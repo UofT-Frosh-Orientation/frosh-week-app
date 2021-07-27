@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import '../widgets/FroshQR.dart';
 
 class HomePage extends StatelessWidget {
-
   final String froshName;
 
   const HomePage({
@@ -12,16 +12,22 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverAppBar(
-            floating: true,
-            pinned: true,
-            snap: false,
-            title: Text('Welcome to F!rosh week, $froshName'),
-          )
-        ],
-      )
-    );
+        appBar: AppBar(
+          title: Text(
+            "Welcome to F!rosh, $froshName",
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+        body: SafeArea(
+          child: Column(
+            children: [
+              FroshQR(
+                  froshAccount: "some_account_id",
+                  froshKitsSize: "Large",
+                  hasCompletedUCheck: true
+              )
+            ],
+          ),
+        ));
   }
 }

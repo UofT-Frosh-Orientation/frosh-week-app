@@ -15,7 +15,6 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-
   final Future<FirebaseApp> _initialization = Firebase.initializeApp();
 
   @override
@@ -25,6 +24,7 @@ class _AppState extends State<App> {
       builder: (context, snapshot) {
         if (snapshot.hasError) {
           //TODO: add an error page
+          return MyApp();
         }
 
         if (snapshot.connectionState == ConnectionState.done) {
@@ -32,11 +32,11 @@ class _AppState extends State<App> {
         }
 
         //TODO: add a loading page
+        return MyApp();
       },
     );
   }
 }
-
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
