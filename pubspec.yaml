@@ -30,6 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_core: ^1.4.0
   qr_flutter: ^4.0.0
+  curved_navigation_bar: ^1.0.1
 
 dev_dependencies:
   flutter_test:
@@ -49,6 +50,13 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+
+  fonts:
+    - family: Avenir
+      fonts:
+        - asset: assets/fonts/AvenirLTStd-Roman.otf
+        - asset: assets/fonts/AvenirLTStd-Black.otf
+          weight: 700
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
