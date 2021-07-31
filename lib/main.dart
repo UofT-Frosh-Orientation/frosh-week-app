@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'src/pages/home_page.dart';
+import 'src/colors.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
@@ -50,9 +51,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primaryColor: Colors.white,
+        primaryColorDark: Colors.grey[200],
         primaryColorLight: Colors.grey[100],
-        primaryColorDark: Colors.black,
-        shadowColor: Colors.grey[100],
         primaryColorBrightness: Brightness.light,
         brightness: Brightness.light,
         canvasColor: Colors.grey[100],
@@ -62,10 +62,10 @@ class MyApp extends StatelessWidget {
       ),
       darkTheme: ThemeData(
           primaryColor: Colors.black,
+          primaryColorDark: Colors.grey[800],
           primaryColorBrightness: Brightness.dark,
           primaryColorLight: Colors.grey[850],
           brightness: Brightness.dark,
-          primaryColorDark: Colors.black,
           indicatorColor: Colors.white,
           canvasColor: Colors.black,
           appBarTheme: AppBarTheme(brightness: Brightness.dark),
@@ -76,11 +76,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Framework(pages: [
         HomePage(
-          froshName: "Calum",
-        ),
+            froshName: "Calum",
+            discipline: "Engineering Science",
+            froshGroup: "Lambda"),
         HomePage(
-          froshName: "Calum",
-        ),
+            froshName: "James",
+            discipline: "Computer Engineering",
+            froshGroup: "Lambda"),
       ]),
     );
   }
@@ -124,10 +126,10 @@ class FrameworkState extends State<Framework> {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
-                end: Alignment(0, 1.3),
+                end: Alignment(0, 0.8),
                 colors: [
                   Theme.of(context).canvasColor.withOpacity(0),
-                  Colors.purple
+                  Theme.of(context).colorScheme.purpleAccent,
                 ],
               ),
             ),
@@ -136,6 +138,9 @@ class FrameworkState extends State<Framework> {
         Align(
           alignment: Alignment.bottomCenter,
           child: CurvedNavigationBar(
+            buttonBackgroundColor:
+                Theme.of(context).colorScheme.lightDarkAccent,
+            color: Theme.of(context).colorScheme.navbar,
             animationDuration: const Duration(milliseconds: 500),
             backgroundColor: Colors.transparent,
             height: 60,
@@ -143,10 +148,18 @@ class FrameworkState extends State<Framework> {
               Icon(
                 Icons.home,
                 size: 30,
-                color: Colors.purple[800],
+                color: Theme.of(context).colorScheme.black,
               ),
-              Icon(Icons.notifications, size: 30),
-              Icon(Icons.ac_unit, size: 30),
+              Icon(
+                Icons.notifications,
+                size: 30,
+                color: Theme.of(context).colorScheme.black,
+              ),
+              Icon(
+                Icons.home,
+                size: 30,
+                color: Theme.of(context).colorScheme.black,
+              ),
             ],
             onTap: (index) {
               setState(() {

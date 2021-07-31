@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../colors.dart';
 
 class MainHeader extends StatelessWidget {
   final String text;
@@ -22,10 +23,10 @@ class MainHeader extends StatelessWidget {
         height: 54,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.elliptical(27, 27)),
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).colorScheme.lightDarkAccent,
           boxShadow: [
             BoxShadow(
-              color: Theme.of(context).primaryColorDark.withOpacity(0.16),
+              color: Theme.of(context).colorScheme.shadowColor,
               offset: Offset(0, 3.0),
               blurRadius: 6.0,
             ),
@@ -100,7 +101,7 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     double paddingAmount = 0;
     if (this.padding) {
-      paddingAmount = 14;
+      paddingAmount = 15;
     }
     return Padding(
       padding: EdgeInsets.only(left: paddingAmount),
@@ -117,24 +118,39 @@ class TextFont extends StatelessWidget {
   final String text;
   final double fontSize;
   final FontWeight fontWeight;
+  final bool customTextColor;
+  final Color textColor;
+  final TextAlign textAlign;
 
   const TextFont(
       {Key? key,
       required this.text,
       this.fontSize = 20,
-      this.fontWeight = FontWeight.normal})
+      this.fontWeight = FontWeight.normal,
+      this.customTextColor = false,
+      this.textAlign = TextAlign.left,
+      this.textColor = Colors.white})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var finalTextColor;
+    if (!this.customTextColor) {
+      finalTextColor = Theme.of(context).colorScheme.black;
+    } else {
+      finalTextColor = textColor;
+    }
     return Text(
       '$text',
-      textAlign: TextAlign.left,
-      overflow: TextOverflow.ellipsis,
+      textAlign: textAlign,
       style: TextStyle(
           fontWeight: this.fontWeight,
           fontSize: this.fontSize,
-          fontFamily: 'Avenir'),
+          fontFamily: 'Avenir',
+          color: finalTextColor,
+          decoration: TextDecoration.underline,
+          decorationStyle: TextDecorationStyle.double,
+          decorationColor: Color(0x00FFFFFF)),
     );
   }
 }
