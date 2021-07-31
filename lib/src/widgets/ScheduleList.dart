@@ -2,23 +2,40 @@ import 'package:flutter/material.dart';
 import "./ContainersExtensions.dart";
 import './TextWidgets.dart';
 
-class Item {
-  Item({
-    required this.expandedValue,
-    required this.headerValue,
+class Event {
+  Event(
+      {required this.title,
+      required this.time,
+      required this.room,
+      this.description = "",
+      this.froshGroup = ""});
+  String title;
+  String time;
+  String room;
+  String description;
+  String froshGroup;
+}
+
+class Day {
+  Day({
+    required this.events,
+    required this.day,
     this.isExpanded = false,
   });
 
-  String expandedValue;
-  String headerValue;
+  List<Event> events;
+  String day;
   bool isExpanded;
 }
 
-List<Item> generateItems(int numberOfItems) {
-  return List<Item>.generate(numberOfItems, (int index) {
-    return Item(
-      headerValue: 'Panel $index',
-      expandedValue: 'This is item number $index',
+List<Day> getDays() {
+  var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  return List<Day>.generate(days.length, (int i) {
+    return Day(
+      day: days[i],
+      events: [
+        Event(title: "title", time: "time", room: "room", description: "")
+      ],
     );
   });
 }
@@ -33,7 +50,7 @@ class ScheduleList extends StatefulWidget {
 
 /// This is the private State class that goes with MyStatefulWidget.
 class ScheduleListState extends State<ScheduleList> {
-  final List<Item> data = generateItems(8);
+  final List<Day> days = getDays();
 
   @override
   Widget build(BuildContext context) {
@@ -47,48 +64,45 @@ class ScheduleListState extends State<ScheduleList> {
   Widget _buildPanel() {
     return ExpansionPanelList(
       expansionCallback: (int index, bool isExpanded) {
-        for (var i = 0; i < data.length; i++) {
-          data[i].isExpanded = false;
+        for (var i = 0; i < days.length; i++) {
+          days[i].isExpanded = false;
         }
         setState(() {
-          data[index].isExpanded = !isExpanded;
+          days[index].isExpanded = !isExpanded;
         });
       },
-      children: data.map<ExpansionPanel>((Item item) {
+      children: days.map<ExpansionPanel>((Day day) {
         return ExpansionPanel(
-          headerBuilder: (BuildContext context, bool isExpanded) {
-            return GestureDetector(
-              onTap: () {
-                for (var i = 0; i < data.length; i++) {
-                  data[i].isExpanded = false;
-                }
-                setState(() {
-                  item.isExpanded = !item.isExpanded;
-                });
-              },
-              child: Padding(
-                padding: const EdgeInsets.only(
-                    left: 24.0, right: 16, top: 16, bottom: 16),
-                child: TextFont(
-                  text: "Lunch Time",
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
+            isExpanded: day.isExpanded,
+            headerBuilder: (BuildContext context, bool isExpanded) {
+              return GestureDetector(
+                onTap: () {
+                  for (var i = 0; i < days.length; i++) {
+                    days[i].isExpanded = false;
+                  }
+                  setState(() {
+                    day.isExpanded = !day.isExpanded;
+                  });
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                      left: 24.0, right: 16, top: 16, bottom: 16),
+                  child: TextFont(
+                    text: day.day,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-            );
-          },
-          body: ListTile(
-              title: Text(item.expandedValue),
-              subtitle:
-                  const Text('To delete this panel, tap the trash can icon'),
-              trailing: const Icon(Icons.delete),
-              onTap: () {
-                setState(() {
-                  data.removeWhere((Item currentItem) => item == currentItem);
-                });
-              }),
-          isExpanded: item.isExpanded,
-        );
+              );
+            },
+            body: Column(children: [
+              for (var event in day.events)
+                ContainerEvent(
+                    title: event.title,
+                    time: event.time,
+                    room: event.room,
+                    description: event.description)
+            ]));
       }).toList(),
     );
   }

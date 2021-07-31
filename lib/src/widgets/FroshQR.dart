@@ -1,5 +1,6 @@
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class FroshQR extends StatelessWidget {
   final String froshAccount;
@@ -15,10 +16,13 @@ class FroshQR extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var deviceWidth = MediaQuery.of(context).size.width;
+    var deviceHeight = MediaQuery.of(context).size.height;
+    var height = min(deviceWidth, deviceHeight);
     return QrImage(
       data: "$froshAccount/$froshKitsSize/$hasCompletedUCheck",
       version: QrVersions.auto,
-      size: 320,
+      size: height * 0.7,
       foregroundColor: Colors.deepPurple,
     );
   }

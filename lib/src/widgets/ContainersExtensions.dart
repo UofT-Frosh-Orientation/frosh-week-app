@@ -19,6 +19,18 @@ class ContainerEvent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget descriptionWidget = Padding(
+      padding: const EdgeInsets.only(left: 23, right: 23, bottom: 23),
+      child: TextFont(
+        text: "$description",
+        fontSize: 18,
+        customTextColor: true,
+        textColor: Colors.black,
+      ),
+    );
+    if (description == "") {
+      descriptionWidget = Container();
+    }
     return (Box(
       outerPadding: 0,
       fancy: true,
@@ -74,17 +86,7 @@ class ContainerEvent extends StatelessWidget {
             ),
           ),
           trailing: Container(height: 0, width: 0),
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(left: 23, right: 23, bottom: 23),
-              child: TextFont(
-                text: "$description",
-                fontSize: 18,
-                customTextColor: true,
-                textColor: Colors.black,
-              ),
-            ),
-          ],
+          children: [descriptionWidget],
         ),
       ),
     ));

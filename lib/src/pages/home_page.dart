@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frosh_week_2t1/src/pages/profile_page.dart';
-import '../widgets/FroshQR.dart';
 import '../widgets/TextWidgets.dart';
 import 'package:flutter/cupertino.dart';
-import "../widgets/Containers.dart";
 import "../widgets/ScheduleList.dart";
 
 import "../widgets/ContainersExtensions.dart";
@@ -65,11 +63,8 @@ class HomePage extends StatelessWidget {
                   "Grab your snacks! It's lunch time. Food is provided so you don't need to worry. Head to the building to get your lunch bla bla bla bla bla",
               time: "12:00 - 2:00",
               room: "SF1234"),
-          FroshQR(
-              froshAccount: "some_account_id",
-              froshKitsSize: "Large",
-              hasCompletedUCheck: true),
           ScheduleList(),
+          Container(height: 100)
         ]),
       )
     ]));
