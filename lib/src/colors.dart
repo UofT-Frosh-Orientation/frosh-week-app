@@ -17,6 +17,9 @@ extension ColorsDefined on ColorScheme {
   Color get purpleAccent => brightness == Brightness.light
       ? const Color(0xFF6f1e88)
       : const Color(0xFF6f1e88);
+  Color get lightPurpleAccent => brightness == Brightness.light
+      ? const Color(0xBB9764A7)
+      : const Color(0xB6AC7BBB);
   Color get navbar => brightness == Brightness.light
       ? const Color(0xFFFFFFFF)
       : const Color(0xFF69247E);

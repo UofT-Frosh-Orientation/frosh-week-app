@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import 'package:frosh_week_2t1/src/pages/schedule_page.dart';
 import 'src/pages/home_page.dart';
 import 'src/colors.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primaryColor: Colors.white,
+        accentColor: Theme.of(context).colorScheme.lightPurpleAccent,
         primaryColorDark: Colors.grey[200],
         primaryColorLight: Colors.grey[100],
         primaryColorBrightness: Brightness.light,
@@ -62,6 +64,7 @@ class MyApp extends StatelessWidget {
       ),
       darkTheme: ThemeData(
           primaryColor: Colors.black,
+          accentColor: Theme.of(context).colorScheme.lightPurpleAccent,
           primaryColorDark: Colors.grey[800],
           primaryColorBrightness: Brightness.dark,
           primaryColorLight: Colors.grey[850],
@@ -79,10 +82,7 @@ class MyApp extends StatelessWidget {
             froshName: "Calum",
             discipline: "Engineering Science",
             froshGroup: "Lambda"),
-        HomePage(
-            froshName: "James",
-            discipline: "Computer Engineering",
-            froshGroup: "Lambda"),
+        SchedulePage(),
       ]),
     );
   }
