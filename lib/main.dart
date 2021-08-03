@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:frosh_week_2t1/src/pages/schedule_page.dart';
+import 'package:frosh_week_2t1/src/pages/login_page.dart';
 import 'src/pages/home_page.dart';
 import 'src/colors.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -51,6 +52,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        fontFamily: 'Avenir',
+        buttonColor: Theme.of(context).colorScheme.lightPurpleAccent,
         primaryColor: Colors.white,
         accentColor: Theme.of(context).colorScheme.lightPurpleAccent,
         primaryColorDark: Colors.grey[200],
@@ -63,6 +66,8 @@ class MyApp extends StatelessWidget {
             const CupertinoThemeData(brightness: Brightness.light),
       ),
       darkTheme: ThemeData(
+          fontFamily: 'Avenir',
+          buttonColor: Theme.of(context).colorScheme.lightPurpleAccent,
           primaryColor: Colors.black,
           accentColor: Theme.of(context).colorScheme.lightPurpleAccent,
           primaryColorDark: Colors.grey[800],
@@ -78,6 +83,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
       home: Framework(pages: [
+        LoginPage(),
         HomePage(
             froshName: "Calum",
             discipline: "Engineering Science",

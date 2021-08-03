@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import '../widgets/FroshQR.dart';
 import '../widgets/TextWidgets.dart';

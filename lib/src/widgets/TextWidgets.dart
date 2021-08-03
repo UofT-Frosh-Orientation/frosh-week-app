@@ -5,12 +5,14 @@ class MainHeader extends StatelessWidget {
   final String text;
   final String textSmaller;
   final bool icon;
+  final bool topSpace;
 
   const MainHeader(
       {Key? key,
       required this.text,
       required this.textSmaller,
-      required this.icon})
+      required this.icon,
+      this.topSpace = true})
       : super(key: key);
 
   @override
@@ -55,7 +57,7 @@ class MainHeader extends StatelessWidget {
     }
 
     return Padding(
-        padding: const EdgeInsets.only(top: 130.0, bottom: 10),
+        padding: EdgeInsets.only(top: topSpace ? 130 : 10, bottom: 10),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
