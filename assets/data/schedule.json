@@ -1,0 +1,203 @@
+{
+  "Monday": [
+      {
+          "startTime": "9:00 AM",
+          "endTime": "10:00 AM",
+          "description": "This is where you get to meet your F!rosh Week Group!!!",
+          "title": "Meet your F! group!",
+          "eventType": "group-event"
+      },
+      {
+          "startTime": "10:00 AM",
+          "endTime": "12:00 PM",
+          "description": "This is your introduction to UofT Engineering, featuring presentations by key members of the Skule Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
+          "title": "Matriculation",
+          "eventType": "frosh-event"
+      },
+      {
+          "startTime": "12:00 PM",
+          "endTime": "1:00 PM",
+          "description": "Time for some food 😋",
+          "title": "Lunch",
+          "eventType": "meal-event"
+      },
+      {
+          "startTime": "1:00 PM",
+          "endTime": "4:00 PM",
+          "description": "Strap on your hardhats, warmup your typing hands, and make sure that mic is working for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped for Frosh Games 2021! Do you want to learn more about how engineers impact the world? Are you interested in working in teams and making new friends? Well...E4TW is the event for you! Get ready to use your creativity to explore some of the world’s most pressing issues through a hands-on, fun, and hype design challenge.",
+          "title": "Games + Engineers for the World",
+          "eventType": "frosh-event"
+      },
+      {
+          "startTime": "4:00 PM",
+          "endTime": "4:30 PM",
+          "description": "Some time to get to know your group better",
+          "title": "Group Time",
+          "eventType": "group-event"
+      },
+      {
+          "startTime": "4:30 PM",
+          "endTime": "6:00 PM",
+          "description": "This seminar is a must-go! It's a very important introduction to your academic life at UofT.",
+          "title": "Academic Success Seminar",
+          "eventType": "group-event"
+      },
+      {
+          "startTime": "6:00 PM",
+          "endTime": "7:00 PM",
+          "description": "Time for a break! Kick back and relax for a bit :)",
+          "title": "Break",
+          "eventType": "break-event"
+      },
+      {
+          "startTime": "7:00 PM",
+          "endTime": "8:00 PM",
+          "description": "Have you been quarantined for too long? Want to meet some new friends? Come out to NITELIFE 2T1 🎉🎉 We will be running both in-person and online events all week so no matter where you are, you can have a good time. At night, F!rosh turns into a big party! We’ll have food and drinks - maybe even a spirited lip sync battle! Every night will have it’s own theme and it’s own set of entertaining events.",
+          "title": "Nitelife",
+          "eventType": "nitelife-event"
+      }
+  ],
+  "Tuesday (In Person)": [
+      {
+          "startTime": "9:00 AM",
+          "endTime": "10:00 AM",
+          "description": "This is some time to get to know your group",
+          "title": "Group Time",
+          "eventType": "group-event"
+      },
+      {
+          "startTime": "10:00 AM",
+          "endTime": "5:30 PM",
+          "description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way! You’ll have the opportunity to get your hands (or arms or face) all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype!",
+          "title": "Campus Tour ft. Dye Station, Walkaround, & Lunch",
+          "eventType": "frosh-event"
+      },
+      {
+          "startTime": "5:30 PM",
+          "endTime": "6:00 PM",
+          "description": "Time for some food 😋",
+          "title": "Dinner",
+          "eventType": "meal-event"
+      },
+      {
+          "startTime": "6:00 PM",
+          "endTime": "7:00 PM",
+          "description": "Time for a break! Kick back and relax for a bit :)",
+          "title": "Break",
+          "eventType": "break-event"
+      },
+      {
+          "startTime": "7:00 PM",
+          "endTime": "8:00 PM",
+          "description": "Have you been quarantined for too long? Want to meet some new friends? Come out to NITELIFE 2T1 🎉🎉 We will be running both in-person and online events all week so no matter where you are, you can have a good time. At night, F!rosh turns into a big party! We’ll have food and drinks - maybe even a spirited lip sync battle! Every night will have it’s own theme and it’s own set of entertaining events.",
+          "title": "Nitelife",
+          "eventType": "nitelife-event"
+      }
+  ],
+  "Tuesday (Online)": [
+      {
+          "startTime": "9:00 AM",
+          "endTime": "10:00 AM",
+          "description": "This is some time to get to know your group",
+          "title": "Group Time",
+          "eventType": "group-event"
+      },
+      {
+          "startTime": "10:00 AM",
+          "endTime": "1:00 PM",
+          "description": "Wondering what campus looks like? Worried you won’t know where your classes might be? Campus Tours is going to show you all of that, letting you chat and connect with upper years, sharing engineering traditions and stories while exploring the fantastic campus at U of T - and ensuring you pass all your midterms in first year with a little luck ;) You’ll have the opportunity to get your hands (or arms or face) all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype! ",
+          "title": "Campus Tour + Dye Station",
+          "eventType": "frosh-event"
+      },
+      {
+          "startTime": "1:00 PM",
+          "endTime": "2:00 PM",
+          "description": "Time for some food 😋",
+          "title": "Lunch",
+          "eventType": "meal-event"
+      },
+      {
+          "startTime": "2:00 PM",
+          "endTime": "2:30 PM",
+          "description": "This is some time to get to know your group",
+          "title": "Group Time",
+          "eventType": "group-event"
+      },
+      {
+          "startTime": "2:30 PM",
+          "endTime": "4:30 PM",
+          "description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way!",
+          "title": "Downtown Walkaround",
+          "eventType": "frosh-event"
+      },
+      {
+          "startTime": "4:30 PM",
+          "endTime": "5:30 PM",
+          "description": "This is some time to get to know your group",
+          "title": "Group Time",
+          "eventType": "group-event"
+      },
+      {
+          "startTime": "5:30 PM",
+          "endTime": "7:00 PM",
+          "description": "Time for a break! Kick back and relax for a bit :)",
+          "title": "Break",
+          "eventType": "break-event"
+      },
+      {
+          "startTime": "7:00 PM",
+          "endTime": "8:00 PM",
+          "description": "Have you been quarantined for too long? Want to meet some new friends? Come out to NITELIFE 2T1 🎉🎉 We will be running both in-person and online events all week so no matter where you are, you can have a good time. At night, F!rosh turns into a big party! We’ll have food and drinks - maybe even a spirited lip sync battle! Every night will have it’s own theme and it’s own set of entertaining events.",
+          "title": "Nitelife",
+          "eventType": "nitelife-event"
+      }
+  ],
+  "Wednesday": [
+      {
+          "startTime": "9:00 AM",
+          "endTime": "7:00 PM",
+          "description": "This is a variety of Faculty-run events to start your school year off",
+          "title": "Faculty Events",
+          "eventType": "school-event"
+      },
+      {
+          "startTime": "7:00 PM",
+          "endTime": "8:00 PM",
+          "description": "Havenger Scunt is F!rosh Week's wacky, wild version of a scavenger hunt, in which teams of F!rosh work together to complete items from the Scunt List and bribe judges to earn points. However, Scunt is not your everyday scavenger hunt; be ready to get creative, try something new, and step out of your comfort zone!",
+          "title": "Havenger Scunt",
+          "eventType": "nitelife-event"
+      }
+  ],
+  "Thursday": [
+      {
+          "startTime": "9:00 AM",
+          "endTime": "7:00 PM",
+          "description": "First day of classes!",
+          "title": "Class",
+          "eventType": "school-event"
+      },
+      {
+          "startTime": "7:00 PM",
+          "endTime": "8:00 PM",
+          "description": "Have you been quarantined for too long? Want to meet some new friends? Come out to NITELIFE 2T1 🎉🎉 We will be running both in-person and online events all week so no matter where you are, you can have a good time. At night, F!rosh turns into a big party! We’ll have food and drinks - maybe even a spirited lip sync battle! Every night will have it’s own theme and it’s own set of entertaining events.",
+          "title": "Nitelife",
+          "eventType": "nitelife-event"
+      }
+  ],
+  "Friday": [
+      {
+          "startTime": "9:00 AM",
+          "endTime": "7:00 PM",
+          "description": "Second day of classes!",
+          "title": "Class",
+          "eventType": "school-event"
+      },
+      {
+          "startTime": "7:00 PM",
+          "endTime": "8:00 PM",
+          "description": "Have you been quarantined for too long? Want to meet some new friends? Come out to NITELIFE 2T1 🎉🎉 We will be running both in-person and online events all week so no matter where you are, you can have a good time. At night, F!rosh turns into a big party! We’ll have food and drinks - maybe even a spirited lip sync battle! Every night will have it’s own theme and it’s own set of entertaining events.",
+          "title": "Nitelife",
+          "eventType": "nitelife-event"
+      }
+  ]
+}
