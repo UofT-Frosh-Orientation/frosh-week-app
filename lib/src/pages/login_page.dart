@@ -46,7 +46,7 @@ class LoginPage extends StatelessWidget {
         ButtonRegular(
             text: "Login",
             onPressed: () {
-              print("object");
+              print("login");
             }),
         Container(height: 100)
       ],

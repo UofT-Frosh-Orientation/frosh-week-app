@@ -68,7 +68,7 @@ class Box extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(7),
-            color: Colors.white,
+            color: Theme.of(context).colorScheme.lightDarkAccent,
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withOpacity(0.1),

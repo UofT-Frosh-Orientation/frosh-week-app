@@ -56,14 +56,14 @@ class HomePage extends StatelessWidget {
             text: "Happening Now",
             padding: true,
           ),
-
           ContainerEvent(
-              title: "Lunch time",
-              description:
-                  "Grab your snacks! It's lunch time. Food is provided so you don't need to worry. Head to the building to get your lunch bla bla bla bla bla",
-              time: "12:00 - 2:00",
-              room: "SF1234"),
-
+            title: "Lunch time",
+            description:
+                "Grab your snacks! It's lunch time. Food is provided so you don't need to worry. Head to the building to get your lunch bla bla bla bla bla",
+            time: "12:00 - 2:00",
+            room: "SF1234",
+            blackText: true,
+          ),
           Container(height: 100)
         ]),
       )

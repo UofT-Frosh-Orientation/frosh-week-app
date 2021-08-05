@@ -19,6 +19,8 @@ class TextInput extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 18.0, right: 18),
       child: TextField(
+        style: TextStyle(fontSize: 18, fontFamily: "Avenir"),
+        cursorColor: Theme.of(context).colorScheme.lightPurpleAccent,
         decoration: InputDecoration(
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
@@ -31,7 +33,8 @@ class TextInput extends StatelessWidget {
               ),
             ),
             labelText: labelText,
-            labelStyle: TextStyle(color: Theme.of(context).colorScheme.black)),
+            labelStyle: TextStyle(
+                color: Theme.of(context).colorScheme.black, fontSize: 18)),
         obscureText: obscureText,
         onChanged: (text) {
           onChanged(text);

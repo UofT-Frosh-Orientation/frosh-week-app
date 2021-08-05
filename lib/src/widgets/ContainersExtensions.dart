@@ -8,6 +8,7 @@ class ContainerEvent extends StatelessWidget {
   final String time;
   final String room;
   final String description;
+  final bool blackText;
   final bool small;
 
   const ContainerEvent({
@@ -16,6 +17,7 @@ class ContainerEvent extends StatelessWidget {
     required this.time,
     required this.room,
     required this.description,
+    this.blackText = false,
     this.small = false,
   }) : super(key: key);
 
@@ -26,7 +28,7 @@ class ContainerEvent extends StatelessWidget {
       child: TextFont(
         text: "$description",
         fontSize: small ? 16 : 18,
-        customTextColor: true,
+        customTextColor: blackText ? true : false,
         textColor: Colors.black,
       ),
     );
@@ -54,7 +56,7 @@ class ContainerEvent extends StatelessWidget {
                   text: "$title",
                   fontSize: small ? 24 : 30,
                   fontWeight: FontWeight.bold,
-                  customTextColor: true,
+                  customTextColor: blackText ? true : false,
                   textColor: Colors.black,
                 ),
               ),
@@ -67,14 +69,14 @@ class ContainerEvent extends StatelessWidget {
                     TextFont(
                       text: "$time",
                       fontSize: 16,
-                      customTextColor: true,
+                      customTextColor: blackText ? true : false,
                       textColor: Colors.black,
                       textAlign: TextAlign.right,
                     ),
                     TextFont(
                       text: "$room",
                       fontSize: 15,
-                      customTextColor: true,
+                      customTextColor: blackText ? true : false,
                       textColor: Colors.black,
                       textAlign: TextAlign.right,
                     ),

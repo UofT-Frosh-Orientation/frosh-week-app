@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:frosh_week_2t1/src/pages/schedule_page.dart';
 import 'package:frosh_week_2t1/src/pages/login_page.dart';
 import 'src/pages/home_page.dart';
+import 'src/pages/notifications_page.dart';
 import 'src/colors.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -50,7 +51,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'F!rosh Week',
       theme: ThemeData(
         fontFamily: 'Avenir',
         buttonColor: Theme.of(context).colorScheme.lightPurpleAccent,
@@ -83,12 +84,13 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
       home: Framework(pages: [
-        LoginPage(),
         HomePage(
             froshName: "Calum",
             discipline: "Engineering Science",
             froshGroup: "Lambda"),
         SchedulePage(),
+        NotificationsPageParse(),
+        LoginPage(),
       ]),
     );
   }
@@ -157,12 +159,17 @@ class FrameworkState extends State<Framework> {
                 color: Theme.of(context).colorScheme.black,
               ),
               Icon(
+                Icons.event,
+                size: 30,
+                color: Theme.of(context).colorScheme.black,
+              ),
+              Icon(
                 Icons.notifications,
                 size: 30,
                 color: Theme.of(context).colorScheme.black,
               ),
               Icon(
-                Icons.home,
+                Icons.book,
                 size: 30,
                 color: Theme.of(context).colorScheme.black,
               ),

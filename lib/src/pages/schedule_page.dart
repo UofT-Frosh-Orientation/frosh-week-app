@@ -11,18 +11,14 @@ class SchedulePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: CustomScrollView(physics: BouncingScrollPhysics(), slivers: [
-      SliverList(
-        delegate: SliverChildListDelegate([
-          MainHeader(
-            text: 'Schedule',
-            textSmaller: "2T1",
-            icon: false,
-          ),
-          ScheduleList(),
-          Container(height: 100)
-        ]),
-      )
+        body: ListView(physics: BouncingScrollPhysics(), children: [
+      MainHeader(
+        text: 'Schedule',
+        textSmaller: "2T1",
+        icon: false,
+      ),
+      ScheduleListParse(),
+      Container(height: 100),
     ]));
   }
 }
