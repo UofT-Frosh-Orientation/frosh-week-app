@@ -8,17 +8,28 @@ import "../widgets/ContainersExtensions.dart";
 
 class Notification {
   Notification(
-      {required this.title, required this.description, this.froshGroup = ""});
+      {required this.title,
+      required this.description,
+      this.froshGroup = "",
+      this.time = ""});
   String title;
   String description;
   String froshGroup;
+  String time;
 }
 
 class NotificationsPageParse extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NotificationsPage(notifications: [
-      Notification(title: "Matriculation", description: "Please go to SF1105")
+      Notification(
+          title: "Matriculation",
+          description: "Please go to SF1105",
+          time: "11:00 AM"),
+      Notification(
+          title: "Another one",
+          description: "Please go to bla bla bla",
+          time: "1:00 PM")
     ]);
   }
 }
@@ -83,10 +94,26 @@ class NotificationBox extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          TextFont(
-            text: notification.title,
-            fontWeight: FontWeight.bold,
-            fontSize: 25,
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Flexible(
+                flex: 2,
+                child: TextFont(
+                  text: notification.title,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25,
+                ),
+              ),
+              Flexible(
+                flex: 1,
+                child: TextFont(
+                  text: notification.time,
+                  fontSize: 15,
+                ),
+              )
+            ],
           ),
           Container(height: 4),
           TextFont(
