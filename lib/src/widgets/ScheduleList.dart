@@ -95,6 +95,7 @@ class ScheduleListState extends State<ScheduleList> {
           },
           children: days.map<ExpansionPanel>((Day day) {
             return ExpansionPanel(
+                canTapOnHeader: true,
                 isExpanded: day.isExpanded,
                 headerBuilder: (BuildContext context, bool isExpanded) {
                   return GestureDetector(

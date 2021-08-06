@@ -67,6 +67,10 @@ class NotificationsPage extends StatelessWidget {
                     ))
                   : Container()
             ])),
+            SliverAppBar(
+              title: Text("hello"),
+              pinned: true,
+            ),
             SliverList(
               delegate: SliverChildBuilderDelegate(
                   (context, index) =>
