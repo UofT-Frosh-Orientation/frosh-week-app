@@ -20,28 +20,38 @@ class ExitButton extends StatelessWidget {
 class Box extends StatelessWidget {
   final Widget widget;
   final bool fancy;
+  final bool lightShadow;
   final List<Color> colors;
   final double outerPadding;
+  final double outerMargin;
+  final double borderRadius;
 
-  const Box(
-      {Key? key,
-      required this.widget,
-      this.fancy = false,
-      this.colors = const [
-        const Color(0xB48C2EA8),
-        const Color(0xBE442FAC),
-        const Color(0xB7CA42D4)
-      ],
-      this.outerPadding = 23.0})
-      : super(key: key);
+  const Box({
+    Key? key,
+    required this.widget,
+    this.fancy = false,
+    this.lightShadow = false,
+    this.colors = const [
+      const Color(0xB48C2EA8),
+      const Color(0xBE442FAC),
+      const Color(0xB7CA42D4)
+    ],
+    this.outerPadding = 23.0,
+    this.outerMargin = 1,
+    this.borderRadius = 7,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     if (this.fancy)
       return Container(
-        margin: EdgeInsets.only(left: 15.0, right: 15, top: 8, bottom: 8),
+        margin: EdgeInsets.only(
+            left: 15.0 * outerMargin,
+            right: 15 * outerMargin,
+            top: 8 * outerMargin,
+            bottom: 8 * outerMargin),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(this.borderRadius),
           gradient: LinearGradient(
             begin: Alignment(-1.09, -2.98),
             end: Alignment(1.0, 2.66),
@@ -50,7 +60,9 @@ class Box extends StatelessWidget {
           ),
           boxShadow: [
             BoxShadow(
-              color: Theme.of(context).colorScheme.shadowColor,
+              color: lightShadow
+                  ? Theme.of(context).colorScheme.shadowColorLight
+                  : Theme.of(context).colorScheme.shadowColor,
               offset: Offset(0, 4.0),
               blurRadius: 6.0,
             ),
@@ -67,7 +79,7 @@ class Box extends StatelessWidget {
             const EdgeInsets.only(left: 15.0, right: 15, top: 8, bottom: 8),
         child: Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(7),
+            borderRadius: BorderRadius.circular(this.borderRadius),
             color: Theme.of(context).colorScheme.lightDarkAccent,
             boxShadow: [
               BoxShadow(

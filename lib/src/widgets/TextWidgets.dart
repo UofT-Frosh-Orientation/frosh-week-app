@@ -25,7 +25,7 @@ class MainHeader extends StatelessWidget {
         height: 54,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.elliptical(27, 27)),
-          color: Theme.of(context).colorScheme.lightDarkAccent,
+          color: Theme.of(context).colorScheme.mainIconBackground,
           boxShadow: [
             BoxShadow(
               color: Theme.of(context).colorScheme.shadowColor,

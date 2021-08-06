@@ -3,8 +3,31 @@ import 'package:frosh_week_2t1/src/pages/profile_page.dart';
 import '../widgets/TextWidgets.dart';
 import 'package:flutter/cupertino.dart';
 import "../widgets/ScheduleList.dart";
-
+import "../functions.dart";
 import "../widgets/ContainersExtensions.dart";
+
+const froshGroupSymbols = {
+  'phi': "φ",
+  'iota': "ι",
+  'rho': "ρ",
+  'psi': "ψ",
+  'gamma': "γ",
+  'zeta': "ζ",
+  'omega': "ω",
+  'upsilon': "ε",
+  'beta': "β",
+  'chi': "χ",
+  'ni': "ν",
+  'sigma': "σ",
+  'kappa': "κ",
+  'omicron': "ο",
+  'delta': "δ",
+  'pi': "π",
+  'alpha': "α",
+  'tau': "τ",
+  'lambda': "λ",
+  'theta': "θ"
+};
 
 class HomePage extends StatelessWidget {
   final String froshName;
@@ -40,14 +63,20 @@ class HomePage extends StatelessWidget {
               Navigator.of(context).push(
                   MaterialPageRoute<void>(builder: (BuildContext context) {
                 return ProfilePage(
-                    froshName: froshName,
-                    discipline: discipline,
-                    froshGroup: froshGroup);
+                  froshName: froshName,
+                  discipline: discipline,
+                  froshGroup:
+                      (froshGroupSymbols[froshGroup.toLowerCase()] ?? "") +
+                          " " +
+                          froshGroup.capitalizeFirst,
+                );
               }));
             },
             child: ContainerFrosh(
               froshName: froshName,
-              froshGroup: froshGroup,
+              froshGroup: (froshGroupSymbols[froshGroup.toLowerCase()] ?? "") +
+                  " " +
+                  froshGroup.capitalizeFirst,
               discipline: discipline,
             ),
           ),
@@ -61,8 +90,6 @@ class HomePage extends StatelessWidget {
             description:
                 "Grab your snacks! It's lunch time. Food is provided so you don't need to worry. Head to the building to get your lunch bla bla bla bla bla",
             time: "12:00 - 2:00",
-            room: "SF1234",
-            blackText: true,
           ),
           Container(height: 100)
         ]),

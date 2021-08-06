@@ -88,7 +88,7 @@ class MyApp extends StatelessWidget {
         HomePage(
             froshName: "Calum",
             discipline: "Engineering Science",
-            froshGroup: "Lambda"),
+            froshGroup: "lambda"),
         SchedulePageParse(),
         NotificationsPageParse(),
         LoginPage(),
@@ -147,7 +147,7 @@ class FrameworkState extends State<Framework> {
                 end: Alignment(0, 0.8),
                 colors: [
                   Theme.of(context).canvasColor.withOpacity(0),
-                  Theme.of(context).colorScheme.purpleAccent,
+                  Theme.of(context).colorScheme.lightPurpleAccent,
                 ],
               ),
             ),
@@ -157,8 +157,8 @@ class FrameworkState extends State<Framework> {
           alignment: Alignment.bottomCenter,
           child: CurvedNavigationBar(
             buttonBackgroundColor:
-                Theme.of(context).colorScheme.lightDarkAccent,
-            color: Theme.of(context).colorScheme.navbar,
+                Theme.of(context).colorScheme.lightPurpleAccent,
+            color: Theme.of(context).colorScheme.lightPurpleAccent,
             animationDuration: const Duration(milliseconds: 500),
             backgroundColor: Colors.transparent,
             height: 60,
@@ -166,22 +166,22 @@ class FrameworkState extends State<Framework> {
               Icon(
                 Icons.home,
                 size: 30,
-                color: Theme.of(context).colorScheme.black,
+                color: Colors.white,
               ),
               Icon(
                 Icons.event,
                 size: 30,
-                color: Theme.of(context).colorScheme.black,
+                color: Colors.white,
               ),
               Icon(
                 Icons.notifications,
                 size: 30,
-                color: Theme.of(context).colorScheme.black,
+                color: Colors.white,
               ),
               Icon(
                 Icons.book,
                 size: 30,
-                color: Theme.of(context).colorScheme.black,
+                color: Colors.white,
               ),
             ],
             onTap: (index) {

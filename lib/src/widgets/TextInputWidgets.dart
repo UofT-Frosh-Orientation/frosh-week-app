@@ -29,7 +29,7 @@ class TextInput extends StatelessWidget {
             ),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                color: Theme.of(context).colorScheme.lightDarkAccent,
+                color: Theme.of(context).colorScheme.shadowColor,
               ),
             ),
             labelText: labelText,

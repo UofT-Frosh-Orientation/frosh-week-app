@@ -121,11 +121,10 @@ class ScheduleListState extends State<ScheduleList> {
                 body: Column(children: [
                   for (var event in widget.data[day.day])
                     ContainerEvent(
-                        title: event["title"],
-                        time: event["startTime"],
-                        room: event["eventType"],
-                        description: event["description"],
-                        small: true)
+                      title: event["title"],
+                      time: event["startTime"],
+                      description: event["description"],
+                    )
                 ]));
           }).toList(),
         ),
