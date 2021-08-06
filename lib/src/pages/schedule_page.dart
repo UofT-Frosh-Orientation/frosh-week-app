@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import "../widgets/ScheduleList.dart";
 import "../widgets/TextWidgets.dart";
 import 'package:intl/intl.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -53,8 +52,6 @@ class SchedulePage extends StatelessWidget {
         break;
       }
     }
-
-    print([data.keys]);
 
     return Scaffold(
       body: DefaultTabController(

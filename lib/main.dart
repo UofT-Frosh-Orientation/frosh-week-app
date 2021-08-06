@@ -5,6 +5,7 @@ import 'package:frosh_week_2t1/src/pages/schedule_page.dart';
 import 'package:frosh_week_2t1/src/pages/login_page.dart';
 import 'src/pages/home_page.dart';
 import 'src/pages/notifications_page.dart';
+import 'src/pages/resources_page.dart';
 import 'src/colors.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -91,6 +92,7 @@ class MyApp extends StatelessWidget {
             froshGroup: "lambda"),
         SchedulePageParse(),
         NotificationsPageParse(),
+        ResourcesPageParse(),
         LoginPage(),
       ]),
     );
@@ -180,6 +182,11 @@ class FrameworkState extends State<Framework> {
               ),
               Icon(
                 Icons.book,
+                size: 30,
+                color: Colors.white,
+              ),
+              Icon(
+                Icons.login,
                 size: 30,
                 color: Colors.white,
               ),

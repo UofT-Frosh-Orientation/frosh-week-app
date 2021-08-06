@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:frosh_week_2t1/src/pages/profile_page.dart';
 import '../widgets/TextWidgets.dart';
 import 'package:flutter/cupertino.dart';
-import "../widgets/ScheduleList.dart";
 import "../functions.dart";
 import "../widgets/ContainersExtensions.dart";
 
