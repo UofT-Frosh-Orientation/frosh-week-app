@@ -5,9 +5,11 @@ import 'package:frosh_week_2t1/src/pages/schedule_page.dart';
 import 'package:frosh_week_2t1/src/pages/login_page.dart';
 import 'src/pages/home_page.dart';
 import 'src/pages/notifications_page.dart';
+import 'src/pages/resources_page.dart';
 import 'src/colors.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:animations/animations.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -87,9 +89,10 @@ class MyApp extends StatelessWidget {
         HomePage(
             froshName: "Calum",
             discipline: "Engineering Science",
-            froshGroup: "Lambda"),
-        SchedulePage(),
+            froshGroup: "lambda"),
+        SchedulePageParse(),
         NotificationsPageParse(),
+        ResourcesPageParse(),
         LoginPage(),
       ]),
     );
@@ -122,10 +125,19 @@ class FrameworkState extends State<Framework> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(children: [
-        PageView(
-          physics: NeverScrollableScrollPhysics(),
-          controller: pageController,
-          children: widget.pages,
+        PageTransitionSwitcher(
+          transitionBuilder: (
+            child,
+            animation,
+            secondaryAnimation,
+          ) {
+            return FadeThroughTransition(
+              animation: animation,
+              secondaryAnimation: secondaryAnimation,
+              child: child,
+            );
+          },
+          child: widget.pages[selectedIndex],
         ),
         Align(
           alignment: Alignment.bottomCenter,
@@ -137,7 +149,7 @@ class FrameworkState extends State<Framework> {
                 end: Alignment(0, 0.8),
                 colors: [
                   Theme.of(context).canvasColor.withOpacity(0),
-                  Theme.of(context).colorScheme.purpleAccent,
+                  Theme.of(context).colorScheme.lightPurpleAccent,
                 ],
               ),
             ),
@@ -147,8 +159,8 @@ class FrameworkState extends State<Framework> {
           alignment: Alignment.bottomCenter,
           child: CurvedNavigationBar(
             buttonBackgroundColor:
-                Theme.of(context).colorScheme.lightDarkAccent,
-            color: Theme.of(context).colorScheme.navbar,
+                Theme.of(context).colorScheme.lightPurpleAccent,
+            color: Theme.of(context).colorScheme.lightPurpleAccent,
             animationDuration: const Duration(milliseconds: 500),
             backgroundColor: Colors.transparent,
             height: 60,
@@ -156,31 +168,33 @@ class FrameworkState extends State<Framework> {
               Icon(
                 Icons.home,
                 size: 30,
-                color: Theme.of(context).colorScheme.black,
+                color: Colors.white,
               ),
               Icon(
                 Icons.event,
                 size: 30,
-                color: Theme.of(context).colorScheme.black,
+                color: Colors.white,
               ),
               Icon(
                 Icons.notifications,
                 size: 30,
-                color: Theme.of(context).colorScheme.black,
+                color: Colors.white,
               ),
               Icon(
                 Icons.book,
                 size: 30,
-                color: Theme.of(context).colorScheme.black,
+                color: Colors.white,
+              ),
+              Icon(
+                Icons.login,
+                size: 30,
+                color: Colors.white,
               ),
             ],
             onTap: (index) {
               setState(() {
                 selectedIndex = index;
               });
-              pageController.animateToPage(selectedIndex,
-                  duration: const Duration(milliseconds: 500),
-                  curve: Curves.easeInOutCubic);
             },
           ),
         ),

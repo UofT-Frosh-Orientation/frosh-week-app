@@ -4,7 +4,6 @@ import '../widgets/TextWidgets.dart';
 import '../widgets/ButtonWidgets.dart';
 import '../widgets/TextInputWidgets.dart';
 import 'package:flutter/cupertino.dart';
-import "../widgets/ScheduleList.dart";
 
 import "../widgets/ContainersExtensions.dart";
 

@@ -6,99 +6,62 @@ import '../widgets/TextWidgets.dart';
 class ContainerEvent extends StatelessWidget {
   final String title;
   final String time;
-  final String room;
   final String description;
-  final bool blackText;
-  final bool small;
 
   const ContainerEvent({
     Key? key,
     required this.title,
     required this.time,
-    required this.room,
     required this.description,
-    this.blackText = false,
-    this.small = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Widget descriptionWidget = Padding(
-      padding: const EdgeInsets.only(left: 23, right: 23, bottom: 23),
-      child: TextFont(
-        text: "$description",
-        fontSize: small ? 16 : 18,
-        customTextColor: blackText ? true : false,
-        textColor: Colors.black,
-      ),
-    );
-    if (description == "") {
-      descriptionWidget = Container();
-    }
-    Widget innerWidget = Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(50.0),
-      ),
-      child: ExpansionTile(
-        childrenPadding: small ? null : EdgeInsets.all(0),
-        tilePadding: small ? EdgeInsets.only(right: 10) : EdgeInsets.all(0),
-        expandedAlignment: Alignment.centerLeft,
-        title: Padding(
-          padding: EdgeInsets.only(
-              left: 23, top: small ? 10 : 23, bottom: small ? 10 : 20),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Flexible(
-                flex: 2,
-                child: TextFont(
-                  text: "$title",
-                  fontSize: small ? 24 : 30,
-                  fontWeight: FontWeight.bold,
-                  customTextColor: blackText ? true : false,
-                  textColor: Colors.black,
+    return Box(
+        fancy: true,
+        colors: [Color(0xD7FFED47), Color(0xCBF58B34), Color(0xB7F1DE32)],
+        widget: Column(
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Flexible(
+                  flex: 2,
+                  child: TextFont(
+                    text: title,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    customTextColor: true,
+                    textColor: Colors.white,
+                  ),
                 ),
-              ),
-              Flexible(
-                flex: 1,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    TextFont(
-                      text: "$time",
-                      fontSize: 16,
-                      customTextColor: blackText ? true : false,
-                      textColor: Colors.black,
-                      textAlign: TextAlign.right,
-                    ),
-                    TextFont(
-                      text: "$room",
-                      fontSize: 15,
-                      customTextColor: blackText ? true : false,
-                      textColor: Colors.black,
-                      textAlign: TextAlign.right,
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
-        ),
-        trailing: small ? null : Container(height: 0, width: 0),
-        children: [descriptionWidget],
-      ),
-    );
-    if (small) {
-      return innerWidget;
-    } else {
-      return (Box(
-          outerPadding: 0,
-          fancy: true,
-          colors: [Color(0xAFFF8447), Color(0xB6FDE938), Color(0xB6F18B32)],
-          widget: innerWidget));
-    }
+                Flexible(
+                  flex: 1,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      TextFont(
+                        text: time,
+                        fontSize: 16,
+                        textAlign: TextAlign.right,
+                        customTextColor: true,
+                        textColor: Colors.white,
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+            TextFont(
+              text: description,
+              fontSize: 16,
+              customTextColor: true,
+              textColor: Colors.white,
+            ),
+          ],
+        ));
   }
 }
 
@@ -134,7 +97,7 @@ class ContainerFrosh extends StatelessWidget {
                   textColor: Colors.white,
                 ),
                 TextFont(
-                  text: "λ Lambda",
+                  text: "$froshGroup",
                   customTextColor: true,
                   textColor: Colors.white,
                   textAlign: TextAlign.right,
