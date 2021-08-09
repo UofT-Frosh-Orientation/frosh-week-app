@@ -26,6 +26,9 @@ extension ColorsDefined on ColorScheme {
   Color get lightPurpleAccent => brightness == Brightness.light
       ? const Color(0xFF936DCF)
       : const Color(0xFF864899);
+  Color get lightLightPurpleAccent => brightness == Brightness.light
+      ? const Color(0xFF8F7DAC)
+      : const Color(0xFF886B91);
   Color get mainIconBackground => brightness == Brightness.light
       ? const Color(0xFFFFFFFF)
       : const Color(0xFFE7E7E7);
