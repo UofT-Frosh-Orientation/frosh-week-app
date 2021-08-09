@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
@@ -10,14 +12,32 @@ import 'src/colors.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:animations/animations.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:dio/dio.dart';
+import 'package:dio_cookie_manager/dio_cookie_manager.dart';
+import 'package:cookie_jar/cookie_jar.dart';
+import 'package:path_provider/path_provider.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(MyApp());
+  SharedPreferences preferences = await SharedPreferences.getInstance();
+  Directory appDocDir = await getApplicationDocumentsDirectory();
+  String appDocPath = appDocDir.path;
+  print(appDocPath);
+  Dio dio = Dio();
+  var cookieJar = PersistCookieJar(ignoreExpires: true, storage: FileStorage(appDocPath + './cookies'));
+  // dio.interceptors.add(CookieManager(cookieJar));
+  runApp(App(preferences: preferences, dio: dio));
 }
 
 class App extends StatefulWidget {
-  const App({Key? key}) : super(key: key);
+  final SharedPreferences preferences;
+  final Dio dio;
+  const App({
+    Key? key,
+    required this.preferences,
+    required this.dio,
+  }) : super(key: key);
 
   @override
   _AppState createState() => _AppState();
@@ -33,21 +53,31 @@ class _AppState extends State<App> {
       builder: (context, snapshot) {
         if (snapshot.hasError) {
           //TODO: add an error page
-          return MyApp();
+          print("There was an error");
+          return MyApp(preferences: widget.preferences, dio: widget.dio);
         }
 
         if (snapshot.connectionState == ConnectionState.done) {
-          return MyApp();
+          return MyApp(preferences: widget.preferences, dio: widget.dio);
         }
 
         //TODO: add a loading page
-        return MyApp();
+        return MyApp(preferences: widget.preferences, dio: widget.dio);
       },
     );
   }
 }
 
+
 class MyApp extends StatelessWidget {
+  final SharedPreferences preferences;
+  final Dio dio;
+
+  const MyApp({
+    Key? key,
+    required this.preferences,
+    required this.dio
+  }) : super(key: key);
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -85,26 +115,33 @@ class MyApp extends StatelessWidget {
               textTheme: CupertinoTextThemeData(primaryColor: Colors.white))),
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: Framework(pages: [
-        HomePage(
-            froshName: "Calum",
-            discipline: "Engineering Science",
-            froshGroup: "lambda"),
-        SchedulePageParse(),
-        NotificationsPageParse(),
-        ResourcesPageParse(),
-        LoginPage(),
-      ]),
+      home: Framework(
+        pages: [
+          HomePage(
+              froshName: "Calum",
+              discipline: "Engineering Science",
+              froshGroup: "lambda"),
+          SchedulePageParse(),
+          NotificationsPageParse(),
+          ResourcesPageParse(),
+        ],
+        isLoggedIn: preferences.getBool('isLoggedIn') ?? false,
+        dio: dio,
+      ),
     );
   }
 }
 
 class Framework extends StatefulWidget {
-  final pages;
+  final List<Widget> pages;
+  final bool isLoggedIn;
+  final Dio dio;
 
   const Framework({
     Key? key,
     required this.pages,
+    required this.isLoggedIn,
+    required this.dio,
   }) : super(key: key);
 
   @override
@@ -114,16 +151,29 @@ class Framework extends StatefulWidget {
 class FrameworkState extends State<Framework> {
   late PageController pageController;
   int selectedIndex = 0;
+  late bool _loggedIn;
+
+  void setLoggedIn(bool login) {
+    print("Logging in");
+    setState(() {
+      _loggedIn = login;
+    });
+  }
 
   @override
   void initState() {
     super.initState();
     pageController = PageController(initialPage: selectedIndex);
+    _loggedIn = widget.isLoggedIn;
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    if (!_loggedIn){
+      return Scaffold(
+        body: LoginPage(dio: widget.dio, setLoggedIn: setLoggedIn)
+      );
+    } else return Scaffold(
       body: Stack(children: [
         PageTransitionSwitcher(
           transitionBuilder: (
@@ -185,11 +235,11 @@ class FrameworkState extends State<Framework> {
                 size: 30,
                 color: Colors.white,
               ),
-              Icon(
-                Icons.login,
-                size: 30,
-                color: Colors.white,
-              ),
+              // Icon(
+              //   Icons.login,
+              //   size: 30,
+              //   color: Colors.white,
+              // ),
             ],
             onTap: (index) {
               setState(() {

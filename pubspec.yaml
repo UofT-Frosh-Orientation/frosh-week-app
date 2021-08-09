@@ -35,6 +35,13 @@ dependencies:
   intl: ^0.17.0
   animations: ^2.0.1
   url_launcher: ^6.0.9
+  shared_preferences: ^2.0.3
+  dio: ^4.0.0
+  cookie_jar: ^3.0.1
+  dio_cookie_manager: ^2.0.0
+  path_provider: ^2.0.2
+
+
 
 dev_dependencies:
   flutter_test:
