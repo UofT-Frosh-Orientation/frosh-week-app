@@ -6,8 +6,29 @@ import 'package:intl/date_symbol_data_local.dart';
 import "../widgets/Containers.dart";
 import 'dart:convert';
 import '../colors.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter/rendering.dart';
+import 'dart:math' as math;
+
+const days = {
+  "Monday": "9/6/2021",
+  "Tuesday": "9/7/2021",
+  "Wednesday": "9/8/2021",
+  "Thursday": "9/9/2021",
+  "Friday": "9/10/2021"
+};
+const attributeEventName = "Event name";
+const attributeEventDescription = "Event description";
+const attributeStartTime = "Start time";
+const attributeEndTime = "End time";
+const attributeColor = "Colour";
+const attributeRoom = "Location";
 
 class SchedulePageParse extends StatelessWidget {
+  final String froshGroup;
+  const SchedulePageParse({Key? key, required this.froshGroup})
+      : super(key: key);
+
   Future<String> parseData(context) async {
     return await DefaultAssetBundle.of(context)
         .loadString('assets/data/schedule.json');
@@ -20,7 +41,7 @@ class SchedulePageParse extends StatelessWidget {
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           var data = json.decode(snapshot.data ?? "");
-          return SchedulePage(data: data);
+          return SchedulePage(data: data[this.froshGroup]);
         } else {
           return Container();
         }
@@ -32,18 +53,13 @@ class SchedulePageParse extends StatelessWidget {
 class SchedulePage extends StatelessWidget {
   final dynamic data;
 
-  const SchedulePage({Key? key, this.data}) : super(key: key);
+  const SchedulePage({
+    Key? key,
+    this.data,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    List<String> days = [
-      "Monday",
-      "Tuesday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday"
-    ];
     DateTime date = DateTime.now();
     int initialIndex = 0;
     for (int i = 0; i < days.length; i++) {
@@ -75,7 +91,7 @@ class SchedulePage extends StatelessWidget {
                   child: TabBar(
                     labelColor: Theme.of(context).colorScheme.black,
                     isScrollable: true,
-                    tabs: [for (var day in days) Tab(text: day)],
+                    tabs: [for (var day in days.keys) Tab(text: day)],
                   ),
                 ),
                 pinned: true,
@@ -83,15 +99,28 @@ class SchedulePage extends StatelessWidget {
             ];
           },
           body: TabBarView(
-            children: [
-              for (var dayIndex in data.keys)
-                ScheduleList(data: data, dayIndex: dayIndex)
-            ],
+            children: generateScheduleLists(this.data, days),
           ),
         ),
       ),
     );
   }
+}
+
+List<ScheduleList> generateScheduleLists(data, days) {
+  //at this point, data is a list of objects
+  //we need to loop through and get all the events on the specefic date
+  List<ScheduleList> returnedList = [];
+  for (var day in days.keys) {
+    var currentDayData = [];
+    for (var event in data) {
+      if (event["Date"] == days[day]) {
+        currentDayData.add(event);
+      }
+    }
+    returnedList.add(ScheduleList(data: currentDayData));
+  }
+  return returnedList;
 }
 
 const scheduleColor = {
@@ -102,15 +131,20 @@ const scheduleColor = {
   "orange": ["faculty events", "class"]
 };
 
+//lower case only
 const colorToGradient = {
   "blue": [Color(0x8C647CE6), Color(0x946593F5), Color(0x936960EE)],
   "green": [Color(0x8E2EA0A8), Color(0x8E61AC2F), Color(0x8E42D455)],
   "purple": [Color(0x8E6D2EA8), Color(0x8E8F2FAC), Color(0x8E5D42D4)],
   "yellow": [Color(0x93FFAF47), Color(0x96FDE938), Color(0x8EF1CE32)],
   "orange": [Color(0x93FF9147), Color(0x96FD6638), Color(0x8EF1AE32)],
+  "pink": [Color(0x93FD6BEA), Color(0x96FD38B1), Color(0x8EF132D1)],
+  "light grey": [Color(0x93B4B4B4), Color(0x96686868), Color(0x8EDDDDDD)],
+  "red": [Color(0x93FF1919), Color(0x96F85A5A), Color(0x8EFF0000)],
+  "light orange": [Color(0x93FFAC75), Color(0x96F59F4E), Color(0x8EF17E32)],
 };
 
-determineEventColor(String eventTitle) {
+determineEventColorFromTitle(String eventTitle) {
   String colorOut = "purple";
   for (var color in scheduleColor.keys) {
     var scheduleColorNonNull = scheduleColor[color] ?? [];
@@ -121,14 +155,42 @@ determineEventColor(String eventTitle) {
       }
     }
   }
-  return (colorToGradient[colorOut] ?? [Colors.blue]).cast<Color>();
+  return (colorToGradient[colorOut] ??
+          [Color(0x8E6D2EA8), Color(0x8E8F2FAC), Color(0x8E5D42D4)])
+      .cast<Color>();
+}
+
+determineEventColorFromColor(String color) {
+  return (colorToGradient[color.toLowerCase()] ??
+          [Color(0x8E6D2EA8), Color(0x8E8F2FAC), Color(0x8E5D42D4)])
+      .cast<Color>();
+}
+
+determineEventTimeString(String startTime, String endTime) {
+  var meridiumStart = " PM";
+  var startHour = int.tryParse(startTime.split(":")[0]) ?? 0;
+  if (startHour <= 12) {
+    meridiumStart = " AM";
+  }
+  var meridiumEnd = " PM";
+  var endHour = int.tryParse(endTime.split(":")[0]) ?? 0;
+  if (endHour <= 12) {
+    meridiumEnd = " AM";
+  }
+  return startTime.split(":")[0] +
+      ":" +
+      startTime.split(":")[1] +
+      meridiumStart +
+      " - " +
+      endTime.split(":")[0] +
+      ":" +
+      endTime.split(":")[1] +
+      meridiumEnd;
 }
 
 class ScheduleList extends StatefulWidget {
   final dynamic data;
-  final String dayIndex;
-  const ScheduleList({Key? key, required this.data, required this.dayIndex})
-      : super(key: key);
+  const ScheduleList({Key? key, required this.data}) : super(key: key);
 
   @override
   State<ScheduleList> createState() => ScheduleListState();
@@ -141,7 +203,7 @@ class ScheduleListState extends State<ScheduleList> {
     return ListView.builder(
         physics: BouncingScrollPhysics(),
         padding: EdgeInsets.only(top: 10, bottom: 100),
-        itemCount: widget.data[widget.dayIndex].length,
+        itemCount: widget.data.length,
         itemBuilder: (BuildContext context, int index) {
           return Box(
             outerMargin: 0.8,
@@ -149,8 +211,8 @@ class ScheduleListState extends State<ScheduleList> {
             outerPadding: 0,
             fancy: true,
             lightShadow: true,
-            colors: determineEventColor(
-                widget.data[widget.dayIndex][index]["title"]),
+            colors: determineEventColorFromColor(
+                widget.data[index][attributeColor]),
             widget: ExpansionPanelList(
               elevation: 0,
               dividerColor: Colors.black.withOpacity(0),
@@ -173,40 +235,50 @@ class ScheduleListState extends State<ScheduleList> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           TextFont(
-                            text: widget.data[widget.dayIndex][index]["title"],
+                            text: widget.data[index][attributeEventName],
                             fontSize: 23,
                             fontWeight: FontWeight.bold,
                           ),
-                          TextFont(
-                            text: widget.data[widget.dayIndex][index]
-                                    ["startTime"] +
-                                " - " +
-                                widget.data[widget.dayIndex][index]["endTime"],
-                            fontSize: 16,
-                          )
+                          widget.data[index][attributeStartTime] != null &&
+                                  widget.data[index][attributeEndTime] != null
+                              ? TextFont(
+                                  text: determineEventTimeString(
+                                      widget.data[index][attributeStartTime],
+                                      widget.data[index][attributeEndTime]),
+                                  fontSize: 16,
+                                )
+                              : Container(),
+                          widget.data[index][attributeRoom] != null
+                              ? TextFont(
+                                  text: widget.data[index][attributeRoom],
+                                  fontSize: 16,
+                                )
+                              : Container(),
                         ],
                       ),
                     );
                   },
-                  body: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        activeIndex = -1;
-                      });
-                    },
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding:
-                            EdgeInsets.only(left: 23, bottom: 17, right: 10),
-                        child: TextFont(
-                          text: widget.data[widget.dayIndex][index]
-                              ["description"],
-                          fontSize: 15,
-                        ),
-                      ),
-                    ),
-                  ),
+                  body: widget.data[index][attributeEventDescription] != null
+                      ? GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              activeIndex = -1;
+                            });
+                          },
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Padding(
+                              padding: EdgeInsets.only(
+                                  left: 23, bottom: 17, right: 15),
+                              child: TextFont(
+                                text: widget.data[index]
+                                    [attributeEventDescription],
+                                fontSize: 15,
+                              ),
+                            ),
+                          ),
+                        )
+                      : Container(),
                 )
               ],
             ),

@@ -90,7 +90,7 @@ class MyApp extends StatelessWidget {
             froshName: "Calum",
             discipline: "Engineering Science",
             froshGroup: "lambda"),
-        SchedulePageParse(),
+        SchedulePageParse(froshGroup: "lambda"),
         NotificationsPageParse(),
         ResourcesPageParse(),
         LoginPage(),

@@ -5,29 +5,6 @@ import 'package:flutter/cupertino.dart';
 import "../functions.dart";
 import "../widgets/ContainersExtensions.dart";
 
-const froshGroupSymbols = {
-  'phi': "φ",
-  'iota': "ι",
-  'rho': "ρ",
-  'psi': "ψ",
-  'gamma': "γ",
-  'zeta': "ζ",
-  'omega': "ω",
-  'upsilon': "ε",
-  'beta': "β",
-  'chi': "χ",
-  'ni': "ν",
-  'sigma': "σ",
-  'kappa': "κ",
-  'omicron': "ο",
-  'delta': "δ",
-  'pi': "π",
-  'alpha': "α",
-  'tau': "τ",
-  'lambda': "λ",
-  'theta': "θ"
-};
-
 class HomePage extends StatelessWidget {
   final String froshName;
   final String discipline;
