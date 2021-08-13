@@ -87,7 +87,7 @@ class SchedulePage extends StatelessWidget {
               SliverAppBar(
                 backgroundColor: Theme.of(context).canvasColor,
                 bottom: PreferredSize(
-                  preferredSize: const Size.fromHeight(0),
+                  preferredSize: const Size.fromHeight(-8),
                   child: TabBar(
                     labelColor: Theme.of(context).colorScheme.black,
                     isScrollable: true,
@@ -202,7 +202,7 @@ class ScheduleListState extends State<ScheduleList> {
   Widget build(BuildContext context) {
     return ListView.builder(
         physics: BouncingScrollPhysics(),
-        padding: EdgeInsets.only(top: 10, bottom: 100),
+        padding: EdgeInsets.only(top: 5, bottom: 100),
         itemCount: widget.data.length,
         itemBuilder: (BuildContext context, int index) {
           return Box(
