@@ -139,7 +139,7 @@ const colorToGradient = {
   "yellow": [Color(0x93FFAF47), Color(0x96FDE938), Color(0x8EF1CE32)],
   "orange": [Color(0x93FF9147), Color(0x96FD6638), Color(0x8EF1AE32)],
   "pink": [Color(0x93FD6BEA), Color(0x96FD38B1), Color(0x8EF132D1)],
-  "light grey": [Color(0x93B4B4B4), Color(0x96686868), Color(0x8EDDDDDD)],
+  "light grey": [Color(0x77A5A5A5), Color(0x81818181), Color(0x8EDDDDDD)],
   "red": [Color(0x93FF1919), Color(0x96F85A5A), Color(0x8EFF0000)],
   "light orange": [Color(0x93FFAC75), Color(0x96F59F4E), Color(0x8EF17E32)],
 };

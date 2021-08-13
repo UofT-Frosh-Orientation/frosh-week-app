@@ -13,11 +13,13 @@ class Resource {
     required this.contact,
     required this.description,
     required this.type, //email, phone, website
+    this.icon,
   });
   String title;
   String contact;
   String description;
   String type;
+  IconData? icon;
 }
 
 class ResourcesPageParse extends StatelessWidget {
@@ -25,20 +27,26 @@ class ResourcesPageParse extends StatelessWidget {
   Widget build(BuildContext context) {
     return ResourcesPage(resources: [
       Resource(
-          title: "Campus Police",
-          contact: "647-123-4567",
-          type: "phone",
-          description: "call campus police today!"),
-      Resource(
-          title: "Aidan",
-          contact: "scratchanimations123@gmail.com",
-          type: "email",
-          description: "don't email me!"),
-      Resource(
-          title: "Url",
-          contact: "http://www.google.ca",
+          icon: Icons.location_on,
+          title: "UofT Map",
+          contact: "https://www.utoronto.ca/__shared/assets/3D_Map1103.pdf",
           type: "url",
-          description: "click me"),
+          description:
+              "Don't know the building codes or where buildings are located? View this map!"),
+      Resource(
+          icon: Icons.badge,
+          title: "Campus Police",
+          contact: "416-978-2323",
+          type: "phone",
+          description:
+              "For non-urgent reports. UofT campus police phone number."),
+      Resource(
+          icon: Icons.language,
+          title: "Orientation website",
+          contact: "https://www.orientation.skule.ca/",
+          type: "url",
+          description:
+              "The F!rosh orientation website. Login to your account here and view full account data."),
     ]);
   }
 }
@@ -98,12 +106,27 @@ class ResourceBox extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TextFont(
-              text: resource.title,
-              fontWeight: FontWeight.bold,
-              fontSize: 27,
+            Row(
+              children: [
+                Expanded(
+                  child: TextFont(
+                    text: resource.title,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 27,
+                  ),
+                ),
+                resource.icon != null
+                    ? Row(children: [
+                        Icon(
+                          resource.icon,
+                          size: 38,
+                        ),
+                        Container(width: 8)
+                      ])
+                    : Container(),
+              ],
             ),
-            Container(height: 7),
+            Container(height: 4),
             TextFont(
               text: resource.contact,
               fontSize: 20,
