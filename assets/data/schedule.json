@@ -5,16 +5,16 @@
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/6/2021",
             "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
-            "Location": "In front of SF, along King's College Road",
+            "End time": "8:00:00 a1/p1",
+            "Location": "Galbraith Building (main entrance, along St. George)",
             "Colour": "Light grey"
         },
         {
             "Event name": "Meet your frosh group",
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
-            "Start time": "7:00:00 a1/p1",
-            "End time": "8:40:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "8:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -22,8 +22,8 @@
             "Event name": "Matriculation",
             "Event description": "\nThis is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:40:00 a1/p1",
-            "End time": "11:00:00 a1/p1",
+            "Start time": "8:30:00 a1/p1",
+            "End time": "11:10:00 a1/p1",
             "Location": "PB B150",
             "Colour": "Yellow"
         },
@@ -31,8 +31,8 @@
             "Event name": "Engineers For The World (E4TW)",
             "Event description": "Get ready to use your creativity and teamwork skills to explore some of the world’s most pressing issues through a hands-on, fun, and hype design challenge (hint: it's Ocean themed).",
             "Date": "9/6/2021",
-            "Start time": "11:00:00 a1/p1",
-            "End time": "0:10:00 a1/p1",
+            "Start time": "11:10:00 a1/p1",
+            "End time": "12:30:00 a1/p1",
             "Location": "MY150",
             "Colour": "Blue"
         },
@@ -40,8 +40,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "12:10:00 a1/p1",
-            "End time": "12:40:00 a1/p1",
+            "Start time": "12:30:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -49,13 +49,14 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "12:40:00 a1/p1",
+            "Start time": "13:00:00 a1/p1",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
         {
             "Event name": "Engineering Student Sucess Seminar",
+            "Event description": "An introductory lecture aimed at explaining the recommended level of conceptual understanding acquired in high school, outlining the academic timeline over the next four years, and providing some preliminary resources to help you succeed at U of T. This is your chance to ask some faculty members and TAs some questions before Academic Orientation on Wednesday!",
             "Date": "9/6/2021",
             "Start time": "16:00:00 a1/p1",
             "End time": "17:10:00 a1/p1",
@@ -67,7 +68,7 @@
             "Event description": "Yes, even MORE games!!!",
             "Date": "9/6/2021",
             "Start time": "17:10:00 a1/p1",
-            "End time": "18:20:00 a1/p1",
+            "End time": "18:30:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -84,8 +85,8 @@
             "Event name": "Registration",
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/7/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "9:00:00 a1/p1",
             "Location": "Bahen Lobby",
             "Colour": "Light grey"
         },
@@ -94,7 +95,7 @@
             "Event description": "Meet up with your frosh group to prep for today's events.",
             "Date": "9/7/2021",
             "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "End time": "9:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -102,7 +103,7 @@
             "Event name": "Campus Tours",
             "Event description": "Wondering what campus looks like? Worried you won’t know where your classes might be? Campus Tours is going to show you all of that, letting you chat and connect with upper years, sharing engineering traditions and stories while exploring the fantastic campus at U of T - and ensuring you pass all your midterms in first year with a little luck ;)",
             "Date": "9/7/2021",
-            "Start time": "10:00:00 a1/p1",
+            "Start time": "9:30:00 a1/p1",
             "End time": "18:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -132,8 +133,10 @@
         },
         {
             "Event name": "Faculty Events",
-            "Event description": "Attend the events faculty has planned for you - Academic Orientation and Meet your Prof! ",
+            "Event description": "A variety of events that the faculty has put together to ease your transition into university, including Academic Orientation and the opportunity to talk to some more first-year profs.",
             "Date": "9/8/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -141,6 +144,8 @@
             "Event name": "SkuleTM Clubs Fair",
             "Event description": "Check out all the amazing student groups you can joing during your time at U of T Engineering! From design teams to clubs to sports, you're bound to find something to get involved in.",
             "Date": "9/8/2021",
+            "Start time": "13:00:00 a1/p1",
+            "End time": "15:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -148,10 +153,19 @@
             "Event name": "Havenger Scunt",
             "Event description": "Havenger Scunt is F!rosh Week's wacky, wild version of a scavenger hunt, in which teams of F!rosh work together to complete items from the Scunt List and bribe judges to earn points. However, Scunt is not your everyday scavenger hunt; be ready to get creative, try something new, and step out of your comfort zone!",
             "Date": "9/8/2021",
-            "Start time": "18:00:00 a1/p1",
+            "Start time": "17:00:00 a1/p1",
             "End time": "23:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Purple"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "First day of classes! Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -161,6 +175,15 @@
             "End time": "23:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Red"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -178,16 +201,16 @@
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/6/2021",
             "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
-            "Location": "In front of SF, along King's College Road",
+            "End time": "8:00:00 a1/p1",
+            "Location": "Galbraith Building (main entrance, along St. George)",
             "Colour": "Light grey"
         },
         {
             "Event name": "Meet your frosh group",
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
-            "Start time": "7:00:00 a1/p1",
-            "End time": "8:40:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "8:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -195,8 +218,8 @@
             "Event name": "Matriculation",
             "Event description": "\nThis is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:40:00 a1/p1",
-            "End time": "11:00:00 a1/p1",
+            "Start time": "8:30:00 a1/p1",
+            "End time": "11:10:00 a1/p1",
             "Location": "PB B250",
             "Colour": "Yellow"
         },
@@ -204,8 +227,8 @@
             "Event name": "Engineers For The World (E4TW)",
             "Event description": "Get ready to use your creativity and teamwork skills to explore some of the world’s most pressing issues through a hands-on, fun, and hype design challenge (hint: it's Ocean themed).",
             "Date": "9/6/2021",
-            "Start time": "11:00:00 a1/p1",
-            "End time": "12:10:00 a1/p1",
+            "Start time": "11:10:00 a1/p1",
+            "End time": "12:30:00 a1/p1",
             "Location": "MY150",
             "Colour": "Blue"
         },
@@ -213,8 +236,8 @@
             "Event name": "Grouptime",
             "Event description": "Hang out with your group for a bit before you go for lunch. ",
             "Date": "9/6/2021",
-            "Start time": "12:10:00 a1/p1",
-            "End time": "12:20:00 a1/p1",
+            "Start time": "12:30:00 a1/p1",
+            "End time": "12:40:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -222,8 +245,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "12:20:00 a1/p1",
-            "End time": "12:50:00 a1/p1",
+            "Start time": "12:40:00 a1/p1",
+            "End time": "13:10:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -231,13 +254,14 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "12:50:00 a1/p1",
+            "Start time": "13:10",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
         {
             "Event name": "Engineering Student Sucess Seminar",
+            "Event description": "An introductory lecture aimed at explaining the recommended level of conceptual understanding acquired in high school, outlining the academic timeline over the next four years, and providing some preliminary resources to help you succeed at U of T. This is your chance to ask some faculty members and TAs some questions before Academic Orientation on Wednesday!",
             "Date": "9/6/2021",
             "Start time": "16:00:00 a1/p1",
             "End time": "17:10:00 a1/p1",
@@ -249,7 +273,7 @@
             "Event description": "Yes, even MORE games!!!",
             "Date": "9/6/2021",
             "Start time": "17:10:00 a1/p1",
-            "End time": "18:20:00 a1/p1",
+            "End time": "18:30:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -266,8 +290,8 @@
             "Event name": "Registration",
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/7/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "9:00:00 a1/p1",
             "Location": "Bahen Lobby",
             "Colour": "Light grey"
         },
@@ -276,7 +300,7 @@
             "Event description": "Meet up with your frosh group to prep for today's events.",
             "Date": "9/7/2021",
             "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "End time": "9:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -284,7 +308,7 @@
             "Event name": "Campus Tours",
             "Event description": "Wondering what campus looks like? Worried you won’t know where your classes might be? Campus Tours is going to show you all of that, letting you chat and connect with upper years, sharing engineering traditions and stories while exploring the fantastic campus at U of T - and ensuring you pass all your midterms in first year with a little luck ;)",
             "Date": "9/7/2021",
-            "Start time": "10:00:00 a1/p1",
+            "Start time": "9:30:00 a1/p1",
             "End time": "18:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -314,8 +338,10 @@
         },
         {
             "Event name": "Faculty Events",
-            "Event description": "Attend the events faculty has planned for you - Academic Orientation and Meet your Prof! ",
+            "Event description": "A variety of events that the faculty has put together to ease your transition into university, including Academic Orientation and the opportunity to talk to some more first-year profs.",
             "Date": "9/8/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -323,6 +349,8 @@
             "Event name": "SkuleTM Clubs Fair",
             "Event description": "Check out all the amazing student groups you can joing during your time at U of T Engineering! From design teams to clubs to sports, you're bound to find something to get involved in.",
             "Date": "9/8/2021",
+            "Start time": "13:00:00 a1/p1",
+            "End time": "15:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -330,10 +358,19 @@
             "Event name": "Havenger Scunt",
             "Event description": "Havenger Scunt is F!rosh Week's wacky, wild version of a scavenger hunt, in which teams of F!rosh work together to complete items from the Scunt List and bribe judges to earn points. However, Scunt is not your everyday scavenger hunt; be ready to get creative, try something new, and step out of your comfort zone!",
             "Date": "9/8/2021",
-            "Start time": "18:00:00 a1/p1",
+            "Start time": "17:00:00 a1/p1",
             "End time": "23:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Purple"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "First day of classes! Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -343,6 +380,15 @@
             "End time": "23:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Red"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -360,16 +406,16 @@
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/6/2021",
             "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
-            "Location": "In front of SF, along King's College Road",
+            "End time": "8:00:00 a1/p1",
+            "Location": "Galbraith Building (main entrance, along St. George)",
             "Colour": "Light grey"
         },
         {
             "Event name": "Meet your frosh group",
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
-            "Start time": "7:00:00 a1/p1",
-            "End time": "8:40:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "8:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -377,8 +423,8 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:40:00 a1/p1",
-            "End time": "11:00:00 a1/p1",
+            "Start time": "8:30:00 a1/p1",
+            "End time": "11:10:00 a1/p1",
             "Location": "MS3154",
             "Colour": "Yellow"
         },
@@ -386,8 +432,8 @@
             "Event name": "Engineers For The World (E4TW)",
             "Event description": "Get ready to use your creativity and teamwork skills to explore some of the world’s most pressing issues through a hands-on, fun, and hype design challenge (hint: it's Ocean themed).",
             "Date": "9/6/2021",
-            "Start time": "11:00:00 a1/p1",
-            "End time": "12:10:00 a1/p1",
+            "Start time": "11:10:00 a1/p1",
+            "End time": "12:30:00 a1/p1",
             "Location": "GB303, GB304, MY315",
             "Colour": "Blue"
         },
@@ -395,8 +441,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "12:10:00 a1/p1",
-            "End time": "12:40:00 a1/p1",
+            "Start time": "12:30:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -404,13 +450,14 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "12:40:00 a1/p1",
+            "Start time": "13:00:00 a1/p1",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
         {
             "Event name": "Engineering Student Sucess Seminar",
+            "Event description": "An introductory lecture aimed at explaining the recommended level of conceptual understanding acquired in high school, outlining the academic timeline over the next four years, and providing some preliminary resources to help you succeed at U of T. This is your chance to ask some faculty members and TAs some questions before Academic Orientation on Wednesday!",
             "Date": "9/6/2021",
             "Start time": "16:00:00 a1/p1",
             "End time": "17:10:00 a1/p1",
@@ -422,7 +469,7 @@
             "Event description": "Yes, even MORE games!!!",
             "Date": "9/6/2021",
             "Start time": "17:10:00 a1/p1",
-            "End time": "18:20:00 a1/p1",
+            "End time": "18:30:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -439,8 +486,8 @@
             "Event name": "Registration",
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/7/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "9:00:00 a1/p1",
             "Location": "Bahen Lobby",
             "Colour": "Light grey"
         },
@@ -449,7 +496,7 @@
             "Event description": "Meet up with your frosh group to prep for today's events.",
             "Date": "9/7/2021",
             "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "End time": "9:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -457,7 +504,7 @@
             "Event name": "Campus Tours",
             "Event description": "Wondering what campus looks like? Worried you won’t know where your classes might be? Campus Tours is going to show you all of that, letting you chat and connect with upper years, sharing engineering traditions and stories while exploring the fantastic campus at U of T - and ensuring you pass all your midterms in first year with a little luck ;)",
             "Date": "9/7/2021",
-            "Start time": "10:00:00 a1/p1",
+            "Start time": "9:30:00 a1/p1",
             "End time": "18:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -487,8 +534,10 @@
         },
         {
             "Event name": "Faculty Events",
-            "Event description": "Attend the events faculty has planned for you - Academic Orientation and Meet your Prof! ",
+            "Event description": "A variety of events that the faculty has put together to ease your transition into university, including Academic Orientation and the opportunity to talk to some more first-year profs.",
             "Date": "9/8/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -496,6 +545,8 @@
             "Event name": "SkuleTM Clubs Fair",
             "Event description": "Check out all the amazing student groups you can joing during your time at U of T Engineering! From design teams to clubs to sports, you're bound to find something to get involved in.",
             "Date": "9/8/2021",
+            "Start time": "13:00:00 a1/p1",
+            "End time": "15:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -503,10 +554,19 @@
             "Event name": "Havenger Scunt",
             "Event description": "Havenger Scunt is F!rosh Week's wacky, wild version of a scavenger hunt, in which teams of F!rosh work together to complete items from the Scunt List and bribe judges to earn points. However, Scunt is not your everyday scavenger hunt; be ready to get creative, try something new, and step out of your comfort zone!",
             "Date": "9/8/2021",
-            "Start time": "18:00:00 a1/p1",
+            "Start time": "17:00:00 a1/p1",
             "End time": "23:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Purple"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "First day of classes! Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -516,6 +576,15 @@
             "End time": "23:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Red"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -533,16 +602,16 @@
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/6/2021",
             "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
-            "Location": "In front of SF, along King's College Road",
+            "End time": "8:00:00 a1/p1",
+            "Location": "Galbraith Building (main entrance, along St. George)",
             "Colour": "Light grey"
         },
         {
             "Event name": "Meet your frosh group",
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
-            "Start time": "7:00:00 a1/p1",
-            "End time": "8:40:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "8:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -550,8 +619,8 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:40:00 a1/p1",
-            "End time": "11:00:00 a1/p1",
+            "Start time": "8:30:00 a1/p1",
+            "End time": "11:10:00 a1/p1",
             "Location": "MS2158",
             "Colour": "Yellow"
         },
@@ -559,8 +628,8 @@
             "Event name": "Engineers For The World (E4TW)",
             "Event description": "Get ready to use your creativity and teamwork skills to explore some of the world’s most pressing issues through a hands-on, fun, and hype design challenge (hint: it's Ocean themed).",
             "Date": "9/6/2021",
-            "Start time": "11:00:00 a1/p1",
-            "End time": "12:10:00 a1/p1",
+            "Start time": "11:10:00 a1/p1",
+            "End time": "12:30:00 a1/p1",
             "Location": "MY315, SF2202, SF3201",
             "Colour": "Blue"
         },
@@ -568,8 +637,8 @@
             "Event name": "Grouptime",
             "Event description": "Hang out with your frosh group for a bit before you go for lunch.",
             "Date": "9/6/2021",
-            "Start time": "12:10:00 a1/p1",
-            "End time": "12:20:00 a1/p1",
+            "Start time": "12:30:00 a1/p1",
+            "End time": "12:40:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -577,8 +646,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "12:20:00 a1/p1",
-            "End time": "12:50:00 a1/p1",
+            "Start time": "12:40:00 a1/p1",
+            "End time": "13:10:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -586,13 +655,14 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "12:50:00 a1/p1",
+            "Start time": "13:10:00 a1/p1",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
         {
             "Event name": "Engineering Student Sucess Seminar",
+            "Event description": "An introductory lecture aimed at explaining the recommended level of conceptual understanding acquired in high school, outlining the academic timeline over the next four years, and providing some preliminary resources to help you succeed at U of T. This is your chance to ask some faculty members and TAs some questions before Academic Orientation on Wednesday!",
             "Date": "9/6/2021",
             "Start time": "16:00:00 a1/p1",
             "End time": "17:10:00 a1/p1",
@@ -604,7 +674,7 @@
             "Event description": "Yes, even MORE games!!!",
             "Date": "9/6/2021",
             "Start time": "17:10:00 a1/p1",
-            "End time": "18:20:00 a1/p1",
+            "End time": "18:30:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -621,8 +691,8 @@
             "Event name": "Registration",
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/7/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "9:00:00 a1/p1",
             "Location": "Bahen Lobby",
             "Colour": "Light grey"
         },
@@ -631,7 +701,7 @@
             "Event description": "Meet up with your frosh group to prep for today's events.",
             "Date": "9/7/2021",
             "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "End time": "9:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -639,7 +709,7 @@
             "Event name": "Campus Tours",
             "Event description": "Wondering what campus looks like? Worried you won’t know where your classes might be? Campus Tours is going to show you all of that, letting you chat and connect with upper years, sharing engineering traditions and stories while exploring the fantastic campus at U of T - and ensuring you pass all your midterms in first year with a little luck ;)",
             "Date": "9/7/2021",
-            "Start time": "10:00:00 a1/p1",
+            "Start time": "9:30:00 a1/p1",
             "End time": "18:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -669,8 +739,10 @@
         },
         {
             "Event name": "Faculty Events",
-            "Event description": "Attend the events faculty has planned for you - Academic Orientation and Meet your Prof! ",
+            "Event description": "A variety of events that the faculty has put together to ease your transition into university, including Academic Orientation and the opportunity to talk to some more first-year profs.",
             "Date": "9/8/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -678,6 +750,8 @@
             "Event name": "SkuleTM Clubs Fair",
             "Event description": "Check out all the amazing student groups you can joing during your time at U of T Engineering! From design teams to clubs to sports, you're bound to find something to get involved in.",
             "Date": "9/8/2021",
+            "Start time": "13:00:00 a1/p1",
+            "End time": "15:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -685,10 +759,19 @@
             "Event name": "Havenger Scunt",
             "Event description": "Havenger Scunt is F!rosh Week's wacky, wild version of a scavenger hunt, in which teams of F!rosh work together to complete items from the Scunt List and bribe judges to earn points. However, Scunt is not your everyday scavenger hunt; be ready to get creative, try something new, and step out of your comfort zone!",
             "Date": "9/8/2021",
-            "Start time": "18:00:00 a1/p1",
+            "Start time": "17:00:00 a1/p1",
             "End time": "23:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Purple"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "First day of classes! Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -698,6 +781,15 @@
             "End time": "23:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Red"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -715,16 +807,16 @@
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/6/2021",
             "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
-            "Location": "In front of SF, along King's College Road",
+            "End time": "8:00:00 a1/p1",
+            "Location": "Galbraith Building (main entrance, along St. George)",
             "Colour": "Light grey"
         },
         {
             "Event name": "Meet your frosh group",
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
-            "Start time": "7:00:00 a1/p1",
-            "End time": "8:40:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "8:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -732,17 +824,26 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:40:00 a1/p1",
-            "End time": "11:00:00 a1/p1",
+            "Start time": "8:30:00 a1/p1",
+            "End time": "11:10:00 a1/p1",
             "Location": "MS2158, MS2170",
             "Colour": "Yellow"
+        },
+        {
+            "Event name": "Grouptime",
+            "Event description": "Hang out with your frosh group for a bit before you go for lunch.",
+            "Date": "9/6/2021",
+            "Start time": "11:10:00 a1/p1",
+            "End time": "11:20:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Pink"
         },
         {
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "11:00:00 a1/p1",
-            "End time": "11:30:00 a1/p1",
+            "Start time": "11:20:00 a1/p1",
+            "End time": "12:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -750,8 +851,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "11:30:00 a1/p1",
-            "End time": "12:10:00 a1/p1",
+            "Start time": "12:00:00 a1/p1",
+            "End time": "12:30:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -759,8 +860,8 @@
             "Event name": "Engineers For The World (E4TW)",
             "Event description": "Get ready to use your creativity and teamwork skills to explore some of the world’s most pressing issues through a hands-on, fun, and hype design challenge (hint: it's Ocean themed).",
             "Date": "9/6/2021",
-            "Start time": "12:10:00 a1/p1",
-            "End time": "13:20:00 a1/p1",
+            "Start time": "12:30:00 a1/p1",
+            "End time": "13:40:00 a1/p1",
             "Location": "MY150",
             "Colour": "Blue"
         },
@@ -768,13 +869,14 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "13:20:00 a1/p1",
+            "Start time": "13:40:00 a1/p1",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
         {
             "Event name": "Engineering Student Sucess Seminar",
+            "Event description": "An introductory lecture aimed at explaining the recommended level of conceptual understanding acquired in high school, outlining the academic timeline over the next four years, and providing some preliminary resources to help you succeed at U of T. This is your chance to ask some faculty members and TAs some questions before Academic Orientation on Wednesday!",
             "Date": "9/6/2021",
             "Start time": "16:00:00 a1/p1",
             "End time": "17:10:00 a1/p1",
@@ -786,7 +888,7 @@
             "Event description": "Yes, even MORE games!!!",
             "Date": "9/6/2021",
             "Start time": "17:10:00 a1/p1",
-            "End time": "18:20:00 a1/p1",
+            "End time": "18:30:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -803,8 +905,8 @@
             "Event name": "Registration",
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/7/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "9:00:00 a1/p1",
             "Location": "Bahen Lobby",
             "Colour": "Light grey"
         },
@@ -813,7 +915,7 @@
             "Event description": "Meet up with your frosh group to prep for today's events.",
             "Date": "9/7/2021",
             "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "End time": "9:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -821,7 +923,7 @@
             "Event name": "Campus Tours",
             "Event description": "Wondering what campus looks like? Worried you won’t know where your classes might be? Campus Tours is going to show you all of that, letting you chat and connect with upper years, sharing engineering traditions and stories while exploring the fantastic campus at U of T - and ensuring you pass all your midterms in first year with a little luck ;)",
             "Date": "9/7/2021",
-            "Start time": "10:00:00 a1/p1",
+            "Start time": "9:30:00 a1/p1",
             "End time": "18:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -851,8 +953,10 @@
         },
         {
             "Event name": "Faculty Events",
-            "Event description": "Attend the events faculty has planned for you - Academic Orientation and Meet your Prof! ",
+            "Event description": "A variety of events that the faculty has put together to ease your transition into university, including Academic Orientation and the opportunity to talk to some more first-year profs.",
             "Date": "9/8/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -860,6 +964,8 @@
             "Event name": "SkuleTM Clubs Fair",
             "Event description": "Check out all the amazing student groups you can joing during your time at U of T Engineering! From design teams to clubs to sports, you're bound to find something to get involved in.",
             "Date": "9/8/2021",
+            "Start time": "13:00:00 a1/p1",
+            "End time": "15:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -867,10 +973,19 @@
             "Event name": "Havenger Scunt",
             "Event description": "Havenger Scunt is F!rosh Week's wacky, wild version of a scavenger hunt, in which teams of F!rosh work together to complete items from the Scunt List and bribe judges to earn points. However, Scunt is not your everyday scavenger hunt; be ready to get creative, try something new, and step out of your comfort zone!",
             "Date": "9/8/2021",
-            "Start time": "18:00:00 a1/p1",
+            "Start time": "17:00:00 a1/p1",
             "End time": "23:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Purple"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "First day of classes! Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -880,6 +995,15 @@
             "End time": "23:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Red"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -897,16 +1021,16 @@
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/6/2021",
             "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
-            "Location": "In front of SF, along King's College Road",
+            "End time": "8:00:00 a1/p1",
+            "Location": "Galbraith Building (main entrance, along St. George)",
             "Colour": "Light grey"
         },
         {
             "Event name": "Meet your frosh group",
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
-            "Start time": "7:00:00 a1/p1",
-            "End time": "8:50:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "8:20:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -914,7 +1038,7 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:50:00 a1/p1",
+            "Start time": "8:20:00 a1/p1",
             "End time": "11:10:00 a1/p1",
             "Location": "BA1160",
             "Colour": "Yellow"
@@ -924,7 +1048,7 @@
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
             "Start time": "11:10:00 a1/p1",
-            "End time": "11:40:00 a1/p1",
+            "End time": "11:50:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -932,8 +1056,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "11:40:00 a1/p1",
-            "End time": "12:10:00 a1/p1",
+            "Start time": "11:50:00 a1/p1",
+            "End time": "12:30:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -941,8 +1065,8 @@
             "Event name": "Engineers For The World (E4TW)",
             "Event description": "Get ready to use your creativity and teamwork skills to explore some of the world’s most pressing issues through a hands-on, fun, and hype design challenge (hint: it's Ocean themed).",
             "Date": "9/6/2021",
-            "Start time": "12:10:00 a1/p1",
-            "End time": "13:20:00 a1/p1",
+            "Start time": "12:30:00 a1/p1",
+            "End time": "13:40:00 a1/p1",
             "Location": "MY150",
             "Colour": "Blue"
         },
@@ -950,13 +1074,14 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "13:20:00 a1/p1",
+            "Start time": "13:40:00 a1/p1",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
         {
             "Event name": "Engineering Student Sucess Seminar",
+            "Event description": "An introductory lecture aimed at explaining the recommended level of conceptual understanding acquired in high school, outlining the academic timeline over the next four years, and providing some preliminary resources to help you succeed at U of T. This is your chance to ask some faculty members and TAs some questions before Academic Orientation on Wednesday!",
             "Date": "9/6/2021",
             "Start time": "16:00:00 a1/p1",
             "End time": "17:10:00 a1/p1",
@@ -968,7 +1093,7 @@
             "Event description": "Yes, even MORE games!!!",
             "Date": "9/6/2021",
             "Start time": "17:10:00 a1/p1",
-            "End time": "18:20:00 a1/p1",
+            "End time": "18:30:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -985,8 +1110,8 @@
             "Event name": "Registration",
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/7/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "9:00:00 a1/p1",
             "Location": "Bahen Lobby",
             "Colour": "Light grey"
         },
@@ -995,7 +1120,7 @@
             "Event description": "Meet up with your frosh group to prep for today's events.",
             "Date": "9/7/2021",
             "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "End time": "9:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -1003,7 +1128,7 @@
             "Event name": "Campus Tours",
             "Event description": "Wondering what campus looks like? Worried you won’t know where your classes might be? Campus Tours is going to show you all of that, letting you chat and connect with upper years, sharing engineering traditions and stories while exploring the fantastic campus at U of T - and ensuring you pass all your midterms in first year with a little luck ;)",
             "Date": "9/7/2021",
-            "Start time": "10:00:00 a1/p1",
+            "Start time": "9:30:00 a1/p1",
             "End time": "18:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -1033,8 +1158,10 @@
         },
         {
             "Event name": "Faculty Events",
-            "Event description": "Attend the events faculty has planned for you - Academic Orientation and Meet your Prof! ",
+            "Event description": "A variety of events that the faculty has put together to ease your transition into university, including Academic Orientation and the opportunity to talk to some more first-year profs.",
             "Date": "9/8/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -1042,6 +1169,8 @@
             "Event name": "SkuleTM Clubs Fair",
             "Event description": "Check out all the amazing student groups you can joing during your time at U of T Engineering! From design teams to clubs to sports, you're bound to find something to get involved in.",
             "Date": "9/8/2021",
+            "Start time": "13:00:00 a1/p1",
+            "End time": "15:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -1049,10 +1178,19 @@
             "Event name": "Havenger Scunt",
             "Event description": "Havenger Scunt is F!rosh Week's wacky, wild version of a scavenger hunt, in which teams of F!rosh work together to complete items from the Scunt List and bribe judges to earn points. However, Scunt is not your everyday scavenger hunt; be ready to get creative, try something new, and step out of your comfort zone!",
             "Date": "9/8/2021",
-            "Start time": "18:00:00 a1/p1",
+            "Start time": "17:00:00 a1/p1",
             "End time": "23:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Purple"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "First day of classes! Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -1062,6 +1200,15 @@
             "End time": "23:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Red"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -1079,16 +1226,16 @@
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/6/2021",
             "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
-            "Location": "In front of SF, along King's College Road",
+            "End time": "8:00:00 a1/p1",
+            "Location": "Galbraith Building (main entrance, along St. George)",
             "Colour": "Light grey"
         },
         {
             "Event name": "Meet your frosh group",
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
-            "Start time": "7:00:00 a1/p1",
-            "End time": "8:50:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "8:20:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -1096,7 +1243,7 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:50:00 a1/p1",
+            "Start time": "8:20:00 a1/p1",
             "End time": "11:10:00 a1/p1",
             "Location": "MY360, MY150",
             "Colour": "Yellow"
@@ -1115,7 +1262,7 @@
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
             "Start time": "11:20:00 a1/p1",
-            "End time": "11:50:00 a1/p1",
+            "End time": "12:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -1123,8 +1270,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "11:50:00 a1/p1",
-            "End time": "0:10:00 a1/p1",
+            "Start time": "12:00:00 a1/p1",
+            "End time": "12:30:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -1132,8 +1279,8 @@
             "Event name": "Engineers For The World (E4TW)",
             "Event description": "Get ready to use your creativity and teamwork skills to explore some of the world’s most pressing issues through a hands-on, fun, and hype design challenge (hint: it's Ocean themed).",
             "Date": "9/6/2021",
-            "Start time": "12:10:00 a1/p1",
-            "End time": "13:20:00 a1/p1",
+            "Start time": "12:30:00 a1/p1",
+            "End time": "13:40:00 a1/p1",
             "Location": "GB303, GB304, MY315",
             "Colour": "Blue"
         },
@@ -1141,13 +1288,14 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "13:20:00 a1/p1",
+            "Start time": "13:40:00 a1/p1",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
         {
             "Event name": "Engineering Student Sucess Seminar",
+            "Event description": "An introductory lecture aimed at explaining the recommended level of conceptual understanding acquired in high school, outlining the academic timeline over the next four years, and providing some preliminary resources to help you succeed at U of T. This is your chance to ask some faculty members and TAs some questions before Academic Orientation on Wednesday!",
             "Date": "9/6/2021",
             "Start time": "16:00:00 a1/p1",
             "End time": "17:10:00 a1/p1",
@@ -1159,7 +1307,7 @@
             "Event description": "Yes, even MORE games!!!",
             "Date": "9/6/2021",
             "Start time": "17:10:00 a1/p1",
-            "End time": "18:20:00 a1/p1",
+            "End time": "18:30:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -1176,8 +1324,8 @@
             "Event name": "Registration",
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/7/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "9:00:00 a1/p1",
             "Location": "Bahen Lobby",
             "Colour": "Light grey"
         },
@@ -1186,7 +1334,7 @@
             "Event description": "Meet up with your frosh group to prep for today's events.",
             "Date": "9/7/2021",
             "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "End time": "9:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -1194,7 +1342,7 @@
             "Event name": "Campus Tours",
             "Event description": "Wondering what campus looks like? Worried you won’t know where your classes might be? Campus Tours is going to show you all of that, letting you chat and connect with upper years, sharing engineering traditions and stories while exploring the fantastic campus at U of T - and ensuring you pass all your midterms in first year with a little luck ;)",
             "Date": "9/7/2021",
-            "Start time": "10:00:00 a1/p1",
+            "Start time": "9:30:00 a1/p1",
             "End time": "18:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -1224,8 +1372,10 @@
         },
         {
             "Event name": "Faculty Events",
-            "Event description": "Attend the events faculty has planned for you - Academic Orientation and Meet your Prof! ",
+            "Event description": "A variety of events that the faculty has put together to ease your transition into university, including Academic Orientation and the opportunity to talk to some more first-year profs.",
             "Date": "9/8/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -1233,6 +1383,8 @@
             "Event name": "SkuleTM Clubs Fair",
             "Event description": "Check out all the amazing student groups you can joing during your time at U of T Engineering! From design teams to clubs to sports, you're bound to find something to get involved in.",
             "Date": "9/8/2021",
+            "Start time": "13:00:00 a1/p1",
+            "End time": "15:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -1240,10 +1392,19 @@
             "Event name": "Havenger Scunt",
             "Event description": "Havenger Scunt is F!rosh Week's wacky, wild version of a scavenger hunt, in which teams of F!rosh work together to complete items from the Scunt List and bribe judges to earn points. However, Scunt is not your everyday scavenger hunt; be ready to get creative, try something new, and step out of your comfort zone!",
             "Date": "9/8/2021",
-            "Start time": "18:00:00 a1/p1",
+            "Start time": "17:00:00 a1/p1",
             "End time": "23:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Purple"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "First day of classes! Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -1253,6 +1414,15 @@
             "End time": "23:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Red"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -1270,16 +1440,16 @@
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/6/2021",
             "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
-            "Location": "In front of SF, along King's College Road",
+            "End time": "8:00:00 a1/p1",
+            "Location": "Galbraith Building (main entrance, along St. George)",
             "Colour": "Light grey"
         },
         {
             "Event name": "Meet your frosh group",
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
-            "Start time": "7:00:00 a1/p1",
-            "End time": "8:50:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "8:20:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -1287,7 +1457,7 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:50:00 a1/p1",
+            "Start time": "8:20:00 a1/p1",
             "End time": "11:10:00 a1/p1",
             "Location": "MY150",
             "Colour": "Yellow"
@@ -1297,7 +1467,7 @@
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
             "Start time": "11:10:00 a1/p1",
-            "End time": "11:40:00 a1/p1",
+            "End time": "11:50:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -1305,8 +1475,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "11:40:00 a1/p1",
-            "End time": "0:10:00 a1/p1",
+            "Start time": "11:50:00 a1/p1",
+            "End time": "12:30:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -1314,8 +1484,8 @@
             "Event name": "Engineers For The World (E4TW)",
             "Event description": "Get ready to use your creativity and teamwork skills to explore some of the world’s most pressing issues through a hands-on, fun, and hype design challenge (hint: it's Ocean themed).",
             "Date": "9/6/2021",
-            "Start time": "12:10:00 a1/p1",
-            "End time": "13:20:00 a1/p1",
+            "Start time": "12:30:00 a1/p1",
+            "End time": "13:40:00 a1/p1",
             "Location": "MY315, SF2202, SF3201",
             "Colour": "Blue"
         },
@@ -1323,13 +1493,14 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "13:20:00 a1/p1",
+            "Start time": "13:40:00 a1/p1",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
         {
             "Event name": "Engineering Student Sucess Seminar",
+            "Event description": "An introductory lecture aimed at explaining the recommended level of conceptual understanding acquired in high school, outlining the academic timeline over the next four years, and providing some preliminary resources to help you succeed at U of T. This is your chance to ask some faculty members and TAs some questions before Academic Orientation on Wednesday!",
             "Date": "9/6/2021",
             "Start time": "16:00:00 a1/p1",
             "End time": "17:10:00 a1/p1",
@@ -1341,7 +1512,7 @@
             "Event description": "Yes, even MORE games!!!",
             "Date": "9/6/2021",
             "Start time": "17:10:00 a1/p1",
-            "End time": "18:20:00 a1/p1",
+            "End time": "18:30:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -1358,8 +1529,8 @@
             "Event name": "Registration",
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/7/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "9:00:00 a1/p1",
             "Location": "Bahen Lobby",
             "Colour": "Light grey"
         },
@@ -1368,7 +1539,7 @@
             "Event description": "Meet up with your frosh group to prep for today's events.",
             "Date": "9/7/2021",
             "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "End time": "9:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -1376,7 +1547,7 @@
             "Event name": "Campus Tours",
             "Event description": "Wondering what campus looks like? Worried you won’t know where your classes might be? Campus Tours is going to show you all of that, letting you chat and connect with upper years, sharing engineering traditions and stories while exploring the fantastic campus at U of T - and ensuring you pass all your midterms in first year with a little luck ;)",
             "Date": "9/7/2021",
-            "Start time": "10:00:00 a1/p1",
+            "Start time": "9:30:00 a1/p1",
             "End time": "18:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -1406,8 +1577,10 @@
         },
         {
             "Event name": "Faculty Events",
-            "Event description": "Attend the events faculty has planned for you - Academic Orientation and Meet your Prof! ",
+            "Event description": "A variety of events that the faculty has put together to ease your transition into university, including Academic Orientation and the opportunity to talk to some more first-year profs.",
             "Date": "9/8/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -1415,6 +1588,8 @@
             "Event name": "SkuleTM Clubs Fair",
             "Event description": "Check out all the amazing student groups you can joing during your time at U of T Engineering! From design teams to clubs to sports, you're bound to find something to get involved in.",
             "Date": "9/8/2021",
+            "Start time": "13:00:00 a1/p1",
+            "End time": "15:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -1422,10 +1597,19 @@
             "Event name": "Havenger Scunt",
             "Event description": "Havenger Scunt is F!rosh Week's wacky, wild version of a scavenger hunt, in which teams of F!rosh work together to complete items from the Scunt List and bribe judges to earn points. However, Scunt is not your everyday scavenger hunt; be ready to get creative, try something new, and step out of your comfort zone!",
             "Date": "9/8/2021",
-            "Start time": "18:00:00 a1/p1",
+            "Start time": "17:00:00 a1/p1",
             "End time": "23:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Purple"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "First day of classes! Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -1435,6 +1619,15 @@
             "End time": "23:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Red"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -1452,16 +1645,16 @@
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/6/2021",
             "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
-            "Location": "In front of SF, along King's College Road",
+            "End time": "8:00:00 a1/p1",
+            "Location": "Galbraith Building (main entrance, along St. George)",
             "Colour": "Light grey"
         },
         {
             "Event name": "Meet your frosh group",
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
-            "Start time": "7:00:00 a1/p1",
-            "End time": "8:50:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "8:20:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -1469,7 +1662,7 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:50:00 a1/p1",
+            "Start time": "8:20:00 a1/p1",
             "End time": "11:10:00 a1/p1",
             "Location": "MY150",
             "Colour": "Yellow"
@@ -1479,7 +1672,7 @@
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
             "Start time": "11:10:00 a1/p1",
-            "End time": "11:30:00 a1/p1",
+            "End time": "11:40:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -1487,8 +1680,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "11:30:00 a1/p1",
-            "End time": "12:00:00 a1/p1",
+            "Start time": "11:40:00 a1/p1",
+            "End time": "12:10:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -1496,7 +1689,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "12:00:00 a1/p1",
+            "Start time": "12:10:00 a1/p1",
             "End time": "13:40:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -1521,6 +1714,7 @@
         },
         {
             "Event name": "Engineering Student Sucess Seminar",
+            "Event description": "An introductory lecture aimed at explaining the recommended level of conceptual understanding acquired in high school, outlining the academic timeline over the next four years, and providing some preliminary resources to help you succeed at U of T. This is your chance to ask some faculty members and TAs some questions before Academic Orientation on Wednesday!",
             "Date": "9/6/2021",
             "Start time": "16:00:00 a1/p1",
             "End time": "17:10:00 a1/p1",
@@ -1532,7 +1726,7 @@
             "Event description": "Last round of games, we promise.",
             "Date": "9/6/2021",
             "Start time": "17:10:00 a1/p1",
-            "End time": "18:20:00 a1/p1",
+            "End time": "18:30:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -1549,8 +1743,8 @@
             "Event name": "Registration",
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/7/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "9:00:00 a1/p1",
             "Location": "Bahen Lobby",
             "Colour": "Light grey"
         },
@@ -1559,7 +1753,7 @@
             "Event description": "Meet up with your frosh group to prep for today's events.",
             "Date": "9/7/2021",
             "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "End time": "9:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -1567,7 +1761,7 @@
             "Event name": "Campus Tours",
             "Event description": "Wondering what campus looks like? Worried you won’t know where your classes might be? Campus Tours is going to show you all of that, letting you chat and connect with upper years, sharing engineering traditions and stories while exploring the fantastic campus at U of T - and ensuring you pass all your midterms in first year with a little luck ;)",
             "Date": "9/7/2021",
-            "Start time": "10:00:00 a1/p1",
+            "Start time": "9:30:00 a1/p1",
             "End time": "18:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -1597,8 +1791,10 @@
         },
         {
             "Event name": "Faculty Events",
-            "Event description": "Attend the events faculty has planned for you - Academic Orientation and Meet your Prof! ",
+            "Event description": "A variety of events that the faculty has put together to ease your transition into university, including Academic Orientation and the opportunity to talk to some more first-year profs.",
             "Date": "9/8/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -1606,6 +1802,8 @@
             "Event name": "SkuleTM Clubs Fair",
             "Event description": "Check out all the amazing student groups you can joing during your time at U of T Engineering! From design teams to clubs to sports, you're bound to find something to get involved in.",
             "Date": "9/8/2021",
+            "Start time": "13:00:00 a1/p1",
+            "End time": "15:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -1613,10 +1811,19 @@
             "Event name": "Havenger Scunt",
             "Event description": "Havenger Scunt is F!rosh Week's wacky, wild version of a scavenger hunt, in which teams of F!rosh work together to complete items from the Scunt List and bribe judges to earn points. However, Scunt is not your everyday scavenger hunt; be ready to get creative, try something new, and step out of your comfort zone!",
             "Date": "9/8/2021",
-            "Start time": "18:00:00 a1/p1",
+            "Start time": "17:00:00 a1/p1",
             "End time": "23:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Purple"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "First day of classes! Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -1626,6 +1833,15 @@
             "End time": "23:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Red"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -1643,16 +1859,16 @@
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/6/2021",
             "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
-            "Location": "In front of SF, along King's College Road",
+            "End time": "8:00:00 a1/p1",
+            "Location": "Galbraith Building (main entrance, along St. George)",
             "Colour": "Light grey"
         },
         {
             "Event name": "Meet your frosh group",
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
-            "Start time": "7:00:00 a1/p1",
-            "End time": "8:50:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "8:20:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -1660,9 +1876,223 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:50:00 a1/p1",
+            "Start time": "8:20:00 a1/p1",
             "End time": "11:10:00 a1/p1",
             "Location": "WB116, WB119",
+            "Colour": "Yellow"
+        },
+        {
+            "Event name": "F!rosh Games",
+            "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
+            "Date": "9/6/2021",
+            "Start time": "11:10:00 a1/p1",
+            "End time": "11:50:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Green"
+        },
+        {
+            "Event name": "Lunch",
+            "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
+            "Date": "9/6/2021",
+            "Start time": "11:50:00 a1/p1",
+            "End time": "12:20:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Light orange"
+        },
+        {
+            "Event name": "F!rosh Games",
+            "Event description": "Yes, MORE games!!!",
+            "Date": "9/6/2021",
+            "Start time": "12:20:00 a1/p1",
+            "End time": "13:40:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Green"
+        },
+        {
+            "Event name": "Engineers For The World (E4TW)",
+            "Event description": "Get ready to use your creativity and teamwork skills to explore some of the world’s most pressing issues through a hands-on, fun, and hype design challenge (hint: it's Ocean themed).",
+            "Date": "9/6/2021",
+            "Start time": "13:40:00 a1/p1",
+            "End time": "14:50:00 a1/p1",
+            "Location": "MY315, SF2202, SF3201",
+            "Colour": "Blue"
+        },
+        {
+            "Event name": "F!rosh Games",
+            "Event description": "Yes, even MORE games!!!",
+            "Date": "9/6/2021",
+            "Start time": "14:50:00 a1/p1",
+            "End time": "16:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Green"
+        },
+        {
+            "Event name": "Engineering Student Sucess Seminar",
+            "Event description": "An introductory lecture aimed at explaining the recommended level of conceptual understanding acquired in high school, outlining the academic timeline over the next four years, and providing some preliminary resources to help you succeed at U of T. This is your chance to ask some faculty members and TAs some questions before Academic Orientation on Wednesday!",
+            "Date": "9/6/2021",
+            "Start time": "16:00:00 a1/p1",
+            "End time": "17:10:00 a1/p1",
+            "Location": "MS3153",
+            "Colour": "Light grey"
+        },
+        {
+            "Event name": "F!rosh Games",
+            "Event description": "Last round of games, we promise.",
+            "Date": "9/6/2021",
+            "Start time": "17:10:00 a1/p1",
+            "End time": "18:30:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Green"
+        },
+        {
+            "Event name": "Nitelife",
+            "Event description": "Have you been quarantined for too long? Want to meet some new friends? Well come out to NITELIFE 2T1 🎉🎉 At night, F!rosh turns into a big party! Every night will have it’s own theme and it’s own set of entertaining events.",
+            "Date": "9/6/2021",
+            "Start time": "19:30:00 a1/p1",
+            "End time": "23:00:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Red"
+        },
+        {
+            "Event name": "Registration",
+            "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
+            "Date": "9/7/2021",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "9:00:00 a1/p1",
+            "Location": "Bahen Lobby",
+            "Colour": "Light grey"
+        },
+        {
+            "Event name": "Meet your frosh group",
+            "Event description": "Meet up with your frosh group to prep for today's events.",
+            "Date": "9/7/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "9:30:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Pink"
+        },
+        {
+            "Event name": "Campus Tours",
+            "Event description": "Wondering what campus looks like? Worried you won’t know where your classes might be? Campus Tours is going to show you all of that, letting you chat and connect with upper years, sharing engineering traditions and stories while exploring the fantastic campus at U of T - and ensuring you pass all your midterms in first year with a little luck ;)",
+            "Date": "9/7/2021",
+            "Start time": "9:30:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Green"
+        },
+        {
+            "Event name": "D!ye Station",
+            "Event description": "Ever wonder why engineering students dye themselves purple during F!Week, or what it would feel like to do it yourself? Join us at D!ye Station to find out! You’ll have the opportunity to get your upper body, arms, or hands all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype! ",
+            "Date": "9/7/2021",
+            "Location": "Haultain Alley",
+            "Colour": "Purple"
+        },
+        {
+            "Event name": "Downtown Walkaround",
+            "Event description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way (this may or may not include getting wet...).",
+            "Date": "9/7/2021",
+            "Location": "Downtown Toronto",
+            "Colour": "Blue"
+        },
+        {
+            "Event name": "Nitelife",
+            "Event description": "Have you been quarantined for too long? Want to meet some new friends? Well come out to NITELIFE 2T1 🎉🎉 At night, F!rosh turns into a big party! Every night will have it’s own theme and it’s own set of entertaining events.",
+            "Date": "9/7/2021",
+            "Start time": "19:00:00 a1/p1",
+            "End time": "23:00:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Red"
+        },
+        {
+            "Event name": "Faculty Events",
+            "Event description": "A variety of events that the faculty has put together to ease your transition into university, including Academic Orientation and the opportunity to talk to some more first-year profs.",
+            "Date": "9/8/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
+            "Location": "Online",
+            "Colour": "Light grey"
+        },
+        {
+            "Event name": "SkuleTM Clubs Fair",
+            "Event description": "Check out all the amazing student groups you can joing during your time at U of T Engineering! From design teams to clubs to sports, you're bound to find something to get involved in.",
+            "Date": "9/8/2021",
+            "Start time": "13:00:00 a1/p1",
+            "End time": "15:00:00 a1/p1",
+            "Location": "Online",
+            "Colour": "Light grey"
+        },
+        {
+            "Event name": "Havenger Scunt",
+            "Event description": "Havenger Scunt is F!rosh Week's wacky, wild version of a scavenger hunt, in which teams of F!rosh work together to complete items from the Scunt List and bribe judges to earn points. However, Scunt is not your everyday scavenger hunt; be ready to get creative, try something new, and step out of your comfort zone!",
+            "Date": "9/8/2021",
+            "Start time": "17:00:00 a1/p1",
+            "End time": "23:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Purple"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "First day of classes! Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
+        },
+        {
+            "Event name": "Nitelife",
+            "Event description": "Have you been quarantined for too long? Want to meet some new friends? Well come out to NITELIFE 2T1 🎉🎉 At night, F!rosh turns into a big party! Every night will have it’s own theme and it’s own set of entertaining events.",
+            "Date": "9/9/2021",
+            "Start time": "19:00:00 a1/p1",
+            "End time": "23:00:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Red"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
+        },
+        {
+            "Event name": "Nitelife",
+            "Event description": "Have you been quarantined for too long? Want to meet some new friends? Well come out to NITELIFE 2T1 🎉🎉 At night, F!rosh turns into a big party! Every night will have it’s own theme and it’s own set of entertaining events.",
+            "Date": "9/10/2021",
+            "Start time": "19:00:00 a1/p1",
+            "End time": "23:00:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Red"
+        }
+    ],
+    "omicron": [
+        {
+            "Event name": "Registration",
+            "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
+            "Date": "9/6/2021",
+            "Start time": "7:00:00 a1/p1",
+            "End time": "8:00:00 a1/p1",
+            "Location": "Galbraith Building (main entrance, along St. George)",
+            "Colour": "Light grey"
+        },
+        {
+            "Event name": "Meet your frosh group",
+            "Event description": "Meet your frosh group IN PERSON for the first time!",
+            "Date": "9/6/2021",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "8:30:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Pink"
+        },
+        {
+            "Event name": "Matriculation",
+            "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
+            "Date": "9/6/2021",
+            "Start time": "8:30:00 a1/p1",
+            "End time": "11:10:00 a1/p1",
+            "Location": "GB303, GB304",
             "Colour": "Yellow"
         },
         {
@@ -1687,197 +2117,6 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "12:10:00 a1/p1",
-            "End time": "13:40:00 a1/p1",
-            "Location": "Various locations",
-            "Colour": "Green"
-        },
-        {
-            "Event name": "Engineers For The World (E4TW)",
-            "Event description": "Get ready to use your creativity and teamwork skills to explore some of the world’s most pressing issues through a hands-on, fun, and hype design challenge (hint: it's Ocean themed).",
-            "Date": "9/6/2021",
-            "Start time": "13:40:00 a1/p1",
-            "End time": "14:50:00 a1/p1",
-            "Location": "MY315, SF2202, SF3201",
-            "Colour": "Blue"
-        },
-        {
-            "Event name": "F!rosh Games",
-            "Event description": "Yes, even MORE games!!!",
-            "Date": "9/6/2021",
-            "Start time": "14:50:00 a1/p1",
-            "End time": "16:00:00 a1/p1",
-            "Location": "Various locations",
-            "Colour": "Green"
-        },
-        {
-            "Event name": "Engineering Student Sucess Seminar",
-            "Date": "9/6/2021",
-            "Start time": "16:00:00 a1/p1",
-            "End time": "17:10:00 a1/p1",
-            "Location": "MS3153",
-            "Colour": "Light grey"
-        },
-        {
-            "Event name": "F!rosh Games",
-            "Event description": "Last round of games, we promise.",
-            "Date": "9/6/2021",
-            "Start time": "17:10:00 a1/p1",
-            "End time": "18:20:00 a1/p1",
-            "Location": "Various locations",
-            "Colour": "Green"
-        },
-        {
-            "Event name": "Nitelife",
-            "Event description": "Have you been quarantined for too long? Want to meet some new friends? Well come out to NITELIFE 2T1 🎉🎉 At night, F!rosh turns into a big party! Every night will have it’s own theme and it’s own set of entertaining events.",
-            "Date": "9/6/2021",
-            "Start time": "19:30:00 a1/p1",
-            "End time": "23:00:00 a1/p1",
-            "Location": "TBD",
-            "Colour": "Red"
-        },
-        {
-            "Event name": "Registration",
-            "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
-            "Date": "9/7/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
-            "Location": "Bahen Lobby",
-            "Colour": "Light grey"
-        },
-        {
-            "Event name": "Meet your frosh group",
-            "Event description": "Meet up with your frosh group to prep for today's events.",
-            "Date": "9/7/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
-            "Location": "TBD",
-            "Colour": "Pink"
-        },
-        {
-            "Event name": "Campus Tours",
-            "Event description": "Wondering what campus looks like? Worried you won’t know where your classes might be? Campus Tours is going to show you all of that, letting you chat and connect with upper years, sharing engineering traditions and stories while exploring the fantastic campus at U of T - and ensuring you pass all your midterms in first year with a little luck ;)",
-            "Date": "9/7/2021",
-            "Start time": "10:00:00 a1/p1",
-            "End time": "18:00:00 a1/p1",
-            "Location": "Various locations",
-            "Colour": "Green"
-        },
-        {
-            "Event name": "D!ye Station",
-            "Event description": "Ever wonder why engineering students dye themselves purple during F!Week, or what it would feel like to do it yourself? Join us at D!ye Station to find out! You’ll have the opportunity to get your upper body, arms, or hands all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype! ",
-            "Date": "9/7/2021",
-            "Location": "Haultain Alley",
-            "Colour": "Purple"
-        },
-        {
-            "Event name": "Downtown Walkaround",
-            "Event description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way (this may or may not include getting wet...).",
-            "Date": "9/7/2021",
-            "Location": "Downtown Toronto",
-            "Colour": "Blue"
-        },
-        {
-            "Event name": "Nitelife",
-            "Event description": "Have you been quarantined for too long? Want to meet some new friends? Well come out to NITELIFE 2T1 🎉🎉 At night, F!rosh turns into a big party! Every night will have it’s own theme and it’s own set of entertaining events.",
-            "Date": "9/7/2021",
-            "Start time": "19:00:00 a1/p1",
-            "End time": "23:00:00 a1/p1",
-            "Location": "TBD",
-            "Colour": "Red"
-        },
-        {
-            "Event name": "Faculty Events",
-            "Event description": "Attend the events faculty has planned for you - Academic Orientation and Meet your Prof! ",
-            "Date": "9/8/2021",
-            "Location": "Online",
-            "Colour": "Light grey"
-        },
-        {
-            "Event name": "SkuleTM Clubs Fair",
-            "Event description": "Check out all the amazing student groups you can joing during your time at U of T Engineering! From design teams to clubs to sports, you're bound to find something to get involved in.",
-            "Date": "9/8/2021",
-            "Location": "Online",
-            "Colour": "Light grey"
-        },
-        {
-            "Event name": "Havenger Scunt",
-            "Event description": "Havenger Scunt is F!rosh Week's wacky, wild version of a scavenger hunt, in which teams of F!rosh work together to complete items from the Scunt List and bribe judges to earn points. However, Scunt is not your everyday scavenger hunt; be ready to get creative, try something new, and step out of your comfort zone!",
-            "Date": "9/8/2021",
-            "Start time": "18:00:00 a1/p1",
-            "End time": "23:00:00 a1/p1",
-            "Location": "Various locations",
-            "Colour": "Purple"
-        },
-        {
-            "Event name": "Nitelife",
-            "Event description": "Have you been quarantined for too long? Want to meet some new friends? Well come out to NITELIFE 2T1 🎉🎉 At night, F!rosh turns into a big party! Every night will have it’s own theme and it’s own set of entertaining events.",
-            "Date": "9/9/2021",
-            "Start time": "19:00:00 a1/p1",
-            "End time": "23:00:00 a1/p1",
-            "Location": "TBD",
-            "Colour": "Red"
-        },
-        {
-            "Event name": "Nitelife",
-            "Event description": "Have you been quarantined for too long? Want to meet some new friends? Well come out to NITELIFE 2T1 🎉🎉 At night, F!rosh turns into a big party! Every night will have it’s own theme and it’s own set of entertaining events.",
-            "Date": "9/10/2021",
-            "Start time": "19:00:00 a1/p1",
-            "End time": "23:00:00 a1/p1",
-            "Location": "TBD",
-            "Colour": "Red"
-        }
-    ],
-    "omicron": [
-        {
-            "Event name": "Registration",
-            "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
-            "Date": "9/6/2021",
-            "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
-            "Location": "In front of SF, along King's College Road",
-            "Colour": "Light grey"
-        },
-        {
-            "Event name": "Meet your frosh group",
-            "Event description": "Meet your frosh group IN PERSON for the first time!",
-            "Date": "9/6/2021",
-            "Start time": "7:00:00 a1/p1",
-            "End time": "8:30:00 a1/p1",
-            "Location": "TBD",
-            "Colour": "Pink"
-        },
-        {
-            "Event name": "Matriculation",
-            "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
-            "Date": "9/6/2021",
-            "Start time": "8:30:00 a1/p1",
-            "End time": "10:50:00 a1/p1",
-            "Location": "GB303, GB304",
-            "Colour": "Yellow"
-        },
-        {
-            "Event name": "F!rosh Games",
-            "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
-            "Date": "9/6/2021",
-            "Start time": "10:50:00 a1/p1",
-            "End time": "11:30:00 a1/p1",
-            "Location": "Various locations",
-            "Colour": "Green"
-        },
-        {
-            "Event name": "Lunch",
-            "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
-            "Date": "9/6/2021",
-            "Start time": "11:30:00 a1/p1",
-            "End time": "12:00:00 a1/p1",
-            "Location": "TBD",
-            "Colour": "Light orange"
-        },
-        {
-            "Event name": "F!rosh Games",
-            "Event description": "Yes, MORE games!!!",
-            "Date": "9/6/2021",
             "Start time": "12:00:00 a1/p1",
             "End time": "13:40:00 a1/p1",
             "Location": "Various locations",
@@ -1903,9 +2142,10 @@
         },
         {
             "Event name": "Engineering Student Sucess Seminar",
+            "Event description": "An introductory lecture aimed at explaining the recommended level of conceptual understanding acquired in high school, outlining the academic timeline over the next four years, and providing some preliminary resources to help you succeed at U of T. This is your chance to ask some faculty members and TAs some questions before Academic Orientation on Wednesday!",
             "Date": "9/6/2021",
             "Start time": "17:10:00 a1/p1",
-            "End time": "18:20:00 a1/p1",
+            "End time": "18:30:00 a1/p1",
             "Location": "SF1101, SF1105",
             "Colour": "Light grey"
         },
@@ -1922,8 +2162,8 @@
             "Event name": "Registration",
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/7/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "9:00:00 a1/p1",
             "Location": "Bahen Lobby",
             "Colour": "Light grey"
         },
@@ -1932,7 +2172,7 @@
             "Event description": "Meet up with your frosh group to prep for today's events.",
             "Date": "9/7/2021",
             "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "End time": "9:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -1940,7 +2180,7 @@
             "Event name": "Campus Tours",
             "Event description": "Wondering what campus looks like? Worried you won’t know where your classes might be? Campus Tours is going to show you all of that, letting you chat and connect with upper years, sharing engineering traditions and stories while exploring the fantastic campus at U of T - and ensuring you pass all your midterms in first year with a little luck ;)",
             "Date": "9/7/2021",
-            "Start time": "10:00:00 a1/p1",
+            "Start time": "9:30:00 a1/p1",
             "End time": "18:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -1970,8 +2210,10 @@
         },
         {
             "Event name": "Faculty Events",
-            "Event description": "Attend the events faculty has planned for you - Academic Orientation and Meet your Prof! ",
+            "Event description": "A variety of events that the faculty has put together to ease your transition into university, including Academic Orientation and the opportunity to talk to some more first-year profs.",
             "Date": "9/8/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -1979,6 +2221,8 @@
             "Event name": "SkuleTM Clubs Fair",
             "Event description": "Check out all the amazing student groups you can joing during your time at U of T Engineering! From design teams to clubs to sports, you're bound to find something to get involved in.",
             "Date": "9/8/2021",
+            "Start time": "13:00:00 a1/p1",
+            "End time": "15:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -1986,10 +2230,19 @@
             "Event name": "Havenger Scunt",
             "Event description": "Havenger Scunt is F!rosh Week's wacky, wild version of a scavenger hunt, in which teams of F!rosh work together to complete items from the Scunt List and bribe judges to earn points. However, Scunt is not your everyday scavenger hunt; be ready to get creative, try something new, and step out of your comfort zone!",
             "Date": "9/8/2021",
-            "Start time": "18:00:00 a1/p1",
+            "Start time": "17:00:00 a1/p1",
             "End time": "23:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Purple"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "First day of classes! Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -1999,6 +2252,15 @@
             "End time": "23:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Red"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -2016,15 +2278,15 @@
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/6/2021",
             "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
-            "Location": "In front of SF, along King's College Road",
+            "End time": "8:00:00 a1/p1",
+            "Location": "Galbraith Building (main entrance, along St. George)",
             "Colour": "Light grey"
         },
         {
             "Event name": "Meet your frosh group",
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
-            "Start time": "7:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
             "End time": "8:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
@@ -2034,7 +2296,7 @@
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
             "Start time": "8:30:00 a1/p1",
-            "End time": "10:50:00 a1/p1",
+            "End time": "11:10:00 a1/p1",
             "Location": "SF3202",
             "Colour": "Yellow"
         },
@@ -2042,8 +2304,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "10:50:00 a1/p1",
-            "End time": "11:40:00 a1/p1",
+            "Start time": "11:10:00 a1/p1",
+            "End time": "11:50:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -2051,8 +2313,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "11:40:00 a1/p1",
-            "End time": "12:10:00 a1/p1",
+            "Start time": "11:50:00 a1/p1",
+            "End time": "12:20:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -2060,7 +2322,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "12:10:00 a1/p1",
+            "Start time": "12:20:00 a1/p1",
             "End time": "13:40:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -2085,9 +2347,10 @@
         },
         {
             "Event name": "Engineering Student Sucess Seminar",
+            "Event description": "An introductory lecture aimed at explaining the recommended level of conceptual understanding acquired in high school, outlining the academic timeline over the next four years, and providing some preliminary resources to help you succeed at U of T. This is your chance to ask some faculty members and TAs some questions before Academic Orientation on Wednesday!",
             "Date": "9/6/2021",
             "Start time": "17:10:00 a1/p1",
-            "End time": "18:20:00 a1/p1",
+            "End time": "18:30:00 a1/p1",
             "Location": "MS3154",
             "Colour": "Light grey"
         },
@@ -2104,8 +2367,8 @@
             "Event name": "Registration",
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/7/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "9:00:00 a1/p1",
             "Location": "Bahen Lobby",
             "Colour": "Light grey"
         },
@@ -2114,7 +2377,7 @@
             "Event description": "Meet up with your frosh group to prep for today's events.",
             "Date": "9/7/2021",
             "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "End time": "9:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -2122,7 +2385,7 @@
             "Event name": "Campus Tours",
             "Event description": "Wondering what campus looks like? Worried you won’t know where your classes might be? Campus Tours is going to show you all of that, letting you chat and connect with upper years, sharing engineering traditions and stories while exploring the fantastic campus at U of T - and ensuring you pass all your midterms in first year with a little luck ;)",
             "Date": "9/7/2021",
-            "Start time": "10:00:00 a1/p1",
+            "Start time": "9:30:00 a1/p1",
             "End time": "18:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -2152,8 +2415,10 @@
         },
         {
             "Event name": "Faculty Events",
-            "Event description": "Attend the events faculty has planned for you - Academic Orientation and Meet your Prof! ",
+            "Event description": "A variety of events that the faculty has put together to ease your transition into university, including Academic Orientation and the opportunity to talk to some more first-year profs.",
             "Date": "9/8/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -2161,6 +2426,8 @@
             "Event name": "SkuleTM Clubs Fair",
             "Event description": "Check out all the amazing student groups you can joing during your time at U of T Engineering! From design teams to clubs to sports, you're bound to find something to get involved in.",
             "Date": "9/8/2021",
+            "Start time": "13:00:00 a1/p1",
+            "End time": "15:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -2168,10 +2435,19 @@
             "Event name": "Havenger Scunt",
             "Event description": "Havenger Scunt is F!rosh Week's wacky, wild version of a scavenger hunt, in which teams of F!rosh work together to complete items from the Scunt List and bribe judges to earn points. However, Scunt is not your everyday scavenger hunt; be ready to get creative, try something new, and step out of your comfort zone!",
             "Date": "9/8/2021",
-            "Start time": "18:00:00 a1/p1",
+            "Start time": "17:00:00 a1/p1",
             "End time": "23:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Purple"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "First day of classes! Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -2181,6 +2457,15 @@
             "End time": "23:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Red"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -2198,15 +2483,15 @@
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/6/2021",
             "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
-            "Location": "In front of SF, along King's College Road",
+            "End time": "8:00:00 a1/p1",
+            "Location": "Galbraith Building (main entrance, along St. George)",
             "Colour": "Light grey"
         },
         {
             "Event name": "Meet your frosh group",
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
-            "Start time": "7:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
             "End time": "8:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
@@ -2216,7 +2501,7 @@
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
             "Start time": "8:30:00 a1/p1",
-            "End time": "10:50:00 a1/p1",
+            "End time": "11:10:00 a1/p1",
             "Location": "MS3153",
             "Colour": "Yellow"
         },
@@ -2224,8 +2509,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "10:50:00 a1/p1",
-            "End time": "12:00:00 a1/p1",
+            "Start time": "11:10:00 a1/p1",
+            "End time": "12:10:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -2233,8 +2518,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "12:00:00 a1/p1",
-            "End time": "12:30:00 a1/p1",
+            "Start time": "12:10:00 a1/p1",
+            "End time": "12:40:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -2267,6 +2552,7 @@
         },
         {
             "Event name": "Engineering Student Sucess Seminar",
+            "Event description": "An introductory lecture aimed at explaining the recommended level of conceptual understanding acquired in high school, outlining the academic timeline over the next four years, and providing some preliminary resources to help you succeed at U of T. This is your chance to ask some faculty members and TAs some questions before Academic Orientation on Wednesday!",
             "Date": "9/6/2021",
             "Start time": "17:10:00 a1/p1",
             "End time": "18:20:00 a1/p1",
@@ -2286,8 +2572,8 @@
             "Event name": "Registration",
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/7/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "9:00:00 a1/p1",
             "Location": "Bahen Lobby",
             "Colour": "Light grey"
         },
@@ -2296,7 +2582,7 @@
             "Event description": "Meet up with your frosh group to prep for today's events.",
             "Date": "9/7/2021",
             "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "End time": "9:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -2304,7 +2590,7 @@
             "Event name": "Campus Tours",
             "Event description": "Wondering what campus looks like? Worried you won’t know where your classes might be? Campus Tours is going to show you all of that, letting you chat and connect with upper years, sharing engineering traditions and stories while exploring the fantastic campus at U of T - and ensuring you pass all your midterms in first year with a little luck ;)",
             "Date": "9/7/2021",
-            "Start time": "10:00:00 a1/p1",
+            "Start time": "9:30:00 a1/p1",
             "End time": "18:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -2334,8 +2620,10 @@
         },
         {
             "Event name": "Faculty Events",
-            "Event description": "Attend the events faculty has planned for you - Academic Orientation and Meet your Prof! ",
+            "Event description": "A variety of events that the faculty has put together to ease your transition into university, including Academic Orientation and the opportunity to talk to some more first-year profs.",
             "Date": "9/8/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -2343,6 +2631,8 @@
             "Event name": "SkuleTM Clubs Fair",
             "Event description": "Check out all the amazing student groups you can joing during your time at U of T Engineering! From design teams to clubs to sports, you're bound to find something to get involved in.",
             "Date": "9/8/2021",
+            "Start time": "13:00:00 a1/p1",
+            "End time": "15:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -2350,10 +2640,19 @@
             "Event name": "Havenger Scunt",
             "Event description": "Havenger Scunt is F!rosh Week's wacky, wild version of a scavenger hunt, in which teams of F!rosh work together to complete items from the Scunt List and bribe judges to earn points. However, Scunt is not your everyday scavenger hunt; be ready to get creative, try something new, and step out of your comfort zone!",
             "Date": "9/8/2021",
-            "Start time": "18:00:00 a1/p1",
+            "Start time": "17:00:00 a1/p1",
             "End time": "23:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Purple"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "First day of classes! Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -2363,6 +2662,15 @@
             "End time": "23:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Red"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -2380,15 +2688,15 @@
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/6/2021",
             "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
-            "Location": "In front of SF, along King's College Road",
+            "End time": "8:00:00 a1/p1",
+            "Location": "Galbraith Building (main entrance, along St. George)",
             "Colour": "Light grey"
         },
         {
             "Event name": "Meet your frosh group",
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
-            "Start time": "7:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
             "End time": "8:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
@@ -2398,7 +2706,7 @@
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
             "Start time": "8:30:00 a1/p1",
-            "End time": "10:50:00 a1/p1",
+            "End time": "11:10:00 a1/p1",
             "Location": "SF3201, SF2202",
             "Colour": "Yellow"
         },
@@ -2406,8 +2714,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "10:50:00 a1/p1",
-            "End time": "11:50:00 a1/p1",
+            "Start time": "11:10:00 a1/p1",
+            "End time": "12:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -2415,8 +2723,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "11:50:00 a1/p1",
-            "End time": "12:20:00 a1/p1",
+            "Start time": "12:00:00 a1/p1",
+            "End time": "12:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -2424,7 +2732,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "12:20:00 a1/p1",
+            "Start time": "12:30:00 a1/p1",
             "End time": "14:50:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -2449,6 +2757,7 @@
         },
         {
             "Event name": "Engineering Student Sucess Seminar",
+            "Event description": "An introductory lecture aimed at explaining the recommended level of conceptual understanding acquired in high school, outlining the academic timeline over the next four years, and providing some preliminary resources to help you succeed at U of T. This is your chance to ask some faculty members and TAs some questions before Academic Orientation on Wednesday!",
             "Date": "9/6/2021",
             "Start time": "17:10:00 a1/p1",
             "End time": "18:20:00 a1/p1",
@@ -2468,8 +2777,8 @@
             "Event name": "Registration",
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/7/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "9:00:00 a1/p1",
             "Location": "Bahen Lobby",
             "Colour": "Light grey"
         },
@@ -2478,7 +2787,7 @@
             "Event description": "Meet up with your frosh group to prep for today's events.",
             "Date": "9/7/2021",
             "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "End time": "9:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -2486,7 +2795,7 @@
             "Event name": "Campus Tours",
             "Event description": "Wondering what campus looks like? Worried you won’t know where your classes might be? Campus Tours is going to show you all of that, letting you chat and connect with upper years, sharing engineering traditions and stories while exploring the fantastic campus at U of T - and ensuring you pass all your midterms in first year with a little luck ;)",
             "Date": "9/7/2021",
-            "Start time": "10:00:00 a1/p1",
+            "Start time": "9:30:00 a1/p1",
             "End time": "18:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -2516,8 +2825,10 @@
         },
         {
             "Event name": "Faculty Events",
-            "Event description": "Attend the events faculty has planned for you - Academic Orientation and Meet your Prof! ",
+            "Event description": "A variety of events that the faculty has put together to ease your transition into university, including Academic Orientation and the opportunity to talk to some more first-year profs.",
             "Date": "9/8/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -2525,6 +2836,8 @@
             "Event name": "SkuleTM Clubs Fair",
             "Event description": "Check out all the amazing student groups you can joing during your time at U of T Engineering! From design teams to clubs to sports, you're bound to find something to get involved in.",
             "Date": "9/8/2021",
+            "Start time": "13:00:00 a1/p1",
+            "End time": "15:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -2532,10 +2845,19 @@
             "Event name": "Havenger Scunt",
             "Event description": "Havenger Scunt is F!rosh Week's wacky, wild version of a scavenger hunt, in which teams of F!rosh work together to complete items from the Scunt List and bribe judges to earn points. However, Scunt is not your everyday scavenger hunt; be ready to get creative, try something new, and step out of your comfort zone!",
             "Date": "9/8/2021",
-            "Start time": "18:00:00 a1/p1",
+            "Start time": "17:00:00 a1/p1",
             "End time": "23:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Purple"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "First day of classes! Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -2545,6 +2867,15 @@
             "End time": "23:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Red"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -2562,15 +2893,15 @@
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/6/2021",
             "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
-            "Location": "In front of SF, along King's College Road",
+            "End time": "8:00:00 a1/p1",
+            "Location": "Galbraith Building (main entrance, along St. George)",
             "Colour": "Light grey"
         },
         {
             "Event name": "Meet your frosh group",
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
-            "Start time": "7:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
             "End time": "8:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
@@ -2580,7 +2911,7 @@
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
             "Start time": "8:30:00 a1/p1",
-            "End time": "10:50:00 a1/p1",
+            "End time": "11:10:00 a1/p1",
             "Location": "SF1101, SF1105",
             "Colour": "Yellow"
         },
@@ -2588,8 +2919,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "10:50:00 a1/p1",
-            "End time": "11:50:00 a1/p1",
+            "Start time": "11:10:00 a1/p1",
+            "End time": "12:10:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -2597,8 +2928,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "11:50:00 a1/p1",
-            "End time": "12:20:00 a1/p1",
+            "Start time": "12:10:00 a1/p1",
+            "End time": "12:40:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -2606,7 +2937,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "12:20:00 a1/p1",
+            "Start time": "12:40:00 a1/p1",
             "End time": "14:50:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -2631,9 +2962,10 @@
         },
         {
             "Event name": "Engineering Student Sucess Seminar",
+            "Event description": "An introductory lecture aimed at explaining the recommended level of conceptual understanding acquired in high school, outlining the academic timeline over the next four years, and providing some preliminary resources to help you succeed at U of T. This is your chance to ask some faculty members and TAs some questions before Academic Orientation on Wednesday!",
             "Date": "9/6/2021",
             "Start time": "17:10:00 a1/p1",
-            "End time": "18:20:00 a1/p1",
+            "End time": "18:30:00 a1/p1",
             "Location": "MS2158",
             "Colour": "Light grey"
         },
@@ -2650,8 +2982,8 @@
             "Event name": "Registration",
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/7/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "9:00:00 a1/p1",
             "Location": "Bahen Lobby",
             "Colour": "Light grey"
         },
@@ -2660,7 +2992,7 @@
             "Event description": "Meet up with your frosh group to prep for today's events.",
             "Date": "9/7/2021",
             "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "End time": "9:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -2668,7 +3000,7 @@
             "Event name": "Campus Tours",
             "Event description": "Wondering what campus looks like? Worried you won’t know where your classes might be? Campus Tours is going to show you all of that, letting you chat and connect with upper years, sharing engineering traditions and stories while exploring the fantastic campus at U of T - and ensuring you pass all your midterms in first year with a little luck ;)",
             "Date": "9/7/2021",
-            "Start time": "10:00:00 a1/p1",
+            "Start time": "9:30:00 a1/p1",
             "End time": "18:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -2698,8 +3030,10 @@
         },
         {
             "Event name": "Faculty Events",
-            "Event description": "Attend the events faculty has planned for you - Academic Orientation and Meet your Prof! ",
+            "Event description": "A variety of events that the faculty has put together to ease your transition into university, including Academic Orientation and the opportunity to talk to some more first-year profs.",
             "Date": "9/8/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -2707,6 +3041,8 @@
             "Event name": "SkuleTM Clubs Fair",
             "Event description": "Check out all the amazing student groups you can joing during your time at U of T Engineering! From design teams to clubs to sports, you're bound to find something to get involved in.",
             "Date": "9/8/2021",
+            "Start time": "13:00:00 a1/p1",
+            "End time": "15:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -2714,10 +3050,19 @@
             "Event name": "Havenger Scunt",
             "Event description": "Havenger Scunt is F!rosh Week's wacky, wild version of a scavenger hunt, in which teams of F!rosh work together to complete items from the Scunt List and bribe judges to earn points. However, Scunt is not your everyday scavenger hunt; be ready to get creative, try something new, and step out of your comfort zone!",
             "Date": "9/8/2021",
-            "Start time": "18:00:00 a1/p1",
+            "Start time": "17:00:00 a1/p1",
             "End time": "23:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Purple"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "First day of classes! Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -2727,6 +3072,15 @@
             "End time": "23:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Red"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -2744,16 +3098,16 @@
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/6/2021",
             "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
-            "Location": "In front of SF, along King's College Road",
+            "End time": "8:00:00 a1/p1",
+            "Location": "Galbraith Building (main entrance, along St. George)",
             "Colour": "Light grey"
         },
         {
             "Event name": "Meet your frosh group",
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
-            "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "8:20:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -2761,8 +3115,8 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "11:20:00 a1/p1",
+            "Start time": "8:20:00 a1/p1",
+            "End time": "11:10:00 a1/p1",
             "Location": "SF1101, SF1105",
             "Colour": "Yellow"
         },
@@ -2770,7 +3124,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "11:20:00 a1/p1",
+            "Start time": "11:10",
             "End time": "12:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -2813,9 +3167,10 @@
         },
         {
             "Event name": "Engineering Student Sucess Seminar",
+            "Event description": "An introductory lecture aimed at explaining the recommended level of conceptual understanding acquired in high school, outlining the academic timeline over the next four years, and providing some preliminary resources to help you succeed at U of T. This is your chance to ask some faculty members and TAs some questions before Academic Orientation on Wednesday!",
             "Date": "9/6/2021",
             "Start time": "17:10:00 a1/p1",
-            "End time": "18:20:00 a1/p1",
+            "End time": "18:30:00 a1/p1",
             "Location": "MS2158, MS2170",
             "Colour": "Light grey"
         },
@@ -2832,8 +3187,8 @@
             "Event name": "Registration",
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/7/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "9:00:00 a1/p1",
             "Location": "Bahen Lobby",
             "Colour": "Light grey"
         },
@@ -2842,7 +3197,7 @@
             "Event description": "Meet up with your frosh group to prep for today's events.",
             "Date": "9/7/2021",
             "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "End time": "9:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -2850,7 +3205,7 @@
             "Event name": "Campus Tours",
             "Event description": "Wondering what campus looks like? Worried you won’t know where your classes might be? Campus Tours is going to show you all of that, letting you chat and connect with upper years, sharing engineering traditions and stories while exploring the fantastic campus at U of T - and ensuring you pass all your midterms in first year with a little luck ;)",
             "Date": "9/7/2021",
-            "Start time": "10:00:00 a1/p1",
+            "Start time": "9:30:00 a1/p1",
             "End time": "18:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -2880,8 +3235,10 @@
         },
         {
             "Event name": "Faculty Events",
-            "Event description": "Attend the events faculty has planned for you - Academic Orientation and Meet your Prof! ",
+            "Event description": "A variety of events that the faculty has put together to ease your transition into university, including Academic Orientation and the opportunity to talk to some more first-year profs.",
             "Date": "9/8/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -2889,6 +3246,8 @@
             "Event name": "SkuleTM Clubs Fair",
             "Event description": "Check out all the amazing student groups you can joing during your time at U of T Engineering! From design teams to clubs to sports, you're bound to find something to get involved in.",
             "Date": "9/8/2021",
+            "Start time": "13:00:00 a1/p1",
+            "End time": "15:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -2896,10 +3255,19 @@
             "Event name": "Havenger Scunt",
             "Event description": "Havenger Scunt is F!rosh Week's wacky, wild version of a scavenger hunt, in which teams of F!rosh work together to complete items from the Scunt List and bribe judges to earn points. However, Scunt is not your everyday scavenger hunt; be ready to get creative, try something new, and step out of your comfort zone!",
             "Date": "9/8/2021",
-            "Start time": "18:00:00 a1/p1",
+            "Start time": "17:00:00 a1/p1",
             "End time": "23:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Purple"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "First day of classes! Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -2909,6 +3277,15 @@
             "End time": "23:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Red"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -2926,16 +3303,16 @@
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/6/2021",
             "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
-            "Location": "In front of SF, along King's College Road",
+            "End time": "8:00:00 a1/p1",
+            "Location": "Galbraith Building (main entrance, along St. George)",
             "Colour": "Light grey"
         },
         {
             "Event name": "Meet your frosh group",
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
-            "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "8:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -2943,8 +3320,8 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "11:20:00 a1/p1",
+            "Start time": "8:30:00 a1/p1",
+            "End time": "11:10:00 a1/p1",
             "Location": "MY315, BA1190",
             "Colour": "Yellow"
         },
@@ -2952,8 +3329,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "11:20:00 a1/p1",
-            "End time": "12:20:00 a1/p1",
+            "Start time": "11:10:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -2961,8 +3338,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "12:20:00 a1/p1",
-            "End time": "12:50:00 a1/p1",
+            "Start time": "13:00:00 a1/p1",
+            "End time": "13:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -2970,7 +3347,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "12:50:00 a1/p1",
+            "Start time": "13:30:00 a1/p1",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -2985,19 +3362,11 @@
             "Colour": "Blue"
         },
         {
-            "Event name": "F!rosh Games",
-            "Event description": "Yes, even MORE games!!!",
-            "Date": "9/6/2021",
-            "Start time": "4:00:00 a1/p1",
-            "End time": "17:10:00 a1/p1",
-            "Location": "Various locations",
-            "Colour": "Green"
-        },
-        {
             "Event name": "Engineering Student Sucess Seminar",
+            "Event description": "An introductory lecture aimed at explaining the recommended level of conceptual understanding acquired in high school, outlining the academic timeline over the next four years, and providing some preliminary resources to help you succeed at U of T. This is your chance to ask some faculty members and TAs some questions before Academic Orientation on Wednesday!",
             "Date": "9/6/2021",
             "Start time": "17:10:00 a1/p1",
-            "End time": "18:20:00 a1/p1",
+            "End time": "18:30:00 a1/p1",
             "Location": "SF3202",
             "Colour": "Light grey"
         },
@@ -3014,8 +3383,8 @@
             "Event name": "Registration",
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/7/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "9:00:00 a1/p1",
             "Location": "Bahen Lobby",
             "Colour": "Light grey"
         },
@@ -3024,7 +3393,7 @@
             "Event description": "Meet up with your frosh group to prep for today's events.",
             "Date": "9/7/2021",
             "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "End time": "9:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -3032,7 +3401,7 @@
             "Event name": "Campus Tours",
             "Event description": "Wondering what campus looks like? Worried you won’t know where your classes might be? Campus Tours is going to show you all of that, letting you chat and connect with upper years, sharing engineering traditions and stories while exploring the fantastic campus at U of T - and ensuring you pass all your midterms in first year with a little luck ;)",
             "Date": "9/7/2021",
-            "Start time": "10:00:00 a1/p1",
+            "Start time": "9:30:00 a1/p1",
             "End time": "18:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -3062,8 +3431,10 @@
         },
         {
             "Event name": "Faculty Events",
-            "Event description": "Attend the events faculty has planned for you - Academic Orientation and Meet your Prof! ",
+            "Event description": "A variety of events that the faculty has put together to ease your transition into university, including Academic Orientation and the opportunity to talk to some more first-year profs.",
             "Date": "9/8/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -3071,6 +3442,8 @@
             "Event name": "SkuleTM Clubs Fair",
             "Event description": "Check out all the amazing student groups you can joing during your time at U of T Engineering! From design teams to clubs to sports, you're bound to find something to get involved in.",
             "Date": "9/8/2021",
+            "Start time": "13:00:00 a1/p1",
+            "End time": "15:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -3078,10 +3451,19 @@
             "Event name": "Havenger Scunt",
             "Event description": "Havenger Scunt is F!rosh Week's wacky, wild version of a scavenger hunt, in which teams of F!rosh work together to complete items from the Scunt List and bribe judges to earn points. However, Scunt is not your everyday scavenger hunt; be ready to get creative, try something new, and step out of your comfort zone!",
             "Date": "9/8/2021",
-            "Start time": "18:00:00 a1/p1",
+            "Start time": "17:00:00 a1/p1",
             "End time": "23:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Purple"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "First day of classes! Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -3091,6 +3473,15 @@
             "End time": "23:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Red"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -3108,16 +3499,16 @@
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/6/2021",
             "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
-            "Location": "In front of SF, along King's College Road",
+            "End time": "8:00:00 a1/p1",
+            "Location": "Galbraith Building (main entrance, along St. George)",
             "Colour": "Light grey"
         },
         {
             "Event name": "Meet your frosh group",
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
-            "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "8:20:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -3125,8 +3516,8 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "11:20:00 a1/p1",
+            "Start time": "8:20:00 a1/p1",
+            "End time": "11:10:00 a1/p1",
             "Location": "BA1180, BA1170",
             "Colour": "Yellow"
         },
@@ -3134,8 +3525,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "11:20:00 a1/p1",
-            "End time": "12:20:00 a1/p1",
+            "Start time": "11:10:00 a1/p1",
+            "End time": "12:50:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -3143,8 +3534,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "12:20:00 a1/p1",
-            "End time": "12:50:00 a1/p1",
+            "Start time": "12:50:00 a1/p1",
+            "End time": "13:20:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -3152,7 +3543,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "12:50:00 a1/p1",
+            "Start time": "13:20:00 a1/p1",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -3167,19 +3558,11 @@
             "Colour": "Blue"
         },
         {
-            "Event name": "F!rosh Games",
-            "Event description": "Yes, even MORE games!!!",
-            "Date": "9/6/2021",
-            "Start time": "4:00:00 a1/p1",
-            "End time": "17:10:00 a1/p1",
-            "Location": "Various locations",
-            "Colour": "Green"
-        },
-        {
             "Event name": "Engineering Student Sucess Seminar",
+            "Event description": "An introductory lecture aimed at explaining the recommended level of conceptual understanding acquired in high school, outlining the academic timeline over the next four years, and providing some preliminary resources to help you succeed at U of T. This is your chance to ask some faculty members and TAs some questions before Academic Orientation on Wednesday!",
             "Date": "9/6/2021",
             "Start time": "17:10:00 a1/p1",
-            "End time": "18:20:00 a1/p1",
+            "End time": "18:30:00 a1/p1",
             "Location": "BA1160",
             "Colour": "Light grey"
         },
@@ -3196,8 +3579,8 @@
             "Event name": "Registration",
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/7/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "9:00:00 a1/p1",
             "Location": "Bahen Lobby",
             "Colour": "Light grey"
         },
@@ -3206,7 +3589,7 @@
             "Event description": "Meet up with your frosh group to prep for today's events.",
             "Date": "9/7/2021",
             "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "End time": "9:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -3214,7 +3597,7 @@
             "Event name": "Campus Tours",
             "Event description": "Wondering what campus looks like? Worried you won’t know where your classes might be? Campus Tours is going to show you all of that, letting you chat and connect with upper years, sharing engineering traditions and stories while exploring the fantastic campus at U of T - and ensuring you pass all your midterms in first year with a little luck ;)",
             "Date": "9/7/2021",
-            "Start time": "10:00:00 a1/p1",
+            "Start time": "9:30:00 a1/p1",
             "End time": "18:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -3244,8 +3627,10 @@
         },
         {
             "Event name": "Faculty Events",
-            "Event description": "Attend the events faculty has planned for you - Academic Orientation and Meet your Prof! ",
+            "Event description": "A variety of events that the faculty has put together to ease your transition into university, including Academic Orientation and the opportunity to talk to some more first-year profs.",
             "Date": "9/8/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -3253,6 +3638,8 @@
             "Event name": "SkuleTM Clubs Fair",
             "Event description": "Check out all the amazing student groups you can joing during your time at U of T Engineering! From design teams to clubs to sports, you're bound to find something to get involved in.",
             "Date": "9/8/2021",
+            "Start time": "13:00:00 a1/p1",
+            "End time": "15:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -3260,10 +3647,19 @@
             "Event name": "Havenger Scunt",
             "Event description": "Havenger Scunt is F!rosh Week's wacky, wild version of a scavenger hunt, in which teams of F!rosh work together to complete items from the Scunt List and bribe judges to earn points. However, Scunt is not your everyday scavenger hunt; be ready to get creative, try something new, and step out of your comfort zone!",
             "Date": "9/8/2021",
-            "Start time": "18:00:00 a1/p1",
+            "Start time": "17:00:00 a1/p1",
             "End time": "23:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Purple"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "First day of classes! Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -3273,6 +3669,15 @@
             "End time": "23:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Red"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -3290,16 +3695,16 @@
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/6/2021",
             "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
-            "Location": "In front of SF, along King's College Road",
+            "End time": "8:00:00 a1/p1",
+            "Location": "Galbraith Building (main entrance, along St. George)",
             "Colour": "Light grey"
         },
         {
             "Event name": "Meet your frosh group",
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
-            "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "8:20:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -3307,8 +3712,8 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "11:20:00 a1/p1",
+            "Start time": "8:20:00 a1/p1",
+            "End time": "11:10:00 a1/p1",
             "Location": "BA1170, BA1130",
             "Colour": "Yellow"
         },
@@ -3316,8 +3721,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "11:20:00 a1/p1",
-            "End time": "12:30:00 a1/p1",
+            "Start time": "11:10:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -3325,8 +3730,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "12:30:00 a1/p1",
-            "End time": "13:00:00 a1/p1",
+            "Start time": "13:00:00 a1/p1",
+            "End time": "13:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -3334,7 +3739,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "13:00:00 a1/p1",
+            "Start time": "13:30:00 a1/p1",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -3349,19 +3754,11 @@
             "Colour": "Blue"
         },
         {
-            "Event name": "F!rosh Games",
-            "Event description": "Yes, even MORE games!!!",
-            "Date": "9/6/2021",
-            "Start time": "4:00:00 a1/p1",
-            "End time": "17:10:00 a1/p1",
-            "Location": "Various locations",
-            "Colour": "Green"
-        },
-        {
             "Event name": "Engineering Student Sucess Seminar",
+            "Event description": "An introductory lecture aimed at explaining the recommended level of conceptual understanding acquired in high school, outlining the academic timeline over the next four years, and providing some preliminary resources to help you succeed at U of T. This is your chance to ask some faculty members and TAs some questions before Academic Orientation on Wednesday!",
             "Date": "9/6/2021",
             "Start time": "17:10:00 a1/p1",
-            "End time": "18:20:00 a1/p1",
+            "End time": "18:30:00 a1/p1",
             "Location": "BA1170, BA1180",
             "Colour": "Light grey"
         },
@@ -3378,8 +3775,8 @@
             "Event name": "Registration",
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/7/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "9:00:00 a1/p1",
             "Location": "Bahen Lobby",
             "Colour": "Light grey"
         },
@@ -3388,7 +3785,7 @@
             "Event description": "Meet up with your frosh group to prep for today's events.",
             "Date": "9/7/2021",
             "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "End time": "9:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -3396,7 +3793,7 @@
             "Event name": "Campus Tours",
             "Event description": "Wondering what campus looks like? Worried you won’t know where your classes might be? Campus Tours is going to show you all of that, letting you chat and connect with upper years, sharing engineering traditions and stories while exploring the fantastic campus at U of T - and ensuring you pass all your midterms in first year with a little luck ;)",
             "Date": "9/7/2021",
-            "Start time": "10:00:00 a1/p1",
+            "Start time": "9:30:00 a1/p1",
             "End time": "18:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -3426,8 +3823,10 @@
         },
         {
             "Event name": "Faculty Events",
-            "Event description": "Attend the events faculty has planned for you - Academic Orientation and Meet your Prof! ",
+            "Event description": "A variety of events that the faculty has put together to ease your transition into university, including Academic Orientation and the opportunity to talk to some more first-year profs.",
             "Date": "9/8/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -3435,6 +3834,8 @@
             "Event name": "SkuleTM Clubs Fair",
             "Event description": "Check out all the amazing student groups you can joing during your time at U of T Engineering! From design teams to clubs to sports, you're bound to find something to get involved in.",
             "Date": "9/8/2021",
+            "Start time": "13:00:00 a1/p1",
+            "End time": "15:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -3442,10 +3843,19 @@
             "Event name": "Havenger Scunt",
             "Event description": "Havenger Scunt is F!rosh Week's wacky, wild version of a scavenger hunt, in which teams of F!rosh work together to complete items from the Scunt List and bribe judges to earn points. However, Scunt is not your everyday scavenger hunt; be ready to get creative, try something new, and step out of your comfort zone!",
             "Date": "9/8/2021",
-            "Start time": "18:00:00 a1/p1",
+            "Start time": "17:00:00 a1/p1",
             "End time": "23:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Purple"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "First day of classes! Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -3455,6 +3865,15 @@
             "End time": "23:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Red"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -3472,16 +3891,16 @@
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/6/2021",
             "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
-            "Location": "In front of SF, along King's College Road",
+            "End time": "8:00:00 a1/p1",
+            "Location": "Galbraith Building (main entrance, along St. George)",
             "Colour": "Light grey"
         },
         {
             "Event name": "Meet your frosh group",
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
-            "Start time": "7:00:00 a1/p1",
-            "End time": "9:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "8:20:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -3489,8 +3908,8 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "11:20:00 a1/p1",
+            "Start time": "8:20:00 a1/p1",
+            "End time": "11:10:00 a1/p1",
             "Location": "MC102",
             "Colour": "Yellow"
         },
@@ -3498,8 +3917,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "11:20:00 a1/p1",
-            "End time": "12:30:00 a1/p1",
+            "Start time": "11:10:00 a1/p1",
+            "End time": "12:50:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -3507,8 +3926,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "12:30:00 a1/p1",
-            "End time": "13:00:00 a1/p1",
+            "Start time": "12:50:00 a1/p1",
+            "End time": "1:20:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -3516,7 +3935,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "13:00:00 a1/p1",
+            "Start time": "13:20:00 a1/p1",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -3531,19 +3950,11 @@
             "Colour": "Blue"
         },
         {
-            "Event name": "F!rosh Games",
-            "Event description": "Yes, even MORE games!!!",
-            "Date": "9/6/2021",
-            "Start time": "4:00:00 a1/p1",
-            "End time": "17:10:00 a1/p1",
-            "Location": "Various locations",
-            "Colour": "Green"
-        },
-        {
             "Event name": "Engineering Student Sucess Seminar",
+            "Event description": "An introductory lecture aimed at explaining the recommended level of conceptual understanding acquired in high school, outlining the academic timeline over the next four years, and providing some preliminary resources to help you succeed at U of T. This is your chance to ask some faculty members and TAs some questions before Academic Orientation on Wednesday!",
             "Date": "9/6/2021",
             "Start time": "17:10:00 a1/p1",
-            "End time": "18:20:00 a1/p1",
+            "End time": "18:30:00 a1/p1",
             "Location": "MS3153",
             "Colour": "Light grey"
         },
@@ -3560,8 +3971,8 @@
             "Event name": "Registration",
             "Event description": "Before heading to any of the day's events, stop by the registration helpdesk to check-in and show proof of your UCheck screening.",
             "Date": "9/7/2021",
-            "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "Start time": "8:00:00 a1/p1",
+            "End time": "9:00:00 a1/p1",
             "Location": "Bahen Lobby",
             "Colour": "Light grey"
         },
@@ -3570,7 +3981,7 @@
             "Event description": "Meet up with your frosh group to prep for today's events.",
             "Date": "9/7/2021",
             "Start time": "9:00:00 a1/p1",
-            "End time": "10:00:00 a1/p1",
+            "End time": "9:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -3578,7 +3989,7 @@
             "Event name": "Campus Tours",
             "Event description": "Wondering what campus looks like? Worried you won’t know where your classes might be? Campus Tours is going to show you all of that, letting you chat and connect with upper years, sharing engineering traditions and stories while exploring the fantastic campus at U of T - and ensuring you pass all your midterms in first year with a little luck ;)",
             "Date": "9/7/2021",
-            "Start time": "10:00:00 a1/p1",
+            "Start time": "9:30:00 a1/p1",
             "End time": "18:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -3608,8 +4019,10 @@
         },
         {
             "Event name": "Faculty Events",
-            "Event description": "Attend the events faculty has planned for you - Academic Orientation and Meet your Prof! ",
+            "Event description": "A variety of events that the faculty has put together to ease your transition into university, including Academic Orientation and the opportunity to talk to some more first-year profs.",
             "Date": "9/8/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -3617,6 +4030,8 @@
             "Event name": "SkuleTM Clubs Fair",
             "Event description": "Check out all the amazing student groups you can joing during your time at U of T Engineering! From design teams to clubs to sports, you're bound to find something to get involved in.",
             "Date": "9/8/2021",
+            "Start time": "13:00:00 a1/p1",
+            "End time": "15:00:00 a1/p1",
             "Location": "Online",
             "Colour": "Light grey"
         },
@@ -3624,10 +4039,19 @@
             "Event name": "Havenger Scunt",
             "Event description": "Havenger Scunt is F!rosh Week's wacky, wild version of a scavenger hunt, in which teams of F!rosh work together to complete items from the Scunt List and bribe judges to earn points. However, Scunt is not your everyday scavenger hunt; be ready to get creative, try something new, and step out of your comfort zone!",
             "Date": "9/8/2021",
-            "Start time": "18:00:00 a1/p1",
+            "Start time": "17:00:00 a1/p1",
             "End time": "23:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Purple"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "First day of classes! Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",
@@ -3637,6 +4061,15 @@
             "End time": "23:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Red"
+        },
+        {
+            "Event name": "Class",
+            "Event description": "Don't forget that there are no tutorials and labs this week.",
+            "Date": "9/9/2021",
+            "Start time": "9:00:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
+            "Location": "Various locations",
+            "Colour": "Light grey"
         },
         {
             "Event name": "Nitelife",

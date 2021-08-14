@@ -27,6 +27,13 @@ class ResourcesPageParse extends StatelessWidget {
   Widget build(BuildContext context) {
     return ResourcesPage(resources: [
       Resource(
+          icon: Icons.language,
+          title: "Orientation website",
+          contact: "https://www.orientation.skule.ca/",
+          type: "url",
+          description:
+              "The F!rosh orientation website. Login to your account here and view full account data."),
+      Resource(
           icon: Icons.location_on,
           title: "UofT Map",
           contact: "https://www.utoronto.ca/__shared/assets/3D_Map1103.pdf",
@@ -34,19 +41,19 @@ class ResourcesPageParse extends StatelessWidget {
           description:
               "Don't know the building codes or where buildings are located? View this map!"),
       Resource(
+          icon: Icons.file_copy,
+          title: "Incident Report Form",
+          contact: "https://www.orientation.skule.ca/",
+          type: "url",
+          description:
+              "Report any incidents you experience during F!rosh week here."),
+      Resource(
           icon: Icons.badge,
           title: "Campus Police",
           contact: "416-978-2323",
           type: "phone",
           description:
               "For non-urgent reports. UofT campus police phone number."),
-      Resource(
-          icon: Icons.language,
-          title: "Orientation website",
-          contact: "https://www.orientation.skule.ca/",
-          type: "url",
-          description:
-              "The F!rosh orientation website. Login to your account here and view full account data."),
     ]);
   }
 }
@@ -81,7 +88,11 @@ class ResourcesPage extends StatelessWidget {
         delegate: SliverChildBuilderDelegate(
             (context, index) => ResourceBox(resource: resources[index]),
             childCount: resources.length),
-      )
+      ),
+      SliverList(
+          delegate: SliverChildListDelegate([
+        Container(height: 100),
+      ])),
     ]));
   }
 }
