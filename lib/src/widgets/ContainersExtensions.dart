@@ -107,12 +107,14 @@ class ContainerFrosh extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                TextFont(
-                  text: "$froshName",
-                  fontSize: 37,
-                  fontWeight: FontWeight.bold,
-                  customTextColor: true,
-                  textColor: Colors.white,
+                Flexible(
+                  child: TextFont(
+                    text: "$froshName",
+                    fontSize: 37,
+                    fontWeight: FontWeight.bold,
+                    customTextColor: true,
+                    textColor: Colors.white,
+                  ),
                 ),
               ],
             ),

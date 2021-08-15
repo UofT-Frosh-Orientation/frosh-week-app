@@ -123,15 +123,6 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
       home: Framework(
-        pages: [
-          HomePage(
-              froshName: "Calum",
-              discipline: "Engineering Science",
-              froshGroup: "lambda"),
-          SchedulePageParse(),
-          NotificationsPageParse(),
-          ResourcesPageParse(),
-        ],
         isLoggedIn: preferences.getBool('isLoggedIn') ?? false,
         dio: dio,
         storage: storage
@@ -141,14 +132,14 @@ class MyApp extends StatelessWidget {
 }
 
 class Framework extends StatefulWidget {
-  final List<Widget> pages;
+  // final List<Widget> pages;
   final bool isLoggedIn;
   final Dio dio;
   final fss.FlutterSecureStorage storage;
 
   const Framework({
     Key? key,
-    required this.pages,
+    // required this.pages,
     required this.isLoggedIn,
     required this.dio,
     required this.storage,
@@ -163,8 +154,11 @@ class FrameworkState extends State<Framework> {
   int selectedIndex = 0;
   late bool _loggedIn;
   String froshName = "";
-  String discipline = "";
   String froshGroup = "";
+  String froshId = "";
+  String discipline = "";
+  String shirtSize = "";
+
 
   Future<void> setLoggedIn(bool login) async{
     setState(() {
@@ -185,19 +179,24 @@ class FrameworkState extends State<Framework> {
               headers: {"cookie": cookie}
           )
       );
+      // print(res.data);
       setState(() {
         froshName = res.data["preferredName"];
         froshGroup = res.data["froshGroup"];
+        froshId = res.data["_id"];
         discipline = res.data["discipline"];
+        shirtSize = res.data["shirtSize"];
       });
-      await prefs.setStringList('froshData', [froshName, froshGroup, discipline]);
+      await prefs.setStringList('froshData', [froshName, froshGroup, froshId, discipline, shirtSize]);
       return true;
     } else {
       List<String>? froshData = prefs.getStringList("froshData");
       setState(() {
         froshName = froshData![0];
         froshGroup = froshData[1];
-        discipline = froshData[2];
+        froshId = froshData[2];
+        discipline = froshData[3];
+        shirtSize = froshData[4];
       });
       return true;
     }
@@ -212,6 +211,18 @@ class FrameworkState extends State<Framework> {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> pages = [
+      HomePage(
+        froshName: froshName,
+        froshGroup: froshGroup,
+        froshId: froshId,
+        discipline: discipline,
+        shirtSize: shirtSize,
+      ),
+      SchedulePageParse(),
+      NotificationsPageParse(),
+      ResourcesPageParse(),
+    ];
     if (!_loggedIn){
       return Scaffold(
         body: LoginPage(dio: widget.dio, setLoggedIn: setLoggedIn, storage: widget.storage)
@@ -230,7 +241,7 @@ class FrameworkState extends State<Framework> {
                 child: child,
               );
             },
-            child: widget.pages[selectedIndex],
+            child: pages[selectedIndex],
           ),
           Align(
             alignment: Alignment.bottomCenter,

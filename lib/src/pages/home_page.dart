@@ -33,14 +33,17 @@ const froshGroupSymbols = {
 class HomePage extends StatefulWidget {
   final String froshName;
   final String froshGroup;
+  final String froshId;
   final String discipline;
-
+  final String shirtSize;
 
   const HomePage({
     Key? key,
     required this.froshName,
     required this.froshGroup,
-    required this.discipline
+    required this.froshId,
+    required this.discipline,
+    required this.shirtSize
   }) : super(key: key);
 
   @override
@@ -74,11 +77,13 @@ class _HomePageState extends State<HomePage> {
                   MaterialPageRoute<void>(builder: (BuildContext context) {
                 return ProfilePage(
                   froshName: widget.froshName,
-                  discipline: widget.discipline,
                   froshGroup:
                       (froshGroupSymbols[widget.froshGroup.toLowerCase()] ?? "") +
                           " " +
                           widget.froshGroup.capitalizeFirst,
+                  froshId: widget.froshId,
+                  discipline: widget.discipline,
+                  shirtSize: widget.shirtSize,
                 );
               }));
             },

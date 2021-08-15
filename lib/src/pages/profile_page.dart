@@ -7,14 +7,18 @@ import "../widgets/ContainersExtensions.dart";
 
 class ProfilePage extends StatelessWidget {
   final String froshName;
-  final String discipline;
   final String froshGroup;
+  final String froshId;
+  final String discipline;
+  final String shirtSize;
 
   const ProfilePage({
     Key? key,
     required this.froshName,
-    required this.discipline,
     required this.froshGroup,
+    required this.froshId,
+    required this.discipline,
+    required this.shirtSize
   }) : super(key: key);
 
   @override
@@ -48,8 +52,8 @@ class ProfilePage extends StatelessWidget {
                 Container(height: 20),
                 Center(
                   child: FroshQR(
-                      froshAccount: "some_account_id",
-                      froshKitsSize: "Large",
+                      froshAccount: froshId,
+                      froshKitsSize: shirtSize,
                       hasCompletedUCheck: true),
                 ),
               ]),
