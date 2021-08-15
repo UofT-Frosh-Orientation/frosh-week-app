@@ -14,29 +14,34 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:animations/animations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:dio/dio.dart';
-import 'package:dio_cookie_manager/dio_cookie_manager.dart';
-import 'package:cookie_jar/cookie_jar.dart';
-import 'package:path_provider/path_provider.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart' as fss;
+
+Future<bool> hasNetwork() async {
+  try {
+    final result = await InternetAddress.lookup('example.com');
+    return result.isNotEmpty && result[0].rawAddress.isNotEmpty;
+  } on SocketException catch (_) {
+    return false;
+  }
+}
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences preferences = await SharedPreferences.getInstance();
-  Directory appDocDir = await getApplicationDocumentsDirectory();
-  String appDocPath = appDocDir.path;
-  print(appDocPath);
+  final fss.FlutterSecureStorage storage = new fss.FlutterSecureStorage();
   Dio dio = Dio();
-  var cookieJar = PersistCookieJar(ignoreExpires: true, storage: FileStorage(appDocPath + './cookies'));
-  // dio.interceptors.add(CookieManager(cookieJar));
-  runApp(App(preferences: preferences, dio: dio));
+  runApp(App(preferences: preferences, dio: dio, storage: storage,));
 }
 
 class App extends StatefulWidget {
   final SharedPreferences preferences;
   final Dio dio;
+  final fss.FlutterSecureStorage storage;
   const App({
     Key? key,
     required this.preferences,
     required this.dio,
+    required this.storage
   }) : super(key: key);
 
   @override
@@ -54,15 +59,15 @@ class _AppState extends State<App> {
         if (snapshot.hasError) {
           //TODO: add an error page
           print("There was an error");
-          return MyApp(preferences: widget.preferences, dio: widget.dio);
+          return MyApp(preferences: widget.preferences, dio: widget.dio, storage: widget.storage);
         }
 
         if (snapshot.connectionState == ConnectionState.done) {
-          return MyApp(preferences: widget.preferences, dio: widget.dio);
+          return MyApp(preferences: widget.preferences, dio: widget.dio, storage: widget.storage);
         }
 
         //TODO: add a loading page
-        return MyApp(preferences: widget.preferences, dio: widget.dio);
+        return MyApp(preferences: widget.preferences, dio: widget.dio, storage: widget.storage);
       },
     );
   }
@@ -72,11 +77,13 @@ class _AppState extends State<App> {
 class MyApp extends StatelessWidget {
   final SharedPreferences preferences;
   final Dio dio;
+  final fss.FlutterSecureStorage storage;
 
   const MyApp({
     Key? key,
     required this.preferences,
-    required this.dio
+    required this.dio,
+    required this.storage,
   }) : super(key: key);
   // This widget is the root of your application.
   @override
@@ -127,6 +134,7 @@ class MyApp extends StatelessWidget {
         ],
         isLoggedIn: preferences.getBool('isLoggedIn') ?? false,
         dio: dio,
+        storage: storage
       ),
     );
   }
@@ -136,12 +144,14 @@ class Framework extends StatefulWidget {
   final List<Widget> pages;
   final bool isLoggedIn;
   final Dio dio;
+  final fss.FlutterSecureStorage storage;
 
   const Framework({
     Key? key,
     required this.pages,
     required this.isLoggedIn,
     required this.dio,
+    required this.storage,
   }) : super(key: key);
 
   @override
@@ -152,103 +162,131 @@ class FrameworkState extends State<Framework> {
   late PageController pageController;
   int selectedIndex = 0;
   late bool _loggedIn;
+  String froshName = "";
+  String discipline = "";
+  String froshGroup = "";
 
-  void setLoggedIn(bool login) {
-    print("Logging in");
+  Future<void> setLoggedIn(bool login) async{
     setState(() {
       _loggedIn = login;
     });
+    if (login) {
+      await getCurrentUser();
+    }
+  }
+  
+  Future<bool> getCurrentUser() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    if (await hasNetwork()) {
+      String? cookie = await widget.storage.read(key: 'cookie');
+      Response res = await widget.dio.get(
+          'https://www.orientation.skule.ca/users/current',
+          options: Options(
+              headers: {"cookie": cookie}
+          )
+      );
+      setState(() {
+        froshName = res.data["preferredName"];
+        froshGroup = res.data["froshGroup"];
+        discipline = res.data["discipline"];
+      });
+      await prefs.setStringList('froshData', [froshName, froshGroup, discipline]);
+      return true;
+    } else {
+      List<String>? froshData = prefs.getStringList("froshData");
+      setState(() {
+        froshName = froshData![0];
+        froshGroup = froshData[1];
+        discipline = froshData[2];
+      });
+      return true;
+    }
   }
 
   @override
   void initState() {
     super.initState();
     pageController = PageController(initialPage: selectedIndex);
-    _loggedIn = widget.isLoggedIn;
+    setLoggedIn(widget.isLoggedIn);
   }
 
   @override
   Widget build(BuildContext context) {
     if (!_loggedIn){
       return Scaffold(
-        body: LoginPage(dio: widget.dio, setLoggedIn: setLoggedIn)
+        body: LoginPage(dio: widget.dio, setLoggedIn: setLoggedIn, storage: widget.storage)
       );
     } else return Scaffold(
-      body: Stack(children: [
-        PageTransitionSwitcher(
-          transitionBuilder: (
-            child,
-            animation,
-            secondaryAnimation,
-          ) {
-            return FadeThroughTransition(
-              animation: animation,
-              secondaryAnimation: secondaryAnimation,
-              child: child,
-            );
-          },
-          child: widget.pages[selectedIndex],
-        ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: Container(
-            height: 80,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment(0, 0.8),
-                colors: [
-                  Theme.of(context).canvasColor.withOpacity(0),
-                  Theme.of(context).colorScheme.lightPurpleAccent,
-                ],
+        body: Stack(children: [
+          PageTransitionSwitcher(
+            transitionBuilder: (
+                child,
+                animation,
+                secondaryAnimation,
+                ) {
+              return FadeThroughTransition(
+                animation: animation,
+                secondaryAnimation: secondaryAnimation,
+                child: child,
+              );
+            },
+            child: widget.pages[selectedIndex],
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              height: 80,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment(0, 0.8),
+                  colors: [
+                    Theme.of(this.context).canvasColor.withOpacity(0),
+                    Theme.of(this.context).colorScheme.lightPurpleAccent,
+                  ],
+                ),
               ),
             ),
           ),
-        ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: CurvedNavigationBar(
-            buttonBackgroundColor:
-                Theme.of(context).colorScheme.lightPurpleAccent,
-            color: Theme.of(context).colorScheme.lightPurpleAccent,
-            animationDuration: const Duration(milliseconds: 500),
-            backgroundColor: Colors.transparent,
-            height: 60,
-            items: <Widget>[
-              Icon(
-                Icons.home,
-                size: 30,
-                color: Colors.white,
-              ),
-              Icon(
-                Icons.event,
-                size: 30,
-                color: Colors.white,
-              ),
-              Icon(
-                Icons.notifications,
-                size: 30,
-                color: Colors.white,
-              ),
-              Icon(
-                Icons.book,
-                size: 30,
-                color: Colors.white,
-              ),
-              // Icon(
-              //   Icons.login,
-              //   size: 30,
-              //   color: Colors.white,
-              // ),
-            ],
-            onTap: (index) {
-              setState(() {
-                selectedIndex = index;
-              });
-            },
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: CurvedNavigationBar(
+              buttonBackgroundColor:
+              Theme.of(this.context).colorScheme.lightPurpleAccent,
+              color: Theme.of(this.context).colorScheme.lightPurpleAccent,
+              animationDuration: const Duration(milliseconds: 500),
+              backgroundColor: Colors.transparent,
+              height: 60,
+              items: <Widget>[
+                Icon(
+                  Icons.home,
+                  size: 30,
+                  color: Colors.white,
+                ),
+                Icon(
+                  Icons.event,
+                  size: 30,
+                  color: Colors.white,
+                ),
+                Icon(
+                  Icons.notifications,
+                  size: 30,
+                  color: Colors.white,
+                ),
+                Icon(
+                  Icons.book,
+                  size: 30,
+                  color: Colors.white,
+                ),
+              ],
+              onTap: (index) {
+                setState(() {
+                  selectedIndex = index;
+                });
+              },
+            ),
           ),
-        ),
-      ]),
-    );
+        ]),
+      );
   }
 }

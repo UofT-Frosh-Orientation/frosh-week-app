@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart' as fss;
 import 'package:frosh_week_2t1/src/pages/profile_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../widgets/TextWidgets.dart';
 import '../widgets/ButtonWidgets.dart';
 import '../widgets/TextInputWidgets.dart';
@@ -10,10 +12,12 @@ import "package:dio/dio.dart";
 class LoginPage extends StatefulWidget {
   final Dio dio;
   final Function setLoggedIn;
+  final fss.FlutterSecureStorage storage;
   const LoginPage({
     Key? key,
     required this.dio,
     required this.setLoggedIn,
+    required this.storage,
   }) : super(key: key);
 
   @override
@@ -26,6 +30,7 @@ class _LoginPageState extends State<LoginPage> {
   String password = '';
 
   Future<void> _login({required String email, required String password}) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
     Response res1 = await widget.dio.post(
       'https://www.orientation.skule.ca/login',
       data: {
@@ -39,18 +44,25 @@ class _LoginPageState extends State<LoginPage> {
     );
     if (res1.headers["location"]![0] == "/login_success"){
       Headers headers = res1.headers;
-      //Parse the cookie
+      print(headers);
       String cookie = headers["set-cookie"]![0].substring(0, headers["set-cookie"]![0].indexOf(';'));
-      Response res2 = await widget.dio.get(
-          'https://www.orientation.skule.ca/users/current',
-          options: Options(
-              headers: {"cookie": cookie}
-          )
-      );
-      // print(res2);
+      // Response res2 = await widget.dio.get(
+      //     'https://www.orientation.skule.ca/users/current',
+      //     options: Options(
+      //         headers: {"cookie": cookie}
+      //     )
+      // );
+      // print(res2.headers);
+      // // await widget.db.insert(res2.data);
+      // print(res2.data);
+      // widget.setLoggedIn(true);
+      await widget.storage.write(key: "cookie", value: cookie);
+      prefs.setBool('isLoggedIn', true);
+      print("Im here");
       widget.setLoggedIn(true);
       return;
     }
+    prefs.setBool('isLoggedIn', false);
     widget.setLoggedIn(false);
   }
 
