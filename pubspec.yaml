@@ -38,6 +38,7 @@ dependencies:
   shared_preferences: ^2.0.3
   dio: ^4.0.0
   flutter_secure_storage: ^4.2.1
+  firebase_messaging: ^10.0.4
 
 
 

@@ -1,5 +1,6 @@
 import 'dart:io';
-
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'src/pages/loading_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
@@ -63,18 +64,19 @@ class _AppState extends State<App> {
         }
 
         if (snapshot.connectionState == ConnectionState.done) {
+          print("Connected");
           return MyApp(preferences: widget.preferences, dio: widget.dio, storage: widget.storage);
         }
 
         //TODO: add a loading page
-        return MyApp(preferences: widget.preferences, dio: widget.dio, storage: widget.storage);
+        return LoadingPage();
       },
     );
   }
 }
 
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   final SharedPreferences preferences;
   final Dio dio;
   final fss.FlutterSecureStorage storage;
@@ -85,7 +87,48 @@ class MyApp extends StatelessWidget {
     required this.dio,
     required this.storage,
   }) : super(key: key);
-  // This widget is the root of your application.
+
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  late FirebaseMessaging messaging;
+  late NotificationSettings notificationSettings;
+
+  Future<void> getNotificationSettings(FirebaseMessaging _messaging) async {
+    NotificationSettings _notificationSettings = await _messaging.requestPermission(
+      alert: true,
+      announcement: false,
+      badge: true,
+      carPlay: false,
+      criticalAlert: false,
+      provisional: false,
+      sound: true,
+    );
+    // print(_notificationSettings);
+    setState(() {
+      notificationSettings = _notificationSettings;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    messaging = FirebaseMessaging.instance;
+    getNotificationSettings(messaging);
+    messaging.getToken().then((value){
+      print("Token: $value");
+    });
+    FirebaseMessaging.onMessage.listen((RemoteMessage event){
+      print("Message received");
+      print(event.notification!.body);
+    });
+    FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+      print("Message clicked");
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
@@ -123,9 +166,9 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
       home: Framework(
-        isLoggedIn: preferences.getBool('isLoggedIn') ?? false,
-        dio: dio,
-        storage: storage
+        isLoggedIn: widget.preferences.getBool('isLoggedIn') ?? false,
+        dio: widget.dio,
+        storage: widget.storage
       ),
     );
   }
