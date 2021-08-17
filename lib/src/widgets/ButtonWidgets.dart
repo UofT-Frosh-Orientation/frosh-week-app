@@ -6,12 +6,14 @@ class ButtonRegular extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final bool outline;
+  final bool yellow;
 
   const ButtonRegular({
     Key? key,
     required this.text,
     required this.onPressed,
     this.outline = false,
+    this.yellow = false,
   }) : super(key: key);
 
   @override
@@ -24,7 +26,9 @@ class ButtonRegular extends StatelessWidget {
             style: OutlinedButton.styleFrom(
                 primary: Colors.white,
                 side: BorderSide(
-                    color: Theme.of(context).colorScheme.lightLightPurpleAccent,
+                    color: yellow
+                        ? Theme.of(context).colorScheme.yellowAccent
+                        : Theme.of(context).colorScheme.lightLightPurpleAccent,
                     width: 3),
                 padding: EdgeInsets.all(18)),
             onPressed: onPressed,
@@ -42,8 +46,9 @@ class ButtonRegular extends StatelessWidget {
         child: Container(
           child: ElevatedButton(
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(
-                  Theme.of(context).colorScheme.lightPurpleAccent),
+              backgroundColor: MaterialStateProperty.all(yellow
+                  ? Theme.of(context).colorScheme.yellowAccent
+                  : Theme.of(context).colorScheme.lightPurpleAccent),
               padding: MaterialStateProperty.all(EdgeInsets.all(18)),
             ),
             onPressed: onPressed,
