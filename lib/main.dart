@@ -72,7 +72,8 @@ class MyApp extends StatelessWidget {
           child = Main(key: ValueKey(1), dataLoaded: snapshot.data);
         } else {
           child = Container(
-              key: ValueKey(0), height: 100, width: 100, color: Colors.blue);
+            key: ValueKey(0),
+          );
         }
         return AnimatedSwitcher(
             duration: Duration(milliseconds: 1000), child: child);
