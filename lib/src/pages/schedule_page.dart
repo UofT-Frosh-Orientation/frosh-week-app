@@ -65,12 +65,11 @@ ContainerEvent getNowEvent(data) {
   int dateTotalMinutes = date.minute + date.hour * 60;
   for (var event in data) {
     if (event[attributeDate] == days[initialDay]) {
-      print(event[attributeEventName]);
-      print(determineEventTime(event[attributeStartTime]));
-      print(dateTotalMinutes);
-      print(determineEventTime(event[attributeEndTime]));
-
-      print(event[attributeEventName]);
+      // print(event[attributeEventName]);
+      // print(determineEventTime(event[attributeStartTime]));
+      // print(dateTotalMinutes);
+      // print(determineEventTime(event[attributeEndTime]));
+      // print(event[attributeEventName]);
       if (determineEventTime(event[attributeStartTime]) <= dateTotalMinutes &&
           determineEventTime(event[attributeEndTime]) >= dateTotalMinutes) {
         return ContainerEvent(

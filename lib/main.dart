@@ -76,7 +76,7 @@ class MyApp extends StatelessWidget {
           );
         }
         return AnimatedSwitcher(
-            duration: Duration(milliseconds: 1000), child: child);
+            duration: Duration(milliseconds: 600), child: child);
       },
     );
   }
