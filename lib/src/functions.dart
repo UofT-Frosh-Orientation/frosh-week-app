@@ -1,4 +1,18 @@
-const welcomeMessages = ["Hello", "Hi", "How are you"];
+const welcomeMessages = [
+  "Hello",
+  "Hi",
+  "How are you?",
+  "Hi there",
+  "Hello there",
+  "Hi!",
+  "Hello!",
+  "Hello there!",
+  "Hi there!",
+  "What's up?",
+  "Welcome",
+  "Welcome!",
+  "Good day,",
+];
 
 const froshGroupSymbols = {
   'alpha': "α",

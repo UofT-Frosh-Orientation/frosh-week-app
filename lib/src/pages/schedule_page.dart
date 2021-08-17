@@ -53,8 +53,8 @@ const attributeDate = "Date";
 // }
 
 ContainerEvent getNowEvent(data) {
-  // DateTime date = DateTime.now();
-  DateTime date = DateTime.parse("1969-09-10 09:18:04Z");
+  DateTime date = DateTime.now();
+  // DateTime date = DateTime.parse("1969-09-10 09:18:04Z");
   String initialDay = "";
   for (var day in days.keys) {
     if (day == DateFormat('EEEE').format(date)) {

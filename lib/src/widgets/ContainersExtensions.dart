@@ -23,7 +23,15 @@ class ContainerEvent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (title == "") {
-      return Container();
+      return Center(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+          child: TextFont(
+            textAlign: TextAlign.center,
+            text: "There are no events right now.",
+          ),
+        ),
+      );
     }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
