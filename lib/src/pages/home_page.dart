@@ -1,21 +1,59 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:frosh_week_2t1/src/pages/profile_page.dart';
 import '../widgets/TextWidgets.dart';
 import 'package:flutter/cupertino.dart';
 import "../functions.dart";
 import "../widgets/ContainersExtensions.dart";
+import "package:flutter_secure_storage/flutter_secure_storage.dart" as fss;
 
-class HomePage extends StatelessWidget {
+
+const froshGroupSymbols = {
+  'phi': "φ",
+  'iota': "ι",
+  'rho': "ρ",
+  'psi': "ψ",
+  'gamma': "γ",
+  'zeta': "ζ",
+  'omega': "ω",
+  'upsilon': "ε",
+  'beta': "β",
+  'chi': "χ",
+  'ni': "ν",
+  'sigma': "σ",
+  'kappa': "κ",
+  'omicron': "ο",
+  'delta': "δ",
+  'pi': "π",
+  'alpha': "α",
+  'tau': "τ",
+  'lambda': "λ",
+  'theta': "θ"
+};
+
+class HomePage extends StatefulWidget {
   final String froshName;
-  final String discipline;
   final String froshGroup;
+  final String froshId;
+  final String discipline;
+  final String shirtSize;
 
   const HomePage({
     Key? key,
     required this.froshName,
-    required this.discipline,
     required this.froshGroup,
+    required this.froshId,
+    required this.discipline,
+    required this.shirtSize
   }) : super(key: key);
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -39,21 +77,23 @@ class HomePage extends StatelessWidget {
               Navigator.of(context).push(
                   MaterialPageRoute<void>(builder: (BuildContext context) {
                 return ProfilePage(
-                  froshName: froshName,
-                  discipline: discipline,
+                  froshName: widget.froshName,
                   froshGroup:
-                      (froshGroupSymbols[froshGroup.toLowerCase()] ?? "") +
+                      (froshGroupSymbols[widget.froshGroup.toLowerCase()] ?? "") +
                           " " +
-                          froshGroup.capitalizeFirst,
+                          widget.froshGroup.capitalizeFirst,
+                  froshId: widget.froshId,
+                  discipline: widget.discipline,
+                  shirtSize: widget.shirtSize,
                 );
               }));
             },
             child: ContainerFrosh(
-              froshName: froshName,
-              froshGroup: (froshGroupSymbols[froshGroup.toLowerCase()] ?? "") +
+              froshName: widget.froshName,
+              froshGroup: (froshGroupSymbols[widget.froshGroup.toLowerCase()] ?? "") +
                   " " +
-                  froshGroup.capitalizeFirst,
-              discipline: discipline,
+                  widget.froshGroup.capitalizeFirst,
+              discipline: widget.discipline,
             ),
           ),
           Container(height: 20),

@@ -35,6 +35,13 @@ dependencies:
   intl: ^0.17.0
   animations: ^2.0.1
   url_launcher: ^6.0.9
+  shared_preferences: ^2.0.3
+  dio: ^4.0.0
+  flutter_secure_storage: ^4.2.1
+  firebase_messaging: ^10.0.4
+
+
+
 
 dev_dependencies:
   flutter_test:
