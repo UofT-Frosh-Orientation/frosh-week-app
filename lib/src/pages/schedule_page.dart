@@ -24,31 +24,31 @@ const attributeEndTime = "End time";
 const attributeColor = "Colour";
 const attributeRoom = "Location";
 
-class SchedulePageParse extends StatelessWidget {
-  final String froshGroup;
-  const SchedulePageParse({Key? key, required this.froshGroup})
-      : super(key: key);
+// class SchedulePageParse extends StatelessWidget {
+//   final String froshGroup;
+//   const SchedulePageParse({Key? key, required this.froshGroup})
+//       : super(key: key);
 
-  Future<String> parseData(context) async {
-    return await DefaultAssetBundle.of(context)
-        .loadString('assets/data/schedule.json');
-  }
+//   Future<dynamic> parseData(context) async {
+//     return await DefaultAssetBundle.of(context)
+//         .loadString('assets/data/schedule.json');
+//   }
 
-  @override
-  Widget build(BuildContext context) {
-    return FutureBuilder<String>(
-      future: parseData(context),
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          var data = json.decode(snapshot.data ?? "");
-          return SchedulePage(data: data[this.froshGroup]);
-        } else {
-          return Container();
-        }
-      },
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return FutureBuilder<dynamic>(
+//       future: parseData(context),
+//       builder: (context, snapshot) {
+//         if (snapshot.hasData) {
+//           var data = json.decode(snapshot.data ?? "");
+//           return SchedulePage(data: data[this.froshGroup]);
+//         } else {
+//           return Container();
+//         }
+//       },
+//     );
+//   }
+// }
 
 class SchedulePage extends StatelessWidget {
   final dynamic data;

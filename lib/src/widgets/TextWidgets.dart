@@ -57,7 +57,9 @@ class MainHeader extends StatelessWidget {
     }
 
     return Padding(
-        padding: EdgeInsets.only(top: topSpace ? 130 : 10, bottom: 10),
+        padding: EdgeInsets.only(
+            top: topSpace ? MediaQuery.of(context).size.height * 0.2 : 10,
+            bottom: 10),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,

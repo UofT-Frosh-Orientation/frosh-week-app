@@ -19,6 +19,7 @@ class LoginPage extends StatelessWidget {
         child: SingleChildScrollView(
             child: Column(
       children: [
+        Container(height: 70),
         MainHeader(
           text: 'F!rosh Week',
           textSmaller: "2T1",

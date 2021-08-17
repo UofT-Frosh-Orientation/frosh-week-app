@@ -10,6 +10,7 @@ import 'src/colors.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:animations/animations.dart';
+import 'dart:convert';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -48,7 +49,37 @@ class _AppState extends State<App> {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  Future<dynamic> loadData(context) async {
+    dynamic scheduleJSON = await DefaultAssetBundle.of(context)
+        .loadString('assets/data/schedule.json');
+    dynamic loadedData = {"scheduleJSON": json.decode(scheduleJSON ?? "")};
+    print(loadedData);
+    return loadedData;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<dynamic>(
+      future: loadData(context),
+      builder: (context, snapshot) {
+        Widget child;
+        if (snapshot.hasData) {
+          child = Main(key: ValueKey(1), dataLoaded: snapshot.data);
+        } else {
+          child = Container(
+              key: ValueKey(0), height: 100, width: 100, color: Colors.blue);
+        }
+        return AnimatedSwitcher(
+            duration: Duration(milliseconds: 1000), child: child);
+      },
+    );
+  }
+}
+
+class Main extends StatelessWidget {
+  final dynamic dataLoaded;
+  const Main({Key? key, required this.dataLoaded}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     // SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
@@ -90,7 +121,7 @@ class MyApp extends StatelessWidget {
             froshName: "Calum",
             discipline: "Engineering Science",
             froshGroup: "lambda"),
-        SchedulePageParse(froshGroup: "lambda"),
+        SchedulePage(data: dataLoaded["scheduleJSON"]["lambda"]),
         NotificationsPageParse(),
         ResourcesPageParse(),
         LoginPage(),
@@ -161,7 +192,7 @@ class FrameworkState extends State<Framework> {
             buttonBackgroundColor:
                 Theme.of(context).colorScheme.lightPurpleAccent,
             color: Theme.of(context).colorScheme.lightPurpleAccent,
-            animationDuration: const Duration(milliseconds: 500),
+            animationDuration: const Duration(milliseconds: 300),
             backgroundColor: Colors.transparent,
             height: 60,
             items: <Widget>[
