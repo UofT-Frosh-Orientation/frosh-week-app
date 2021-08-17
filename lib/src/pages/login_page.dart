@@ -6,6 +6,7 @@ import '../widgets/TextWidgets.dart';
 import '../widgets/ButtonWidgets.dart';
 import '../widgets/TextInputWidgets.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:url_launcher/url_launcher.dart';
 import "../widgets/ContainersExtensions.dart";
 import "package:dio/dio.dart";
 
@@ -105,6 +106,15 @@ class _LoginPageState extends State<LoginPage> {
             onPressed: () async {
               await _login(email: email, password: password);
             }),
+        Container(height: 15),
+        ButtonRegular(
+          text: "Signup",
+          onPressed: () async {
+            var url = "https://www.orientation.skule.ca/registration";
+            if (await canLaunch(url)) await launch(url);
+          },
+          outline: true,
+        ),
         Container(height: 100)
       ],
     )));
