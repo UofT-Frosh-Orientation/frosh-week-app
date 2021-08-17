@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frosh_week_2t1/src/pages/profile_page.dart';
+import 'package:frosh_week_2t1/src/pages/schedule_page.dart';
 import '../widgets/TextWidgets.dart';
 import 'package:flutter/cupertino.dart';
 import "../functions.dart";
@@ -9,12 +10,16 @@ class HomePage extends StatelessWidget {
   final String froshName;
   final String discipline;
   final String froshGroup;
+  final String welcomeMessage;
+  final dynamic froshScheduleData;
 
   const HomePage({
     Key? key,
     required this.froshName,
     required this.discipline,
     required this.froshGroup,
+    required this.welcomeMessage,
+    required this.froshScheduleData,
   }) : super(key: key);
 
   @override
@@ -39,13 +44,13 @@ class HomePage extends StatelessWidget {
               Navigator.of(context).push(
                   MaterialPageRoute<void>(builder: (BuildContext context) {
                 return ProfilePage(
-                  froshName: froshName,
-                  discipline: discipline,
-                  froshGroup:
-                      (froshGroupSymbols[froshGroup.toLowerCase()] ?? "") +
-                          " " +
-                          froshGroup.capitalizeFirst,
-                );
+                    froshName: froshName,
+                    discipline: discipline,
+                    froshGroup:
+                        (froshGroupSymbols[froshGroup.toLowerCase()] ?? "") +
+                            " " +
+                            froshGroup.capitalizeFirst,
+                    welcomeMessage: welcomeMessage);
               }));
             },
             child: ContainerFrosh(
@@ -54,19 +59,12 @@ class HomePage extends StatelessWidget {
                   " " +
                   froshGroup.capitalizeFirst,
               discipline: discipline,
+              welcomeMessage: welcomeMessage,
             ),
           ),
           Container(height: 20),
-          Header(
-            text: "Happening Now",
-            padding: true,
-          ),
-          ContainerEvent(
-            title: "Lunch time",
-            description:
-                "Grab your snacks! It's lunch time. Food is provided so you don't need to worry. Head to the building to get your lunch bla bla bla bla bla",
-            time: "12:00 - 2:00",
-          ),
+
+          getNowEvent(froshScheduleData),
           Container(height: 100)
         ]),
       )

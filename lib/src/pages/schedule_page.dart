@@ -9,6 +9,7 @@ import '../colors.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/rendering.dart';
 import 'dart:math' as math;
+import "../widgets/ContainersExtensions.dart";
 
 const days = {
   "Monday": "9/6/2021",
@@ -23,6 +24,7 @@ const attributeStartTime = "Start time";
 const attributeEndTime = "End time";
 const attributeColor = "Colour";
 const attributeRoom = "Location";
+const attributeDate = "Date";
 
 // class SchedulePageParse extends StatelessWidget {
 //   final String froshGroup;
@@ -50,6 +52,44 @@ const attributeRoom = "Location";
 //   }
 // }
 
+ContainerEvent getNowEvent(data) {
+  // DateTime date = DateTime.now();
+  DateTime date = DateTime.parse("1969-09-10 09:18:04Z");
+  String initialDay = "";
+  for (var day in days.keys) {
+    if (day == DateFormat('EEEE').format(date)) {
+      initialDay = day;
+      break;
+    }
+  }
+  int dateTotalMinutes = date.minute + date.hour * 60;
+  for (var event in data) {
+    if (event[attributeDate] == days[initialDay]) {
+      print(event[attributeEventName]);
+      print(determineEventTime(event[attributeStartTime]));
+      print(dateTotalMinutes);
+      print(determineEventTime(event[attributeEndTime]));
+
+      print(event[attributeEventName]);
+      if (determineEventTime(event[attributeStartTime]) <= dateTotalMinutes &&
+          determineEventTime(event[attributeEndTime]) >= dateTotalMinutes) {
+        return ContainerEvent(
+            title: event[attributeEventName],
+            time: event[attributeStartTime] != null &&
+                    event[attributeEndTime] != null
+                ? determineEventTimeString(
+                    event[attributeStartTime], event[attributeEndTime])
+                : "",
+            description: event[attributeEventDescription],
+            room: event[attributeRoom],
+            color: event[attributeColor]);
+      }
+    }
+  }
+  return ContainerEvent(
+      title: "", time: "", description: "", room: "", color: "");
+}
+
 class SchedulePage extends StatelessWidget {
   final dynamic data;
 
@@ -61,10 +101,10 @@ class SchedulePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     DateTime date = DateTime.now();
-    int initialIndex = 0;
-    for (int i = 0; i < days.length; i++) {
-      if (days[i] == DateFormat('EEEE').format(date)) {
-        initialIndex = i;
+    int initialIndex = -1;
+    for (var day in days.keys) {
+      initialIndex++;
+      if (day == DateFormat('EEEE').format(date)) {
         break;
       }
     }
@@ -114,7 +154,7 @@ List<ScheduleList> generateScheduleLists(data, days) {
   for (var day in days.keys) {
     var currentDayData = [];
     for (var event in data) {
-      if (event["Date"] == days[day]) {
+      if (event[attributeDate] == days[day]) {
         currentDayData.add(event);
       }
     }
@@ -186,6 +226,13 @@ determineEventTimeString(String startTime, String endTime) {
       ":" +
       endTime.split(":")[1] +
       meridiumEnd;
+}
+
+int determineEventTime(String? time) {
+  if (time == null) return 0;
+  var hoursMinutes = int.parse(time.split(":")[0]) * 60;
+  var minutes = int.parse(time.split(":")[1]);
+  return hoursMinutes + minutes;
 }
 
 class ScheduleList extends StatefulWidget {

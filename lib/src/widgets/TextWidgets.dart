@@ -119,7 +119,7 @@ class Header extends StatelessWidget {
 }
 
 class TextFont extends StatelessWidget {
-  final String text;
+  final String? text;
   final double fontSize;
   final FontWeight fontWeight;
   final bool customTextColor;
@@ -143,6 +143,9 @@ class TextFont extends StatelessWidget {
       finalTextColor = Theme.of(context).colorScheme.black;
     } else {
       finalTextColor = textColor;
+    }
+    if (text == null) {
+      return Container();
     }
     return Text(
       '$text',

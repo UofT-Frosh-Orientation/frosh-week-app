@@ -11,6 +11,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:animations/animations.dart';
 import 'dart:convert';
+import 'dart:math';
+import '../src/functions.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -50,10 +52,13 @@ class _AppState extends State<App> {
 
 class MyApp extends StatelessWidget {
   Future<dynamic> loadData(context) async {
+    Random random = new Random();
     dynamic scheduleJSON = await DefaultAssetBundle.of(context)
         .loadString('assets/data/schedule.json');
-    dynamic loadedData = {"scheduleJSON": json.decode(scheduleJSON ?? "")};
-    print(loadedData);
+    dynamic loadedData = {
+      "scheduleJSON": json.decode(scheduleJSON ?? ""),
+      "welcomeMessage": welcomeMessages[random.nextInt(welcomeMessages.length)],
+    };
     return loadedData;
   }
 
@@ -118,9 +123,12 @@ class Main extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Framework(pages: [
         HomePage(
-            froshName: "Calum",
-            discipline: "Engineering Science",
-            froshGroup: "lambda"),
+          froshName: "Calum",
+          discipline: "Engineering Science",
+          froshGroup: "lambda",
+          froshScheduleData: dataLoaded["scheduleJSON"]["lambda"],
+          welcomeMessage: dataLoaded["welcomeMessage"],
+        ),
         SchedulePage(data: dataLoaded["scheduleJSON"]["lambda"]),
         NotificationsPageParse(),
         ResourcesPageParse(),

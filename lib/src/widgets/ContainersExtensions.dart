@@ -2,66 +2,78 @@ import 'package:flutter/material.dart';
 import '../colors.dart';
 import "../widgets/Containers.dart";
 import '../widgets/TextWidgets.dart';
+import 'package:frosh_week_2t1/src/pages/schedule_page.dart';
 
 class ContainerEvent extends StatelessWidget {
   final String title;
   final String time;
   final String description;
+  final String? room;
+  final String color;
 
   const ContainerEvent({
     Key? key,
     required this.title,
     required this.time,
     required this.description,
+    this.room,
+    required this.color,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Box(
-        fancy: true,
-        colors: [Color(0xD7FFED47), Color(0xCBF58B34), Color(0xB7F1DE32)],
-        widget: Column(
-          children: [
-            Row(
+    if (title == "") {
+      return Container();
+    }
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Header(
+          text: "Happening Now",
+          padding: true,
+        ),
+        Box(
+            fancy: true,
+            colors: determineEventColorFromColor(color),
+            widget: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Flexible(
-                  flex: 2,
-                  child: TextFont(
-                    text: title,
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    customTextColor: true,
-                    textColor: Colors.white,
-                  ),
+                TextFont(
+                  text: title,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  customTextColor: true,
+                  textColor: Colors.white,
                 ),
-                Flexible(
-                  flex: 1,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      TextFont(
+                Container(height: 3),
+                time != ""
+                    ? TextFont(
                         text: time,
-                        fontSize: 16,
+                        fontSize: 17,
                         textAlign: TextAlign.right,
                         customTextColor: true,
                         textColor: Colors.white,
-                      ),
-                    ],
-                  ),
-                )
+                      )
+                    : Container(),
+                room != null
+                    ? TextFont(
+                        text: room,
+                        fontSize: 17,
+                        customTextColor: true,
+                        textColor: Colors.white,
+                      )
+                    : Container(),
+                Container(height: 5),
+                TextFont(
+                  text: description,
+                  fontSize: 15,
+                  customTextColor: true,
+                  textColor: Colors.white,
+                ),
               ],
-            ),
-            TextFont(
-              text: description,
-              fontSize: 16,
-              customTextColor: true,
-              textColor: Colors.white,
-            ),
-          ],
-        ));
+            )),
+      ],
+    );
   }
 }
 
@@ -69,12 +81,14 @@ class ContainerFrosh extends StatelessWidget {
   final String froshName;
   final String discipline;
   final String froshGroup;
+  final String welcomeMessage;
 
   const ContainerFrosh({
     Key? key,
     required this.froshName,
     required this.discipline,
     required this.froshGroup,
+    required this.welcomeMessage,
   }) : super(key: key);
 
   @override
@@ -91,7 +105,7 @@ class ContainerFrosh extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 TextFont(
-                  text: "Hello",
+                  text: welcomeMessage,
                   fontSize: 27,
                   customTextColor: true,
                   textColor: Colors.white,
