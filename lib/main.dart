@@ -9,6 +9,7 @@ import 'package:frosh_week_2t1/src/pages/login_page.dart';
 import 'src/pages/home_page.dart';
 import 'src/pages/notifications_page.dart';
 import 'src/pages/resources_page.dart';
+import 'src/pages/leaders_page.dart';
 import 'src/colors.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -298,6 +299,8 @@ class FrameworkState extends State<Framework> {
 
   @override
   Widget build(BuildContext context) {
+    bool leaderAccount = true;
+
     List<Widget> pages = [
       HomePage(
         froshName: froshName,
@@ -312,6 +315,40 @@ class FrameworkState extends State<Framework> {
       NotificationsPageParse(),
       ResourcesPageParse(),
     ];
+    List<Widget> icons = [
+      Icon(
+        Icons.home,
+        size: 30,
+        color: Colors.white,
+      ),
+      Icon(
+        Icons.event,
+        size: 30,
+        color: Colors.white,
+      ),
+      Icon(
+        Icons.notifications,
+        size: 30,
+        color: Colors.white,
+      ),
+      Icon(
+        Icons.book,
+        size: 30,
+        color: Colors.white,
+      ),
+    ];
+
+    if (leaderAccount) {
+      pages.add(LeadersPage());
+      icons.add(
+        Icon(
+          Icons.people,
+          size: 30,
+          color: Colors.white,
+        ),
+      );
+    }
+
     if (!_loggedIn) {
       return Scaffold(
           body: LoginPage(
@@ -360,28 +397,7 @@ class FrameworkState extends State<Framework> {
               animationDuration: const Duration(milliseconds: 500),
               backgroundColor: Colors.transparent,
               height: 60,
-              items: <Widget>[
-                Icon(
-                  Icons.home,
-                  size: 30,
-                  color: Colors.white,
-                ),
-                Icon(
-                  Icons.event,
-                  size: 30,
-                  color: Colors.white,
-                ),
-                Icon(
-                  Icons.notifications,
-                  size: 30,
-                  color: Colors.white,
-                ),
-                Icon(
-                  Icons.book,
-                  size: 30,
-                  color: Colors.white,
-                ),
-              ],
+              items: icons,
               onTap: (index) {
                 setState(() {
                   selectedIndex = index;
