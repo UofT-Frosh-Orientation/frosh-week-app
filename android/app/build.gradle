@@ -42,7 +42,7 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.orientation.frosh_week_2t1"
-        minSdkVersion 18 // Needs to be 18 for secure storage
+        minSdkVersion 20 // Needs to be 20 for qr scanner
         targetSdkVersion 30
         multiDexEnabled true
         versionCode flutterVersionCode.toInteger()
