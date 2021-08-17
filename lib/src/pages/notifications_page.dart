@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:frosh_week_2t1/src/pages/profile_page.dart';
 import 'package:frosh_week_2t1/src/widgets/Containers.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../widgets/TextWidgets.dart';
 import 'package:flutter/cupertino.dart';
-import "../widgets/ContainersExtensions.dart";
+import 'dart:convert';
 
 class Notification {
   Notification(
@@ -17,19 +17,45 @@ class Notification {
   String time;
 }
 
-class NotificationsPageParse extends StatelessWidget {
+class NotificationsPageParse extends StatefulWidget {
+
+
+  const NotificationsPageParse({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  _NotificationsPageParseState createState() => _NotificationsPageParseState();
+}
+
+class _NotificationsPageParseState extends State<NotificationsPageParse> {
+  List<Notification> notifications = [];
+
+  Future<void> getNotifications() async {
+    // print("Getting notifications");
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    List<String>? rawNotifications = preferences.getStringList('notifications');
+    if (rawNotifications == null){
+      return;
+    }
+    List<Notification> parsedNotifications = rawNotifications.map((notif){
+      Map<String, dynamic> parsed = jsonDecode(notif);
+      return Notification(title: parsed["title"], description: parsed["description"], time: parsed["time"]);
+    }).toList();
+    setState(() {
+      notifications = parsedNotifications;
+    });
+  }
+
+  @override
+  initState(){
+    super.initState();
+    getNotifications();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return NotificationsPage(notifications: [
-      Notification(
-          title: "Matriculation",
-          description: "Please go to SF1105",
-          time: "11:00 AM"),
-      Notification(
-          title: "Another one",
-          description: "Please go to bla bla bla",
-          time: "1:00 PM")
-    ]);
+    return NotificationsPage(notifications: notifications);
   }
 }
 
@@ -45,7 +71,7 @@ class NotificationsPage extends StatelessWidget {
     return Scaffold(
         body: RefreshIndicator(
       onRefresh: () => Future.delayed(Duration(seconds: 2), () {
-        print("refresh notifications");
+        // print("refresh notifications");
       }),
       child: CustomScrollView(
           physics:

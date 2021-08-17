@@ -44,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
     );
     if (res1.headers["location"]![0] == "/login_success"){
       Headers headers = res1.headers;
-      print(headers);
+      // print(headers);
       String cookie = headers["set-cookie"]![0].substring(0, headers["set-cookie"]![0].indexOf(';'));
       // Response res2 = await widget.dio.get(
       //     'https://www.orientation.skule.ca/users/current',
@@ -58,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
       // widget.setLoggedIn(true);
       await widget.storage.write(key: "cookie", value: cookie);
       prefs.setBool('isLoggedIn', true);
-      print("Im here");
+      // print("Im here");
       widget.setLoggedIn(true);
       return;
     }

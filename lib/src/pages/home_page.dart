@@ -96,17 +96,18 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Container(height: 20),
-          Header(
-            text: "Happening Now",
-            padding: true,
-          ),
-          ContainerEvent(
-            title: "Lunch time",
-            description:
-                "Grab your snacks! It's lunch time. Food is provided so you don't need to worry. Head to the building to get your lunch bla bla bla bla bla",
-            time: "12:00 - 2:00",
-          ),
-          Container(height: 100)
+          // Commented out for now because we needed to show a live event for app store approval
+          // Header(
+          //   text: "Happening Now",
+          //   padding: true,
+          // ),
+          // ContainerEvent(
+          //   title: "Lunch time",
+          //   description:
+          //       "Grab your snacks! It's lunch time. Food is provided so you don't need to worry. Head to the building to get your lunch bla bla bla bla bla",
+          //   time: "12:00 - 2:00",
+          // ),
+          // Container(height: 100)
         ]),
       )
     ]));
