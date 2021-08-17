@@ -54,23 +54,57 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: _initialization,
-      builder: (context, snapshot) {
-        if (snapshot.hasError) {
-          //TODO: add an error page
-          print("There was an error");
-          return MyApp(preferences: widget.preferences, dio: widget.dio, storage: widget.storage);
-        }
+    return MaterialApp(
+      title: 'F!rosh Week',
+      theme: ThemeData(
+        fontFamily: 'Avenir',
+        buttonColor: Theme.of(context).colorScheme.lightPurpleAccent,
+        primaryColor: Colors.white,
+        accentColor: Theme.of(context).colorScheme.lightPurpleAccent,
+        primaryColorDark: Colors.grey[200],
+        primaryColorLight: Colors.grey[100],
+        primaryColorBrightness: Brightness.light,
+        brightness: Brightness.light,
+        canvasColor: Colors.grey[100],
+        appBarTheme: AppBarTheme(brightness: Brightness.light),
+        cupertinoOverrideTheme:
+        const CupertinoThemeData(brightness: Brightness.light),
+      ),
+      darkTheme: ThemeData(
+          fontFamily: 'Avenir',
+          buttonColor: Theme.of(context).colorScheme.lightPurpleAccent,
+          primaryColor: Colors.black,
+          accentColor: Theme.of(context).colorScheme.lightPurpleAccent,
+          primaryColorDark: Colors.grey[800],
+          primaryColorBrightness: Brightness.dark,
+          primaryColorLight: Colors.grey[850],
+          brightness: Brightness.dark,
+          indicatorColor: Colors.white,
+          canvasColor: Colors.black,
+          appBarTheme: AppBarTheme(brightness: Brightness.dark),
+          cupertinoOverrideTheme: const CupertinoThemeData(
+              brightness: Brightness.dark,
+              textTheme: CupertinoTextThemeData(primaryColor: Colors.white))),
+      themeMode: ThemeMode.system,
+      debugShowCheckedModeBanner: false,
+      home: FutureBuilder(
+        future: _initialization,
+        builder: (context, snapshot) {
+          if (snapshot.hasError) {
+            //TODO: add an error page
+            print("There was an error");
+            return MyApp(preferences: widget.preferences, dio: widget.dio, storage: widget.storage);
+          }
 
-        if (snapshot.connectionState == ConnectionState.done) {
-          print("Connected");
-          return MyApp(preferences: widget.preferences, dio: widget.dio, storage: widget.storage);
-        }
+          if (snapshot.connectionState == ConnectionState.done) {
+            print("Connected");
+            return MyApp(preferences: widget.preferences, dio: widget.dio, storage: widget.storage);
+          }
 
-        //TODO: add a loading page
-        return LoadingPage();
-      },
+          //TODO: add a loading page
+          return LoadingPage();
+        },
+      ),
     );
   }
 }
@@ -123,6 +157,23 @@ class _MyAppState extends State<MyApp> {
     FirebaseMessaging.onMessage.listen((RemoteMessage event){
       print("Message received");
       print(event.notification!.body);
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text("Notification"),
+            content: Text(event.notification!.body!),
+            actions: [
+              TextButton(
+                child: Text("OK"),
+                onPressed: (){
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          );
+        }
+      );
     });
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
       print("Message clicked");
