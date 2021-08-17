@@ -56,6 +56,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    print(widget.froshName);
     return Scaffold(
         body: CustomScrollView(physics: BouncingScrollPhysics(), slivers: [
       // CupertinoSliverNavigationBar(

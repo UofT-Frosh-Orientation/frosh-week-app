@@ -20,8 +20,6 @@ import "package:intl/intl.dart";
 
 Future<void> _messageHandler(RemoteMessage message) async {
   final DateFormat dateFormat = DateFormat('H:mm a EEEE');
-  // print('background message ${message.notification!.body}');
-  // print('Time: ${message.sentTime}');
   SharedPreferences preferences = await SharedPreferences.getInstance();
   late List<Map<String, dynamic>> notifications;
   List<String> rawNotifications = preferences.getStringList("notifications") ?? [];
@@ -159,8 +157,6 @@ class _MyAppState extends State<MyApp> {
     // });
     FirebaseMessaging.onMessage.listen((RemoteMessage event){
       _messageHandler(event);
-      // print("Message received");
-      // print(event.notification!.body);
       showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -180,7 +176,6 @@ class _MyAppState extends State<MyApp> {
       );
     });
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-      // print("Message clicked");
       return;
     });
   }
@@ -241,8 +236,11 @@ class FrameworkState extends State<Framework> {
           options: Options(
               headers: {"cookie": cookie}
           )
-      );
-      // print(res.data);
+      ).catchError((error){
+        setState(() {
+          _loggedIn = false;
+        });
+      });
       setState(() {
         froshName = res.data["preferredName"];
         froshGroup = res.data["froshGroup"];
