@@ -1,6 +1,6 @@
+import 'dart:convert';
 import 'dart:io';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'src/pages/loading_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
@@ -16,6 +16,25 @@ import 'package:animations/animations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as fss;
+import "package:intl/intl.dart";
+
+Future<void> _messageHandler(RemoteMessage message) async {
+  final DateFormat dateFormat = DateFormat('H:mm a EEEE');
+  SharedPreferences preferences = await SharedPreferences.getInstance();
+  late List<Map<String, dynamic>> notifications;
+  List<String> rawNotifications = preferences.getStringList("notifications") ?? [];
+  notifications = rawNotifications.map((notification){
+    return jsonDecode(notification) as Map<String, dynamic>;
+  }).toList();
+  notifications.add({
+    "title": message.notification!.title,
+    "description": message.notification!.body,
+    "time": dateFormat.format(message.sentTime!)
+  });
+  await preferences.setStringList("notifications", notifications.map((element){
+    return jsonEncode(element);
+  }).toList());
+}
 
 Future<bool> hasNetwork() async {
   try {
@@ -30,11 +49,13 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences preferences = await SharedPreferences.getInstance();
   final fss.FlutterSecureStorage storage = new fss.FlutterSecureStorage();
+  await Firebase.initializeApp();
+  FirebaseMessaging.onBackgroundMessage(_messageHandler);
   Dio dio = Dio();
   runApp(App(preferences: preferences, dio: dio, storage: storage,));
 }
 
-class App extends StatefulWidget {
+class App extends StatelessWidget {
   final SharedPreferences preferences;
   final Dio dio;
   final fss.FlutterSecureStorage storage;
@@ -44,13 +65,6 @@ class App extends StatefulWidget {
     required this.dio,
     required this.storage
   }) : super(key: key);
-
-  @override
-  _AppState createState() => _AppState();
-}
-
-class _AppState extends State<App> {
-  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
 
   @override
   Widget build(BuildContext context) {
@@ -87,24 +101,11 @@ class _AppState extends State<App> {
               textTheme: CupertinoTextThemeData(primaryColor: Colors.white))),
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: FutureBuilder(
-        future: _initialization,
-        builder: (context, snapshot) {
-          if (snapshot.hasError) {
-            //TODO: add an error page
-            print("There was an error");
-            return MyApp(preferences: widget.preferences, dio: widget.dio, storage: widget.storage);
-          }
-
-          if (snapshot.connectionState == ConnectionState.done) {
-            print("Connected");
-            return MyApp(preferences: widget.preferences, dio: widget.dio, storage: widget.storage);
-          }
-
-          //TODO: add a loading page
-          return LoadingPage();
-        },
-      ),
+      home: MyApp(
+        preferences: preferences,
+        dio: dio,
+        storage: storage,
+      )
     );
   }
 }
@@ -151,12 +152,11 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     messaging = FirebaseMessaging.instance;
     getNotificationSettings(messaging);
-    messaging.getToken().then((value){
-      print("Token: $value");
-    });
+    // messaging.getToken().then((value){
+    //   // print("Token: $value");
+    // });
     FirebaseMessaging.onMessage.listen((RemoteMessage event){
-      print("Message received");
-      print(event.notification!.body);
+      _messageHandler(event);
       showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -176,64 +176,28 @@ class _MyAppState extends State<MyApp> {
       );
     });
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-      print("Message clicked");
+      return;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    // SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
-    return MaterialApp(
-      title: 'F!rosh Week',
-      theme: ThemeData(
-        fontFamily: 'Avenir',
-        buttonColor: Theme.of(context).colorScheme.lightPurpleAccent,
-        primaryColor: Colors.white,
-        accentColor: Theme.of(context).colorScheme.lightPurpleAccent,
-        primaryColorDark: Colors.grey[200],
-        primaryColorLight: Colors.grey[100],
-        primaryColorBrightness: Brightness.light,
-        brightness: Brightness.light,
-        canvasColor: Colors.grey[100],
-        appBarTheme: AppBarTheme(brightness: Brightness.light),
-        cupertinoOverrideTheme:
-            const CupertinoThemeData(brightness: Brightness.light),
-      ),
-      darkTheme: ThemeData(
-          fontFamily: 'Avenir',
-          buttonColor: Theme.of(context).colorScheme.lightPurpleAccent,
-          primaryColor: Colors.black,
-          accentColor: Theme.of(context).colorScheme.lightPurpleAccent,
-          primaryColorDark: Colors.grey[800],
-          primaryColorBrightness: Brightness.dark,
-          primaryColorLight: Colors.grey[850],
-          brightness: Brightness.dark,
-          indicatorColor: Colors.white,
-          canvasColor: Colors.black,
-          appBarTheme: AppBarTheme(brightness: Brightness.dark),
-          cupertinoOverrideTheme: const CupertinoThemeData(
-              brightness: Brightness.dark,
-              textTheme: CupertinoTextThemeData(primaryColor: Colors.white))),
-      themeMode: ThemeMode.system,
-      debugShowCheckedModeBanner: false,
-      home: Framework(
+    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
+    return Framework(
         isLoggedIn: widget.preferences.getBool('isLoggedIn') ?? false,
         dio: widget.dio,
         storage: widget.storage
-      ),
     );
   }
 }
 
 class Framework extends StatefulWidget {
-  // final List<Widget> pages;
   final bool isLoggedIn;
   final Dio dio;
   final fss.FlutterSecureStorage storage;
 
   const Framework({
     Key? key,
-    // required this.pages,
     required this.isLoggedIn,
     required this.dio,
     required this.storage,
@@ -272,8 +236,11 @@ class FrameworkState extends State<Framework> {
           options: Options(
               headers: {"cookie": cookie}
           )
-      );
-      // print(res.data);
+      ).catchError((error){
+        setState(() {
+          _loggedIn = false;
+        });
+      });
       setState(() {
         froshName = res.data["preferredName"];
         froshGroup = res.data["froshGroup"];
