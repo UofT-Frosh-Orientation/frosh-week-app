@@ -108,7 +108,6 @@ class LoginPageState extends State<LoginPage> {
             child: TextFont(
               key: ValueKey<String>(error),
               text: error,
-              customTextColor: true,
               textColor: Theme.of(context).colorScheme.redAccent,
             ),
           ),

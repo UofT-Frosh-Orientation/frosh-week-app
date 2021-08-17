@@ -50,7 +50,6 @@ class ContainerEvent extends StatelessWidget {
                   text: title,
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
-                  customTextColor: true,
                   textColor: Colors.white,
                 ),
                 Container(height: 3),
@@ -59,7 +58,6 @@ class ContainerEvent extends StatelessWidget {
                         text: time,
                         fontSize: 17,
                         textAlign: TextAlign.right,
-                        customTextColor: true,
                         textColor: Colors.white,
                       )
                     : Container(),
@@ -67,7 +65,6 @@ class ContainerEvent extends StatelessWidget {
                     ? TextFont(
                         text: room,
                         fontSize: 17,
-                        customTextColor: true,
                         textColor: Colors.white,
                       )
                     : Container(),
@@ -75,7 +72,6 @@ class ContainerEvent extends StatelessWidget {
                 TextFont(
                   text: description,
                   fontSize: 15,
-                  customTextColor: true,
                   textColor: Colors.white,
                 ),
               ],
@@ -115,12 +111,10 @@ class ContainerFrosh extends StatelessWidget {
                 TextFont(
                   text: welcomeMessage,
                   fontSize: 27,
-                  customTextColor: true,
                   textColor: Colors.white,
                 ),
                 TextFont(
                   text: "$froshGroup",
-                  customTextColor: true,
                   textColor: Colors.white,
                   textAlign: TextAlign.right,
                 ),
@@ -133,7 +127,6 @@ class ContainerFrosh extends StatelessWidget {
                   text: "$froshName",
                   fontSize: 37,
                   fontWeight: FontWeight.bold,
-                  customTextColor: true,
                   textColor: Colors.white,
                 ),
               ],
@@ -141,7 +134,6 @@ class ContainerFrosh extends StatelessWidget {
             TextFont(
               text: "$discipline",
               fontSize: 15,
-              customTextColor: true,
               textColor: Colors.white,
             ),
           ],

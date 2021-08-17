@@ -16,7 +16,7 @@ import '../src/functions.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(MyApp());
+  runApp(App());
 }
 
 class App extends StatefulWidget {

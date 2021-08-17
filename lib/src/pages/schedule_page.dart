@@ -210,18 +210,22 @@ determineEventTimeString(String startTime, String endTime) {
   var startHour = int.tryParse(startTime.split(":")[0]) ?? 0;
   if (startHour <= 12) {
     meridiumStart = " AM";
+  } else {
+    startHour = startHour - 12;
   }
   var meridiumEnd = " PM";
   var endHour = int.tryParse(endTime.split(":")[0]) ?? 0;
   if (endHour <= 12) {
     meridiumEnd = " AM";
+  } else {
+    endHour = endHour - 12;
   }
-  return startTime.split(":")[0] +
+  return startHour.toString() +
       ":" +
       startTime.split(":")[1] +
       meridiumStart +
       " - " +
-      endTime.split(":")[0] +
+      endHour.toString() +
       ":" +
       endTime.split(":")[1] +
       meridiumEnd;

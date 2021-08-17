@@ -141,7 +141,6 @@ class ResourceBox extends StatelessWidget {
             TextFont(
               text: resource.contact,
               fontSize: 20,
-              customTextColor: true,
               textColor: Theme.of(context).colorScheme.purpleText,
             ),
             Container(height: 2),
