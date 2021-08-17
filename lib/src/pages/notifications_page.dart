@@ -18,8 +18,6 @@ class Notification {
 }
 
 class NotificationsPageParse extends StatefulWidget {
-
-
   const NotificationsPageParse({
     Key? key,
   }) : super(key: key);
@@ -35,12 +33,15 @@ class _NotificationsPageParseState extends State<NotificationsPageParse> {
     // print("Getting notifications");
     SharedPreferences preferences = await SharedPreferences.getInstance();
     List<String>? rawNotifications = preferences.getStringList('notifications');
-    if (rawNotifications == null){
+    if (rawNotifications == null) {
       return;
     }
-    List<Notification> parsedNotifications = rawNotifications.map((notif){
+    List<Notification> parsedNotifications = rawNotifications.map((notif) {
       Map<String, dynamic> parsed = jsonDecode(notif);
-      return Notification(title: parsed["title"], description: parsed["description"], time: parsed["time"]);
+      return Notification(
+          title: parsed["title"],
+          description: parsed["description"],
+          time: parsed["time"]);
     }).toList();
     setState(() {
       notifications = parsedNotifications;
@@ -48,7 +49,7 @@ class _NotificationsPageParseState extends State<NotificationsPageParse> {
   }
 
   @override
-  initState(){
+  initState() {
     super.initState();
     getNotifications();
   }
@@ -69,37 +70,29 @@ class NotificationsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: RefreshIndicator(
-      onRefresh: () => Future.delayed(Duration(seconds: 2), () {
-        // print("refresh notifications");
-      }),
-      child: CustomScrollView(
-          physics:
-              BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-          slivers: [
-            SliverList(
-                delegate: SliverChildListDelegate([
-              MainHeader(
-                text: 'Notifications',
-                textSmaller: "",
-                icon: false,
-              ),
-              notifications.length == 0
-                  ? Center(
-                      child: Padding(
-                      padding: const EdgeInsets.only(top: 70, bottom: 70),
-                      child: TextFont(text: "There are no notifications"),
-                    ))
-                  : Container()
-            ])),
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                  (context, index) =>
-                      NotificationBox(notification: notifications[index]),
-                  childCount: notifications.length),
-            )
-          ]),
-    ));
+        body: CustomScrollView(physics: BouncingScrollPhysics(), slivers: [
+      SliverList(
+          delegate: SliverChildListDelegate([
+        MainHeader(
+          text: 'Notifications',
+          textSmaller: "",
+          icon: false,
+        ),
+        notifications.length == 0
+            ? Center(
+                child: Padding(
+                padding: const EdgeInsets.only(top: 70, bottom: 70),
+                child: TextFont(text: "There are no notifications"),
+              ))
+            : Container()
+      ])),
+      SliverList(
+        delegate: SliverChildBuilderDelegate(
+            (context, index) =>
+                NotificationBox(notification: notifications[index]),
+            childCount: notifications.length),
+      )
+    ]));
   }
 }
 

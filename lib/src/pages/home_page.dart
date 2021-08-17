@@ -6,30 +6,7 @@ import 'package:flutter/cupertino.dart';
 import "../functions.dart";
 import "../widgets/ContainersExtensions.dart";
 import "package:flutter_secure_storage/flutter_secure_storage.dart" as fss;
-
-
-const froshGroupSymbols = {
-  'phi': "φ",
-  'iota': "ι",
-  'rho': "ρ",
-  'psi': "ψ",
-  'gamma': "γ",
-  'zeta': "ζ",
-  'omega': "ω",
-  'upsilon': "ε",
-  'beta': "β",
-  'chi': "χ",
-  'ni': "ν",
-  'sigma': "σ",
-  'kappa': "κ",
-  'omicron': "ο",
-  'delta': "δ",
-  'pi': "π",
-  'alpha': "α",
-  'tau': "τ",
-  'lambda': "λ",
-  'theta': "θ"
-};
+import 'package:frosh_week_2t1/src/pages/schedule_page.dart';
 
 class HomePage extends StatefulWidget {
   final String froshName;
@@ -37,24 +14,25 @@ class HomePage extends StatefulWidget {
   final String froshId;
   final String discipline;
   final String shirtSize;
+  final String welcomeMessage;
+  final dynamic froshScheduleData;
 
-  const HomePage({
-    Key? key,
-    required this.froshName,
-    required this.froshGroup,
-    required this.froshId,
-    required this.discipline,
-    required this.shirtSize
-  }) : super(key: key);
+  const HomePage(
+      {Key? key,
+      required this.froshName,
+      required this.froshGroup,
+      required this.froshId,
+      required this.discipline,
+      required this.shirtSize,
+      required this.welcomeMessage,
+      required this.froshScheduleData})
+      : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-
-
-
   @override
   Widget build(BuildContext context) {
     print(widget.froshName);
@@ -80,36 +58,30 @@ class _HomePageState extends State<HomePage> {
                 return ProfilePage(
                   froshName: widget.froshName,
                   froshGroup:
-                      (froshGroupSymbols[widget.froshGroup.toLowerCase()] ?? "") +
+                      (froshGroupSymbols[widget.froshGroup.toLowerCase()] ??
+                              "") +
                           " " +
                           widget.froshGroup.capitalizeFirst,
                   froshId: widget.froshId,
                   discipline: widget.discipline,
                   shirtSize: widget.shirtSize,
+                  welcomeMessage: widget.welcomeMessage,
                 );
               }));
             },
             child: ContainerFrosh(
               froshName: widget.froshName,
-              froshGroup: (froshGroupSymbols[widget.froshGroup.toLowerCase()] ?? "") +
-                  " " +
-                  widget.froshGroup.capitalizeFirst,
+              froshGroup:
+                  (froshGroupSymbols[widget.froshGroup.toLowerCase()] ?? "") +
+                      " " +
+                      widget.froshGroup.capitalizeFirst,
               discipline: widget.discipline,
+              welcomeMessage: widget.welcomeMessage,
             ),
           ),
           Container(height: 20),
-          // Commented out for now because we needed to show a live event for app store approval
-          // Header(
-          //   text: "Happening Now",
-          //   padding: true,
-          // ),
-          // ContainerEvent(
-          //   title: "Lunch time",
-          //   description:
-          //       "Grab your snacks! It's lunch time. Food is provided so you don't need to worry. Head to the building to get your lunch bla bla bla bla bla",
-          //   time: "12:00 - 2:00",
-          // ),
-          // Container(height: 100)
+          getNowEvent(widget.froshScheduleData),
+          Container(height: 100)
         ]),
       )
     ]));

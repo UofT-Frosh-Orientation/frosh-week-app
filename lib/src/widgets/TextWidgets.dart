@@ -57,7 +57,9 @@ class MainHeader extends StatelessWidget {
     }
 
     return Padding(
-        padding: EdgeInsets.only(top: topSpace ? 130 : 10, bottom: 10),
+        padding: EdgeInsets.only(
+            top: topSpace ? MediaQuery.of(context).size.height * 0.18 : 10,
+            bottom: 10),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -120,8 +122,7 @@ class TextFont extends StatelessWidget {
   final String text;
   final double fontSize;
   final FontWeight fontWeight;
-  final bool customTextColor;
-  final Color textColor;
+  final Color? textColor;
   final TextAlign textAlign;
 
   const TextFont(
@@ -129,15 +130,14 @@ class TextFont extends StatelessWidget {
       required this.text,
       this.fontSize = 20,
       this.fontWeight = FontWeight.normal,
-      this.customTextColor = false,
       this.textAlign = TextAlign.left,
-      this.textColor = Colors.white})
+      this.textColor})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     var finalTextColor;
-    if (!this.customTextColor) {
+    if (this.textColor == null) {
       finalTextColor = Theme.of(context).colorScheme.black;
     } else {
       finalTextColor = textColor;

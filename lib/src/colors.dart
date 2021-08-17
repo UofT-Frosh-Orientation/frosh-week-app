@@ -32,4 +32,10 @@ extension ColorsDefined on ColorScheme {
   Color get mainIconBackground => brightness == Brightness.light
       ? const Color(0xFFFFFFFF)
       : const Color(0xFFE7E7E7);
+  Color get yellowAccent => brightness == Brightness.light
+      ? const Color(0xFFF1BD2C)
+      : const Color(0xFFDBAF50);
+  Color get redAccent => brightness == Brightness.light
+      ? const Color(0xFFB42B22)
+      : const Color(0xFFF06E6E);
 }

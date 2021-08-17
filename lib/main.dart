@@ -17,13 +17,17 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as fss;
 import "package:intl/intl.dart";
+import 'dart:convert';
+import 'dart:math';
+import '../src/functions.dart';
 
 Future<void> _messageHandler(RemoteMessage message) async {
   final DateFormat dateFormat = DateFormat('H:mm a EEEE');
   SharedPreferences preferences = await SharedPreferences.getInstance();
   late List<Map<String, dynamic>> notifications;
-  List<String> rawNotifications = preferences.getStringList("notifications") ?? [];
-  notifications = rawNotifications.map((notification){
+  List<String> rawNotifications =
+      preferences.getStringList("notifications") ?? [];
+  notifications = rawNotifications.map((notification) {
     return jsonDecode(notification) as Map<String, dynamic>;
   }).toList();
   notifications.add({
@@ -31,9 +35,11 @@ Future<void> _messageHandler(RemoteMessage message) async {
     "description": message.notification!.body,
     "time": dateFormat.format(message.sentTime!)
   });
-  await preferences.setStringList("notifications", notifications.map((element){
-    return jsonEncode(element);
-  }).toList());
+  await preferences.setStringList(
+      "notifications",
+      notifications.map((element) {
+        return jsonEncode(element);
+      }).toList());
 }
 
 Future<bool> hasNetwork() async {
@@ -45,6 +51,17 @@ Future<bool> hasNetwork() async {
   }
 }
 
+Future<dynamic> loadData() async {
+  Random random = new Random();
+  dynamic scheduleJSON =
+      await rootBundle.loadString('assets/data/schedule.json');
+  dynamic loadedData = {
+    "scheduleJSON": json.decode(scheduleJSON ?? ""),
+    "welcomeMessage": welcomeMessages[random.nextInt(welcomeMessages.length)],
+  };
+  return loadedData;
+}
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences preferences = await SharedPreferences.getInstance();
@@ -52,75 +69,84 @@ void main() async {
   await Firebase.initializeApp();
   FirebaseMessaging.onBackgroundMessage(_messageHandler);
   Dio dio = Dio();
-  runApp(App(preferences: preferences, dio: dio, storage: storage,));
+  final loadedData = await loadData();
+  runApp(App(
+    preferences: preferences,
+    dio: dio,
+    storage: storage,
+    loadedData: loadedData,
+  ));
 }
 
 class App extends StatelessWidget {
   final SharedPreferences preferences;
   final Dio dio;
   final fss.FlutterSecureStorage storage;
-  const App({
-    Key? key,
-    required this.preferences,
-    required this.dio,
-    required this.storage
-  }) : super(key: key);
+  final dynamic loadedData;
+  const App(
+      {Key? key,
+      required this.preferences,
+      required this.dio,
+      required this.storage,
+      required this.loadedData})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'F!rosh Week',
-      theme: ThemeData(
-        fontFamily: 'Avenir',
-        buttonColor: Theme.of(context).colorScheme.lightPurpleAccent,
-        primaryColor: Colors.white,
-        accentColor: Theme.of(context).colorScheme.lightPurpleAccent,
-        primaryColorDark: Colors.grey[200],
-        primaryColorLight: Colors.grey[100],
-        primaryColorBrightness: Brightness.light,
-        brightness: Brightness.light,
-        canvasColor: Colors.grey[100],
-        appBarTheme: AppBarTheme(brightness: Brightness.light),
-        cupertinoOverrideTheme:
-        const CupertinoThemeData(brightness: Brightness.light),
-      ),
-      darkTheme: ThemeData(
+        title: 'F!rosh Week',
+        theme: ThemeData(
           fontFamily: 'Avenir',
           buttonColor: Theme.of(context).colorScheme.lightPurpleAccent,
-          primaryColor: Colors.black,
+          primaryColor: Colors.white,
           accentColor: Theme.of(context).colorScheme.lightPurpleAccent,
-          primaryColorDark: Colors.grey[800],
-          primaryColorBrightness: Brightness.dark,
-          primaryColorLight: Colors.grey[850],
-          brightness: Brightness.dark,
-          indicatorColor: Colors.white,
-          canvasColor: Colors.black,
-          appBarTheme: AppBarTheme(brightness: Brightness.dark),
-          cupertinoOverrideTheme: const CupertinoThemeData(
-              brightness: Brightness.dark,
-              textTheme: CupertinoTextThemeData(primaryColor: Colors.white))),
-      themeMode: ThemeMode.system,
-      debugShowCheckedModeBanner: false,
-      home: MyApp(
-        preferences: preferences,
-        dio: dio,
-        storage: storage,
-      )
-    );
+          primaryColorDark: Colors.grey[200],
+          primaryColorLight: Colors.grey[100],
+          primaryColorBrightness: Brightness.light,
+          brightness: Brightness.light,
+          canvasColor: Colors.grey[100],
+          appBarTheme: AppBarTheme(brightness: Brightness.light),
+          cupertinoOverrideTheme:
+              const CupertinoThemeData(brightness: Brightness.light),
+        ),
+        darkTheme: ThemeData(
+            fontFamily: 'Avenir',
+            buttonColor: Theme.of(context).colorScheme.lightPurpleAccent,
+            primaryColor: Colors.black,
+            accentColor: Theme.of(context).colorScheme.lightPurpleAccent,
+            primaryColorDark: Colors.grey[800],
+            primaryColorBrightness: Brightness.dark,
+            primaryColorLight: Colors.grey[850],
+            brightness: Brightness.dark,
+            indicatorColor: Colors.white,
+            canvasColor: Colors.black,
+            appBarTheme: AppBarTheme(brightness: Brightness.dark),
+            cupertinoOverrideTheme: const CupertinoThemeData(
+                brightness: Brightness.dark,
+                textTheme: CupertinoTextThemeData(primaryColor: Colors.white))),
+        themeMode: ThemeMode.system,
+        debugShowCheckedModeBanner: false,
+        home: MyApp(
+          preferences: preferences,
+          dio: dio,
+          storage: storage,
+          loadedData: loadedData,
+        ));
   }
 }
-
 
 class MyApp extends StatefulWidget {
   final SharedPreferences preferences;
   final Dio dio;
   final fss.FlutterSecureStorage storage;
+  final dynamic loadedData;
 
   const MyApp({
     Key? key,
     required this.preferences,
     required this.dio,
     required this.storage,
+    required this.loadedData,
   }) : super(key: key);
 
   @override
@@ -132,7 +158,8 @@ class _MyAppState extends State<MyApp> {
   late NotificationSettings notificationSettings;
 
   Future<void> getNotificationSettings(FirebaseMessaging _messaging) async {
-    NotificationSettings _notificationSettings = await _messaging.requestPermission(
+    NotificationSettings _notificationSettings =
+        await _messaging.requestPermission(
       alert: true,
       announcement: false,
       badge: true,
@@ -155,25 +182,24 @@ class _MyAppState extends State<MyApp> {
     // messaging.getToken().then((value){
     //   // print("Token: $value");
     // });
-    FirebaseMessaging.onMessage.listen((RemoteMessage event){
+    FirebaseMessaging.onMessage.listen((RemoteMessage event) {
       _messageHandler(event);
       showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: Text("Notification"),
-            content: Text(event.notification!.body!),
-            actions: [
-              TextButton(
-                child: Text("OK"),
-                onPressed: (){
-                  Navigator.of(context).pop();
-                },
-              )
-            ],
-          );
-        }
-      );
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text("Notification"),
+              content: Text(event.notification!.body!),
+              actions: [
+                TextButton(
+                  child: Text("OK"),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                )
+              ],
+            );
+          });
     });
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
       return;
@@ -186,8 +212,8 @@ class _MyAppState extends State<MyApp> {
     return Framework(
         isLoggedIn: widget.preferences.getBool('isLoggedIn') ?? false,
         dio: widget.dio,
-        storage: widget.storage
-    );
+        storage: widget.storage,
+        loadedData: widget.loadedData);
   }
 }
 
@@ -195,12 +221,14 @@ class Framework extends StatefulWidget {
   final bool isLoggedIn;
   final Dio dio;
   final fss.FlutterSecureStorage storage;
+  final dynamic loadedData;
 
   const Framework({
     Key? key,
     required this.isLoggedIn,
     required this.dio,
     required this.storage,
+    required this.loadedData,
   }) : super(key: key);
 
   @override
@@ -217,8 +245,7 @@ class FrameworkState extends State<Framework> {
   String discipline = "";
   String shirtSize = "";
 
-
-  Future<void> setLoggedIn(bool login) async{
+  Future<void> setLoggedIn(bool login) async {
     setState(() {
       _loggedIn = login;
     });
@@ -226,17 +253,15 @@ class FrameworkState extends State<Framework> {
       await getCurrentUser();
     }
   }
-  
+
   Future<bool> getCurrentUser() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     if (await hasNetwork()) {
       String? cookie = await widget.storage.read(key: 'cookie');
-      Response res = await widget.dio.get(
-          'https://www.orientation.skule.ca/users/current',
-          options: Options(
-              headers: {"cookie": cookie}
-          )
-      ).catchError((error){
+      Response res = await widget.dio
+          .get('https://www.orientation.skule.ca/users/current',
+              options: Options(headers: {"cookie": cookie}))
+          .catchError((error) {
         setState(() {
           _loggedIn = false;
         });
@@ -248,7 +273,8 @@ class FrameworkState extends State<Framework> {
         discipline = res.data["discipline"];
         shirtSize = res.data["shirtSize"];
       });
-      await prefs.setStringList('froshData', [froshName, froshGroup, froshId, discipline, shirtSize]);
+      await prefs.setStringList(
+          'froshData', [froshName, froshGroup, froshId, discipline, shirtSize]);
       return true;
     } else {
       List<String>? froshData = prefs.getStringList("froshData");
@@ -279,23 +305,28 @@ class FrameworkState extends State<Framework> {
         froshId: froshId,
         discipline: discipline,
         shirtSize: shirtSize,
+        froshScheduleData: widget.loadedData["scheduleJSON"]["lambda"],
+        welcomeMessage: widget.loadedData["welcomeMessage"],
       ),
-      SchedulePageParse(),
+      SchedulePage(data: widget.loadedData["scheduleJSON"]["lambda"]),
       NotificationsPageParse(),
       ResourcesPageParse(),
     ];
-    if (!_loggedIn){
+    if (!_loggedIn) {
       return Scaffold(
-        body: LoginPage(dio: widget.dio, setLoggedIn: setLoggedIn, storage: widget.storage)
-      );
-    } else return Scaffold(
+          body: LoginPage(
+              dio: widget.dio,
+              setLoggedIn: setLoggedIn,
+              storage: widget.storage));
+    } else
+      return Scaffold(
         body: Stack(children: [
           PageTransitionSwitcher(
             transitionBuilder: (
-                child,
-                animation,
-                secondaryAnimation,
-                ) {
+              child,
+              animation,
+              secondaryAnimation,
+            ) {
               return FadeThroughTransition(
                 animation: animation,
                 secondaryAnimation: secondaryAnimation,
@@ -324,7 +355,7 @@ class FrameworkState extends State<Framework> {
             alignment: Alignment.bottomCenter,
             child: CurvedNavigationBar(
               buttonBackgroundColor:
-              Theme.of(this.context).colorScheme.lightPurpleAccent,
+                  Theme.of(this.context).colorScheme.lightPurpleAccent,
               color: Theme.of(this.context).colorScheme.lightPurpleAccent,
               animationDuration: const Duration(milliseconds: 500),
               backgroundColor: Colors.transparent,
