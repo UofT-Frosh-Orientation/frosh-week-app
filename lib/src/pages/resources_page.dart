@@ -140,7 +140,9 @@ class ResourceBox extends StatelessWidget {
             ),
             Container(height: 4),
             TextFont(
-              text: resource.contact,
+              text: resource.type == "url"
+                  ? cutUrl(resource.contact)
+                  : resource.contact,
               fontSize: 20,
               textColor: Theme.of(context).colorScheme.purpleText,
             ),
@@ -168,4 +170,19 @@ launchContact(Resource resource) async {
     return;
   }
   if (await canLaunch(url)) await launch(url);
+}
+
+cutUrl(String url) {
+  var splitUrl = url.split("/");
+  var splitUrlEnd = "";
+  if (splitUrl.length > 3 && splitUrl[3] != "") {
+    splitUrlEnd = "...";
+  }
+  return splitUrl[0] +
+      "/" +
+      splitUrl[1] +
+      "/" +
+      splitUrl[2] +
+      "/" +
+      splitUrlEnd;
 }

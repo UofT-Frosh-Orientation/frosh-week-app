@@ -7,6 +7,8 @@ import "../functions.dart";
 import "../widgets/ContainersExtensions.dart";
 import "package:flutter_secure_storage/flutter_secure_storage.dart" as fss;
 import 'package:frosh_week_2t1/src/pages/schedule_page.dart';
+import 'package:frosh_week_2t1/src/pages/resources_page.dart';
+import 'package:frosh_week_2t1/src/widgets/ButtonWidgets.dart';
 
 class HomePage extends StatefulWidget {
   final String froshName;
@@ -33,6 +35,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  String uCheckPass =
+      "pass"; //one of pass, fail, incomplete (incomplete is fail)
+
+  handleUCheckChange(bool status) {
+    print("ucheckStatus:" + status.toString());
+  }
+
   @override
   Widget build(BuildContext context) {
     print(widget.froshName);
@@ -81,6 +90,69 @@ class _HomePageState extends State<HomePage> {
           ),
           Container(height: 20),
           getNowEvent(widget.froshScheduleData),
+          Container(height: 20),
+
+          ResourceBox(
+            resource: Resource(
+                icon: Icons.health_and_safety,
+                title: "UCheck",
+                contact:
+                    "https://www.provost.utoronto.ca/planning-policy/utogether2020-a-roadmap-for-the-university-of-toronto/quercus-ucheck/",
+                type: "url",
+                description:
+                    "Before coming to campus, complete a quick COVID-19 self-assessment through the UCheck web portal."),
+          ),
+          Container(height: 5),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              children: [
+                ButtonRegular(
+                    outline: !(uCheckPass == "fail"),
+                    customWidth:
+                        MediaQuery.of(context).size.width / 2 - 16 - 20 * 2,
+                    text: "UCheck Fail",
+                    onPressed: () async {
+                      setState(() {
+                        if (uCheckPass == "fail") {
+                          uCheckPass = "incomplete";
+                        } else {
+                          uCheckPass = "fail";
+                        }
+                      });
+                      handleUCheckChange(false);
+                    }),
+                ButtonRegular(
+                    outline: !(uCheckPass == "pass"),
+                    customWidth:
+                        MediaQuery.of(context).size.width / 2 - 16 - 20 * 2,
+                    text: "UCheck Pass",
+                    onPressed: () async {
+                      if (uCheckPass == "pass") {
+                        handleUCheckChange(false);
+                      } else {
+                        handleUCheckChange(true);
+                      }
+                      setState(() {
+                        if (uCheckPass == "pass") {
+                          uCheckPass = "incomplete";
+                        } else {
+                          uCheckPass = "pass";
+                        }
+                      });
+                    }),
+              ],
+            ),
+          ),
+          Container(height: 40),
+          ButtonRegular(
+            text: "Logout",
+            outline: true,
+            yellow: true,
+            onPressed: () {
+              print("handle logout");
+            },
+          ),
           Container(height: 100)
         ]),
       )
