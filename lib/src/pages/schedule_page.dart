@@ -9,6 +9,7 @@ import '../colors.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/rendering.dart';
 import 'dart:math' as math;
+import "../widgets/ContainersExtensions.dart";
 
 const days = {
   "Monday": "9/6/2021",
@@ -23,31 +24,69 @@ const attributeStartTime = "Start time";
 const attributeEndTime = "End time";
 const attributeColor = "Colour";
 const attributeRoom = "Location";
+const attributeDate = "Date";
 
-class SchedulePageParse extends StatelessWidget {
-  final String froshGroup;
-  const SchedulePageParse({Key? key, required this.froshGroup})
-      : super(key: key);
+// class SchedulePageParse extends StatelessWidget {
+//   final String froshGroup;
+//   const SchedulePageParse({Key? key, required this.froshGroup})
+//       : super(key: key);
 
-  Future<String> parseData(context) async {
-    return await DefaultAssetBundle.of(context)
-        .loadString('assets/data/schedule.json');
+//   Future<dynamic> parseData(context) async {
+//     return await DefaultAssetBundle.of(context)
+//         .loadString('assets/data/schedule.json');
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return FutureBuilder<dynamic>(
+//       future: parseData(context),
+//       builder: (context, snapshot) {
+//         if (snapshot.hasData) {
+//           var data = json.decode(snapshot.data ?? "");
+//           return SchedulePage(data: data[this.froshGroup]);
+//         } else {
+//           return Container();
+//         }
+//       },
+//     );
+//   }
+// }
+
+ContainerEvent getNowEvent(data) {
+  DateTime date = DateTime.now();
+  // DateTime date = DateTime.parse("1969-09-10 09:18:04Z");
+  String initialDay = "";
+  for (var day in days.keys) {
+    if (day == DateFormat('EEEE').format(date)) {
+      initialDay = day;
+      break;
+    }
   }
-
-  @override
-  Widget build(BuildContext context) {
-    return FutureBuilder<String>(
-      future: parseData(context),
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          var data = json.decode(snapshot.data ?? "");
-          return SchedulePage(data: data[this.froshGroup]);
-        } else {
-          return Container();
-        }
-      },
-    );
+  int dateTotalMinutes = date.minute + date.hour * 60;
+  for (var event in data) {
+    if (event[attributeDate] == days[initialDay]) {
+      // print(event[attributeEventName]);
+      // print(determineEventTime(event[attributeStartTime]));
+      // print(dateTotalMinutes);
+      // print(determineEventTime(event[attributeEndTime]));
+      // print(event[attributeEventName]);
+      if (determineEventTime(event[attributeStartTime]) <= dateTotalMinutes &&
+          determineEventTime(event[attributeEndTime]) >= dateTotalMinutes) {
+        return ContainerEvent(
+            title: event[attributeEventName],
+            time: event[attributeStartTime] != null &&
+                    event[attributeEndTime] != null
+                ? determineEventTimeString(
+                    event[attributeStartTime], event[attributeEndTime])
+                : "",
+            description: event[attributeEventDescription],
+            room: event[attributeRoom],
+            color: event[attributeColor]);
+      }
+    }
   }
+  return ContainerEvent(
+      title: "", time: "", description: "", room: "", color: "");
 }
 
 class SchedulePage extends StatelessWidget {
@@ -61,10 +100,10 @@ class SchedulePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     DateTime date = DateTime.now();
-    int initialIndex = 0;
-    for (int i = 0; i < days.length; i++) {
-      if (days[i] == DateFormat('EEEE').format(date)) {
-        initialIndex = i;
+    int initialIndex = -1;
+    for (var day in days.keys) {
+      initialIndex++;
+      if (day == DateFormat('EEEE').format(date)) {
         break;
       }
     }
@@ -114,7 +153,7 @@ List<ScheduleList> generateScheduleLists(data, days) {
   for (var day in days.keys) {
     var currentDayData = [];
     for (var event in data) {
-      if (event["Date"] == days[day]) {
+      if (event[attributeDate] == days[day]) {
         currentDayData.add(event);
       }
     }
@@ -171,21 +210,32 @@ determineEventTimeString(String startTime, String endTime) {
   var startHour = int.tryParse(startTime.split(":")[0]) ?? 0;
   if (startHour <= 12) {
     meridiumStart = " AM";
+  } else {
+    startHour = startHour - 12;
   }
   var meridiumEnd = " PM";
   var endHour = int.tryParse(endTime.split(":")[0]) ?? 0;
   if (endHour <= 12) {
     meridiumEnd = " AM";
+  } else {
+    endHour = endHour - 12;
   }
-  return startTime.split(":")[0] +
+  return startHour.toString() +
       ":" +
       startTime.split(":")[1] +
       meridiumStart +
       " - " +
-      endTime.split(":")[0] +
+      endHour.toString() +
       ":" +
       endTime.split(":")[1] +
       meridiumEnd;
+}
+
+int determineEventTime(String? time) {
+  if (time == null) return 0;
+  var hoursMinutes = int.parse(time.split(":")[0]) * 60;
+  var minutes = int.parse(time.split(":")[1]);
+  return hoursMinutes + minutes;
 }
 
 class ScheduleList extends StatefulWidget {

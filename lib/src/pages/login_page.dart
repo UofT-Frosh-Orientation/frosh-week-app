@@ -9,6 +9,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:url_launcher/url_launcher.dart';
 import "../widgets/ContainersExtensions.dart";
 import "package:dio/dio.dart";
+import '../colors.dart';
 
 class LoginPage extends StatefulWidget {
   final Dio dio;
@@ -26,27 +27,30 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-
   String email = '';
   String password = '';
 
+  bool loginLeaderType = false;
+  String error = '';
+
   Future<void> _login({required String email, required String password}) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    Response res1 = await widget.dio.post(
-      'https://www.orientation.skule.ca/login',
-      data: {
-        'email': email,
-        'password': password,
-      },
-      options: Options(
-        followRedirects: false,
-        validateStatus: (status) {return status! < 400;}
-      )
-    );
-    if (res1.headers["location"]![0] == "/login_success"){
+    Response res1 =
+        await widget.dio.post('https://www.orientation.skule.ca/login',
+            data: {
+              'email': email,
+              'password': password,
+            },
+            options: Options(
+                followRedirects: false,
+                validateStatus: (status) {
+                  return status! < 400;
+                }));
+    if (res1.headers["location"]![0] == "/login_success") {
       Headers headers = res1.headers;
       // print(headers);
-      String cookie = headers["set-cookie"]![0].substring(0, headers["set-cookie"]![0].indexOf(';'));
+      String cookie = headers["set-cookie"]![0]
+          .substring(0, headers["set-cookie"]![0].indexOf(';'));
       // Response res2 = await widget.dio.get(
       //     'https://www.orientation.skule.ca/users/current',
       //     options: Options(
@@ -67,17 +71,41 @@ class _LoginPageState extends State<LoginPage> {
     widget.setLoggedIn(false);
   }
 
+  int lastTap = DateTime.now().millisecondsSinceEpoch;
+  int consecutiveTaps = 0;
+  triggerLeaderLogin() {
+    int now = DateTime.now().millisecondsSinceEpoch;
+    if (now - lastTap < 1000) {
+      consecutiveTaps++;
+      if (consecutiveTaps > 8) {
+        if (!loginLeaderType) {
+          setState(() {
+            loginLeaderType = true;
+          });
+        }
+      }
+    } else {
+      consecutiveTaps = 0;
+    }
+    lastTap = now;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
         child: SingleChildScrollView(
             child: Column(
       children: [
-        MainHeader(
-          text: 'F!rosh Week',
-          textSmaller: "2T1",
-          icon: true,
-          topSpace: false,
+        GestureDetector(
+          onTap: () {
+            triggerLeaderLogin();
+          },
+          child: MainHeader(
+            text: 'F!rosh Week',
+            textSmaller: "2T1",
+            icon: true,
+            topSpace: false,
+          ),
         ),
         Container(height: 24),
         Align(
@@ -101,11 +129,40 @@ class _LoginPageState extends State<LoginPage> {
               });
             }),
         Container(height: 18),
-        ButtonRegular(
-            text: "Login",
-            onPressed: () async {
-              await _login(email: email, password: password);
-            }),
+        AnimatedSwitcher(
+            duration: Duration(milliseconds: 500),
+            switchInCurve: Curves.easeIn,
+            switchOutCurve: Curves.easeIn,
+            transitionBuilder: (Widget child, Animation<double> animation) {
+              return ScaleTransition(child: child, scale: animation);
+            },
+            child: loginLeaderType
+                ? Row(
+                    key: ValueKey<bool>(loginLeaderType),
+                    children: [
+                      ButtonRegular(
+                          customWidth:
+                              MediaQuery.of(context).size.width / 2 - 16 * 2,
+                          text: "Frosh Login",
+                          onPressed: () async {
+                            await _login(email: email, password: password);
+                          }),
+                      ButtonRegular(
+                          yellow: true,
+                          customWidth:
+                              MediaQuery.of(context).size.width / 2 - 16 * 2,
+                          text: "Leader Login",
+                          onPressed: () async {
+                            await _login(email: email, password: password);
+                          }),
+                    ],
+                  )
+                : ButtonRegular(
+                    key: ValueKey<bool>(loginLeaderType),
+                    text: "Login",
+                    onPressed: () async {
+                      await _login(email: email, password: password);
+                    })),
         Container(height: 15),
         ButtonRegular(
           text: "Signup",
@@ -115,7 +172,19 @@ class _LoginPageState extends State<LoginPage> {
           },
           outline: true,
         ),
-        Container(height: 100)
+        Padding(
+          padding: EdgeInsets.all(20),
+          child: AnimatedSwitcher(
+            duration: Duration(milliseconds: 500),
+            child: TextFont(
+              key: ValueKey<String>(error),
+              text: error,
+              fontSize: 16,
+              textColor: Theme.of(context).colorScheme.redAccent,
+            ),
+          ),
+        ),
+        Container(height: 60)
       ],
     )));
   }

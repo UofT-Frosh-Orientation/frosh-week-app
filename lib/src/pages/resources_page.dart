@@ -41,13 +41,13 @@ class ResourcesPageParse extends StatelessWidget {
           type: "url",
           description:
               "Don't know the building codes or where buildings are located? View this map!"),
-      Resource(
-          icon: Icons.file_copy,
-          title: "Incident Report Form",
-          contact: "https://www.orientation.skule.ca/",
-          type: "url",
-          description:
-              "Report any incidents you experience during F!rosh week here."),
+      // Resource(
+      //     icon: Icons.file_copy,
+      //     title: "Incident Report Form",
+      //     contact: "https://www.orientation.skule.ca/",
+      //     type: "url",
+      //     description:
+      //         "Report any incidents you experience during F!rosh week here."),
       Resource(
           icon: Icons.badge,
           title: "Campus Police",
@@ -142,7 +142,6 @@ class ResourceBox extends StatelessWidget {
             TextFont(
               text: resource.contact,
               fontSize: 20,
-              customTextColor: true,
               textColor: Theme.of(context).colorScheme.purpleText,
             ),
             Container(height: 2),

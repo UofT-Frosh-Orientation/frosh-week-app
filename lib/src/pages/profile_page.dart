@@ -11,15 +11,17 @@ class ProfilePage extends StatelessWidget {
   final String froshId;
   final String discipline;
   final String shirtSize;
+  final String welcomeMessage;
 
-  const ProfilePage({
-    Key? key,
-    required this.froshName,
-    required this.froshGroup,
-    required this.froshId,
-    required this.discipline,
-    required this.shirtSize
-  }) : super(key: key);
+  const ProfilePage(
+      {Key? key,
+      required this.froshName,
+      required this.froshGroup,
+      required this.froshId,
+      required this.discipline,
+      required this.shirtSize,
+      required this.welcomeMessage})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -45,10 +47,10 @@ class ProfilePage extends StatelessWidget {
             SliverList(
               delegate: SliverChildListDelegate([
                 ContainerFrosh(
-                  froshName: froshName,
-                  froshGroup: froshGroup,
-                  discipline: discipline,
-                ),
+                    froshName: froshName,
+                    froshGroup: froshGroup,
+                    discipline: discipline,
+                    welcomeMessage: welcomeMessage),
                 Container(height: 20),
                 Center(
                   child: FroshQR(
