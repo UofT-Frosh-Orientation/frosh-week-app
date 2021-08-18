@@ -41,13 +41,13 @@ class ResourcesPageParse extends StatelessWidget {
           type: "url",
           description:
               "Don't know the building codes or where buildings are located? View this map!"),
-      // Resource(
-      //     icon: Icons.file_copy,
-      //     title: "Incident Report Form",
-      //     contact: "https://www.orientation.skule.ca/",
-      //     type: "url",
-      //     description:
-      //         "Report any incidents you experience during F!rosh week here."),
+      Resource(
+          icon: Icons.file_copy,
+          title: "Incident Report Form",
+          contact: "https://forms.gle/c6tyroJMVsKHbhR59",
+          type: "url",
+          description:
+              "Report any incidents you experience during F!rosh week here."),
       Resource(
           icon: Icons.badge,
           title: "Campus Police",
@@ -140,7 +140,9 @@ class ResourceBox extends StatelessWidget {
             ),
             Container(height: 4),
             TextFont(
-              text: resource.contact,
+              text: resource.type == "url"
+                  ? cutUrl(resource.contact)
+                  : resource.contact,
               fontSize: 20,
               textColor: Theme.of(context).colorScheme.purpleText,
             ),
@@ -168,4 +170,19 @@ launchContact(Resource resource) async {
     return;
   }
   if (await canLaunch(url)) await launch(url);
+}
+
+cutUrl(String url) {
+  var splitUrl = url.split("/");
+  var splitUrlEnd = "";
+  if (splitUrl.length > 3 && splitUrl[3] != "") {
+    splitUrlEnd = "...";
+  }
+  return splitUrl[0] +
+      "/" +
+      splitUrl[1] +
+      "/" +
+      splitUrl[2] +
+      "/" +
+      splitUrlEnd;
 }
