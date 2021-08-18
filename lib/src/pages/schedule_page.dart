@@ -54,7 +54,7 @@ const attributeDate = "Date";
 
 ContainerEvent getNowEvent(data) {
   DateTime date = DateTime.now();
-  // DateTime date = DateTime.parse("1969-09-10 09:18:04Z");
+  // DateTime date = DateTime.parse("2021-09-08 13:00:04Z");
   String initialDay = "";
   for (var day in days.keys) {
     if (day == DateFormat('EEEE').format(date)) {
@@ -65,24 +65,29 @@ ContainerEvent getNowEvent(data) {
   int dateTotalMinutes = date.minute + date.hour * 60;
   for (var event in data) {
     if (event[attributeDate] == days[initialDay]) {
+      if (days[initialDay]?.split("/")[0] == date.month.toString() &&
+          days[initialDay]?.split("/")[1] == date.day.toString() &&
+          days[initialDay]?.split("/")[2] == date.year.toString()) {
+        if (determineEventTime(event[attributeStartTime]) <= dateTotalMinutes &&
+            determineEventTime(event[attributeEndTime]) >= dateTotalMinutes) {
+          return ContainerEvent(
+              title: event[attributeEventName],
+              time: event[attributeStartTime] != null &&
+                      event[attributeEndTime] != null
+                  ? determineEventTimeString(
+                      event[attributeStartTime], event[attributeEndTime])
+                  : "",
+              description: event[attributeEventDescription],
+              room: event[attributeRoom],
+              color: event[attributeColor]);
+        }
+      }
       // print(event[attributeEventName]);
       // print(determineEventTime(event[attributeStartTime]));
       // print(dateTotalMinutes);
       // print(determineEventTime(event[attributeEndTime]));
       // print(event[attributeEventName]);
-      if (determineEventTime(event[attributeStartTime]) <= dateTotalMinutes &&
-          determineEventTime(event[attributeEndTime]) >= dateTotalMinutes) {
-        return ContainerEvent(
-            title: event[attributeEventName],
-            time: event[attributeStartTime] != null &&
-                    event[attributeEndTime] != null
-                ? determineEventTimeString(
-                    event[attributeStartTime], event[attributeEndTime])
-                : "",
-            description: event[attributeEventDescription],
-            room: event[attributeRoom],
-            color: event[attributeColor]);
-      }
+
     }
   }
   return ContainerEvent(
