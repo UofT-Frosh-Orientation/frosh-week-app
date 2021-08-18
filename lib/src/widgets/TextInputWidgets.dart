@@ -4,13 +4,15 @@ import '../widgets/TextWidgets.dart';
 
 class TextInput extends StatelessWidget {
   final String labelText;
-  final ValueChanged<String> onChanged;
+  final ValueChanged<String>? onChanged;
+  final ValueChanged<String>? onSubmitted;
   final bool obscureText;
 
   const TextInput({
     Key? key,
     required this.labelText,
-    required this.onChanged,
+    this.onChanged,
+    this.onSubmitted,
     this.obscureText = false,
   }) : super(key: key);
 
@@ -37,7 +39,14 @@ class TextInput extends StatelessWidget {
                 color: Theme.of(context).colorScheme.black, fontSize: 18)),
         obscureText: obscureText,
         onChanged: (text) {
-          onChanged(text);
+          if (onChanged != null) {
+            onChanged!(text);
+          }
+        },
+        onSubmitted: (text) {
+          if (onSubmitted != null) {
+            onSubmitted!(text);
+          }
         },
       ),
     );
