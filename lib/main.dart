@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -18,9 +17,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as fss;
 import "package:intl/intl.dart";
-import 'dart:convert';
 import 'dart:math';
 import '../src/functions.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
+
 
 Future<void> _messageHandler(RemoteMessage message) async {
   final DateFormat dateFormat = DateFormat('H:mm a EEEE');
@@ -44,12 +44,8 @@ Future<void> _messageHandler(RemoteMessage message) async {
 }
 
 Future<bool> hasNetwork() async {
-  try {
-    final result = await InternetAddress.lookup('example.com');
-    return result.isNotEmpty && result[0].rawAddress.isNotEmpty;
-  } on SocketException catch (_) {
-    return false;
-  }
+  ConnectivityResult connectivityResult = await (Connectivity().checkConnectivity());
+  return connectivityResult != ConnectivityResult.none;
 }
 
 Future<dynamic> loadData() async {
@@ -258,6 +254,7 @@ class FrameworkState extends State<Framework> {
   Future<bool> getCurrentUser() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     if (await hasNetwork()) {
+      print("Has network");
       String? cookie = await widget.storage.read(key: 'cookie');
       Response res = await widget.dio
           .get('https://www.orientation.skule.ca/users/current',
