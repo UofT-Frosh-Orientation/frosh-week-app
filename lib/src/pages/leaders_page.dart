@@ -87,6 +87,12 @@ class LeadersPageState extends State<LeadersPage> {
             });
           },
         ),
+        DropDownButton(
+            title: "Location",
+            items: ["King's college circle", "Myhal", "Orientation"],
+            onChanged: (value) {
+              print(value);
+            }),
         Container(height: 20),
         TextInput(
             obscureText: true,

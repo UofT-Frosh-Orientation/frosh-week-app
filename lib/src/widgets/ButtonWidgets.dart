@@ -73,3 +73,81 @@ class ButtonRegular extends StatelessWidget {
     }
   }
 }
+
+class DropDownButton extends StatefulWidget {
+  final String title;
+  final List<String> items;
+  final ValueChanged<String>? onChanged;
+  const DropDownButton(
+      {required this.title,
+      required this.items,
+      required this.onChanged,
+      Key? key})
+      : super(key: key);
+
+  @override
+  State<DropDownButton> createState() => DropDownButtonState();
+}
+
+/// This is the private State class that goes with MyStatefulWidget.
+class DropDownButtonState extends State<DropDownButton> {
+  String? selectedItem;
+  @override
+  void initState() {
+    super.initState();
+    selectedItem = widget.items[0];
+  }
+
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(left: 18, right: 18, top: 10),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          TextFont(
+            text: widget.title,
+            fontSize: 15,
+          ),
+          Container(height: 5),
+          Container(
+            width: 1000,
+            decoration: BoxDecoration(
+              border: Border.all(
+                  color: Theme.of(context).colorScheme.lightDarkAccent),
+              borderRadius: BorderRadius.circular(5),
+            ),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 11, vertical: 17),
+              child: DropdownButton(
+                isExpanded: true,
+                underline: Container(),
+                isDense: true,
+                value: selectedItem,
+                dropdownColor: Theme.of(context).colorScheme.lightDarkAccent,
+                focusColor: Theme.of(context).colorScheme.lightPurpleAccent,
+                items: widget.items.map((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: TextFont(
+                      key: ValueKey<String>(value),
+                      text: value,
+                      fontSize: 18,
+                      textColor: Theme.of(context).colorScheme.black,
+                    ),
+                  );
+                }).toList(),
+                onChanged: (String? newValue) {
+                  if (newValue != null) widget.onChanged!(newValue);
+                  setState(() {
+                    selectedItem = newValue;
+                  });
+                },
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
