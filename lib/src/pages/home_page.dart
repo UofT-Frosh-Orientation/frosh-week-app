@@ -1,11 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:frosh_week_2t1/src/pages/profile_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../widgets/TextWidgets.dart';
 import 'package:flutter/cupertino.dart';
 import "../functions.dart";
 import "../widgets/ContainersExtensions.dart";
-import "package:flutter_secure_storage/flutter_secure_storage.dart" as fss;
+// import "package:flutter_secure_storage/flutter_secure_storage.dart" as fss;
 import 'package:frosh_week_2t1/src/pages/schedule_page.dart';
 import 'package:frosh_week_2t1/src/pages/resources_page.dart';
 import 'package:frosh_week_2t1/src/widgets/ButtonWidgets.dart';
@@ -18,6 +19,7 @@ class HomePage extends StatefulWidget {
   final String shirtSize;
   final String welcomeMessage;
   final dynamic froshScheduleData;
+  final Function setLoggedIn;
 
   const HomePage(
       {Key? key,
@@ -27,7 +29,9 @@ class HomePage extends StatefulWidget {
       required this.discipline,
       required this.shirtSize,
       required this.welcomeMessage,
-      required this.froshScheduleData})
+      required this.froshScheduleData,
+        required this.setLoggedIn,
+      })
       : super(key: key);
 
   @override
@@ -47,10 +51,6 @@ class _HomePageState extends State<HomePage> {
     print(widget.froshName);
     return Scaffold(
         body: CustomScrollView(physics: BouncingScrollPhysics(), slivers: [
-      // CupertinoSliverNavigationBar(
-      //   largeTitle: Text('Frosh Week'),
-      //   trailing: Text('2T1'),
-      // ),
       SliverList(
         delegate: SliverChildListDelegate([
           MainHeader(
@@ -149,23 +149,16 @@ class _HomePageState extends State<HomePage> {
             text: "Logout",
             outline: true,
             yellow: true,
-            onPressed: () {
+            onPressed: () async {
               print("handle logout");
+              SharedPreferences preferences = await SharedPreferences.getInstance();
+              preferences.setBool('isLoggedIn', false);
+              widget.setLoggedIn(false);
             },
           ),
           Container(height: 100)
         ]),
       )
     ]));
-    // body: SafeArea(
-    //   child: Column(
-    //     children: [
-    //       FroshQR(
-    //           froshAccount: "some_account_id",
-    //           froshKitsSize: "Large",
-    //           hasCompletedUCheck: true)
-    //     ],
-    //   ),
-    // ));
   }
 }
