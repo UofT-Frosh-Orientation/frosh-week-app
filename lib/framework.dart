@@ -40,6 +40,7 @@ class Framework extends StatefulWidget {
 class FrameworkState extends State<Framework> {
   late PageController pageController;
   int selectedIndex = 0;
+  bool isLeader = false;
   late bool _loggedIn;
   String froshName = "";
   String froshGroup = "";
@@ -58,9 +59,11 @@ class FrameworkState extends State<Framework> {
 
   Future<bool> getCurrentUser() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      isLeader = prefs.getBool('isLeader') ?? false;
+    });
     if (await hasNetwork()) {
       String? cookie = await widget.storage.read(key: 'cookie');
-      bool isLeader = prefs.getBool('isLeader') ?? false;
       Response res = await widget.dio
           .get(isLeader ? 'https://www.orientation.skule.ca/exec/current' : 'https://www.orientation.skule.ca/users/current',
               options: Options(headers: {"cookie": cookie}))
@@ -70,7 +73,6 @@ class FrameworkState extends State<Framework> {
         });
       });
       if (isLeader) {
-        print("Is leader");
         setState(() {
           froshName = res.data["name"];
           froshGroup = res.data["froshGroup"];
@@ -112,8 +114,6 @@ class FrameworkState extends State<Framework> {
 
   @override
   Widget build(BuildContext context) {
-    bool leaderAccount = true;
-
     List<Widget> pages = [
       HomePage(
         froshName: froshName,
@@ -152,7 +152,7 @@ class FrameworkState extends State<Framework> {
       ),
     ];
 
-    if (leaderAccount) {
+    if (isLeader) {
       pages.add(LeadersPage());
       icons.add(
         Icon(

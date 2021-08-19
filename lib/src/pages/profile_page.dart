@@ -12,6 +12,7 @@ class ProfilePage extends StatelessWidget {
   final String discipline;
   final String shirtSize;
   final String welcomeMessage;
+  final bool hasCompletedUCheck;
 
   const ProfilePage(
       {Key? key,
@@ -20,7 +21,8 @@ class ProfilePage extends StatelessWidget {
       required this.froshId,
       required this.discipline,
       required this.shirtSize,
-      required this.welcomeMessage})
+      required this.welcomeMessage,
+      required this.hasCompletedUCheck})
       : super(key: key);
 
   @override

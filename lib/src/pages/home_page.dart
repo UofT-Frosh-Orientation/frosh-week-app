@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:frosh_week_2t1/src/pages/profile_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -38,16 +37,31 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String uCheckPass =
-      "pass"; //one of pass, fail, incomplete (incomplete is fail)
+  bool uCheckPass = false; //one of pass, fail, incomplete (incomplete is fail)
 
-  handleUCheckChange(bool status) {
-    print("ucheckStatus:" + status.toString());
+  Future<void> handleUCheckChange(bool status) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    setState(() {
+      uCheckPass = status;
+    });
+    preferences.setBool('uCheck', status);
+  }
+
+  Future<void> initializeUCheck() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    setState(() {
+      uCheckPass = preferences.getBool('uCheck') ?? false;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initializeUCheck();
   }
 
   @override
   Widget build(BuildContext context) {
-    print(widget.froshName);
     return Scaffold(
         body: CustomScrollView(physics: BouncingScrollPhysics(), slivers: [
       SliverList(
@@ -74,6 +88,7 @@ class _HomePageState extends State<HomePage> {
                   discipline: widget.discipline,
                   shirtSize: widget.shirtSize,
                   welcomeMessage: widget.welcomeMessage,
+                  hasCompletedUCheck: uCheckPass,
                 );
               }));
             },
@@ -107,37 +122,30 @@ class _HomePageState extends State<HomePage> {
             child: Row(
               children: [
                 ButtonRegular(
-                    outline: !(uCheckPass == "fail"),
+                    outline: !(uCheckPass == false),
                     customWidth:
                         MediaQuery.of(context).size.width / 2 - 16 - 20 * 2,
                     text: "UCheck Fail",
                     onPressed: () async {
                       setState(() {
-                        if (uCheckPass == "fail") {
-                          uCheckPass = "incomplete";
-                        } else {
-                          uCheckPass = "fail";
-                        }
+                        uCheckPass = false;
                       });
                       handleUCheckChange(false);
                     }),
                 ButtonRegular(
-                    outline: !(uCheckPass == "pass"),
+                    outline: !(uCheckPass == true),
                     customWidth:
                         MediaQuery.of(context).size.width / 2 - 16 - 20 * 2,
                     text: "UCheck Pass",
                     onPressed: () async {
-                      if (uCheckPass == "pass") {
+
+                      if (uCheckPass == true) {
                         handleUCheckChange(false);
                       } else {
                         handleUCheckChange(true);
                       }
                       setState(() {
-                        if (uCheckPass == "pass") {
-                          uCheckPass = "incomplete";
-                        } else {
-                          uCheckPass = "pass";
-                        }
+                       uCheckPass = true;
                       });
                     }),
               ],
