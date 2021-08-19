@@ -34,7 +34,11 @@ class _LoginPageState extends State<LoginPage> {
   String error = '';
   bool loading = false;
 
-  Future<void> _login({required String email, required String password}) async {
+  Future<void> _login({
+    required String email,
+    required String password,
+    required bool isFrosh,
+  }) async {
     if (loading) {
       return;
     }
@@ -43,60 +47,91 @@ class _LoginPageState extends State<LoginPage> {
       error = '';
     });
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    Response res1 =
-        await widget.dio.post('https://www.orientation.skule.ca/login',
-            data: {
-              'email': email,
-              'password': password,
-            },
-            options: Options(
-                followRedirects: false,
-                validateStatus: (status) {
-                  return status! < 400;
-                }));
-    if (email == "" || password == "" || res1.headers["location"] == null) {
+    if (isFrosh) {
+      Response res1 =
+      await widget.dio.post('https://www.orientation.skule.ca/login',
+          data: {
+            'email': email,
+            'password': password,
+          },
+          options: Options(
+              followRedirects: false,
+              validateStatus: (status) {
+                return status! < 400;
+              }));
+      if (email == "" || password == "" || res1.headers["location"] == null) {
+        prefs.setBool('isLoggedIn', false);
+        widget.setLoggedIn(false);
+        setState(() {
+          loading = false;
+          error = "Please fill in the credentials";
+        });
+        return;
+      }
+      if (res1.headers["location"]![0] == "/login_success") {
+        Headers headers = res1.headers;
+        // print(headers);
+        String cookie = headers["set-cookie"]![0]
+            .substring(0, headers["set-cookie"]![0].indexOf(';'));
+        await widget.storage.write(key: "cookie", value: cookie);
+        prefs.setBool('isLoggedIn', true);
+        widget.setLoggedIn(true);
+        setState(() {
+          loading = false;
+        });
+        return;
+      }
       prefs.setBool('isLoggedIn', false);
       widget.setLoggedIn(false);
       setState(() {
         loading = false;
-        error = "Please fill in the credentials";
+        error = "Please enter a valid password and email";
       });
-      return;
     }
-    if (res1.headers["location"]![0] == "/login_success") {
-      Headers headers = res1.headers;
-      // print(headers);
-      String cookie = headers["set-cookie"]![0]
-          .substring(0, headers["set-cookie"]![0].indexOf(';'));
-      // Response res2 = await widget.dio.get(
-      //     'https://www.orientation.skule.ca/users/current',
-      //     options: Options(
-      //         headers: {"cookie": cookie}
-      //     )
-      // );
-      // print(res2.headers);
-      // // await widget.db.insert(res2.data);
-      // print(res2.data);
-      // widget.setLoggedIn(true);
-      await widget.storage.write(key: "cookie", value: cookie);
-      prefs.setBool('isLoggedIn', true);
-      // print("Im here");
-      widget.setLoggedIn(true);
-      setState(() {
-        loading = false;
-      });
-      return;
-    }
-    prefs.setBool('isLoggedIn', false);
-    widget.setLoggedIn(false);
-    setState(() {
-      loading = false;
-    });
+    // Response res1 =
+    //     await widget.dio.post('https://www.orientation.skule.ca/login',
+    //         data: {
+    //           'email': email,
+    //           'password': password,
+    //         },
+    //         options: Options(
+    //             followRedirects: false,
+    //             validateStatus: (status) {
+    //               return status! < 400;
+    //             }));
+    // if (email == "" || password == "" || res1.headers["location"] == null) {
+    //   prefs.setBool('isLoggedIn', false);
+    //   widget.setLoggedIn(false);
+    //   setState(() {
+    //     loading = false;
+    //     error = "Please fill in the credentials";
+    //   });
+    //   return;
+    // }
+    // if (res1.headers["location"]![0] == "/login_success") {
+    //   Headers headers = res1.headers;
+    //   // print(headers);
+    //   String cookie = headers["set-cookie"]![0]
+    //       .substring(0, headers["set-cookie"]![0].indexOf(';'));
+    //   await widget.storage.write(key: "cookie", value: cookie);
+    //   prefs.setBool('isLoggedIn', true);
+    //   widget.setLoggedIn(true);
+    //   setState(() {
+    //     loading = false;
+    //   });
+    //   return;
+    // }
+    // prefs.setBool('isLoggedIn', false);
+    // widget.setLoggedIn(false);
+    // setState(() {
+    //   loading = false;
+    //   error = "Please enter a valid password and email";
+    // });
   }
 
   int lastTap = DateTime.now().millisecondsSinceEpoch;
   int consecutiveTaps = 0;
-  triggerLeaderLogin() {
+  void triggerLeaderLogin() {
     int now = DateTime.now().millisecondsSinceEpoch;
     if (now - lastTap < 1000) {
       consecutiveTaps++;
@@ -189,7 +224,10 @@ class _LoginPageState extends State<LoginPage> {
                                 text: "Frosh Login",
                                 onPressed: () async {
                                   await _login(
-                                      email: email, password: password);
+                                      email: email,
+                                      password: password,
+                                    isFrosh: true,
+                                  );
                                 }),
                             ButtonRegular(
                                 yellow: true,
@@ -199,7 +237,10 @@ class _LoginPageState extends State<LoginPage> {
                                 text: "Leader Login",
                                 onPressed: () async {
                                   await _login(
-                                      email: email, password: password);
+                                      email: email,
+                                      password: password,
+                                    isFrosh: false,
+                                  );
                                 }),
                           ],
                         )
@@ -207,7 +248,11 @@ class _LoginPageState extends State<LoginPage> {
                           key: ValueKey<bool>(loginLeaderType),
                           text: "Login",
                           onPressed: () async {
-                            await _login(email: email, password: password);
+                            await _login(
+                                email: email,
+                                password: password,
+                              isFrosh: true
+                            );
                           })),
         ),
         Container(height: 15),

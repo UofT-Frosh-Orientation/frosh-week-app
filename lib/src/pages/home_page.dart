@@ -152,6 +152,7 @@ class _HomePageState extends State<HomePage> {
             onPressed: () async {
               print("handle logout");
               SharedPreferences preferences = await SharedPreferences.getInstance();
+              await preferences.clear();
               preferences.setBool('isLoggedIn', false);
               widget.setLoggedIn(false);
             },
