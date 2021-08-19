@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as fss;
-import 'package:frosh_week_2t1/src/pages/profile_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../widgets/TextWidgets.dart';
 import '../widgets/ButtonWidgets.dart';
 import '../widgets/TextInputWidgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:url_launcher/url_launcher.dart';
-import "../widgets/ContainersExtensions.dart";
 import "package:dio/dio.dart";
 import '../colors.dart';
 
@@ -118,6 +116,7 @@ class _LoginPageState extends State<LoginPage> {
             .substring(0, headers["set-cookie"]![0].indexOf(';'));
         await widget.storage.write(key: "cookie", value: cookie);
         prefs.setBool('isLoggedIn', true);
+        prefs.setBool('isLeader', true);
         widget.setLoggedIn(true);
         setState(() {
           loading = false;

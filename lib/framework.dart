@@ -59,23 +59,34 @@ class FrameworkState extends State<Framework> {
   Future<bool> getCurrentUser() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     if (await hasNetwork()) {
-      print("Has network");
       String? cookie = await widget.storage.read(key: 'cookie');
+      bool isLeader = prefs.getBool('isLeader') ?? false;
       Response res = await widget.dio
-          .get('https://www.orientation.skule.ca/users/current',
+          .get(isLeader ? 'https://www.orientation.skule.ca/exec/current' : 'https://www.orientation.skule.ca/users/current',
               options: Options(headers: {"cookie": cookie}))
           .catchError((error) {
         setState(() {
           _loggedIn = false;
         });
       });
-      setState(() {
-        froshName = res.data["preferredName"];
-        froshGroup = res.data["froshGroup"];
-        froshId = res.data["_id"];
-        discipline = res.data["discipline"];
-        shirtSize = res.data["shirtSize"];
-      });
+      if (isLeader) {
+        print("Is leader");
+        setState(() {
+          froshName = res.data["name"];
+          froshGroup = res.data["froshGroup"];
+          froshId = res.data["_id"];
+          discipline = "";
+          shirtSize = "Medium";
+        });
+      } else {
+        setState(() {
+          froshName = res.data["preferredName"];
+          froshGroup = res.data["froshGroup"];
+          froshId = res.data["_id"];
+          discipline = res.data["discipline"];
+          shirtSize = res.data["shirtSize"];
+        });
+      }
       await prefs.setStringList(
           'froshData', [froshName, froshGroup, froshId, discipline, shirtSize]);
       return true;
