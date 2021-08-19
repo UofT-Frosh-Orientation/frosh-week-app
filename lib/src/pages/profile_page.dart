@@ -4,6 +4,7 @@ import '../widgets/FroshQR.dart';
 import '../widgets/TextWidgets.dart';
 import "../widgets/Containers.dart";
 import "../widgets/ContainersExtensions.dart";
+import 'package:device_display_brightness/device_display_brightness.dart';
 
 class ProfilePage extends StatelessWidget {
   final String froshName;
@@ -30,6 +31,7 @@ class ProfilePage extends StatelessWidget {
     return GestureDetector(
       onPanUpdate: (details) {
         if (details.delta.dy > 10) {
+          DeviceDisplayBrightness.resetBrightness();
           Navigator.of(context).pop();
         }
       },
@@ -39,6 +41,7 @@ class ProfilePage extends StatelessWidget {
             leading: Container(),
             actions: [
               ExitButton(onTap: () {
+                DeviceDisplayBrightness.resetBrightness();
                 Navigator.of(context).pop();
               }),
             ],

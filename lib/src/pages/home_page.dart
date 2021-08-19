@@ -9,6 +9,7 @@ import "package:flutter_secure_storage/flutter_secure_storage.dart" as fss;
 import 'package:frosh_week_2t1/src/pages/schedule_page.dart';
 import 'package:frosh_week_2t1/src/pages/resources_page.dart';
 import 'package:frosh_week_2t1/src/widgets/ButtonWidgets.dart';
+import 'package:device_display_brightness/device_display_brightness.dart';
 
 class HomePage extends StatefulWidget {
   final String froshName;
@@ -72,9 +73,9 @@ class _HomePageState extends State<HomePage> {
             icon: true,
           ),
           Container(height: 10),
-          // Header(text: "Welcome Calum", padding: true),
           InkWell(
             onTap: () {
+              DeviceDisplayBrightness.setBrightness(1.0);
               Navigator.of(context).push(
                   MaterialPageRoute<void>(builder: (BuildContext context) {
                 return ProfilePage(
@@ -105,7 +106,6 @@ class _HomePageState extends State<HomePage> {
           Container(height: 20),
           getNowEvent(widget.froshScheduleData),
           Container(height: 20),
-
           ResourceBox(
             resource: Resource(
                 icon: Icons.health_and_safety,
