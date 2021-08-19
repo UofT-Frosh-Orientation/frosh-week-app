@@ -32,8 +32,16 @@ class _LoginPageState extends State<LoginPage> {
 
   bool loginLeaderType = false;
   String error = '';
+  bool loading = false;
 
   Future<void> _login({required String email, required String password}) async {
+    if (loading) {
+      return;
+    }
+    setState(() {
+      loading = true;
+      error = '';
+    });
     SharedPreferences prefs = await SharedPreferences.getInstance();
     Response res1 =
         await widget.dio.post('https://www.orientation.skule.ca/login',
@@ -46,6 +54,15 @@ class _LoginPageState extends State<LoginPage> {
                 validateStatus: (status) {
                   return status! < 400;
                 }));
+    if (email == "" || password == "" || res1.headers["location"] == null) {
+      prefs.setBool('isLoggedIn', false);
+      widget.setLoggedIn(false);
+      setState(() {
+        loading = false;
+        error = "Please fill in the credentials";
+      });
+      return;
+    }
     if (res1.headers["location"]![0] == "/login_success") {
       Headers headers = res1.headers;
       // print(headers);
@@ -65,10 +82,16 @@ class _LoginPageState extends State<LoginPage> {
       prefs.setBool('isLoggedIn', true);
       // print("Im here");
       widget.setLoggedIn(true);
+      setState(() {
+        loading = false;
+      });
       return;
     }
     prefs.setBool('isLoggedIn', false);
     widget.setLoggedIn(false);
+    setState(() {
+      loading = false;
+    });
   }
 
   int lastTap = DateTime.now().millisecondsSinceEpoch;
@@ -130,39 +153,63 @@ class _LoginPageState extends State<LoginPage> {
             }),
         Container(height: 18),
         AnimatedSwitcher(
-            duration: Duration(milliseconds: 500),
-            switchInCurve: Curves.easeIn,
-            switchOutCurve: Curves.easeIn,
-            transitionBuilder: (Widget child, Animation<double> animation) {
-              return ScaleTransition(child: child, scale: animation);
-            },
-            child: loginLeaderType
-                ? Row(
-                    key: ValueKey<bool>(loginLeaderType),
-                    children: [
-                      ButtonRegular(
-                          customWidth:
-                              MediaQuery.of(context).size.width / 2 - 16 * 2,
-                          text: "Frosh Login",
+          duration: Duration(milliseconds: 300),
+          switchInCurve: Curves.easeIn,
+          switchOutCurve: Curves.easeIn,
+          transitionBuilder: (Widget child, Animation<double> animation) {
+            return FadeTransition(
+              opacity: animation,
+              child: child,
+            );
+          },
+          child: loading
+              ? Container(
+                  width: 55,
+                  height: 55,
+                  child: CircularProgressIndicator(
+                    color: Theme.of(context).colorScheme.yellowAccent,
+                  ),
+                )
+              : AnimatedSwitcher(
+                  duration: Duration(milliseconds: 500),
+                  switchInCurve: Curves.easeIn,
+                  switchOutCurve: Curves.easeIn,
+                  transitionBuilder:
+                      (Widget child, Animation<double> animation) {
+                    return ScaleTransition(child: child, scale: animation);
+                  },
+                  child: loginLeaderType
+                      ? Row(
+                          key: ValueKey<bool>(loginLeaderType),
+                          children: [
+                            ButtonRegular(
+                                customWidth:
+                                    MediaQuery.of(context).size.width / 2 -
+                                        16 * 2,
+                                text: "Frosh Login",
+                                onPressed: () async {
+                                  await _login(
+                                      email: email, password: password);
+                                }),
+                            ButtonRegular(
+                                yellow: true,
+                                customWidth:
+                                    MediaQuery.of(context).size.width / 2 -
+                                        16 * 2,
+                                text: "Leader Login",
+                                onPressed: () async {
+                                  await _login(
+                                      email: email, password: password);
+                                }),
+                          ],
+                        )
+                      : ButtonRegular(
+                          key: ValueKey<bool>(loginLeaderType),
+                          text: "Login",
                           onPressed: () async {
                             await _login(email: email, password: password);
-                          }),
-                      ButtonRegular(
-                          yellow: true,
-                          customWidth:
-                              MediaQuery.of(context).size.width / 2 - 16 * 2,
-                          text: "Leader Login",
-                          onPressed: () async {
-                            await _login(email: email, password: password);
-                          }),
-                    ],
-                  )
-                : ButtonRegular(
-                    key: ValueKey<bool>(loginLeaderType),
-                    text: "Login",
-                    onPressed: () async {
-                      await _login(email: email, password: password);
-                    })),
+                          })),
+        ),
         Container(height: 15),
         ButtonRegular(
           text: "Signup",
@@ -175,7 +222,7 @@ class _LoginPageState extends State<LoginPage> {
         Padding(
           padding: EdgeInsets.all(20),
           child: AnimatedSwitcher(
-            duration: Duration(milliseconds: 500),
+            duration: Duration(milliseconds: 400),
             child: TextFont(
               key: ValueKey<String>(error),
               text: error,

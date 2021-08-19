@@ -97,7 +97,8 @@ class LeadersPageState extends State<LeadersPage> {
             text: "Use the Frosh's email to sign-in manually",
             fontSize: 10,
           ),
-        )
+        ),
+        Container(height: 100),
       ]))
     ]));
   }
