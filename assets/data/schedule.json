@@ -14,7 +14,7 @@
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
             "Start time": "8:00:00 a1/p1",
-            "End time": "8:30:00 a1/p1",
+            "End time": "8:40:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -22,8 +22,8 @@
             "Event name": "Matriculation",
             "Event description": "\nThis is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:30:00 a1/p1",
-            "End time": "11:10:00 a1/p1",
+            "Start time": "8:40:00 a1/p1",
+            "End time": "11:00:00 a1/p1",
             "Location": "PB B150",
             "Colour": "Yellow"
         },
@@ -31,8 +31,8 @@
             "Event name": "Engineers For The World (E4TW)",
             "Event description": "Get ready to use your creativity and teamwork skills to explore some of the world’s most pressing issues through a hands-on, fun, and hype design challenge (hint: it's Ocean themed).",
             "Date": "9/6/2021",
-            "Start time": "11:10:00 a1/p1",
-            "End time": "12:30:00 a1/p1",
+            "Start time": "11:00:00 a1/p1",
+            "End time": "12:10:00 a1/p1",
             "Location": "MY150",
             "Colour": "Blue"
         },
@@ -40,8 +40,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "12:30:00 a1/p1",
-            "End time": "13:00:00 a1/p1",
+            "Start time": "12:10:00 a1/p1",
+            "End time": "12:40:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -49,7 +49,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "13:00:00 a1/p1",
+            "Start time": "12:40:00 a1/p1",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -112,6 +112,8 @@
             "Event name": "D!ye Station",
             "Event description": "Ever wonder why engineering students dye themselves purple during F!Week, or what it would feel like to do it yourself? Join us at D!ye Station to find out! You’ll have the opportunity to get your upper body, arms, or hands all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype! ",
             "Date": "9/7/2021",
+            "Start time": "11:10:00 a1/p1",
+            "End time": "12:10:00 a1/p1",
             "Location": "Haultain Alley",
             "Colour": "Purple"
         },
@@ -119,8 +121,19 @@
             "Event name": "Downtown Walkaround",
             "Event description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way (this may or may not include getting wet...).",
             "Date": "9/7/2021",
-            "Location": "Downtown Toronto",
+            "Start time": "9:30:00 a1/p1",
+            "End time": "11:10:00 a1/p1",
+            "Location": "Willcock's Commons, Downtown Toronto",
             "Colour": "Blue"
+        },
+        {
+            "Event name": "Lunch",
+            "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
+            "Date": "9/7/2021",
+            "Start time": "12:10:00 a1/p1",
+            "End time": "12:40:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Light orange"
         },
         {
             "Event name": "Nitelife",
@@ -219,7 +232,7 @@
             "Event description": "\nThis is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
             "Start time": "8:30:00 a1/p1",
-            "End time": "11:10:00 a1/p1",
+            "End time": "10:50:00 a1/p1",
             "Location": "PB B250",
             "Colour": "Yellow"
         },
@@ -227,8 +240,8 @@
             "Event name": "Engineers For The World (E4TW)",
             "Event description": "Get ready to use your creativity and teamwork skills to explore some of the world’s most pressing issues through a hands-on, fun, and hype design challenge (hint: it's Ocean themed).",
             "Date": "9/6/2021",
-            "Start time": "11:10:00 a1/p1",
-            "End time": "12:30:00 a1/p1",
+            "Start time": "10:50:00 a1/p1",
+            "End time": "12:10:00 a1/p1",
             "Location": "MY150",
             "Colour": "Blue"
         },
@@ -236,8 +249,8 @@
             "Event name": "Grouptime",
             "Event description": "Hang out with your group for a bit before you go for lunch. ",
             "Date": "9/6/2021",
-            "Start time": "12:30:00 a1/p1",
-            "End time": "12:40:00 a1/p1",
+            "Start time": "12:10:00 a1/p1",
+            "End time": "12:20:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -245,8 +258,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "12:40:00 a1/p1",
-            "End time": "13:10:00 a1/p1",
+            "Start time": "12:20:00 a1/p1",
+            "End time": "12:50:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -254,7 +267,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "13:10",
+            "Start time": "12:50",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -317,6 +330,8 @@
             "Event name": "D!ye Station",
             "Event description": "Ever wonder why engineering students dye themselves purple during F!Week, or what it would feel like to do it yourself? Join us at D!ye Station to find out! You’ll have the opportunity to get your upper body, arms, or hands all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype! ",
             "Date": "9/7/2021",
+            "Start time": "11:40:00 a1/p1",
+            "End time": "12:40:00 a1/p1",
             "Location": "Haultain Alley",
             "Colour": "Purple"
         },
@@ -324,8 +339,19 @@
             "Event name": "Downtown Walkaround",
             "Event description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way (this may or may not include getting wet...).",
             "Date": "9/7/2021",
+            "Start time": "9:30:00 a1/p1",
+            "End time": "11:10:00 a1/p1",
             "Location": "Downtown Toronto",
             "Colour": "Blue"
+        },
+        {
+            "Event name": "Lunch",
+            "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
+            "Date": "9/7/2021",
+            "Start time": "11:10:00 a1/p1",
+            "End time": "11:40:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Light orange"
         },
         {
             "Event name": "Nitelife",
@@ -415,7 +441,7 @@
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
             "Start time": "8:00:00 a1/p1",
-            "End time": "8:30:00 a1/p1",
+            "End time": "8:40:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -423,8 +449,8 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:30:00 a1/p1",
-            "End time": "11:10:00 a1/p1",
+            "Start time": "8:40:00 a1/p1",
+            "End time": "10:50:00 a1/p1",
             "Location": "MS3154",
             "Colour": "Yellow"
         },
@@ -432,8 +458,8 @@
             "Event name": "Engineers For The World (E4TW)",
             "Event description": "Get ready to use your creativity and teamwork skills to explore some of the world’s most pressing issues through a hands-on, fun, and hype design challenge (hint: it's Ocean themed).",
             "Date": "9/6/2021",
-            "Start time": "11:10:00 a1/p1",
-            "End time": "12:30:00 a1/p1",
+            "Start time": "10:50:00 a1/p1",
+            "End time": "12:10:00 a1/p1",
             "Location": "GB303, GB304, MY315",
             "Colour": "Blue"
         },
@@ -441,8 +467,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "12:30:00 a1/p1",
-            "End time": "13:00:00 a1/p1",
+            "Start time": "12:10:00 a1/p1",
+            "End time": "12:40:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -450,7 +476,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "13:00:00 a1/p1",
+            "Start time": "12:40:00 a1/p1",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -513,6 +539,8 @@
             "Event name": "D!ye Station",
             "Event description": "Ever wonder why engineering students dye themselves purple during F!Week, or what it would feel like to do it yourself? Join us at D!ye Station to find out! You’ll have the opportunity to get your upper body, arms, or hands all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype! ",
             "Date": "9/7/2021",
+            "Start time": "12:10:00 a1/p1",
+            "End time": "13:10:00 a1/p1",
             "Location": "Haultain Alley",
             "Colour": "Purple"
         },
@@ -520,8 +548,19 @@
             "Event name": "Downtown Walkaround",
             "Event description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way (this may or may not include getting wet...).",
             "Date": "9/7/2021",
+            "Start time": "10:00:00 a1/p1",
+            "End time": "10:40:00 a1/p1",
             "Location": "Downtown Toronto",
             "Colour": "Blue"
+        },
+        {
+            "Event name": "Lunch",
+            "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
+            "Date": "9/7/2021",
+            "Start time": "13:10:00 a1/p1",
+            "End time": "13:45:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Light orange"
         },
         {
             "Event name": "Nitelife",
@@ -611,7 +650,7 @@
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
             "Start time": "8:00:00 a1/p1",
-            "End time": "8:30:00 a1/p1",
+            "End time": "8:40:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -619,8 +658,8 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:30:00 a1/p1",
-            "End time": "11:10:00 a1/p1",
+            "Start time": "8:40:00 a1/p1",
+            "End time": "10:50:00 a1/p1",
             "Location": "MS2158",
             "Colour": "Yellow"
         },
@@ -628,8 +667,8 @@
             "Event name": "Engineers For The World (E4TW)",
             "Event description": "Get ready to use your creativity and teamwork skills to explore some of the world’s most pressing issues through a hands-on, fun, and hype design challenge (hint: it's Ocean themed).",
             "Date": "9/6/2021",
-            "Start time": "11:10:00 a1/p1",
-            "End time": "12:30:00 a1/p1",
+            "Start time": "10:50:00 a1/p1",
+            "End time": "12:10:00 a1/p1",
             "Location": "MY315, SF2202, SF3201",
             "Colour": "Blue"
         },
@@ -637,8 +676,8 @@
             "Event name": "Grouptime",
             "Event description": "Hang out with your frosh group for a bit before you go for lunch.",
             "Date": "9/6/2021",
-            "Start time": "12:30:00 a1/p1",
-            "End time": "12:40:00 a1/p1",
+            "Start time": "12:10:00 a1/p1",
+            "End time": "12:20:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -646,8 +685,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "12:40:00 a1/p1",
-            "End time": "13:10:00 a1/p1",
+            "Start time": "12:20:00 a1/p1",
+            "End time": "12:50:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -655,7 +694,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "13:10:00 a1/p1",
+            "Start time": "12:50:00 a1/p1",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -718,6 +757,8 @@
             "Event name": "D!ye Station",
             "Event description": "Ever wonder why engineering students dye themselves purple during F!Week, or what it would feel like to do it yourself? Join us at D!ye Station to find out! You’ll have the opportunity to get your upper body, arms, or hands all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype! ",
             "Date": "9/7/2021",
+            "Start time": "12:45:00 a1/p1",
+            "End time": "13:45:00 a1/p1",
             "Location": "Haultain Alley",
             "Colour": "Purple"
         },
@@ -725,8 +766,19 @@
             "Event name": "Downtown Walkaround",
             "Event description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way (this may or may not include getting wet...).",
             "Date": "9/7/2021",
+            "Start time": "10:00:00 a1/p1",
+            "End time": "11:40:00 a1/p1",
             "Location": "Downtown Toronto",
             "Colour": "Blue"
+        },
+        {
+            "Event name": "Lunch",
+            "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
+            "Date": "9/7/2021",
+            "Start time": "11:40:00 a1/p1",
+            "End time": "12:15:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Light orange"
         },
         {
             "Event name": "Nitelife",
@@ -825,25 +877,16 @@
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
             "Start time": "8:30:00 a1/p1",
-            "End time": "11:10:00 a1/p1",
+            "End time": "11:00:00 a1/p1",
             "Location": "MS2158, MS2170",
             "Colour": "Yellow"
-        },
-        {
-            "Event name": "Grouptime",
-            "Event description": "Hang out with your frosh group for a bit before you go for lunch.",
-            "Date": "9/6/2021",
-            "Start time": "11:10:00 a1/p1",
-            "End time": "11:20:00 a1/p1",
-            "Location": "TBD",
-            "Colour": "Pink"
         },
         {
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "11:20:00 a1/p1",
-            "End time": "12:00:00 a1/p1",
+            "Start time": "11:00:00 a1/p1",
+            "End time": "11:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -851,8 +894,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "12:00:00 a1/p1",
-            "End time": "12:30:00 a1/p1",
+            "Start time": "11:30:00 a1/p1",
+            "End time": "12:10:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -860,8 +903,8 @@
             "Event name": "Engineers For The World (E4TW)",
             "Event description": "Get ready to use your creativity and teamwork skills to explore some of the world’s most pressing issues through a hands-on, fun, and hype design challenge (hint: it's Ocean themed).",
             "Date": "9/6/2021",
-            "Start time": "12:30:00 a1/p1",
-            "End time": "13:40:00 a1/p1",
+            "Start time": "12:10:00 a1/p1",
+            "End time": "13:20:00 a1/p1",
             "Location": "MY150",
             "Colour": "Blue"
         },
@@ -869,7 +912,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "13:40:00 a1/p1",
+            "Start time": "13:20:00 a1/p1",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -932,6 +975,8 @@
             "Event name": "D!ye Station",
             "Event description": "Ever wonder why engineering students dye themselves purple during F!Week, or what it would feel like to do it yourself? Join us at D!ye Station to find out! You’ll have the opportunity to get your upper body, arms, or hands all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype! ",
             "Date": "9/7/2021",
+            "Start time": "13:10:00 a1/p1",
+            "End time": "14:10:00 a1/p1",
             "Location": "Haultain Alley",
             "Colour": "Purple"
         },
@@ -939,8 +984,19 @@
             "Event name": "Downtown Walkaround",
             "Event description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way (this may or may not include getting wet...).",
             "Date": "9/7/2021",
+            "Start time": "10:30:00 a1/p1",
+            "End time": "12:10:00 a1/p1",
             "Location": "Downtown Toronto",
             "Colour": "Blue"
+        },
+        {
+            "Event name": "Lunch",
+            "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
+            "Date": "9/7/2021",
+            "Start time": "12:30:00 a1/p1",
+            "End time": "13:05:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Light orange"
         },
         {
             "Event name": "Nitelife",
@@ -1030,7 +1086,7 @@
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
             "Start time": "8:00:00 a1/p1",
-            "End time": "8:20:00 a1/p1",
+            "End time": "8:40:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -1038,7 +1094,7 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:20:00 a1/p1",
+            "Start time": "8:40:00 a1/p1",
             "End time": "11:10:00 a1/p1",
             "Location": "BA1160",
             "Colour": "Yellow"
@@ -1048,7 +1104,7 @@
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
             "Start time": "11:10:00 a1/p1",
-            "End time": "11:50:00 a1/p1",
+            "End time": "11:40:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -1056,8 +1112,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "11:50:00 a1/p1",
-            "End time": "12:30:00 a1/p1",
+            "Start time": "11:40:00 a1/p1",
+            "End time": "12:10:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -1065,8 +1121,8 @@
             "Event name": "Engineers For The World (E4TW)",
             "Event description": "Get ready to use your creativity and teamwork skills to explore some of the world’s most pressing issues through a hands-on, fun, and hype design challenge (hint: it's Ocean themed).",
             "Date": "9/6/2021",
-            "Start time": "12:30:00 a1/p1",
-            "End time": "13:40:00 a1/p1",
+            "Start time": "12:10:00 a1/p1",
+            "End time": "13:20:00 a1/p1",
             "Location": "MY150",
             "Colour": "Blue"
         },
@@ -1074,7 +1130,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "13:40:00 a1/p1",
+            "Start time": "13:20:00 a1/p1",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -1137,6 +1193,8 @@
             "Event name": "D!ye Station",
             "Event description": "Ever wonder why engineering students dye themselves purple during F!Week, or what it would feel like to do it yourself? Join us at D!ye Station to find out! You’ll have the opportunity to get your upper body, arms, or hands all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype! ",
             "Date": "9/7/2021",
+            "Start time": "13:40:00 a1/p1",
+            "End time": "14:40:00 a1/p1",
             "Location": "Haultain Alley",
             "Colour": "Purple"
         },
@@ -1144,8 +1202,19 @@
             "Event name": "Downtown Walkaround",
             "Event description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way (this may or may not include getting wet...).",
             "Date": "9/7/2021",
+            "Start time": "10:30:00 a1/p1",
+            "End time": "12:10:00 a1/p1",
             "Location": "Downtown Toronto",
             "Colour": "Blue"
+        },
+        {
+            "Event name": "Lunch",
+            "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
+            "Date": "9/7/2021",
+            "Start time": "13:00:00 a1/p1",
+            "End time": "13:35:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Light orange"
         },
         {
             "Event name": "Nitelife",
@@ -1235,7 +1304,7 @@
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
             "Start time": "8:00:00 a1/p1",
-            "End time": "8:20:00 a1/p1",
+            "End time": "8:40:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -1243,26 +1312,17 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:20:00 a1/p1",
-            "End time": "11:10:00 a1/p1",
+            "Start time": "8:40:00 a1/p1",
+            "End time": "11:00:00 a1/p1",
             "Location": "MY360, MY150",
             "Colour": "Yellow"
-        },
-        {
-            "Event name": "Grouptime",
-            "Event description": "Hang out with your frosh group for a bit before you go for lunch.",
-            "Date": "9/6/2021",
-            "Start time": "11:10:00 a1/p1",
-            "End time": "11:20:00 a1/p1",
-            "Location": "TBD",
-            "Colour": "Pink"
         },
         {
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "11:20:00 a1/p1",
-            "End time": "12:00:00 a1/p1",
+            "Start time": "11:00:00 a1/p1",
+            "End time": "11:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -1270,8 +1330,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "12:00:00 a1/p1",
-            "End time": "12:30:00 a1/p1",
+            "Start time": "11:30:00 a1/p1",
+            "End time": "12:10:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -1279,8 +1339,8 @@
             "Event name": "Engineers For The World (E4TW)",
             "Event description": "Get ready to use your creativity and teamwork skills to explore some of the world’s most pressing issues through a hands-on, fun, and hype design challenge (hint: it's Ocean themed).",
             "Date": "9/6/2021",
-            "Start time": "12:30:00 a1/p1",
-            "End time": "13:40:00 a1/p1",
+            "Start time": "12:10:00 a1/p1",
+            "End time": "13:20:00 a1/p1",
             "Location": "GB303, GB304, MY315",
             "Colour": "Blue"
         },
@@ -1288,7 +1348,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "13:40:00 a1/p1",
+            "Start time": "13:20:00 a1/p1",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -1351,6 +1411,8 @@
             "Event name": "D!ye Station",
             "Event description": "Ever wonder why engineering students dye themselves purple during F!Week, or what it would feel like to do it yourself? Join us at D!ye Station to find out! You’ll have the opportunity to get your upper body, arms, or hands all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype! ",
             "Date": "9/7/2021",
+            "Start time": "14:10:00 a1/p1",
+            "End time": "15:10:00 a1/p1",
             "Location": "Haultain Alley",
             "Colour": "Purple"
         },
@@ -1358,8 +1420,19 @@
             "Event name": "Downtown Walkaround",
             "Event description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way (this may or may not include getting wet...).",
             "Date": "9/7/2021",
+            "Start time": "11:00:00 a1/p1",
+            "End time": "12:40:00 a1/p1",
             "Location": "Downtown Toronto",
             "Colour": "Blue"
+        },
+        {
+            "Event name": "Lunch",
+            "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
+            "Date": "9/7/2021",
+            "Start time": "13:10:00 a1/p1",
+            "End time": "13:45:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Light orange"
         },
         {
             "Event name": "Nitelife",
@@ -1449,7 +1522,7 @@
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
             "Start time": "8:00:00 a1/p1",
-            "End time": "8:20:00 a1/p1",
+            "End time": "8:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -1457,7 +1530,7 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:20:00 a1/p1",
+            "Start time": "8:30:00 a1/p1",
             "End time": "11:10:00 a1/p1",
             "Location": "MY150",
             "Colour": "Yellow"
@@ -1467,7 +1540,7 @@
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
             "Start time": "11:10:00 a1/p1",
-            "End time": "11:50:00 a1/p1",
+            "End time": "11:40:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -1475,8 +1548,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "11:50:00 a1/p1",
-            "End time": "12:30:00 a1/p1",
+            "Start time": "11:40:00 a1/p1",
+            "End time": "12:10:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -1484,8 +1557,8 @@
             "Event name": "Engineers For The World (E4TW)",
             "Event description": "Get ready to use your creativity and teamwork skills to explore some of the world’s most pressing issues through a hands-on, fun, and hype design challenge (hint: it's Ocean themed).",
             "Date": "9/6/2021",
-            "Start time": "12:30:00 a1/p1",
-            "End time": "13:40:00 a1/p1",
+            "Start time": "12:10:00 a1/p1",
+            "End time": "13:20:00 a1/p1",
             "Location": "MY315, SF2202, SF3201",
             "Colour": "Blue"
         },
@@ -1493,7 +1566,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "13:40:00 a1/p1",
+            "Start time": "13:20:00 a1/p1",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -1556,6 +1629,8 @@
             "Event name": "D!ye Station",
             "Event description": "Ever wonder why engineering students dye themselves purple during F!Week, or what it would feel like to do it yourself? Join us at D!ye Station to find out! You’ll have the opportunity to get your upper body, arms, or hands all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype! ",
             "Date": "9/7/2021",
+            "Start time": "14:40:00 a1/p1",
+            "End time": "15:40:00 a1/p1",
             "Location": "Haultain Alley",
             "Colour": "Purple"
         },
@@ -1563,8 +1638,19 @@
             "Event name": "Downtown Walkaround",
             "Event description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way (this may or may not include getting wet...).",
             "Date": "9/7/2021",
+            "Start time": "11:30:00 a1/p1",
+            "End time": "1:10:00 a1/p1",
             "Location": "Downtown Toronto",
             "Colour": "Blue"
+        },
+        {
+            "Event name": "Lunch",
+            "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
+            "Date": "9/7/2021",
+            "Start time": "13:15:00 a1/p1",
+            "End time": "13:50:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Light orange"
         },
         {
             "Event name": "Nitelife",
@@ -1654,7 +1740,7 @@
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
             "Start time": "8:00:00 a1/p1",
-            "End time": "8:20:00 a1/p1",
+            "End time": "8:40:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -1662,8 +1748,8 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:20:00 a1/p1",
-            "End time": "11:10:00 a1/p1",
+            "Start time": "8:40:00 a1/p1",
+            "End time": "11:00:00 a1/p1",
             "Location": "MY150",
             "Colour": "Yellow"
         },
@@ -1671,8 +1757,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "11:10:00 a1/p1",
-            "End time": "11:40:00 a1/p1",
+            "Start time": "11:00:00 a1/p1",
+            "End time": "11:30:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -1680,8 +1766,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "11:40:00 a1/p1",
-            "End time": "12:10:00 a1/p1",
+            "Start time": "11:30:00 a1/p1",
+            "End time": "12:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -1689,7 +1775,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "12:10:00 a1/p1",
+            "Start time": "12:00:00 a1/p1",
             "End time": "13:40:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -1770,6 +1856,8 @@
             "Event name": "D!ye Station",
             "Event description": "Ever wonder why engineering students dye themselves purple during F!Week, or what it would feel like to do it yourself? Join us at D!ye Station to find out! You’ll have the opportunity to get your upper body, arms, or hands all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype! ",
             "Date": "9/7/2021",
+            "Start time": "14:40:00 a1/p1",
+            "End time": "15:40:00 a1/p1",
             "Location": "Haultain Alley",
             "Colour": "Purple"
         },
@@ -1777,8 +1865,19 @@
             "Event name": "Downtown Walkaround",
             "Event description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way (this may or may not include getting wet...).",
             "Date": "9/7/2021",
+            "Start time": "11:00:00 a1/p1",
+            "End time": "12:40:00 a1/p1",
             "Location": "Downtown Toronto",
             "Colour": "Blue"
+        },
+        {
+            "Event name": "Lunch",
+            "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
+            "Date": "9/7/2021",
+            "Start time": "13:30:00 a1/p1",
+            "End time": "14:05:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Light orange"
         },
         {
             "Event name": "Nitelife",
@@ -1868,7 +1967,7 @@
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
             "Start time": "8:00:00 a1/p1",
-            "End time": "8:20:00 a1/p1",
+            "End time": "8:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -1876,8 +1975,8 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:20:00 a1/p1",
-            "End time": "11:10:00 a1/p1",
+            "Start time": "8:30:00 a1/p1",
+            "End time": "10:50:00 a1/p1",
             "Location": "WB116, WB119",
             "Colour": "Yellow"
         },
@@ -1885,8 +1984,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "11:10:00 a1/p1",
-            "End time": "11:50:00 a1/p1",
+            "Start time": "10:50:00 a1/p1",
+            "End time": "11:40:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -1894,8 +1993,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "11:50:00 a1/p1",
-            "End time": "12:20:00 a1/p1",
+            "Start time": "11:40:00 a1/p1",
+            "End time": "12:10:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -1903,7 +2002,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "12:20:00 a1/p1",
+            "Start time": "12:10:00 a1/p1",
             "End time": "13:40:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -1984,6 +2083,8 @@
             "Event name": "D!ye Station",
             "Event description": "Ever wonder why engineering students dye themselves purple during F!Week, or what it would feel like to do it yourself? Join us at D!ye Station to find out! You’ll have the opportunity to get your upper body, arms, or hands all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype! ",
             "Date": "9/7/2021",
+            "Start time": "15:40:00 a1/p1",
+            "End time": "16:40:00 a1/p1",
             "Location": "Haultain Alley",
             "Colour": "Purple"
         },
@@ -1991,8 +2092,19 @@
             "Event name": "Downtown Walkaround",
             "Event description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way (this may or may not include getting wet...).",
             "Date": "9/7/2021",
+            "Start time": "11:30:00 a1/p1",
+            "End time": "13:10:00 a1/p1",
             "Location": "Downtown Toronto",
             "Colour": "Blue"
+        },
+        {
+            "Event name": "Lunch",
+            "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
+            "Date": "9/7/2021",
+            "Start time": "10:55:00 a1/p1",
+            "End time": "11:30:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Light orange"
         },
         {
             "Event name": "Nitelife",
@@ -2091,7 +2203,7 @@
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
             "Start time": "8:30:00 a1/p1",
-            "End time": "11:10:00 a1/p1",
+            "End time": "10:50:00 a1/p1",
             "Location": "GB303, GB304",
             "Colour": "Yellow"
         },
@@ -2099,8 +2211,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "11:10:00 a1/p1",
-            "End time": "11:40:00 a1/p1",
+            "Start time": "10:50:00 a1/p1",
+            "End time": "11:30:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -2108,8 +2220,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "11:40:00 a1/p1",
-            "End time": "12:10:00 a1/p1",
+            "Start time": "11:30:00 a1/p1",
+            "End time": "12:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -2189,6 +2301,8 @@
             "Event name": "D!ye Station",
             "Event description": "Ever wonder why engineering students dye themselves purple during F!Week, or what it would feel like to do it yourself? Join us at D!ye Station to find out! You’ll have the opportunity to get your upper body, arms, or hands all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype! ",
             "Date": "9/7/2021",
+            "Start time": "16:10:00 a1/p1",
+            "End time": "17:10:00 a1/p1",
             "Location": "Haultain Alley",
             "Colour": "Purple"
         },
@@ -2196,8 +2310,19 @@
             "Event name": "Downtown Walkaround",
             "Event description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way (this may or may not include getting wet...).",
             "Date": "9/7/2021",
+            "Start time": "13:40:00 a1/p1",
+            "End time": "15:10:00 a1/p1",
             "Location": "Downtown Toronto",
             "Colour": "Blue"
+        },
+        {
+            "Event name": "Lunch",
+            "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
+            "Date": "9/7/2021",
+            "Start time": "12:20:00 a1/p1",
+            "End time": "12:55:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Light orange"
         },
         {
             "Event name": "Nitelife",
@@ -2287,7 +2412,7 @@
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
             "Start time": "8:00:00 a1/p1",
-            "End time": "8:30:00 a1/p1",
+            "End time": "8:40:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -2295,8 +2420,8 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:30:00 a1/p1",
-            "End time": "11:10:00 a1/p1",
+            "Start time": "8:40:00 a1/p1",
+            "End time": "11:00:00 a1/p1",
             "Location": "SF3202",
             "Colour": "Yellow"
         },
@@ -2304,8 +2429,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "11:10:00 a1/p1",
-            "End time": "11:50:00 a1/p1",
+            "Start time": "11:00:00 a1/p1",
+            "End time": "11:40:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -2313,8 +2438,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "11:50:00 a1/p1",
-            "End time": "12:20:00 a1/p1",
+            "Start time": "11:40:00 a1/p1",
+            "End time": "12:10:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -2322,7 +2447,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "12:20:00 a1/p1",
+            "Start time": "12:10:00 a1/p1",
             "End time": "13:40:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -2394,6 +2519,8 @@
             "Event name": "D!ye Station",
             "Event description": "Ever wonder why engineering students dye themselves purple during F!Week, or what it would feel like to do it yourself? Join us at D!ye Station to find out! You’ll have the opportunity to get your upper body, arms, or hands all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype! ",
             "Date": "9/7/2021",
+            "Start time": "16:40:00 a1/p1",
+            "End time": "17:40:00 a1/p1",
             "Location": "Haultain Alley",
             "Colour": "Purple"
         },
@@ -2401,8 +2528,19 @@
             "Event name": "Downtown Walkaround",
             "Event description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way (this may or may not include getting wet...).",
             "Date": "9/7/2021",
+            "Start time": "13:40:00 a1/p1",
+            "End time": "15:10:00 a1/p1",
             "Location": "Downtown Toronto",
             "Colour": "Blue"
+        },
+        {
+            "Event name": "Lunch",
+            "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
+            "Date": "9/7/2021",
+            "Start time": "11:20:00 a1/p1",
+            "End time": "11:55:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Light orange"
         },
         {
             "Event name": "Nitelife",
@@ -2501,7 +2639,7 @@
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
             "Start time": "8:30:00 a1/p1",
-            "End time": "11:10:00 a1/p1",
+            "End time": "10:50:00 a1/p1",
             "Location": "MS3153",
             "Colour": "Yellow"
         },
@@ -2509,7 +2647,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "11:10:00 a1/p1",
+            "Start time": "10:50:00 a1/p1",
             "End time": "12:10:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -2599,6 +2737,8 @@
             "Event name": "D!ye Station",
             "Event description": "Ever wonder why engineering students dye themselves purple during F!Week, or what it would feel like to do it yourself? Join us at D!ye Station to find out! You’ll have the opportunity to get your upper body, arms, or hands all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype! ",
             "Date": "9/7/2021",
+            "Start time": "17:10:00 a1/p1",
+            "End time": "18:00:00 a1/p1",
             "Location": "Haultain Alley",
             "Colour": "Purple"
         },
@@ -2606,8 +2746,19 @@
             "Event name": "Downtown Walkaround",
             "Event description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way (this may or may not include getting wet...).",
             "Date": "9/7/2021",
+            "Start time": "14:10:00 a1/p1",
+            "End time": "15:50:00 a1/p1",
             "Location": "Downtown Toronto",
             "Colour": "Blue"
+        },
+        {
+            "Event name": "Lunch",
+            "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
+            "Date": "9/7/2021",
+            "Start time": "11:20:00 a1/p1",
+            "End time": "11:55:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Light orange"
         },
         {
             "Event name": "Nitelife",
@@ -2706,7 +2857,7 @@
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
             "Start time": "8:30:00 a1/p1",
-            "End time": "11:10:00 a1/p1",
+            "End time": "11:00:00 a1/p1",
             "Location": "SF3201, SF2202",
             "Colour": "Yellow"
         },
@@ -2714,8 +2865,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "11:10:00 a1/p1",
-            "End time": "12:00:00 a1/p1",
+            "Start time": "11:00:00 a1/p1",
+            "End time": "11:50:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -2723,8 +2874,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "12:00:00 a1/p1",
-            "End time": "12:30:00 a1/p1",
+            "Start time": "11:50:00 a1/p1",
+            "End time": "12:20:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -2732,7 +2883,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "12:30:00 a1/p1",
+            "Start time": "12:20:00 a1/p1",
             "End time": "14:50:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -2804,6 +2955,8 @@
             "Event name": "D!ye Station",
             "Event description": "Ever wonder why engineering students dye themselves purple during F!Week, or what it would feel like to do it yourself? Join us at D!ye Station to find out! You’ll have the opportunity to get your upper body, arms, or hands all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype! ",
             "Date": "9/7/2021",
+            "Start time": "9:30:00 a1/p1",
+            "End time": "10:30:00 a1/p1",
             "Location": "Haultain Alley",
             "Colour": "Purple"
         },
@@ -2811,8 +2964,19 @@
             "Event name": "Downtown Walkaround",
             "Event description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way (this may or may not include getting wet...).",
             "Date": "9/7/2021",
+            "Start time": "14:10:00 a1/p1",
+            "End time": "15:50:00 a1/p1",
             "Location": "Downtown Toronto",
             "Colour": "Blue"
+        },
+        {
+            "Event name": "Lunch",
+            "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
+            "Date": "9/7/2021",
+            "Start time": "11:40:00 a1/p1",
+            "End time": "12:15:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Light orange"
         },
         {
             "Event name": "Nitelife",
@@ -2911,7 +3075,7 @@
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
             "Start time": "8:30:00 a1/p1",
-            "End time": "11:10:00 a1/p1",
+            "End time": "10:50:00 a1/p1",
             "Location": "SF1101, SF1105",
             "Colour": "Yellow"
         },
@@ -2919,8 +3083,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "11:10:00 a1/p1",
-            "End time": "12:10:00 a1/p1",
+            "Start time": "10:50:00 a1/p1",
+            "End time": "11:50:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -2928,8 +3092,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "12:10:00 a1/p1",
-            "End time": "12:40:00 a1/p1",
+            "Start time": "11:50:00 a1/p1",
+            "End time": "12:20:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -2937,7 +3101,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "12:40:00 a1/p1",
+            "Start time": "12:20:00 a1/p1",
             "End time": "14:50:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -3009,6 +3173,8 @@
             "Event name": "D!ye Station",
             "Event description": "Ever wonder why engineering students dye themselves purple during F!Week, or what it would feel like to do it yourself? Join us at D!ye Station to find out! You’ll have the opportunity to get your upper body, arms, or hands all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype! ",
             "Date": "9/7/2021",
+            "Start time": "9:55:00 a1/p1",
+            "End time": "10:55:00 a1/p1",
             "Location": "Haultain Alley",
             "Colour": "Purple"
         },
@@ -3016,8 +3182,19 @@
             "Event name": "Downtown Walkaround",
             "Event description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way (this may or may not include getting wet...).",
             "Date": "9/7/2021",
+            "Start time": "14:40:00 a1/p1",
+            "End time": "16:20:00 a1/p1",
             "Location": "Downtown Toronto",
             "Colour": "Blue"
+        },
+        {
+            "Event name": "Lunch",
+            "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
+            "Date": "9/7/2021",
+            "Start time": "12:20:00 a1/p1",
+            "End time": "12:55:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Light orange"
         },
         {
             "Event name": "Nitelife",
@@ -3107,7 +3284,7 @@
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
             "Start time": "8:00:00 a1/p1",
-            "End time": "8:20:00 a1/p1",
+            "End time": "8:40:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -3115,16 +3292,16 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:20:00 a1/p1",
-            "End time": "11:10:00 a1/p1",
-            "Location": "SF1101, SF1105",
+            "Start time": "8:40:00 a1/p1",
+            "End time": "11:00:00 a1/p1",
+            "Location": "LM159",
             "Colour": "Yellow"
         },
         {
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "11:10",
+            "Start time": "11:00:00 a1/p1",
             "End time": "12:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -3214,6 +3391,8 @@
             "Event name": "D!ye Station",
             "Event description": "Ever wonder why engineering students dye themselves purple during F!Week, or what it would feel like to do it yourself? Join us at D!ye Station to find out! You’ll have the opportunity to get your upper body, arms, or hands all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype! ",
             "Date": "9/7/2021",
+            "Start time": "10:20:00 a1/p1",
+            "End time": "11:20:00 a1/p1",
             "Location": "Haultain Alley",
             "Colour": "Purple"
         },
@@ -3221,8 +3400,19 @@
             "Event name": "Downtown Walkaround",
             "Event description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way (this may or may not include getting wet...).",
             "Date": "9/7/2021",
+            "Start time": "14:40:00 a1/p1",
+            "End time": "16:20:00 a1/p1",
             "Location": "Downtown Toronto",
             "Colour": "Blue"
+        },
+        {
+            "Event name": "Lunch",
+            "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
+            "Date": "9/7/2021",
+            "Start time": "13:40:00 a1/p1",
+            "End time": "14:15:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Light orange"
         },
         {
             "Event name": "Nitelife",
@@ -3312,7 +3502,7 @@
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
             "Start time": "8:00:00 a1/p1",
-            "End time": "8:30:00 a1/p1",
+            "End time": "8:40:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -3320,8 +3510,8 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:30:00 a1/p1",
-            "End time": "11:10:00 a1/p1",
+            "Start time": "8:40:00 a1/p1",
+            "End time": "11:00:00 a1/p1",
             "Location": "MY315, BA1190",
             "Colour": "Yellow"
         },
@@ -3329,8 +3519,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "11:10:00 a1/p1",
-            "End time": "13:00:00 a1/p1",
+            "Start time": "11:00:00 a1/p1",
+            "End time": "12:30:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -3338,8 +3528,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "13:00:00 a1/p1",
-            "End time": "13:30:00 a1/p1",
+            "Start time": "12:30:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -3347,7 +3537,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "13:30:00 a1/p1",
+            "Start time": "13:00:00 a1/p1",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -3410,6 +3600,8 @@
             "Event name": "D!ye Station",
             "Event description": "Ever wonder why engineering students dye themselves purple during F!Week, or what it would feel like to do it yourself? Join us at D!ye Station to find out! You’ll have the opportunity to get your upper body, arms, or hands all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype! ",
             "Date": "9/7/2021",
+            "Start time": "10:45:00 a1/p1",
+            "End time": "11:45:00 a1/p1",
             "Location": "Haultain Alley",
             "Colour": "Purple"
         },
@@ -3417,8 +3609,19 @@
             "Event name": "Downtown Walkaround",
             "Event description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way (this may or may not include getting wet...).",
             "Date": "9/7/2021",
+            "Start time": "15:10:00 a1/p1",
+            "End time": "14:50:00 a1/p1",
             "Location": "Downtown Toronto",
             "Colour": "Blue"
+        },
+        {
+            "Event name": "Lunch",
+            "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
+            "Date": "9/7/2021",
+            "Start time": "13:25:00 a1/p1",
+            "End time": "14:00:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Light orange"
         },
         {
             "Event name": "Nitelife",
@@ -3508,7 +3711,7 @@
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
             "Start time": "8:00:00 a1/p1",
-            "End time": "8:20:00 a1/p1",
+            "End time": "8:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -3516,8 +3719,8 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:20:00 a1/p1",
-            "End time": "11:10:00 a1/p1",
+            "Start time": "8:30:00 a1/p1",
+            "End time": "10:50:00 a1/p1",
             "Location": "BA1180, BA1170",
             "Colour": "Yellow"
         },
@@ -3525,8 +3728,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "11:10:00 a1/p1",
-            "End time": "12:50:00 a1/p1",
+            "Start time": "10:50:00 a1/p1",
+            "End time": "12:30:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -3534,8 +3737,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "12:50:00 a1/p1",
-            "End time": "13:20:00 a1/p1",
+            "Start time": "12:30:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -3543,7 +3746,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "13:20:00 a1/p1",
+            "Start time": "13:00:00 a1/p1",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -3606,6 +3809,8 @@
             "Event name": "D!ye Station",
             "Event description": "Ever wonder why engineering students dye themselves purple during F!Week, or what it would feel like to do it yourself? Join us at D!ye Station to find out! You’ll have the opportunity to get your upper body, arms, or hands all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype! ",
             "Date": "9/7/2021",
+            "Start time": "11:10:00 a1/p1",
+            "End time": "12:10:00 a1/p1",
             "Location": "Haultain Alley",
             "Colour": "Purple"
         },
@@ -3613,8 +3818,19 @@
             "Event name": "Downtown Walkaround",
             "Event description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way (this may or may not include getting wet...).",
             "Date": "9/7/2021",
+            "Start time": "15:10:00 a1/p1",
+            "End time": "16:50:00 a1/p1",
             "Location": "Downtown Toronto",
             "Colour": "Blue"
+        },
+        {
+            "Event name": "Lunch",
+            "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
+            "Date": "9/7/2021",
+            "Start time": "12:10:00 a1/p1",
+            "End time": "12:45:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Light orange"
         },
         {
             "Event name": "Nitelife",
@@ -3704,7 +3920,7 @@
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
             "Start time": "8:00:00 a1/p1",
-            "End time": "8:20:00 a1/p1",
+            "End time": "8:30:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -3712,8 +3928,8 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:20:00 a1/p1",
-            "End time": "11:10:00 a1/p1",
+            "Start time": "8:30:00 a1/p1",
+            "End time": "10:50:00 a1/p1",
             "Location": "BA1170, BA1130",
             "Colour": "Yellow"
         },
@@ -3721,8 +3937,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "11:10:00 a1/p1",
-            "End time": "13:00:00 a1/p1",
+            "Start time": "10:50:00 a1/p1",
+            "End time": "12:40:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -3730,8 +3946,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "13:00:00 a1/p1",
-            "End time": "13:30:00 a1/p1",
+            "Start time": "12:40:00 a1/p1",
+            "End time": "13:10:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -3739,7 +3955,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "13:30:00 a1/p1",
+            "Start time": "13:10:00 a1/p1",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -3802,6 +4018,8 @@
             "Event name": "D!ye Station",
             "Event description": "Ever wonder why engineering students dye themselves purple during F!Week, or what it would feel like to do it yourself? Join us at D!ye Station to find out! You’ll have the opportunity to get your upper body, arms, or hands all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype! ",
             "Date": "9/7/2021",
+            "Start time": "11:35:00 a1/p1",
+            "End time": "12:35:00 a1/p1",
             "Location": "Haultain Alley",
             "Colour": "Purple"
         },
@@ -3809,8 +4027,19 @@
             "Event name": "Downtown Walkaround",
             "Event description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way (this may or may not include getting wet...).",
             "Date": "9/7/2021",
+            "Start time": "15:40:00 a1/p1",
+            "End time": "17:20:00 a1/p1",
             "Location": "Downtown Toronto",
             "Colour": "Blue"
+        },
+        {
+            "Event name": "Lunch",
+            "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
+            "Date": "9/7/2021",
+            "Start time": "11:00:00 a1/p1",
+            "End time": "11:35:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Light orange"
         },
         {
             "Event name": "Nitelife",
@@ -3900,7 +4129,7 @@
             "Event description": "Meet your frosh group IN PERSON for the first time!",
             "Date": "9/6/2021",
             "Start time": "8:00:00 a1/p1",
-            "End time": "8:20:00 a1/p1",
+            "End time": "8:40:00 a1/p1",
             "Location": "TBD",
             "Colour": "Pink"
         },
@@ -3908,8 +4137,8 @@
             "Event name": "Matriculation",
             "Event description": "This is your introduction to UofT Engineering, featuring presentations by key members of the SkuleTM Community and some stellar demonstrations from clubs. You’ll come out of this a little bit more familiar and a lot more excited for first year.",
             "Date": "9/6/2021",
-            "Start time": "8:20:00 a1/p1",
-            "End time": "11:10:00 a1/p1",
+            "Start time": "8:40:00 a1/p1",
+            "End time": "11:00:00 a1/p1",
             "Location": "MC102",
             "Colour": "Yellow"
         },
@@ -3917,8 +4146,8 @@
             "Event name": "F!rosh Games",
             "Event description": "Your all-in-one event for introductions to Skule, your amazing fellow Frosh, and to what it means to be an Engineer at UofT. Strap on your hardhats and tie up your shoes for a carousel of team games. Be ready to mingle, think, maybe get a little competitive… and most importantly, get hyyyyped!",
             "Date": "9/6/2021",
-            "Start time": "11:10:00 a1/p1",
-            "End time": "12:50:00 a1/p1",
+            "Start time": "11:00:00 a1/p1",
+            "End time": "12:40:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
         },
@@ -3926,8 +4155,8 @@
             "Event name": "Lunch",
             "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
             "Date": "9/6/2021",
-            "Start time": "12:50:00 a1/p1",
-            "End time": "1:20:00 a1/p1",
+            "Start time": "12:40:00 a1/p1",
+            "End time": "13:10:00 a1/p1",
             "Location": "TBD",
             "Colour": "Light orange"
         },
@@ -3935,7 +4164,7 @@
             "Event name": "F!rosh Games",
             "Event description": "Yes, MORE games!!!",
             "Date": "9/6/2021",
-            "Start time": "13:20:00 a1/p1",
+            "Start time": "13:10:00 a1/p1",
             "End time": "16:00:00 a1/p1",
             "Location": "Various locations",
             "Colour": "Green"
@@ -3998,6 +4227,8 @@
             "Event name": "D!ye Station",
             "Event description": "Ever wonder why engineering students dye themselves purple during F!Week, or what it would feel like to do it yourself? Join us at D!ye Station to find out! You’ll have the opportunity to get your upper body, arms, or hands all purpled up alongside your new SkuleTM community, so get ready to experience the legendary purrrrrrrple hype! ",
             "Date": "9/7/2021",
+            "Start time": "12:00:00 a1/p1",
+            "End time": "13:00:00 a1/p1",
             "Location": "Haultain Alley",
             "Colour": "Purple"
         },
@@ -4005,8 +4236,19 @@
             "Event name": "Downtown Walkaround",
             "Event description": "Get ready to see Toronto like you never have before! Downtown Walkaround is a walking tour of Downtown Toronto with a Skule twist. You’ll see glassy high-rises, Toronto landmarks, and a whole host of surprises along the way (this may or may not include getting wet...).",
             "Date": "9/7/2021",
+            "Start time": "15:50:00 a1/p1",
+            "End time": "17:20:00 a1/p1",
             "Location": "Downtown Toronto",
             "Colour": "Blue"
+        },
+        {
+            "Event name": "Lunch",
+            "Event description": "Time to Feed! The! Frosh! Can't have you low on energy while you participate in all the fun activities for the afternoon.",
+            "Date": "9/7/2021",
+            "Start time": "11:10:00 a1/p1",
+            "End time": "11:45:00 a1/p1",
+            "Location": "TBD",
+            "Colour": "Light orange"
         },
         {
             "Event name": "Nitelife",

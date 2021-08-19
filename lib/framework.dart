@@ -13,9 +13,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'src/colors.dart';
 
-
 Future<bool> hasNetwork() async {
-  ConnectivityResult connectivityResult = await (Connectivity().checkConnectivity());
+  ConnectivityResult connectivityResult =
+      await (Connectivity().checkConnectivity());
   return connectivityResult != ConnectivityResult.none;
 }
 
@@ -63,7 +63,7 @@ class FrameworkState extends State<Framework> {
       String? cookie = await widget.storage.read(key: 'cookie');
       Response res = await widget.dio
           .get('https://www.orientation.skule.ca/users/current',
-          options: Options(headers: {"cookie": cookie}))
+              options: Options(headers: {"cookie": cookie}))
           .catchError((error) {
         setState(() {
           _loggedIn = false;
@@ -159,13 +159,14 @@ class FrameworkState extends State<Framework> {
               storage: widget.storage));
     } else
       return Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Stack(children: [
           PageTransitionSwitcher(
             transitionBuilder: (
-                child,
-                animation,
-                secondaryAnimation,
-                ) {
+              child,
+              animation,
+              secondaryAnimation,
+            ) {
               return FadeThroughTransition(
                 animation: animation,
                 secondaryAnimation: secondaryAnimation,
@@ -194,7 +195,7 @@ class FrameworkState extends State<Framework> {
             alignment: Alignment.bottomCenter,
             child: CurvedNavigationBar(
               buttonBackgroundColor:
-              Theme.of(this.context).colorScheme.lightPurpleAccent,
+                  Theme.of(this.context).colorScheme.lightPurpleAccent,
               color: Theme.of(this.context).colorScheme.lightPurpleAccent,
               animationDuration: const Duration(milliseconds: 500),
               backgroundColor: Colors.transparent,
