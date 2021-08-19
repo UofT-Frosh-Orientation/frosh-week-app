@@ -6,7 +6,7 @@ import '../widgets/TextWidgets.dart';
 import 'package:flutter/cupertino.dart';
 import "../functions.dart";
 import "../widgets/ContainersExtensions.dart";
-// import "package:flutter_secure_storage/flutter_secure_storage.dart" as fss;
+import "package:flutter_secure_storage/flutter_secure_storage.dart" as fss;
 import 'package:frosh_week_2t1/src/pages/schedule_page.dart';
 import 'package:frosh_week_2t1/src/pages/resources_page.dart';
 import 'package:frosh_week_2t1/src/widgets/ButtonWidgets.dart';
@@ -21,18 +21,17 @@ class HomePage extends StatefulWidget {
   final dynamic froshScheduleData;
   final Function setLoggedIn;
 
-  const HomePage(
-      {Key? key,
-      required this.froshName,
-      required this.froshGroup,
-      required this.froshId,
-      required this.discipline,
-      required this.shirtSize,
-      required this.welcomeMessage,
-      required this.froshScheduleData,
-        required this.setLoggedIn,
-      })
-      : super(key: key);
+  const HomePage({
+    Key? key,
+    required this.froshName,
+    required this.froshGroup,
+    required this.froshId,
+    required this.discipline,
+    required this.shirtSize,
+    required this.welcomeMessage,
+    required this.froshScheduleData,
+    required this.setLoggedIn,
+  }) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -151,8 +150,11 @@ class _HomePageState extends State<HomePage> {
             yellow: true,
             onPressed: () async {
               print("handle logout");
-              SharedPreferences preferences = await SharedPreferences.getInstance();
+              SharedPreferences preferences =
+                  await SharedPreferences.getInstance();
               await preferences.clear();
+              fss.FlutterSecureStorage storage = fss.FlutterSecureStorage();
+              storage.deleteAll();
               preferences.setBool('isLoggedIn', false);
               widget.setLoggedIn(false);
             },

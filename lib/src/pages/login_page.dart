@@ -48,17 +48,19 @@ class _LoginPageState extends State<LoginPage> {
     });
     SharedPreferences prefs = await SharedPreferences.getInstance();
     if (isFrosh) {
-      Response res1 =
-      await widget.dio.post('https://www.orientation.skule.ca/login',
-          data: {
-            'email': email,
-            'password': password,
+      Response res1 = await widget.dio.post(
+        'https://www.orientation.skule.ca/login',
+        data: {
+          'email': email,
+          'password': password,
+        },
+        options: Options(
+          followRedirects: false,
+          validateStatus: (status) {
+            return status! < 400;
           },
-          options: Options(
-              followRedirects: false,
-              validateStatus: (status) {
-                return status! < 400;
-              }));
+        ),
+      );
       if (email == "" || password == "" || res1.headers["location"] == null) {
         prefs.setBool('isLoggedIn', false);
         widget.setLoggedIn(false);
@@ -87,46 +89,48 @@ class _LoginPageState extends State<LoginPage> {
         loading = false;
         error = "Please enter a valid password and email";
       });
+    } else {
+      Response res1 = await widget.dio.post(
+        'https://www.orientation.skule.ca/exec/login',
+        data: {
+          'email': email,
+          'password': password,
+        },
+        options: Options(
+          followRedirects: false,
+          validateStatus: (status) {
+            return status! < 400;
+          },
+        ),
+      );
+      if (email == "" || password == "" || res1.headers["location"] == null) {
+        prefs.setBool('isLoggedIn', false);
+        widget.setLoggedIn(false);
+        setState(() {
+          loading = false;
+          error = "Please fill in the credentials";
+        });
+        return;
+      }
+      if (res1.headers["location"]![0] == '/exec/login_success') {
+        Headers headers = res1.headers;
+        String cookie = headers["set-cookie"]![0]
+            .substring(0, headers["set-cookie"]![0].indexOf(';'));
+        await widget.storage.write(key: "cookie", value: cookie);
+        prefs.setBool('isLoggedIn', true);
+        widget.setLoggedIn(true);
+        setState(() {
+          loading = false;
+        });
+        return;
+      }
+      prefs.setBool('isLoggedIn', false);
+      widget.setLoggedIn(false);
+      setState(() {
+        loading = false;
+        error = "Please enter a valid password and email";
+      });
     }
-    // Response res1 =
-    //     await widget.dio.post('https://www.orientation.skule.ca/login',
-    //         data: {
-    //           'email': email,
-    //           'password': password,
-    //         },
-    //         options: Options(
-    //             followRedirects: false,
-    //             validateStatus: (status) {
-    //               return status! < 400;
-    //             }));
-    // if (email == "" || password == "" || res1.headers["location"] == null) {
-    //   prefs.setBool('isLoggedIn', false);
-    //   widget.setLoggedIn(false);
-    //   setState(() {
-    //     loading = false;
-    //     error = "Please fill in the credentials";
-    //   });
-    //   return;
-    // }
-    // if (res1.headers["location"]![0] == "/login_success") {
-    //   Headers headers = res1.headers;
-    //   // print(headers);
-    //   String cookie = headers["set-cookie"]![0]
-    //       .substring(0, headers["set-cookie"]![0].indexOf(';'));
-    //   await widget.storage.write(key: "cookie", value: cookie);
-    //   prefs.setBool('isLoggedIn', true);
-    //   widget.setLoggedIn(true);
-    //   setState(() {
-    //     loading = false;
-    //   });
-    //   return;
-    // }
-    // prefs.setBool('isLoggedIn', false);
-    // widget.setLoggedIn(false);
-    // setState(() {
-    //   loading = false;
-    //   error = "Please enter a valid password and email";
-    // });
   }
 
   int lastTap = DateTime.now().millisecondsSinceEpoch;
@@ -224,8 +228,8 @@ class _LoginPageState extends State<LoginPage> {
                                 text: "Frosh Login",
                                 onPressed: () async {
                                   await _login(
-                                      email: email,
-                                      password: password,
+                                    email: email,
+                                    password: password,
                                     isFrosh: true,
                                   );
                                 }),
@@ -237,8 +241,8 @@ class _LoginPageState extends State<LoginPage> {
                                 text: "Leader Login",
                                 onPressed: () async {
                                   await _login(
-                                      email: email,
-                                      password: password,
+                                    email: email,
+                                    password: password,
                                     isFrosh: false,
                                   );
                                 }),
@@ -251,8 +255,7 @@ class _LoginPageState extends State<LoginPage> {
                             await _login(
                                 email: email,
                                 password: password,
-                              isFrosh: true
-                            );
+                                isFrosh: true);
                           })),
         ),
         Container(height: 15),
