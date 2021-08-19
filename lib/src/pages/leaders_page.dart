@@ -51,6 +51,16 @@ class LeadersPageState extends State<LeadersPage> {
             fontSize: 24,
             fontWeight: FontWeight.bold,
           ),
+          Container(height: 5),
+          ButtonRegular(
+            yellow: true,
+            text: "Register F!rosh In",
+            onPressed: () async {
+              setState(() {
+                print("register frosh");
+              });
+            },
+          ),
         ])),
         Container(height: 30),
         ButtonRegular(
@@ -87,6 +97,7 @@ class LeadersPageState extends State<LeadersPage> {
             });
           },
         ),
+        Container(height: 30),
         DropDownButton(
             title: "Location",
             items: ["King's college circle", "Myhal", "Orientation"],
