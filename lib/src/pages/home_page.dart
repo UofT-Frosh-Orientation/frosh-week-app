@@ -78,18 +78,24 @@ class _HomePageState extends State<HomePage> {
               DeviceDisplayBrightness.setBrightness(1.0);
               Navigator.of(context).push(
                   MaterialPageRoute<void>(builder: (BuildContext context) {
-                return ProfilePage(
-                  froshName: widget.froshName,
-                  froshGroup:
-                      (froshGroupSymbols[widget.froshGroup.toLowerCase()] ??
-                              "") +
-                          " " +
-                          widget.froshGroup.capitalizeFirst,
-                  froshId: widget.froshId,
-                  discipline: widget.discipline,
-                  shirtSize: widget.shirtSize,
-                  welcomeMessage: widget.welcomeMessage,
-                  hasCompletedUCheck: uCheckPass,
+                return WillPopScope(
+                  onWillPop: () async {
+                    DeviceDisplayBrightness.resetBrightness();
+                    return true;
+                  },
+                  child: ProfilePage(
+                    froshName: widget.froshName,
+                    froshGroup:
+                        (froshGroupSymbols[widget.froshGroup.toLowerCase()] ??
+                                "") +
+                            " " +
+                            widget.froshGroup.capitalizeFirst,
+                    froshId: widget.froshId,
+                    discipline: widget.discipline,
+                    shirtSize: widget.shirtSize,
+                    welcomeMessage: widget.welcomeMessage,
+                    hasCompletedUCheck: uCheckPass,
+                  ),
                 );
               }));
             },
