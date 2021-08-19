@@ -52,15 +52,30 @@ class LeadersPageState extends State<LeadersPage> {
             fontWeight: FontWeight.bold,
           ),
           Container(height: 5),
-          ButtonRegular(
-            yellow: true,
-            text: "Register F!rosh In",
-            onPressed: () async {
-              setState(() {
+          Row(children: [
+            ButtonRegular(
+              yellow: true,
+              outline: true,
+              text: "Cancel",
+              customWidth: MediaQuery.of(context).size.width / 2 - 32 * 2,
+              onPressed: () async {
+                setState(() {
+                  scannedStrings = ["", "", ""];
+                });
+              },
+            ),
+            ButtonRegular(
+              yellow: true,
+              text: "Register",
+              customWidth: MediaQuery.of(context).size.width / 2 - 32 * 2,
+              onPressed: () async {
                 print("register frosh");
-              });
-            },
-          ),
+                setState(() {
+                  scannedStrings = ["", "", ""];
+                });
+              },
+            ),
+          ]),
         ])),
         Container(height: 30),
         ButtonRegular(
