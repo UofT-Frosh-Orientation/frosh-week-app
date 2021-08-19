@@ -8,11 +8,7 @@ class QRScanner extends StatefulWidget {
   /// the state of this widget and use it in a page. It should probably call setState((){})
   /// and set a state value in the parent Widget which this widget is nested within.
   final Function setValues;
-  const QRScanner({
-    Key? key,
-    required this.setValues
-  }) : super(key: key);
-
+  const QRScanner({Key? key, required this.setValues}) : super(key: key);
 
   @override
   _QRScannerState createState() => _QRScannerState();
@@ -20,11 +16,12 @@ class QRScanner extends StatefulWidget {
 
 class _QRScannerState extends State<QRScanner> {
   Barcode? result;
+  int count = 0;
   QRViewController? controller;
   final GlobalKey qrKey = GlobalKey(debugLabel: "QR");
- //TODO: Add button to flip camera
+  //TODO: Add button to flip camera
   @override
-  void reassemble(){
+  void reassemble() {
     super.reassemble();
     if (Platform.isAndroid) {
       controller!.pauseCamera();
@@ -38,25 +35,17 @@ class _QRScannerState extends State<QRScanner> {
     super.dispose();
   }
 
-
-  void onQRViewCreated(QRViewController controller) {
-    print("QRViewController created");
-    this.controller = controller;
-    controller.scannedDataStream.listen((scanData) {
-      print(scanData);
-      setState(() {
-        result = scanData;
-      });
-      widget.setValues(scanData.code);
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
       child: QRView(
         key: qrKey,
-        onQRViewCreated: onQRViewCreated,
+        onQRViewCreated: (QRViewController controller) async {
+          print("QR Scanner created!");
+          this.controller = controller;
+          final result = await controller.scannedDataStream.first;
+          Navigator.pop(context, result.code);
+        },
       ),
     );
   }

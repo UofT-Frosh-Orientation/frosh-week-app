@@ -14,8 +14,6 @@ import 'dart:math';
 import '../src/functions.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 
-
-
 Future<void> _messageHandler(RemoteMessage message) async {
   final DateFormat dateFormat = DateFormat('H:mm a EEEE');
   SharedPreferences preferences = await SharedPreferences.getInstance();

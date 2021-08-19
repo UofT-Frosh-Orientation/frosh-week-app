@@ -55,16 +55,16 @@ class LeadersPageState extends State<LeadersPage> {
         Container(height: 30),
         ButtonRegular(
           text: "Scan QR Code",
-          onPressed: () {
+          onPressed: () async {
             setState(() {
               scannedStrings = ["", "", ""];
             });
-            Navigator.of(context)
-                .push(MaterialPageRoute<void>(builder: (BuildContext context) {
+            final result = await Navigator.push(context,
+                MaterialPageRoute<String>(builder: (BuildContext context) {
               return GestureDetector(
                 onPanUpdate: (details) {
                   if (details.delta.dy > 10) {
-                    Navigator.of(context).pop();
+                    Navigator.pop(context, '');
                   }
                 },
                 child: Scaffold(
@@ -73,7 +73,7 @@ class LeadersPageState extends State<LeadersPage> {
                       leading: Container(),
                       actions: [
                         ExitButton(onTap: () {
-                          Navigator.of(context).pop();
+                          Navigator.pop(context, '');
                         }),
                       ],
                       backgroundColor: Colors.transparent,
@@ -82,6 +82,9 @@ class LeadersPageState extends State<LeadersPage> {
                     body: QRScanner(setValues: getStrings)),
               );
             }));
+            setState(() {
+              scannedStrings = result!.split("/");
+            });
           },
         ),
         Container(height: 20),
