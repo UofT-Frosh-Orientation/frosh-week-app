@@ -40,6 +40,7 @@ class Framework extends StatefulWidget {
 class FrameworkState extends State<Framework> {
   late PageController pageController;
   int selectedIndex = 0;
+  bool isLeader = false;
   late bool _loggedIn;
   String froshName = "";
   String froshGroup = "";
@@ -58,24 +59,39 @@ class FrameworkState extends State<Framework> {
 
   Future<bool> getCurrentUser() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      isLeader = prefs.getBool('isLeader') ?? false;
+    });
     if (await hasNetwork()) {
-      print("Has network");
       String? cookie = await widget.storage.read(key: 'cookie');
       Response res = await widget.dio
-          .get('https://www.orientation.skule.ca/users/current',
+          .get(
+              isLeader
+                  ? 'https://www.orientation.skule.ca/exec/current'
+                  : 'https://www.orientation.skule.ca/users/current',
               options: Options(headers: {"cookie": cookie}))
           .catchError((error) {
         setState(() {
           _loggedIn = false;
         });
       });
-      setState(() {
-        froshName = res.data["preferredName"];
-        froshGroup = res.data["froshGroup"];
-        froshId = res.data["_id"];
-        discipline = res.data["discipline"];
-        shirtSize = res.data["shirtSize"];
-      });
+      if (isLeader) {
+        setState(() {
+          froshName = res.data["name"];
+          froshGroup = res.data["froshGroup"];
+          froshId = res.data["_id"];
+          discipline = "";
+          shirtSize = "Medium";
+        });
+      } else {
+        setState(() {
+          froshName = res.data["preferredName"];
+          froshGroup = res.data["froshGroup"];
+          froshId = res.data["_id"];
+          discipline = res.data["discipline"];
+          shirtSize = res.data["shirtSize"];
+        });
+      }
       await prefs.setStringList(
           'froshData', [froshName, froshGroup, froshId, discipline, shirtSize]);
       return true;
@@ -101,8 +117,6 @@ class FrameworkState extends State<Framework> {
 
   @override
   Widget build(BuildContext context) {
-    bool leaderAccount = true;
-
     List<Widget> pages = [
       HomePage(
         froshName: froshName,
@@ -141,7 +155,7 @@ class FrameworkState extends State<Framework> {
       ),
     ];
 
-    if (leaderAccount) {
+    if (isLeader) {
       pages.add(LeadersPage());
       icons.add(
         Icon(
