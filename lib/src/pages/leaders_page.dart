@@ -59,7 +59,8 @@ class LeadersPageState extends State<LeadersPage> {
             setState(() {
               scannedStrings = ["", "", ""];
             });
-            final result = await Navigator.push(context, MaterialPageRoute<String>(builder: (BuildContext context) {
+            final result = await Navigator.push(context,
+                MaterialPageRoute<String>(builder: (BuildContext context) {
               return GestureDetector(
                 onPanUpdate: (details) {
                   if (details.delta.dy > 10) {
