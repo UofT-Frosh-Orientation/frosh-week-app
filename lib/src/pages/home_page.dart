@@ -138,14 +138,13 @@ class _HomePageState extends State<HomePage> {
                         MediaQuery.of(context).size.width / 2 - 16 - 20 * 2,
                     text: "UCheck Pass",
                     onPressed: () async {
-
                       if (uCheckPass == true) {
                         handleUCheckChange(false);
                       } else {
                         handleUCheckChange(true);
                       }
                       setState(() {
-                       uCheckPass = true;
+                        uCheckPass = true;
                       });
                     }),
               ],

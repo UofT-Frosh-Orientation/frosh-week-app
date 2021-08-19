@@ -65,7 +65,10 @@ class FrameworkState extends State<Framework> {
     if (await hasNetwork()) {
       String? cookie = await widget.storage.read(key: 'cookie');
       Response res = await widget.dio
-          .get(isLeader ? 'https://www.orientation.skule.ca/exec/current' : 'https://www.orientation.skule.ca/users/current',
+          .get(
+              isLeader
+                  ? 'https://www.orientation.skule.ca/exec/current'
+                  : 'https://www.orientation.skule.ca/users/current',
               options: Options(headers: {"cookie": cookie}))
           .catchError((error) {
         setState(() {
