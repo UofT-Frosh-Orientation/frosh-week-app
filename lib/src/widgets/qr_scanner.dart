@@ -20,6 +20,7 @@ class QRScanner extends StatefulWidget {
 
 class _QRScannerState extends State<QRScanner> {
   Barcode? result;
+  int count = 0;
   QRViewController? controller;
   final GlobalKey qrKey = GlobalKey(debugLabel: "QR");
  //TODO: Add button to flip camera
@@ -38,25 +39,27 @@ class _QRScannerState extends State<QRScanner> {
     super.dispose();
   }
 
-
-  void onQRViewCreated(QRViewController controller) {
-    print("QRViewController created");
-    this.controller = controller;
-    controller.scannedDataStream.listen((scanData) {
-      print(scanData);
-      setState(() {
-        result = scanData;
-      });
-      widget.setValues(scanData.code);
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
       child: QRView(
         key: qrKey,
-        onQRViewCreated: onQRViewCreated,
+        onQRViewCreated: (QRViewController controller) async {
+          print("QR Scanner created!");
+          this.controller = controller;
+          // controller.scannedDataStream.listen((scanData) {
+          //   print("Data obtained: ${scanData.code}");
+          //   print(count);
+          //   setState(() {
+          //     count += 1;
+          //   });
+          //   if (count > 1) {
+          //     Navigator.pop(context, scanData.code);
+          //   }
+          // });
+          final result = await controller.scannedDataStream.first;
+          Navigator.pop(context, result.code);
+        },
       ),
     );
   }
