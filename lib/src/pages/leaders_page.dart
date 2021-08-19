@@ -16,6 +16,7 @@ class LeadersPage extends StatefulWidget {
 
 class LeadersPageState extends State<LeadersPage> {
   List<String> scannedStrings = ["", "", ""];
+  bool hasLoaded = false;
   getStrings(String output) {
     setState(() {
       scannedStrings = output.split("/");
