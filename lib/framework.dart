@@ -112,6 +112,7 @@ class FrameworkState extends State<Framework> {
         shirtSize: shirtSize,
         froshScheduleData: widget.loadedData["scheduleJSON"]["lambda"],
         welcomeMessage: widget.loadedData["welcomeMessage"],
+        setLoggedIn: setLoggedIn,
       ),
       SchedulePage(data: widget.loadedData["scheduleJSON"]["lambda"]),
       NotificationsPageParse(),
