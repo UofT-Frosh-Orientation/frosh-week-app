@@ -61,7 +61,7 @@ class ProfilePage extends StatelessWidget {
                   child: FroshQR(
                       froshAccount: froshId,
                       froshKitsSize: shirtSize,
-                      hasCompletedUCheck: true),
+                      hasCompletedUCheck: hasCompletedUCheck),
                 ),
               ]),
             )
