@@ -216,7 +216,7 @@ class FrameworkState extends State<Framework> {
                 buttonBackgroundColor:
                     Theme.of(this.context).colorScheme.lightPurpleAccent,
                 color: Theme.of(this.context).colorScheme.lightPurpleAccent,
-                animationDuration: const Duration(milliseconds: 500),
+                animationDuration: const Duration(milliseconds: 375),
                 backgroundColor: Colors.transparent,
                 height: 60,
                 items: icons,
