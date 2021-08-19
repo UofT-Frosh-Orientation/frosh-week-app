@@ -51,6 +51,31 @@ class LeadersPageState extends State<LeadersPage> {
             fontSize: 24,
             fontWeight: FontWeight.bold,
           ),
+          Container(height: 5),
+          Row(children: [
+            ButtonRegular(
+              yellow: true,
+              outline: true,
+              text: "Cancel",
+              customWidth: MediaQuery.of(context).size.width / 2 - 32 * 2,
+              onPressed: () async {
+                setState(() {
+                  scannedStrings = ["", "", ""];
+                });
+              },
+            ),
+            ButtonRegular(
+              yellow: true,
+              text: "Register",
+              customWidth: MediaQuery.of(context).size.width / 2 - 32 * 2,
+              onPressed: () async {
+                print("register frosh");
+                setState(() {
+                  scannedStrings = ["", "", ""];
+                });
+              },
+            ),
+          ]),
         ])),
         Container(height: 30),
         ButtonRegular(
@@ -87,6 +112,13 @@ class LeadersPageState extends State<LeadersPage> {
             });
           },
         ),
+        Container(height: 30),
+        DropDownButton(
+            title: "Location",
+            items: ["King's college circle", "Myhal", "Orientation"],
+            onChanged: (value) {
+              print(value);
+            }),
         Container(height: 20),
         TextInput(
             obscureText: true,

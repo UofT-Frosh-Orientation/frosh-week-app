@@ -175,55 +175,60 @@ class FrameworkState extends State<Framework> {
     } else
       return Scaffold(
         resizeToAvoidBottomInset: false,
-        body: Stack(children: [
-          PageTransitionSwitcher(
-            transitionBuilder: (
-              child,
-              animation,
-              secondaryAnimation,
-            ) {
-              return FadeThroughTransition(
-                animation: animation,
-                secondaryAnimation: secondaryAnimation,
-                child: child,
-              );
-            },
-            child: pages[selectedIndex],
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              height: 80,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment(0, 0.8),
-                  colors: [
-                    Theme.of(this.context).canvasColor.withOpacity(0),
-                    Theme.of(this.context).colorScheme.lightPurpleAccent,
-                  ],
+        body: GestureDetector(
+          onTap: () {
+            FocusScope.of(context).requestFocus(new FocusNode());
+          },
+          child: Stack(children: [
+            PageTransitionSwitcher(
+              transitionBuilder: (
+                child,
+                animation,
+                secondaryAnimation,
+              ) {
+                return FadeThroughTransition(
+                  animation: animation,
+                  secondaryAnimation: secondaryAnimation,
+                  child: child,
+                );
+              },
+              child: pages[selectedIndex],
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                height: 80,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment(0, 0.8),
+                    colors: [
+                      Theme.of(this.context).canvasColor.withOpacity(0),
+                      Theme.of(this.context).colorScheme.lightPurpleAccent,
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: CurvedNavigationBar(
-              buttonBackgroundColor:
-                  Theme.of(this.context).colorScheme.lightPurpleAccent,
-              color: Theme.of(this.context).colorScheme.lightPurpleAccent,
-              animationDuration: const Duration(milliseconds: 500),
-              backgroundColor: Colors.transparent,
-              height: 60,
-              items: icons,
-              onTap: (index) {
-                setState(() {
-                  selectedIndex = index;
-                });
-              },
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: CurvedNavigationBar(
+                buttonBackgroundColor:
+                    Theme.of(this.context).colorScheme.lightPurpleAccent,
+                color: Theme.of(this.context).colorScheme.lightPurpleAccent,
+                animationDuration: const Duration(milliseconds: 500),
+                backgroundColor: Colors.transparent,
+                height: 60,
+                items: icons,
+                onTap: (index) {
+                  setState(() {
+                    selectedIndex = index;
+                  });
+                },
+              ),
             ),
-          ),
-        ]),
+          ]),
+        ),
       );
   }
 }
