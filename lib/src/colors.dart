@@ -38,6 +38,9 @@ extension ColorsDefined on ColorScheme {
   Color get redAccent => brightness == Brightness.light
       ? const Color(0xFFB42B22)
       : const Color(0xFFF06E6E);
+  Color get greenAccent => brightness == Brightness.light
+      ? const Color(0xFF69B315)
+      : const Color(0xFF79C54D);
   Color get qrColor => brightness == Brightness.light //needs high contrast
       ? const Color(0xFF380077)
       : const Color(0xFF310069);

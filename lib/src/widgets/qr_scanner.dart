@@ -54,8 +54,12 @@ class _QRScannerState extends State<QRScanner> {
         onQRViewCreated: (QRViewController controller) async {
           print("QR Scanner created!");
           this.controller = controller;
-          final result = await controller.scannedDataStream.first;
-          Navigator.pop(context, result.code);
+          try {
+            final result = await controller.scannedDataStream.first;
+            Navigator.pop(context, result.code);
+          } catch (_) {
+            print('QR error');
+          }
         },
       ),
     );

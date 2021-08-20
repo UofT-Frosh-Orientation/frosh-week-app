@@ -4,6 +4,7 @@ import '../widgets/TextWidgets.dart';
 import '../widgets/qr_scanner.dart';
 import "../widgets/Containers.dart";
 import '../widgets/TextInputWidgets.dart';
+import '../colors.dart';
 
 class LeadersPage extends StatefulWidget {
   const LeadersPage({
@@ -39,61 +40,85 @@ class LeadersPageState extends State<LeadersPage> {
           textSmaller: "",
           icon: false,
         ),
-        Box(
-            widget: Column(children: [
-          TextFont(text: "Name:"),
-          TextFont(
-              text: scannedStrings[0],
-              fontSize: 24,
-              fontWeight: FontWeight.bold),
-          TextFont(text: "Frosh:"),
-          TextFont(
-              text: scannedStrings[1],
-              fontSize: 24,
-              fontWeight: FontWeight.bold),
-          TextFont(text: "Shirt size:"),
-          TextFont(
-              text: scannedStrings[2],
-              fontSize: 24,
-              fontWeight: FontWeight.bold),
-          TextFont(text: "Completed UCheck:"),
-          TextFont(
-            text: scannedStrings[3],
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
-          Container(height: 5),
-          Row(children: [
-            ButtonRegular(
-              yellow: true,
-              outline: true,
-              text: "Cancel",
-              customWidth: MediaQuery.of(context).size.width / 2 - 32 * 2,
-              onPressed: () async {
-                setState(() {
-                  scannedStrings = ["", "", ""];
-                });
-              },
-            ),
-            ButtonRegular(
-              yellow: true,
-              text: "Register",
-              customWidth: MediaQuery.of(context).size.width / 2 - 32 * 2,
-              onPressed: () async {
-                print("register frosh");
-                setState(() {
-                  scannedStrings = ["", "", ""];
-                });
-              },
-            ),
-          ]),
-        ])),
+        AnimatedSwitcher(
+          duration: Duration(milliseconds: 700),
+          child: Box(
+              key: ValueKey<String>(scannedStrings[1]),
+              widget: Column(children: [
+                TextFont(text: "Name:"),
+                TextFont(
+                    text: scannedStrings[0],
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold),
+                TextFont(text: "Frosh:"),
+                TextFont(
+                    text: scannedStrings[1],
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold),
+                TextFont(text: "Shirt size:"),
+                TextFont(
+                    text: scannedStrings[2],
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold),
+                TextFont(text: "Completed UCheck:"),
+                TextFont(
+                  text: scannedStrings[3],
+                  fontSize: 24,
+                  textColor: scannedStrings[3] == "false"
+                      ? Theme.of(context).colorScheme.redAccent
+                      : Theme.of(context).colorScheme.greenAccent,
+                  fontWeight: FontWeight.bold,
+                ),
+                Container(height: 5),
+                Row(children: [
+                  ButtonRegular(
+                    yellow: true,
+                    outline: true,
+                    text: "Cancel",
+                    customWidth: MediaQuery.of(context).size.width / 2 - 32 * 2,
+                    onPressed: () async {
+                      setState(() {
+                        scannedStrings = defaultScannedStrings;
+                      });
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: TextFont(
+                          text: '🛑 Registeration cancelled',
+                          fontSize: 16,
+                          textColor: Theme.of(context).colorScheme.white,
+                        ),
+                        backgroundColor:
+                            Theme.of(context).colorScheme.redAccent,
+                      ));
+                    },
+                  ),
+                  ButtonRegular(
+                    yellow: true,
+                    text: "Register",
+                    customWidth: MediaQuery.of(context).size.width / 2 - 32 * 2,
+                    onPressed: () async {
+                      print("register frosh");
+                      setState(() {
+                        scannedStrings = defaultScannedStrings;
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: TextFont(
+                            text: '🎉 Frosh Registered',
+                            fontSize: 16,
+                            textColor: Theme.of(context).colorScheme.white,
+                          ),
+                          backgroundColor: Theme.of(context).colorScheme.black,
+                        ));
+                      });
+                    },
+                  ),
+                ]),
+              ])),
+        ),
         Container(height: 30),
         ButtonRegular(
           text: "Scan QR Code",
           onPressed: () async {
             setState(() {
-              scannedStrings = ["", "", ""];
+              scannedStrings = defaultScannedStrings;
             });
             final result = await Navigator.push(context,
                 MaterialPageRoute<String>(builder: (BuildContext context) {
@@ -123,7 +148,12 @@ class LeadersPageState extends State<LeadersPage> {
                 scannedStrings = result.split("/");
               else {
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  content: const Text('There was an error scanning'),
+                  content: TextFont(
+                    text: '🛑 There was an error reading the QR code',
+                    fontSize: 16,
+                    textColor: Theme.of(context).colorScheme.white,
+                  ),
+                  backgroundColor: Theme.of(context).colorScheme.redAccent,
                 ));
               }
             });
