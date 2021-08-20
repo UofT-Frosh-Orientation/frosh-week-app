@@ -110,7 +110,8 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Container(height: 20),
-          getNowEvent(widget.froshScheduleData),
+          if (widget.froshScheduleData != null)
+            getNowEvent(widget.froshScheduleData),
           Container(height: 20),
           ResourceBox(
             resource: Resource(
@@ -127,32 +128,40 @@ class _HomePageState extends State<HomePage> {
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Row(
               children: [
-                ButtonRegular(
-                    outline: !(uCheckPass == false),
-                    customWidth:
-                        MediaQuery.of(context).size.width / 2 - 16 - 20 * 2,
-                    text: "UCheck Fail",
-                    onPressed: () async {
-                      setState(() {
-                        uCheckPass = false;
-                      });
-                      handleUCheckChange(false);
-                    }),
-                ButtonRegular(
-                    outline: !(uCheckPass == true),
-                    customWidth:
-                        MediaQuery.of(context).size.width / 2 - 16 - 20 * 2,
-                    text: "UCheck Pass",
-                    onPressed: () async {
-                      if (uCheckPass == true) {
+                AnimatedSwitcher(
+                  duration: Duration(milliseconds: 400),
+                  child: ButtonRegular(
+                      key: ValueKey<bool>(uCheckPass),
+                      outline: !(uCheckPass == false),
+                      customWidth:
+                          MediaQuery.of(context).size.width / 2 - 16 - 20 * 2,
+                      text: "UCheck Fail",
+                      onPressed: () async {
+                        setState(() {
+                          uCheckPass = false;
+                        });
                         handleUCheckChange(false);
-                      } else {
-                        handleUCheckChange(true);
-                      }
-                      setState(() {
-                        uCheckPass = true;
-                      });
-                    }),
+                      }),
+                ),
+                AnimatedSwitcher(
+                  duration: Duration(milliseconds: 400),
+                  child: ButtonRegular(
+                      key: ValueKey<bool>(uCheckPass),
+                      outline: !(uCheckPass == true),
+                      customWidth:
+                          MediaQuery.of(context).size.width / 2 - 16 - 20 * 2,
+                      text: "UCheck Pass",
+                      onPressed: () async {
+                        if (uCheckPass == true) {
+                          handleUCheckChange(false);
+                        } else {
+                          handleUCheckChange(true);
+                        }
+                        setState(() {
+                          uCheckPass = true;
+                        });
+                      }),
+                ),
               ],
             ),
           ),

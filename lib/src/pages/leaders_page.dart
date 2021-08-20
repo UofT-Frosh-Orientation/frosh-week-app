@@ -14,13 +14,19 @@ class LeadersPage extends StatefulWidget {
   LeadersPageState createState() => LeadersPageState();
 }
 
+const defaultScannedStrings = ["", "", "", ""];
+int numFields = defaultScannedStrings.length;
+
 class LeadersPageState extends State<LeadersPage> {
-  List<String> scannedStrings = ["", "", ""];
+  List<String> scannedStrings = defaultScannedStrings;
+
   bool hasLoaded = false;
+
   getStrings(String output) {
-    setState(() {
-      scannedStrings = output.split("/");
-    });
+    if (output.split("/").length == numFields)
+      setState(() {
+        scannedStrings = output.split("/");
+      });
   }
 
   Widget build(BuildContext context) {
@@ -35,19 +41,24 @@ class LeadersPageState extends State<LeadersPage> {
         ),
         Box(
             widget: Column(children: [
-          TextFont(text: "Frosh:"),
+          TextFont(text: "Name:"),
           TextFont(
               text: scannedStrings[0],
               fontSize: 24,
               fontWeight: FontWeight.bold),
-          TextFont(text: "Shirt size:"),
+          TextFont(text: "Frosh:"),
           TextFont(
               text: scannedStrings[1],
               fontSize: 24,
               fontWeight: FontWeight.bold),
+          TextFont(text: "Shirt size:"),
+          TextFont(
+              text: scannedStrings[2],
+              fontSize: 24,
+              fontWeight: FontWeight.bold),
           TextFont(text: "Completed UCheck:"),
           TextFont(
-            text: scannedStrings[2],
+            text: scannedStrings[3],
             fontSize: 24,
             fontWeight: FontWeight.bold,
           ),
@@ -108,7 +119,13 @@ class LeadersPageState extends State<LeadersPage> {
               );
             }));
             setState(() {
-              scannedStrings = result!.split("/");
+              if (result != null && result.split("/").length == numFields)
+                scannedStrings = result.split("/");
+              else {
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: const Text('There was an error scanning'),
+                ));
+              }
             });
           },
         ),

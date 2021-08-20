@@ -15,6 +15,7 @@ const welcomeMessages = [
 ];
 
 const froshGroupSymbols = {
+  'all': "α",
   'alpha': "α",
   'beta': "β",
   'gamma': "γ",

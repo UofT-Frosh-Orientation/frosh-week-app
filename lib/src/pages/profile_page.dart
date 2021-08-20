@@ -59,6 +59,7 @@ class ProfilePage extends StatelessWidget {
                 Container(height: 20),
                 Center(
                   child: FroshQR(
+                      froshName: froshName,
                       froshAccount: froshId,
                       froshKitsSize: shirtSize,
                       hasCompletedUCheck: hasCompletedUCheck),
