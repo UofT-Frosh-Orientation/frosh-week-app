@@ -124,11 +124,16 @@ class FrameworkState extends State<Framework> {
         froshId: froshId,
         discipline: discipline,
         shirtSize: shirtSize,
-        froshScheduleData: widget.loadedData["scheduleJSON"]["lambda"],
+        froshScheduleData: froshGroup == "all"
+            ? widget.loadedData["scheduleJSON"]["alpha"]
+            : widget.loadedData["scheduleJSON"][froshGroup],
         welcomeMessage: widget.loadedData["welcomeMessage"],
         setLoggedIn: setLoggedIn,
       ),
-      SchedulePage(data: widget.loadedData["scheduleJSON"]["lambda"]),
+      SchedulePage(
+          data: froshGroup == "all"
+              ? widget.loadedData["scheduleJSON"]["alpha"]
+              : widget.loadedData["scheduleJSON"][froshGroup]),
       NotificationsPageParse(),
       ResourcesPageParse(),
     ];
