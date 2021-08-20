@@ -121,7 +121,6 @@ class LeadersPageState extends State<LeadersPage> {
             }),
         Container(height: 20),
         TextInput(
-            obscureText: true,
             labelText: "Manual sign-in",
             onSubmitted: (text) {
               print(text);
