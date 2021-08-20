@@ -120,6 +120,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.5.6"
+  device_display_brightness:
+    dependency: "direct main"
+    description:
+      name: device_display_brightness
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.6"
   dio:
     dependency: "direct main"
     description:

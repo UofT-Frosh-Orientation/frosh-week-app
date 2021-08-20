@@ -64,6 +64,7 @@ class ButtonRegular extends StatelessWidget {
               child: TextFont(
                 text: text,
                 fontWeight: FontWeight.bold,
+                textColor: Colors.white,
                 fontSize: 16,
               ),
             ),
@@ -113,8 +114,8 @@ class DropDownButtonState extends State<DropDownButton> {
           Container(
             width: 1000,
             decoration: BoxDecoration(
-              border: Border.all(
-                  color: Theme.of(context).colorScheme.lightDarkAccent),
+              border:
+                  Border.all(color: Theme.of(context).colorScheme.shadowColor),
               borderRadius: BorderRadius.circular(5),
             ),
             child: Padding(

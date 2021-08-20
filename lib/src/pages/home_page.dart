@@ -9,6 +9,7 @@ import "package:flutter_secure_storage/flutter_secure_storage.dart" as fss;
 import 'package:frosh_week_2t1/src/pages/schedule_page.dart';
 import 'package:frosh_week_2t1/src/pages/resources_page.dart';
 import 'package:frosh_week_2t1/src/widgets/ButtonWidgets.dart';
+import 'package:device_display_brightness/device_display_brightness.dart';
 
 class HomePage extends StatefulWidget {
   final String froshName;
@@ -72,23 +73,29 @@ class _HomePageState extends State<HomePage> {
             icon: true,
           ),
           Container(height: 10),
-          // Header(text: "Welcome Calum", padding: true),
           InkWell(
             onTap: () {
+              DeviceDisplayBrightness.setBrightness(1.0);
               Navigator.of(context).push(
                   MaterialPageRoute<void>(builder: (BuildContext context) {
-                return ProfilePage(
-                  froshName: widget.froshName,
-                  froshGroup:
-                      (froshGroupSymbols[widget.froshGroup.toLowerCase()] ??
-                              "") +
-                          " " +
-                          widget.froshGroup.capitalizeFirst,
-                  froshId: widget.froshId,
-                  discipline: widget.discipline,
-                  shirtSize: widget.shirtSize,
-                  welcomeMessage: widget.welcomeMessage,
-                  hasCompletedUCheck: uCheckPass,
+                return WillPopScope(
+                  onWillPop: () async {
+                    DeviceDisplayBrightness.resetBrightness();
+                    return true;
+                  },
+                  child: ProfilePage(
+                    froshName: widget.froshName,
+                    froshGroup:
+                        (froshGroupSymbols[widget.froshGroup.toLowerCase()] ??
+                                "") +
+                            " " +
+                            widget.froshGroup.capitalizeFirst,
+                    froshId: widget.froshId,
+                    discipline: widget.discipline,
+                    shirtSize: widget.shirtSize,
+                    welcomeMessage: widget.welcomeMessage,
+                    hasCompletedUCheck: uCheckPass,
+                  ),
                 );
               }));
             },
@@ -103,9 +110,9 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Container(height: 20),
-          getNowEvent(widget.froshScheduleData),
+          if (widget.froshScheduleData != null)
+            getNowEvent(widget.froshScheduleData),
           Container(height: 20),
-
           ResourceBox(
             resource: Resource(
                 icon: Icons.health_and_safety,
@@ -121,32 +128,40 @@ class _HomePageState extends State<HomePage> {
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Row(
               children: [
-                ButtonRegular(
-                    outline: !(uCheckPass == false),
-                    customWidth:
-                        MediaQuery.of(context).size.width / 2 - 16 - 20 * 2,
-                    text: "UCheck Fail",
-                    onPressed: () async {
-                      setState(() {
-                        uCheckPass = false;
-                      });
-                      handleUCheckChange(false);
-                    }),
-                ButtonRegular(
-                    outline: !(uCheckPass == true),
-                    customWidth:
-                        MediaQuery.of(context).size.width / 2 - 16 - 20 * 2,
-                    text: "UCheck Pass",
-                    onPressed: () async {
-                      if (uCheckPass == true) {
+                AnimatedSwitcher(
+                  duration: Duration(milliseconds: 400),
+                  child: ButtonRegular(
+                      key: ValueKey<bool>(uCheckPass),
+                      outline: !(uCheckPass == false),
+                      customWidth:
+                          MediaQuery.of(context).size.width / 2 - 16 - 20 * 2,
+                      text: "UCheck Fail",
+                      onPressed: () async {
+                        setState(() {
+                          uCheckPass = false;
+                        });
                         handleUCheckChange(false);
-                      } else {
-                        handleUCheckChange(true);
-                      }
-                      setState(() {
-                        uCheckPass = true;
-                      });
-                    }),
+                      }),
+                ),
+                AnimatedSwitcher(
+                  duration: Duration(milliseconds: 400),
+                  child: ButtonRegular(
+                      key: ValueKey<bool>(uCheckPass),
+                      outline: !(uCheckPass == true),
+                      customWidth:
+                          MediaQuery.of(context).size.width / 2 - 16 - 20 * 2,
+                      text: "UCheck Pass",
+                      onPressed: () async {
+                        if (uCheckPass == true) {
+                          handleUCheckChange(false);
+                        } else {
+                          handleUCheckChange(true);
+                        }
+                        setState(() {
+                          uCheckPass = true;
+                        });
+                      }),
+                ),
               ],
             ),
           ),

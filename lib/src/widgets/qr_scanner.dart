@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import '../colors.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
@@ -37,14 +37,29 @@ class _QRScannerState extends State<QRScanner> {
 
   @override
   Widget build(BuildContext context) {
+    var scanArea = (MediaQuery.of(context).size.width < 400 ||
+            MediaQuery.of(context).size.height < 400)
+        ? 150.0
+        : 300.0;
     return Container(
       child: QRView(
         key: qrKey,
+        overlay: QrScannerOverlayShape(
+            borderColor: Theme.of(context).colorScheme.purpleAccent,
+            borderRadius: 10,
+            borderLength: 30,
+            borderWidth: 10,
+            cutOutBottomOffset: 30,
+            cutOutSize: scanArea),
         onQRViewCreated: (QRViewController controller) async {
           print("QR Scanner created!");
           this.controller = controller;
-          final result = await controller.scannedDataStream.first;
-          Navigator.pop(context, result.code);
+          try {
+            final result = await controller.scannedDataStream.first;
+            Navigator.pop(context, result.code);
+          } catch (_) {
+            print('QR error');
+          }
         },
       ),
     );

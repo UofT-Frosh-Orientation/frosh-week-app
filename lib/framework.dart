@@ -124,11 +124,16 @@ class FrameworkState extends State<Framework> {
         froshId: froshId,
         discipline: discipline,
         shirtSize: shirtSize,
-        froshScheduleData: widget.loadedData["scheduleJSON"]["lambda"],
+        froshScheduleData: froshGroup.toLowerCase() == "all".toLowerCase()
+            ? widget.loadedData["scheduleJSON"]["alpha"]
+            : widget.loadedData["scheduleJSON"][froshGroup.toLowerCase()],
         welcomeMessage: widget.loadedData["welcomeMessage"],
         setLoggedIn: setLoggedIn,
       ),
-      SchedulePage(data: widget.loadedData["scheduleJSON"]["lambda"]),
+      SchedulePage(
+          data: froshGroup.toLowerCase() == "all".toLowerCase()
+              ? widget.loadedData["scheduleJSON"]["alpha"]
+              : widget.loadedData["scheduleJSON"][froshGroup.toLowerCase()]),
       NotificationsPageParse(),
       ResourcesPageParse(),
     ];
@@ -216,7 +221,7 @@ class FrameworkState extends State<Framework> {
                 buttonBackgroundColor:
                     Theme.of(this.context).colorScheme.lightPurpleAccent,
                 color: Theme.of(this.context).colorScheme.lightPurpleAccent,
-                animationDuration: const Duration(milliseconds: 500),
+                animationDuration: const Duration(milliseconds: 375),
                 backgroundColor: Colors.transparent,
                 height: 60,
                 items: icons,
