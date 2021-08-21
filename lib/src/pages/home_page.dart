@@ -78,33 +78,33 @@ class _HomePageState extends State<HomePage> {
               DeviceDisplayBrightness.setBrightness(1.0);
               Navigator.of(context).push(
                   MaterialPageRoute<void>(builder: (BuildContext context) {
-                    return WillPopScope(
-                      onWillPop: () async {
-                        DeviceDisplayBrightness.resetBrightness();
-                        return true;
-                      },
-                      child: ProfilePage(
-                        froshName: widget.froshName,
-                        froshGroup:
+                return WillPopScope(
+                  onWillPop: () async {
+                    DeviceDisplayBrightness.resetBrightness();
+                    return true;
+                  },
+                  child: ProfilePage(
+                    froshName: widget.froshName,
+                    froshGroup:
                         (froshGroupSymbols[widget.froshGroup.toLowerCase()] ??
-                            "") +
+                                "") +
                             " " +
                             widget.froshGroup.capitalizeFirst,
-                        froshAccount: widget.froshAccount,
-                        discipline: widget.discipline,
-                        shirtSize: widget.shirtSize,
-                        welcomeMessage: widget.welcomeMessage,
-                        hasCompletedUCheck: uCheckPass,
-                      ),
-                    );
-                  }));
+                    froshAccount: widget.froshAccount,
+                    discipline: widget.discipline,
+                    shirtSize: widget.shirtSize,
+                    welcomeMessage: widget.welcomeMessage,
+                    hasCompletedUCheck: uCheckPass,
+                  ),
+                );
+              }));
             },
             child: ContainerFrosh(
               froshName: widget.froshName,
               froshGroup:
-              (froshGroupSymbols[widget.froshGroup.toLowerCase()] ?? "") +
-                  " " +
-                  widget.froshGroup.capitalizeFirst,
+                  (froshGroupSymbols[widget.froshGroup.toLowerCase()] ?? "") +
+                      " " +
+                      widget.froshGroup.capitalizeFirst,
               discipline: widget.discipline,
               welcomeMessage: widget.welcomeMessage,
             ),
@@ -177,7 +177,7 @@ class _HomePageState extends State<HomePage> {
               fss.FlutterSecureStorage storage = fss.FlutterSecureStorage();
               storage.deleteAll();
               preferences.setBool('isLoggedIn', false);
-              widget.setLoggedIn(false);
+              widget.setLoggedIn(false, false);
             },
           ),
           Container(height: 100)

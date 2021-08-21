@@ -26,7 +26,6 @@ const attributeColor = "Colour";
 const attributeRoom = "Location";
 const attributeDate = "Date";
 
-
 ContainerEvent getNowEvent(data) {
   DateTime date = DateTime.now();
   // DateTime date = DateTime.parse("2021-09-08 13:00:04Z");

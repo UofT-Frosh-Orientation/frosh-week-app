@@ -8,8 +8,8 @@ import '../colors.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as fss;
 
-
-Future<bool> signInFrosh(String leaderId, String froshEmail, String location, bool completedUCheck, Dio dio) async {
+Future<bool> signInFrosh(String leaderId, String froshEmail, String location,
+    bool completedUCheck, Dio dio) async {
   Response res = await dio.post(
     'https://www.orientation.skule.ca/app/sign-in/',
     data: {
@@ -27,16 +27,11 @@ Future<bool> signInFrosh(String leaderId, String froshEmail, String location, bo
   }
 }
 
-
-
 class LeadersPage extends StatefulWidget {
   final String leaderId;
   final fss.FlutterSecureStorage storage;
-  const LeadersPage({
-    Key? key,
-    required this.leaderId,
-    required this.storage
-  }) : super(key: key);
+  const LeadersPage({Key? key, required this.leaderId, required this.storage})
+      : super(key: key);
 
   @override
   LeadersPageState createState() => LeadersPageState();
@@ -54,16 +49,9 @@ class LeadersPageState extends State<LeadersPage> {
   Future<bool> manualGetFrosh(String email) async {
     String? cookie = await widget.storage.read(key: 'cookie');
     Response res = await dio.post(
-      'https://www.orientation.skule.ca/exec/manual-signin',
-      data: {
-        "email": email
-      },
-      options: Options(
-        headers: {
-          "cookie": cookie
-        }
-      )
-    );
+        'https://www.orientation.skule.ca/exec/manual-signin',
+        data: {"email": email},
+        options: Options(headers: {"cookie": cookie}));
     if (res.data["errorMessage"] == "") {
       setState(() {
         scannedStrings = [
@@ -79,7 +67,9 @@ class LeadersPageState extends State<LeadersPage> {
   }
 
   Future<void> updateLocations() async {
-    Response res = await dio.get('https://www.orientation.skule.ca/app/locations')
+    Response res =
+        await dio.get('https://www.orientation.skule.ca/app/locations');
+    print(res.data.runtimeType);
   }
 
   getStrings(String output) {
@@ -89,6 +79,13 @@ class LeadersPageState extends State<LeadersPage> {
       });
   }
 
+  @override
+  void initState() {
+    super.initState();
+    updateLocations();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: CustomScrollView(physics: BouncingScrollPhysics(), slivers: [
@@ -155,16 +152,25 @@ class LeadersPageState extends State<LeadersPage> {
                     text: "Register",
                     customWidth: MediaQuery.of(context).size.width / 2 - 32 * 2,
                     onPressed: () async {
-                      bool wasSuccessful = await signInFrosh(widget.leaderId, scannedStrings[1], location, scannedStrings[3] == "true", dio);
+                      bool wasSuccessful = await signInFrosh(
+                          widget.leaderId,
+                          scannedStrings[1],
+                          location,
+                          scannedStrings[3] == "true",
+                          dio);
                       setState(() {
                         scannedStrings = defaultScannedStrings;
                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                           content: TextFont(
-                            text: wasSuccessful ? '🎉 Frosh Registered' : '🛑 There was an error',
+                            text: wasSuccessful
+                                ? '🎉 Frosh Registered'
+                                : '🛑 There was an error',
                             fontSize: 16,
                             textColor: Theme.of(context).colorScheme.white,
                           ),
-                          backgroundColor: wasSuccessful ? Theme.of(context).colorScheme.black : Theme.of(context).colorScheme.redAccent,
+                          backgroundColor: wasSuccessful
+                              ? Theme.of(context).colorScheme.black
+                              : Theme.of(context).colorScheme.redAccent,
                         ));
                       });
                     },
@@ -220,20 +226,20 @@ class LeadersPageState extends State<LeadersPage> {
         ),
         Container(height: 20),
         TextInput(
-            labelText: "Manual sign-in",
-            onSubmitted: (text) async {
-              bool foundFrosh = await manualGetFrosh(text);
-              if (!foundFrosh) {
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: TextFont(
-                      text: '🛑 Unable to find a Frosh with that email',
-                      fontSize: 16,
-                      textColor: Theme.of(context).colorScheme.white,
-                    ),
-                    backgroundColor: Theme.of(context).colorScheme.redAccent,
-                ));
-              }
-            },
+          labelText: "Manual sign-in",
+          onSubmitted: (text) async {
+            bool foundFrosh = await manualGetFrosh(text);
+            if (!foundFrosh) {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: TextFont(
+                  text: '🛑 Unable to find a Frosh with that email',
+                  fontSize: 16,
+                  textColor: Theme.of(context).colorScheme.white,
+                ),
+                backgroundColor: Theme.of(context).colorScheme.redAccent,
+              ));
+            }
+          },
         ),
         Container(height: 7),
         Center(

@@ -61,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
       );
       if (email == "" || password == "" || res1.headers["location"] == null) {
         prefs.setBool('isLoggedIn', false);
-        widget.setLoggedIn(false);
+        widget.setLoggedIn(false, false);
         setState(() {
           loading = false;
           error = "Please fill in the credentials";
@@ -74,14 +74,14 @@ class _LoginPageState extends State<LoginPage> {
             .substring(0, headers["set-cookie"]![0].indexOf(';'));
         await widget.storage.write(key: "cookie", value: cookie);
         prefs.setBool('isLoggedIn', true);
-        widget.setLoggedIn(true);
+        widget.setLoggedIn(true, false);
         setState(() {
           loading = false;
         });
         return;
       }
       prefs.setBool('isLoggedIn', false);
-      widget.setLoggedIn(false);
+      widget.setLoggedIn(false, false);
       setState(() {
         loading = false;
         error = "Please enter a valid password and email";
@@ -102,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
       );
       if (email == "" || password == "" || res1.headers["location"] == null) {
         prefs.setBool('isLoggedIn', false);
-        widget.setLoggedIn(false);
+        widget.setLoggedIn(false, true);
         setState(() {
           loading = false;
           error = "Please fill in the credentials";
@@ -116,14 +116,14 @@ class _LoginPageState extends State<LoginPage> {
         await widget.storage.write(key: "cookie", value: cookie);
         prefs.setBool('isLoggedIn', true);
         prefs.setBool('isLeader', true);
-        widget.setLoggedIn(true);
+        widget.setLoggedIn(true, true);
         setState(() {
           loading = false;
         });
         return;
       }
       prefs.setBool('isLoggedIn', false);
-      widget.setLoggedIn(false);
+      widget.setLoggedIn(false, true);
       setState(() {
         loading = false;
         error = "Please enter a valid password and email";

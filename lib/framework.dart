@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:animations/animations.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:dio/dio.dart';
@@ -22,16 +24,20 @@ Future<bool> hasNetwork() async {
 
 class Framework extends StatefulWidget {
   final bool isLoggedIn;
+  final bool isLeader;
   final Dio dio;
   final fss.FlutterSecureStorage storage;
   final dynamic loadedData;
+  final Function setLoggedIn;
 
   const Framework({
     Key? key,
     required this.isLoggedIn,
+    required this.isLeader,
     required this.dio,
     required this.storage,
     required this.loadedData,
+    required this.setLoggedIn,
   }) : super(key: key);
 
   @override
@@ -41,33 +47,31 @@ class Framework extends StatefulWidget {
 class FrameworkState extends State<Framework> {
   late PageController pageController;
   int selectedIndex = 0;
-  bool isLeader = false;
   late bool _loggedIn;
   String froshName = "";
   String froshGroup = "";
   String froshEmail = "";
   String discipline = "";
   String shirtSize = "";
+  Completer<bool> completer = new Completer();
 
-  Future<void> setLoggedIn(bool login) async {
-    setState(() {
-      _loggedIn = login;
-    });
-    if (login) {
-      await getCurrentUser();
-    }
-  }
+  // Future<void> setLoggedIn(bool login) async {
+  //   setState(() {
+  //     _loggedIn = login;
+  //   });
+  //   if (login) {
+  //     await getCurrentUser();
+  //   }
+  // }
 
   Future<bool> getCurrentUser() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState(() {
-      isLeader = prefs.getBool('isLeader') ?? false;
-    });
+
     if (await hasNetwork()) {
       String? cookie = await widget.storage.read(key: 'cookie');
       Response res = await widget.dio
           .get(
-              isLeader
+              widget.isLeader
                   ? 'https://www.orientation.skule.ca/exec/current'
                   : 'https://www.orientation.skule.ca/users/current',
               options: Options(headers: {"cookie": cookie}))
@@ -76,14 +80,15 @@ class FrameworkState extends State<Framework> {
           _loggedIn = false;
         });
       });
-      if (res.data.toString() == "{}"){
+      if (res.data.toString() == "{}") {
         setState(() {
           _loggedIn = false;
         });
+        completer.complete(false);
         return false;
       }
       print("Data: ${res.data}");
-      if (isLeader) {
+      if (widget.isLeader) {
         setState(() {
           froshName = res.data["name"];
           froshGroup = res.data["froshGroup"];
@@ -100,27 +105,23 @@ class FrameworkState extends State<Framework> {
           shirtSize = res.data["shirtSize"];
         });
       }
-      await prefs.setStringList(
-          'froshData', [froshName, froshGroup, froshEmail, discipline, shirtSize]);
+      await prefs.setStringList('froshData',
+          [froshName, froshGroup, froshEmail, discipline, shirtSize]);
       // subscribe to topic on each app start-up
       String? token = await FirebaseMessaging.instance.getToken();
       print(token);
       await FirebaseMessaging.instance.subscribeToTopic(froshGroup);
-      Response res2  = await widget.dio.post(
-        'https://www.orientation.skule.ca/app/firebase-token',
-        data: {
-          "email": froshEmail,
-          "execId": froshEmail,
-          "isFrosh": !isLeader,
-          "firebaseToken": token
-        },
-        options: Options(
-          headers: {
-            "cookie": cookie
-          }
-        )
-      );
+      Response res2 = await widget.dio
+          .post('https://www.orientation.skule.ca/app/firebase-token',
+              data: {
+                "email": froshEmail,
+                "execId": froshEmail,
+                "isFrosh": !widget.isLeader,
+                "firebaseToken": token
+              },
+              options: Options(headers: {"cookie": cookie}));
       print("Data: ${res2.data}");
+      completer.complete(true);
       return true;
     } else {
       List<String>? froshData = prefs.getStringList("froshData");
@@ -131,139 +132,189 @@ class FrameworkState extends State<Framework> {
         discipline = froshData[3];
         shirtSize = froshData[4];
       });
+      completer.complete(true);
       return true;
     }
   }
+
+
 
   @override
   void initState() {
     super.initState();
     pageController = PageController(initialPage: selectedIndex);
-    setLoggedIn(widget.isLoggedIn);
+    getCurrentUser();
   }
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> pages = [
-      HomePage(
-        froshName: froshName,
-        froshGroup: froshGroup,
-        froshAccount: froshEmail,
-        discipline: discipline,
-        shirtSize: shirtSize,
-        froshScheduleData: froshGroup.toLowerCase() == "all".toLowerCase()
-            ? widget.loadedData["scheduleJSON"]["alpha"]
-            : widget.loadedData["scheduleJSON"][froshGroup.toLowerCase()],
-        welcomeMessage: widget.loadedData["welcomeMessage"],
-        setLoggedIn: setLoggedIn,
-      ),
-      SchedulePage(
-          data: froshGroup.toLowerCase() == "all".toLowerCase()
-              ? widget.loadedData["scheduleJSON"]["alpha"]
-              : widget.loadedData["scheduleJSON"][froshGroup.toLowerCase()]),
-      NotificationsPageParse(),
-      ResourcesPageParse(),
-    ];
-    List<Widget> icons = [
-      Icon(
-        Icons.home,
-        size: 30,
-        color: Colors.white,
-      ),
-      Icon(
-        Icons.event,
-        size: 30,
-        color: Colors.white,
-      ),
-      Icon(
-        Icons.notifications,
-        size: 30,
-        color: Colors.white,
-      ),
-      Icon(
-        Icons.book,
-        size: 30,
-        color: Colors.white,
-      ),
-    ];
-
-    if (isLeader) {
-      pages.add(LeadersPage(
-        leaderId: froshEmail,
-        storage: widget.storage,
-      ));
-      icons.add(
-        Icon(
-          Icons.people,
-          size: 30,
-          color: Colors.white,
-        ),
-      );
-    }
-
-    if (!_loggedIn) {
-      return Scaffold(
-          body: LoginPage(
-              dio: widget.dio,
-              setLoggedIn: setLoggedIn,
-              storage: widget.storage));
-    } else
-      return Scaffold(
-        resizeToAvoidBottomInset: false,
-        body: GestureDetector(
-          onTap: () {
-            FocusScope.of(context).requestFocus(new FocusNode());
-          },
-          child: Stack(children: [
-            PageTransitionSwitcher(
-              transitionBuilder: (
-                child,
-                animation,
-                secondaryAnimation,
-              ) {
-                return FadeThroughTransition(
-                  animation: animation,
-                  secondaryAnimation: secondaryAnimation,
-                  child: child,
-                );
-              },
-              child: pages[selectedIndex],
+    List<Widget> pages = widget.isLeader
+        ? [
+            HomePage(
+              froshName: froshName,
+              froshGroup: froshGroup,
+              froshAccount: froshEmail,
+              discipline: discipline,
+              shirtSize: shirtSize,
+              froshScheduleData: froshGroup.toLowerCase() == "all".toLowerCase()
+                  ? widget.loadedData["scheduleJSON"]["alpha"]
+                  : widget.loadedData["scheduleJSON"][froshGroup.toLowerCase()],
+              welcomeMessage: widget.loadedData["welcomeMessage"],
+              setLoggedIn: widget.setLoggedIn,
             ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                height: 80,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment(0, 0.8),
-                    colors: [
-                      Theme.of(this.context).canvasColor.withOpacity(0),
-                      Theme.of(this.context).colorScheme.lightPurpleAccent,
-                    ],
+            SchedulePage(
+                data: froshGroup.toLowerCase() == "all".toLowerCase()
+                    ? widget.loadedData["scheduleJSON"]["alpha"]
+                    : widget.loadedData["scheduleJSON"]
+                        [froshGroup.toLowerCase()]),
+            NotificationsPageParse(),
+            ResourcesPageParse(),
+            LeadersPage(
+              leaderId: froshEmail,
+              storage: widget.storage,
+            ),
+          ]
+        : [
+            HomePage(
+              froshName: froshName,
+              froshGroup: froshGroup,
+              froshAccount: froshEmail,
+              discipline: discipline,
+              shirtSize: shirtSize,
+              froshScheduleData: froshGroup.toLowerCase() == "all".toLowerCase()
+                  ? widget.loadedData["scheduleJSON"]["alpha"]
+                  : widget.loadedData["scheduleJSON"][froshGroup.toLowerCase()],
+              welcomeMessage: widget.loadedData["welcomeMessage"],
+              setLoggedIn: widget.setLoggedIn,
+            ),
+            SchedulePage(
+                data: froshGroup.toLowerCase() == "all".toLowerCase()
+                    ? widget.loadedData["scheduleJSON"]["alpha"]
+                    : widget.loadedData["scheduleJSON"]
+                        [froshGroup.toLowerCase()]),
+            NotificationsPageParse(),
+            ResourcesPageParse(),
+          ];
+    List<Widget> icons = widget.isLeader
+        ? [
+            Icon(
+              Icons.home,
+              size: 30,
+              color: Colors.white,
+            ),
+            Icon(
+              Icons.event,
+              size: 30,
+              color: Colors.white,
+            ),
+            Icon(
+              Icons.notifications,
+              size: 30,
+              color: Colors.white,
+            ),
+            Icon(
+              Icons.book,
+              size: 30,
+              color: Colors.white,
+            ),
+            Icon(
+              Icons.people,
+              size: 30,
+              color: Colors.white,
+            ),
+          ]
+        : [
+            Icon(
+              Icons.home,
+              size: 30,
+              color: Colors.white,
+            ),
+            Icon(
+              Icons.event,
+              size: 30,
+              color: Colors.white,
+            ),
+            Icon(
+              Icons.notifications,
+              size: 30,
+              color: Colors.white,
+            ),
+            Icon(
+              Icons.book,
+              size: 30,
+              color: Colors.white,
+            ),
+          ];
+
+    return FutureBuilder(
+      future: completer.future,
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return Scaffold(
+            resizeToAvoidBottomInset: false,
+            body: GestureDetector(
+              onTap: () {
+                FocusScope.of(context).requestFocus(new FocusNode());
+              },
+              child: Stack(children: [
+                PageTransitionSwitcher(
+                  transitionBuilder: (
+                    child,
+                    animation,
+                    secondaryAnimation,
+                  ) {
+                    return FadeThroughTransition(
+                      animation: animation,
+                      secondaryAnimation: secondaryAnimation,
+                      child: child,
+                    );
+                  },
+                  child: pages[selectedIndex],
+                ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    height: 80,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment(0, 0.8),
+                        colors: [
+                          Theme.of(this.context).canvasColor.withOpacity(0),
+                          Theme.of(this.context).colorScheme.lightPurpleAccent,
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-              ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: CurvedNavigationBar(
+                    buttonBackgroundColor:
+                        Theme.of(this.context).colorScheme.lightPurpleAccent,
+                    color: Theme.of(this.context).colorScheme.lightPurpleAccent,
+                    animationDuration: const Duration(milliseconds: 375),
+                    backgroundColor: Colors.transparent,
+                    height: 60,
+                    items: icons,
+                    onTap: (index) {
+                      setState(() {
+                        selectedIndex = index;
+                      });
+                    },
+                  ),
+                ),
+              ]),
             ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: CurvedNavigationBar(
-                buttonBackgroundColor:
-                    Theme.of(this.context).colorScheme.lightPurpleAccent,
-                color: Theme.of(this.context).colorScheme.lightPurpleAccent,
-                animationDuration: const Duration(milliseconds: 375),
-                backgroundColor: Colors.transparent,
-                height: 60,
-                items: icons,
-                onTap: (index) {
-                  setState(() {
-                    selectedIndex = index;
-                  });
-                },
-              ),
+          );
+        } else {
+          return Scaffold(
+            body: Center(
+              child: CircularProgressIndicator(),
             ),
-          ]),
-        ),
-      );
+          );
+        }
+      }
+    );
   }
 }

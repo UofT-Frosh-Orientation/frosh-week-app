@@ -3,6 +3,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import 'package:frosh_week_2t1/src/pages/login_page.dart';
 import 'framework.dart';
 import 'src/colors.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -139,6 +140,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   late FirebaseMessaging messaging;
   late NotificationSettings notificationSettings;
+  bool isLoggedIn = false;
+  bool isLeader = false;
 
   Future<void> getNotificationSettings(FirebaseMessaging _messaging) async {
     NotificationSettings _notificationSettings =
@@ -159,6 +162,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+    isLoggedIn = widget.preferences.getBool("isLoggedIn") ?? false;
     messaging = FirebaseMessaging.instance;
     getNotificationSettings(messaging);
     FirebaseMessaging.onMessage.listen((RemoteMessage event) {
@@ -185,13 +189,33 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  void setLoggedIn(bool login, bool _isLeader) {
+    print("called");
+    print("login: $login isLeader: $isLeader");
+    setState(() {
+      isLoggedIn = login;
+      isLeader = _isLeader;
+    });
+    print(isLoggedIn);
+  }
+
   @override
   Widget build(BuildContext context) {
+    print("rebuilding");
+    print("build login: $isLoggedIn");
     SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
-    return Framework(
-        isLoggedIn: widget.preferences.getBool('isLoggedIn') ?? false,
-        dio: widget.dio,
-        storage: widget.storage,
-        loadedData: widget.loadedData);
+    return !isLoggedIn
+        ? Scaffold(
+          body: LoginPage(
+              dio: widget.dio, setLoggedIn: setLoggedIn, storage: widget.storage),
+        )
+        : Framework(
+            isLoggedIn: widget.preferences.getBool('isLoggedIn') ?? false,
+            isLeader: isLeader,
+            dio: widget.dio,
+            storage: widget.storage,
+            loadedData: widget.loadedData,
+            setLoggedIn: setLoggedIn,
+          );
   }
 }
