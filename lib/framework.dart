@@ -188,7 +188,9 @@ class FrameworkState extends State<Framework> {
     ];
 
     if (isLeader) {
-      pages.add(LeadersPage());
+      pages.add(LeadersPage(
+        leaderId: froshEmail,
+      ));
       icons.add(
         Icon(
           Icons.people,

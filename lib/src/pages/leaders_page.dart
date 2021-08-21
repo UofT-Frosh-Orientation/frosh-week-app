@@ -5,10 +5,32 @@ import '../widgets/qr_scanner.dart';
 import "../widgets/Containers.dart";
 import '../widgets/TextInputWidgets.dart';
 import '../colors.dart';
+import 'package:dio/dio.dart';
+
+
+Future<bool> signInFrosh(String leaderId, String froshEmail, String location, bool completedUCheck, Dio dio) async {
+  Response res = await dio.post(
+    'https://www.orientation.skule.ca/app/sign-in/',
+    data: {
+      "froshEmail": froshEmail,
+      "leaderAccountId": leaderId,
+      "location": location,
+      "hasCompletedUCheck": completedUCheck,
+      "dateTime": DateTime.now().toString()
+    },
+  );
+  if (res.data["message"] == "Sign in successful!!") {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 class LeadersPage extends StatefulWidget {
+  final String leaderId;
   const LeadersPage({
     Key? key,
+    required this.leaderId,
   }) : super(key: key);
 
   @override
@@ -20,8 +42,9 @@ int numFields = defaultScannedStrings.length;
 
 class LeadersPageState extends State<LeadersPage> {
   List<String> scannedStrings = defaultScannedStrings;
-
+  Dio dio = Dio();
   bool hasLoaded = false;
+  String location = "King's college circle";
 
   getStrings(String output) {
     if (output.split("/").length == numFields)
@@ -96,16 +119,16 @@ class LeadersPageState extends State<LeadersPage> {
                     text: "Register",
                     customWidth: MediaQuery.of(context).size.width / 2 - 32 * 2,
                     onPressed: () async {
-                      print("register frosh");
+                      bool wasSuccessful = await signInFrosh(widget.leaderId, scannedStrings[1], location, scannedStrings[3] == "true", dio);
                       setState(() {
                         scannedStrings = defaultScannedStrings;
                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                           content: TextFont(
-                            text: '🎉 Frosh Registered',
+                            text: wasSuccessful ? '🎉 Frosh Registered' : '🛑 There was an error',
                             fontSize: 16,
                             textColor: Theme.of(context).colorScheme.white,
                           ),
-                          backgroundColor: Theme.of(context).colorScheme.black,
+                          backgroundColor: wasSuccessful ? Theme.of(context).colorScheme.black : Theme.of(context).colorScheme.redAccent,
                         ));
                       });
                     },
@@ -179,6 +202,9 @@ class LeadersPageState extends State<LeadersPage> {
             title: "Location",
             items: ["King's college circle", "Myhal", "Orientation"],
             onChanged: (value) {
+              setState(() {
+                location = value;
+              });
             }),
         Container(height: 100),
       ]))
