@@ -37,10 +37,7 @@ Future<void> _messageHandler(RemoteMessage message) async {
 
 Future<dynamic> loadData() async {
   Random random = new Random();
-  dynamic scheduleJSON =
-      await rootBundle.loadString('assets/data/schedule.json');
   dynamic loadedData = {
-    "scheduleJSON": json.decode(scheduleJSON ?? ""),
     "welcomeMessage": welcomeMessages[random.nextInt(welcomeMessages.length)],
   };
   return loadedData;
