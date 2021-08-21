@@ -6,6 +6,7 @@ import "../widgets/Containers.dart";
 import '../widgets/TextInputWidgets.dart';
 import '../colors.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart' as fss;
 
 
 Future<bool> signInFrosh(String leaderId, String froshEmail, String location, bool completedUCheck, Dio dio) async {
@@ -26,11 +27,15 @@ Future<bool> signInFrosh(String leaderId, String froshEmail, String location, bo
   }
 }
 
+
+
 class LeadersPage extends StatefulWidget {
   final String leaderId;
+  final fss.FlutterSecureStorage storage;
   const LeadersPage({
     Key? key,
     required this.leaderId,
+    required this.storage
   }) : super(key: key);
 
   @override
@@ -45,6 +50,37 @@ class LeadersPageState extends State<LeadersPage> {
   Dio dio = Dio();
   bool hasLoaded = false;
   String location = "King's college circle";
+
+  Future<bool> manualGetFrosh(String email) async {
+    String? cookie = await widget.storage.read(key: 'cookie');
+    Response res = await dio.post(
+      'https://www.orientation.skule.ca/exec/manual-signin',
+      data: {
+        "email": email
+      },
+      options: Options(
+        headers: {
+          "cookie": cookie
+        }
+      )
+    );
+    if (res.data["errorMessage"] == "") {
+      setState(() {
+        scannedStrings = [
+          res.data!["froshData"]["preferredName"],
+          res.data["froshData"]["email"],
+          res.data["froshData"]["shirtSize"],
+          "true"
+        ];
+      });
+      return true;
+    }
+    return false;
+  }
+
+  Future<void> updateLocations() async {
+    Response res = await dio.get('https://www.orientation.skule.ca/app/locations')
+  }
 
   getStrings(String output) {
     if (output.split("/").length == numFields)
@@ -73,7 +109,7 @@ class LeadersPageState extends State<LeadersPage> {
                     text: scannedStrings[0],
                     fontSize: 24,
                     fontWeight: FontWeight.bold),
-                TextFont(text: "Frosh:"),
+                TextFont(text: "Frosh Email:"),
                 TextFont(
                     text: scannedStrings[1],
                     fontSize: 24,
@@ -185,10 +221,19 @@ class LeadersPageState extends State<LeadersPage> {
         Container(height: 20),
         TextInput(
             labelText: "Manual sign-in",
-            onSubmitted: (text) {
-              print("Submitted");
+            onSubmitted: (text) async {
+              bool foundFrosh = await manualGetFrosh(text);
+              if (!foundFrosh) {
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: TextFont(
+                      text: '🛑 Unable to find a Frosh with that email',
+                      fontSize: 16,
+                      textColor: Theme.of(context).colorScheme.white,
+                    ),
+                    backgroundColor: Theme.of(context).colorScheme.redAccent,
+                ));
+              }
             },
-
         ),
         Container(height: 7),
         Center(

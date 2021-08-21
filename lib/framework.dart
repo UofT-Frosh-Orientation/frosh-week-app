@@ -190,6 +190,7 @@ class FrameworkState extends State<Framework> {
     if (isLeader) {
       pages.add(LeadersPage(
         leaderId: froshEmail,
+        storage: widget.storage,
       ));
       icons.add(
         Icon(
