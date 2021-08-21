@@ -114,7 +114,8 @@ class FrameworkState extends State<Framework> {
       await FirebaseMessaging.instance.subscribeToTopic(froshGroup);
       if (widget.isLeader) {
         await FirebaseMessaging.instance.subscribeToTopic("leaders");
-        await FirebaseMessaging.instance.subscribeToTopic("${froshGroup}Leaders");
+        await FirebaseMessaging.instance
+            .subscribeToTopic("${froshGroup}Leaders");
       }
       Response res2 = await widget.dio
           .post('https://www.orientation.skule.ca/app/firebase-token',

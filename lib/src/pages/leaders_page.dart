@@ -72,7 +72,7 @@ class LeadersPageState extends State<LeadersPage> {
         await dio.get('https://www.orientation.skule.ca/app/locations');
     List<dynamic> data = res.data;
     setState(() {
-      locations = data.map((item){
+      locations = data.map((item) {
         return item.toString();
       }).toList();
     });
