@@ -30,7 +30,6 @@ class _NotificationsPageParseState extends State<NotificationsPageParse> {
   List<Notification> notifications = [];
 
   Future<void> getNotifications() async {
-    // print("Getting notifications");
     SharedPreferences preferences = await SharedPreferences.getInstance();
     List<String>? rawNotifications = preferences.getStringList('notifications');
     if (rawNotifications == null) {

@@ -44,7 +44,7 @@ class FrameworkState extends State<Framework> {
   late bool _loggedIn;
   String froshName = "";
   String froshGroup = "";
-  String froshId = "";
+  String froshEmail = "";
   String discipline = "";
   String shirtSize = "";
 
@@ -79,7 +79,7 @@ class FrameworkState extends State<Framework> {
         setState(() {
           froshName = res.data["name"];
           froshGroup = res.data["froshGroup"];
-          froshId = res.data["_id"];
+          froshEmail = res.data["_id"];
           discipline = "";
           shirtSize = "Medium";
         });
@@ -87,23 +87,24 @@ class FrameworkState extends State<Framework> {
         setState(() {
           froshName = res.data["preferredName"];
           froshGroup = res.data["froshGroup"];
-          froshId = res.data["_id"];
+          froshEmail = res.data["email"];
           discipline = res.data["discipline"];
           shirtSize = res.data["shirtSize"];
         });
       }
       await prefs.setStringList(
-          'froshData', [froshName, froshGroup, froshId, discipline, shirtSize]);
+          'froshData', [froshName, froshGroup, froshEmail, discipline, shirtSize]);
       return true;
     } else {
       List<String>? froshData = prefs.getStringList("froshData");
       setState(() {
         froshName = froshData![0];
         froshGroup = froshData[1];
-        froshId = froshData[2];
+        froshEmail = froshData[2];
         discipline = froshData[3];
         shirtSize = froshData[4];
       });
+      print(froshEmail);
       return true;
     }
   }
@@ -121,7 +122,7 @@ class FrameworkState extends State<Framework> {
       HomePage(
         froshName: froshName,
         froshGroup: froshGroup,
-        froshId: froshId,
+        froshAccount: froshEmail,
         discipline: discipline,
         shirtSize: shirtSize,
         froshScheduleData: froshGroup.toLowerCase() == "all".toLowerCase()

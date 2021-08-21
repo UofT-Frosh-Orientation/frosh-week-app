@@ -12,7 +12,6 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart' as fss;
 import "package:intl/intl.dart";
 import 'dart:math';
 import '../src/functions.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
 
 Future<void> _messageHandler(RemoteMessage message) async {
   final DateFormat dateFormat = DateFormat('H:mm a EEEE');
@@ -152,7 +151,6 @@ class _MyAppState extends State<MyApp> {
       provisional: false,
       sound: true,
     );
-    // print(_notificationSettings);
     setState(() {
       notificationSettings = _notificationSettings;
     });
@@ -163,9 +161,6 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     messaging = FirebaseMessaging.instance;
     getNotificationSettings(messaging);
-    // messaging.getToken().then((value){
-    //   // print("Token: $value");
-    // });
     FirebaseMessaging.onMessage.listen((RemoteMessage event) {
       _messageHandler(event);
       showDialog(

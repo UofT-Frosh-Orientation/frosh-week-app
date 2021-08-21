@@ -70,7 +70,6 @@ class _LoginPageState extends State<LoginPage> {
       }
       if (res1.headers["location"]![0] == "/login_success") {
         Headers headers = res1.headers;
-        // print(headers);
         String cookie = headers["set-cookie"]![0]
             .substring(0, headers["set-cookie"]![0].indexOf(';'));
         await widget.storage.write(key: "cookie", value: cookie);

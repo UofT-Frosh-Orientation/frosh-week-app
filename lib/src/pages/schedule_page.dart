@@ -26,31 +26,6 @@ const attributeColor = "Colour";
 const attributeRoom = "Location";
 const attributeDate = "Date";
 
-// class SchedulePageParse extends StatelessWidget {
-//   final String froshGroup;
-//   const SchedulePageParse({Key? key, required this.froshGroup})
-//       : super(key: key);
-
-//   Future<dynamic> parseData(context) async {
-//     return await DefaultAssetBundle.of(context)
-//         .loadString('assets/data/schedule.json');
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return FutureBuilder<dynamic>(
-//       future: parseData(context),
-//       builder: (context, snapshot) {
-//         if (snapshot.hasData) {
-//           var data = json.decode(snapshot.data ?? "");
-//           return SchedulePage(data: data[this.froshGroup]);
-//         } else {
-//           return Container();
-//         }
-//       },
-//     );
-//   }
-// }
 
 ContainerEvent getNowEvent(data) {
   DateTime date = DateTime.now();
@@ -82,12 +57,6 @@ ContainerEvent getNowEvent(data) {
               color: event[attributeColor]);
         }
       }
-      // print(event[attributeEventName]);
-      // print(determineEventTime(event[attributeStartTime]));
-      // print(dateTotalMinutes);
-      // print(determineEventTime(event[attributeEndTime]));
-      // print(event[attributeEventName]);
-
     }
   }
   return ContainerEvent(

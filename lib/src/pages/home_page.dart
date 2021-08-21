@@ -14,7 +14,7 @@ import 'package:device_display_brightness/device_display_brightness.dart';
 class HomePage extends StatefulWidget {
   final String froshName;
   final String froshGroup;
-  final String froshId;
+  final String froshAccount;
   final String discipline;
   final String shirtSize;
   final String welcomeMessage;
@@ -25,7 +25,7 @@ class HomePage extends StatefulWidget {
     Key? key,
     required this.froshName,
     required this.froshGroup,
-    required this.froshId,
+    required this.froshAccount,
     required this.discipline,
     required this.shirtSize,
     required this.welcomeMessage,
@@ -78,33 +78,33 @@ class _HomePageState extends State<HomePage> {
               DeviceDisplayBrightness.setBrightness(1.0);
               Navigator.of(context).push(
                   MaterialPageRoute<void>(builder: (BuildContext context) {
-                return WillPopScope(
-                  onWillPop: () async {
-                    DeviceDisplayBrightness.resetBrightness();
-                    return true;
-                  },
-                  child: ProfilePage(
-                    froshName: widget.froshName,
-                    froshGroup:
+                    return WillPopScope(
+                      onWillPop: () async {
+                        DeviceDisplayBrightness.resetBrightness();
+                        return true;
+                      },
+                      child: ProfilePage(
+                        froshName: widget.froshName,
+                        froshGroup:
                         (froshGroupSymbols[widget.froshGroup.toLowerCase()] ??
-                                "") +
+                            "") +
                             " " +
                             widget.froshGroup.capitalizeFirst,
-                    froshId: widget.froshId,
-                    discipline: widget.discipline,
-                    shirtSize: widget.shirtSize,
-                    welcomeMessage: widget.welcomeMessage,
-                    hasCompletedUCheck: uCheckPass,
-                  ),
-                );
-              }));
+                        froshAccount: widget.froshAccount,
+                        discipline: widget.discipline,
+                        shirtSize: widget.shirtSize,
+                        welcomeMessage: widget.welcomeMessage,
+                        hasCompletedUCheck: uCheckPass,
+                      ),
+                    );
+                  }));
             },
             child: ContainerFrosh(
               froshName: widget.froshName,
               froshGroup:
-                  (froshGroupSymbols[widget.froshGroup.toLowerCase()] ?? "") +
-                      " " +
-                      widget.froshGroup.capitalizeFirst,
+              (froshGroupSymbols[widget.froshGroup.toLowerCase()] ?? "") +
+                  " " +
+                  widget.froshGroup.capitalizeFirst,
               discipline: widget.discipline,
               welcomeMessage: widget.welcomeMessage,
             ),
@@ -171,7 +171,6 @@ class _HomePageState extends State<HomePage> {
             outline: true,
             yellow: true,
             onPressed: () async {
-              print("handle logout");
               SharedPreferences preferences =
                   await SharedPreferences.getInstance();
               await preferences.clear();

@@ -52,7 +52,6 @@ class _QRScannerState extends State<QRScanner> {
             cutOutBottomOffset: 30,
             cutOutSize: scanArea),
         onQRViewCreated: (QRViewController controller) async {
-          print("QR Scanner created!");
           this.controller = controller;
           try {
             final result = await controller.scannedDataStream.first;

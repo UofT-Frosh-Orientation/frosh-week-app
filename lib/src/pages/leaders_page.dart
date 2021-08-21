@@ -164,13 +164,11 @@ class LeadersPageState extends State<LeadersPage> {
             title: "Location",
             items: ["King's college circle", "Myhal", "Orientation"],
             onChanged: (value) {
-              print(value);
             }),
         Container(height: 20),
         TextInput(
             labelText: "Manual sign-in",
             onSubmitted: (text) {
-              print(text);
             }),
         Container(height: 7),
         Center(
