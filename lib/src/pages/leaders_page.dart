@@ -45,6 +45,7 @@ class LeadersPageState extends State<LeadersPage> {
   Dio dio = Dio();
   bool hasLoaded = false;
   String location = "King's college circle";
+  List<String> locations = ["King's college circle", "Myhal"];
 
   Future<bool> manualGetFrosh(String email) async {
     String? cookie = await widget.storage.read(key: 'cookie');
@@ -69,7 +70,12 @@ class LeadersPageState extends State<LeadersPage> {
   Future<void> updateLocations() async {
     Response res =
         await dio.get('https://www.orientation.skule.ca/app/locations');
-    print(res.data.runtimeType);
+    List<dynamic> data = res.data;
+    setState(() {
+      locations = data.map((item){
+        return item.toString();
+      }).toList();
+    });
   }
 
   getStrings(String output) {
@@ -251,7 +257,7 @@ class LeadersPageState extends State<LeadersPage> {
         Container(height: 30),
         DropDownButton(
             title: "Location",
-            items: ["King's college circle", "Myhal", "Orientation"],
+            items: locations,
             onChanged: (value) {
               setState(() {
                 location = value;

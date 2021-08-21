@@ -1,3 +1,5 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
+
 const welcomeMessages = [
   "Hello",
   "Hi",
@@ -47,4 +49,10 @@ extension CapExtension on String {
       .split(" ")
       .map((str) => str.capitalizeFirst)
       .join(" ");
+}
+
+Future<bool> hasNetwork() async {
+  ConnectivityResult connectivityResult =
+      await (Connectivity().checkConnectivity());
+  return connectivityResult != ConnectivityResult.none;
 }

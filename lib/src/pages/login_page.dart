@@ -8,6 +8,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:url_launcher/url_launcher.dart';
 import "package:dio/dio.dart";
 import '../colors.dart';
+import "../functions.dart";
 
 class LoginPage extends StatefulWidget {
   final Dio dio;
@@ -44,6 +45,14 @@ class _LoginPageState extends State<LoginPage> {
       loading = true;
       error = '';
     });
+    bool connected = await hasNetwork();
+    if (!connected) {
+      setState(() {
+        loading = false;
+        error = 'Please connect to the internet';
+      });
+      return;
+    }
     SharedPreferences prefs = await SharedPreferences.getInstance();
     if (isFrosh) {
       Response res1 = await widget.dio.post(

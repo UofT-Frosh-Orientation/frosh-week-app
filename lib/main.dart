@@ -162,7 +162,11 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    isLoggedIn = widget.preferences.getBool("isLoggedIn") ?? false;
+    setState(() {
+      isLoggedIn = widget.preferences.getBool("isLoggedIn") ?? false;
+      isLeader = widget.preferences.getBool('isLeader') ?? false;
+    });
+
     messaging = FirebaseMessaging.instance;
     getNotificationSettings(messaging);
     FirebaseMessaging.onMessage.listen((RemoteMessage event) {
@@ -190,19 +194,14 @@ class _MyAppState extends State<MyApp> {
   }
 
   void setLoggedIn(bool login, bool _isLeader) {
-    print("called");
-    print("login: $login isLeader: $isLeader");
     setState(() {
       isLoggedIn = login;
       isLeader = _isLeader;
     });
-    print(isLoggedIn);
   }
 
   @override
   Widget build(BuildContext context) {
-    print("rebuilding");
-    print("build login: $isLoggedIn");
     SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
     return !isLoggedIn
         ? Scaffold(

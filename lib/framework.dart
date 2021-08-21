@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'dart:convert';
 import 'package:animations/animations.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:dio/dio.dart';
@@ -7,19 +7,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as fss;
 import 'package:frosh_week_2t1/src/pages/home_page.dart';
 import 'package:frosh_week_2t1/src/pages/leaders_page.dart';
-import 'package:frosh_week_2t1/src/pages/login_page.dart';
 import 'package:frosh_week_2t1/src/pages/notifications_page.dart';
 import 'package:frosh_week_2t1/src/pages/resources_page.dart';
 import 'package:frosh_week_2t1/src/pages/schedule_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'src/colors.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import "src/functions.dart";
 
-Future<bool> hasNetwork() async {
-  ConnectivityResult connectivityResult =
-      await (Connectivity().checkConnectivity());
-  return connectivityResult != ConnectivityResult.none;
+List<String> convertToStringList(List<dynamic> data) {
+  List<String> converted = data.map((item) {
+    return jsonEncode(item);
+  }).toList();
+  return converted;
+}
+
+List<Map<String, dynamic>> convertFromStringList(List<String> data) {
+  List<Map<String, dynamic>> converted = data.map((item) {
+    return jsonDecode(item) as Map<String, dynamic>;
+  }).toList();
+  return converted;
 }
 
 class Framework extends StatefulWidget {
@@ -47,13 +54,13 @@ class Framework extends StatefulWidget {
 class FrameworkState extends State<Framework> {
   late PageController pageController;
   int selectedIndex = 0;
-  late bool _loggedIn;
   String froshName = "";
   String froshGroup = "";
   String froshEmail = "";
   String discipline = "";
   String shirtSize = "";
   Completer<bool> completer = new Completer();
+  dynamic data = [];
 
   // Future<void> setLoggedIn(bool login) async {
   //   setState(() {
@@ -76,18 +83,13 @@ class FrameworkState extends State<Framework> {
                   : 'https://www.orientation.skule.ca/users/current',
               options: Options(headers: {"cookie": cookie}))
           .catchError((error) {
-        setState(() {
-          _loggedIn = false;
-        });
+        widget.setLoggedIn(false, false);
       });
       if (res.data.toString() == "{}") {
-        setState(() {
-          _loggedIn = false;
-        });
+        widget.setLoggedIn(false, false);
         completer.complete(false);
         return false;
       }
-      print("Data: ${res.data}");
       if (widget.isLeader) {
         setState(() {
           froshName = res.data["name"];
@@ -109,8 +111,11 @@ class FrameworkState extends State<Framework> {
           [froshName, froshGroup, froshEmail, discipline, shirtSize]);
       // subscribe to topic on each app start-up
       String? token = await FirebaseMessaging.instance.getToken();
-      print(token);
       await FirebaseMessaging.instance.subscribeToTopic(froshGroup);
+      if (widget.isLeader) {
+        await FirebaseMessaging.instance.subscribeToTopic("leaders");
+        await FirebaseMessaging.instance.subscribeToTopic("${froshGroup}Leaders");
+      }
       Response res2 = await widget.dio
           .post('https://www.orientation.skule.ca/app/firebase-token',
               data: {
@@ -120,17 +125,26 @@ class FrameworkState extends State<Framework> {
                 "firebaseToken": token
               },
               options: Options(headers: {"cookie": cookie}));
-      print("Data: ${res2.data}");
+      Response res3 = await widget.dio.get(
+          "https://www.orientation.skule.ca/app/schedule?froshGroup=${froshGroup == 'all' ? 'alpha' : froshGroup.toLowerCase()}");
+      setState(() {
+        data = res3.data;
+      });
       completer.complete(true);
+      //This can complete in the background
+      await prefs.setStringList('schedule', convertToStringList(res3.data));
       return true;
     } else {
       List<String>? froshData = prefs.getStringList("froshData");
+      List<String>? _schedule = prefs.getStringList("schedule");
+      // List<String>
       setState(() {
         froshName = froshData![0];
         froshGroup = froshData[1];
         froshEmail = froshData[2];
         discipline = froshData[3];
         shirtSize = froshData[4];
+        data = convertFromStringList(_schedule!);
       });
       completer.complete(true);
       return true;
@@ -154,17 +168,11 @@ class FrameworkState extends State<Framework> {
               froshAccount: froshEmail,
               discipline: discipline,
               shirtSize: shirtSize,
-              froshScheduleData: froshGroup.toLowerCase() == "all".toLowerCase()
-                  ? widget.loadedData["scheduleJSON"]["alpha"]
-                  : widget.loadedData["scheduleJSON"][froshGroup.toLowerCase()],
+              froshScheduleData: data,
               welcomeMessage: widget.loadedData["welcomeMessage"],
               setLoggedIn: widget.setLoggedIn,
             ),
-            SchedulePage(
-                data: froshGroup.toLowerCase() == "all".toLowerCase()
-                    ? widget.loadedData["scheduleJSON"]["alpha"]
-                    : widget.loadedData["scheduleJSON"]
-                        [froshGroup.toLowerCase()]),
+            SchedulePage(data: data),
             NotificationsPageParse(),
             ResourcesPageParse(),
             LeadersPage(
@@ -179,17 +187,11 @@ class FrameworkState extends State<Framework> {
               froshAccount: froshEmail,
               discipline: discipline,
               shirtSize: shirtSize,
-              froshScheduleData: froshGroup.toLowerCase() == "all".toLowerCase()
-                  ? widget.loadedData["scheduleJSON"]["alpha"]
-                  : widget.loadedData["scheduleJSON"][froshGroup.toLowerCase()],
+              froshScheduleData: data,
               welcomeMessage: widget.loadedData["welcomeMessage"],
               setLoggedIn: widget.setLoggedIn,
             ),
-            SchedulePage(
-                data: froshGroup.toLowerCase() == "all".toLowerCase()
-                    ? widget.loadedData["scheduleJSON"]["alpha"]
-                    : widget.loadedData["scheduleJSON"]
-                        [froshGroup.toLowerCase()]),
+            SchedulePage(data: data),
             NotificationsPageParse(),
             ResourcesPageParse(),
           ];
