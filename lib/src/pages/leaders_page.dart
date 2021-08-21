@@ -159,17 +159,14 @@ class LeadersPageState extends State<LeadersPage> {
             });
           },
         ),
-        Container(height: 30),
-        DropDownButton(
-            title: "Location",
-            items: ["King's college circle", "Myhal", "Orientation"],
-            onChanged: (value) {
-            }),
         Container(height: 20),
         TextInput(
             labelText: "Manual sign-in",
             onSubmitted: (text) {
-            }),
+              print("Submitted");
+            },
+
+        ),
         Container(height: 7),
         Center(
           child: TextFont(
@@ -177,6 +174,12 @@ class LeadersPageState extends State<LeadersPage> {
             fontSize: 10,
           ),
         ),
+        Container(height: 30),
+        DropDownButton(
+            title: "Location",
+            items: ["King's college circle", "Myhal", "Orientation"],
+            onChanged: (value) {
+            }),
         Container(height: 100),
       ]))
     ]));

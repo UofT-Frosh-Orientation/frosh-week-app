@@ -12,6 +12,7 @@ import 'package:frosh_week_2t1/src/pages/schedule_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'src/colors.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 Future<bool> hasNetwork() async {
   ConnectivityResult connectivityResult =
@@ -75,6 +76,13 @@ class FrameworkState extends State<Framework> {
           _loggedIn = false;
         });
       });
+      if (res.data.toString() == "{}"){
+        setState(() {
+          _loggedIn = false;
+        });
+        return false;
+      }
+      print("Data: ${res.data}");
       if (isLeader) {
         setState(() {
           froshName = res.data["name"];
@@ -94,6 +102,25 @@ class FrameworkState extends State<Framework> {
       }
       await prefs.setStringList(
           'froshData', [froshName, froshGroup, froshEmail, discipline, shirtSize]);
+      // subscribe to topic on each app start-up
+      String? token = await FirebaseMessaging.instance.getToken();
+      print(token);
+      await FirebaseMessaging.instance.subscribeToTopic(froshGroup);
+      Response res2  = await widget.dio.post(
+        'https://www.orientation.skule.ca/app/firebase-token',
+        data: {
+          "email": froshEmail,
+          "execId": froshEmail,
+          "isFrosh": !isLeader,
+          "firebaseToken": token
+        },
+        options: Options(
+          headers: {
+            "cookie": cookie
+          }
+        )
+      );
+      print("Data: ${res2.data}");
       return true;
     } else {
       List<String>? froshData = prefs.getStringList("froshData");
@@ -104,7 +131,6 @@ class FrameworkState extends State<Framework> {
         discipline = froshData[3];
         shirtSize = froshData[4];
       });
-      print(froshEmail);
       return true;
     }
   }
