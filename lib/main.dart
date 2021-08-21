@@ -206,9 +206,11 @@ class _MyAppState extends State<MyApp> {
     SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
     return !isLoggedIn
         ? Scaffold(
-          body: LoginPage(
-              dio: widget.dio, setLoggedIn: setLoggedIn, storage: widget.storage),
-        )
+            body: LoginPage(
+                dio: widget.dio,
+                setLoggedIn: setLoggedIn,
+                storage: widget.storage),
+          )
         : Framework(
             isLoggedIn: widget.preferences.getBool('isLoggedIn') ?? false,
             isLeader: isLeader,
