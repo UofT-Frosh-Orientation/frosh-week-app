@@ -14,7 +14,7 @@ import 'package:device_display_brightness/device_display_brightness.dart';
 class HomePage extends StatefulWidget {
   final String froshName;
   final String froshGroup;
-  final String froshId;
+  final String froshAccount;
   final String discipline;
   final String shirtSize;
   final String welcomeMessage;
@@ -25,7 +25,7 @@ class HomePage extends StatefulWidget {
     Key? key,
     required this.froshName,
     required this.froshGroup,
-    required this.froshId,
+    required this.froshAccount,
     required this.discipline,
     required this.shirtSize,
     required this.welcomeMessage,
@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                                 "") +
                             " " +
                             widget.froshGroup.capitalizeFirst,
-                    froshId: widget.froshId,
+                    froshAccount: widget.froshAccount,
                     discipline: widget.discipline,
                     shirtSize: widget.shirtSize,
                     welcomeMessage: widget.welcomeMessage,
@@ -171,14 +171,13 @@ class _HomePageState extends State<HomePage> {
             outline: true,
             yellow: true,
             onPressed: () async {
-              print("handle logout");
               SharedPreferences preferences =
                   await SharedPreferences.getInstance();
               await preferences.clear();
               fss.FlutterSecureStorage storage = fss.FlutterSecureStorage();
               storage.deleteAll();
               preferences.setBool('isLoggedIn', false);
-              widget.setLoggedIn(false);
+              widget.setLoggedIn(false, false);
             },
           ),
           Container(height: 100)

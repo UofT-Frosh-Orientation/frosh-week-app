@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../colors.dart';
-import '../widgets/TextWidgets.dart';
 
 class TextInput extends StatelessWidget {
   final String labelText;

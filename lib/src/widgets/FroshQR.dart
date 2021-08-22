@@ -22,6 +22,12 @@ class FroshQR extends StatelessWidget {
     var deviceWidth = MediaQuery.of(context).size.width;
     var deviceHeight = MediaQuery.of(context).size.height;
     var height = min(deviceWidth, deviceHeight);
+    // return QrImage(
+    //   data: "$froshEmail/$froshKitsSize/$hasCompletedUCheck",
+    //   version: QrVersions.auto,
+    //   size: height * 0.7,
+    //   foregroundColor: Colors.deepPurple,
+    // )
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(7),

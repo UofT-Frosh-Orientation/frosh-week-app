@@ -3,6 +3,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import 'package:frosh_week_2t1/src/pages/login_page.dart';
 import 'framework.dart';
 import 'src/colors.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -12,7 +13,6 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart' as fss;
 import "package:intl/intl.dart";
 import 'dart:math';
 import '../src/functions.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
 
 Future<void> _messageHandler(RemoteMessage message) async {
   final DateFormat dateFormat = DateFormat('H:mm a EEEE');
@@ -37,10 +37,7 @@ Future<void> _messageHandler(RemoteMessage message) async {
 
 Future<dynamic> loadData() async {
   Random random = new Random();
-  dynamic scheduleJSON =
-      await rootBundle.loadString('assets/data/schedule.json');
   dynamic loadedData = {
-    "scheduleJSON": json.decode(scheduleJSON ?? ""),
     "welcomeMessage": welcomeMessages[random.nextInt(welcomeMessages.length)],
   };
   return loadedData;
@@ -140,6 +137,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   late FirebaseMessaging messaging;
   late NotificationSettings notificationSettings;
+  bool isLoggedIn = false;
+  bool isLeader = false;
 
   Future<void> getNotificationSettings(FirebaseMessaging _messaging) async {
     NotificationSettings _notificationSettings =
@@ -152,7 +151,6 @@ class _MyAppState extends State<MyApp> {
       provisional: false,
       sound: true,
     );
-    // print(_notificationSettings);
     setState(() {
       notificationSettings = _notificationSettings;
     });
@@ -161,11 +159,13 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+    setState(() {
+      isLoggedIn = widget.preferences.getBool("isLoggedIn") ?? false;
+      isLeader = widget.preferences.getBool('isLeader') ?? false;
+    });
+
     messaging = FirebaseMessaging.instance;
     getNotificationSettings(messaging);
-    // messaging.getToken().then((value){
-    //   // print("Token: $value");
-    // });
     FirebaseMessaging.onMessage.listen((RemoteMessage event) {
       _messageHandler(event);
       showDialog(
@@ -190,13 +190,30 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  void setLoggedIn(bool login, bool _isLeader) {
+    setState(() {
+      isLoggedIn = login;
+      isLeader = _isLeader;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
-    return Framework(
-        isLoggedIn: widget.preferences.getBool('isLoggedIn') ?? false,
-        dio: widget.dio,
-        storage: widget.storage,
-        loadedData: widget.loadedData);
+    return !isLoggedIn
+        ? Scaffold(
+            body: LoginPage(
+                dio: widget.dio,
+                setLoggedIn: setLoggedIn,
+                storage: widget.storage),
+          )
+        : Framework(
+            isLoggedIn: widget.preferences.getBool('isLoggedIn') ?? false,
+            isLeader: isLeader,
+            dio: widget.dio,
+            storage: widget.storage,
+            loadedData: widget.loadedData,
+            setLoggedIn: setLoggedIn,
+          );
   }
 }

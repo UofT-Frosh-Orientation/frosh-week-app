@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../colors.dart';
 import "../widgets/Containers.dart";
 import '../widgets/TextWidgets.dart';
 import 'package:frosh_week_2t1/src/pages/schedule_page.dart';

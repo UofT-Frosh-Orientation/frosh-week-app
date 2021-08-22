@@ -1,7 +1,5 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import '../widgets/FroshQR.dart';
-import '../widgets/TextWidgets.dart';
 import "../widgets/Containers.dart";
 import "../widgets/ContainersExtensions.dart";
 import 'package:device_display_brightness/device_display_brightness.dart';
@@ -9,7 +7,7 @@ import 'package:device_display_brightness/device_display_brightness.dart';
 class ProfilePage extends StatelessWidget {
   final String froshName;
   final String froshGroup;
-  final String froshId;
+  final String froshAccount;
   final String discipline;
   final String shirtSize;
   final String welcomeMessage;
@@ -19,7 +17,7 @@ class ProfilePage extends StatelessWidget {
       {Key? key,
       required this.froshName,
       required this.froshGroup,
-      required this.froshId,
+      required this.froshAccount,
       required this.discipline,
       required this.shirtSize,
       required this.welcomeMessage,
@@ -60,7 +58,7 @@ class ProfilePage extends StatelessWidget {
                 Center(
                   child: FroshQR(
                       froshName: froshName,
-                      froshAccount: froshId,
+                      froshAccount: froshAccount,
                       froshKitsSize: shirtSize,
                       hasCompletedUCheck: hasCompletedUCheck),
                 ),

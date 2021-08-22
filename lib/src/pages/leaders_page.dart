@@ -5,11 +5,33 @@ import '../widgets/qr_scanner.dart';
 import "../widgets/Containers.dart";
 import '../widgets/TextInputWidgets.dart';
 import '../colors.dart';
+import 'package:dio/dio.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart' as fss;
+
+Future<bool> signInFrosh(String leaderId, String froshEmail, String location,
+    bool completedUCheck, Dio dio) async {
+  Response res = await dio.post(
+    'https://www.orientation.skule.ca/app/sign-in/',
+    data: {
+      "froshEmail": froshEmail,
+      "leaderAccountId": leaderId,
+      "location": location,
+      "hasCompletedUCheck": completedUCheck,
+      "dateTime": DateTime.now().toString()
+    },
+  );
+  if (res.data["message"] == "Sign in successful!!") {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 class LeadersPage extends StatefulWidget {
-  const LeadersPage({
-    Key? key,
-  }) : super(key: key);
+  final String leaderId;
+  final fss.FlutterSecureStorage storage;
+  const LeadersPage({Key? key, required this.leaderId, required this.storage})
+      : super(key: key);
 
   @override
   LeadersPageState createState() => LeadersPageState();
@@ -20,8 +42,41 @@ int numFields = defaultScannedStrings.length;
 
 class LeadersPageState extends State<LeadersPage> {
   List<String> scannedStrings = defaultScannedStrings;
-
+  Dio dio = Dio();
   bool hasLoaded = false;
+  String location = "King's college circle";
+  List<String> locations = ["King's college circle", "Myhal"];
+
+  Future<bool> manualGetFrosh(String email) async {
+    String? cookie = await widget.storage.read(key: 'cookie');
+    Response res = await dio.post(
+        'https://www.orientation.skule.ca/exec/manual-signin',
+        data: {"email": email},
+        options: Options(headers: {"cookie": cookie}));
+    if (res.data["errorMessage"] == "") {
+      setState(() {
+        scannedStrings = [
+          res.data!["froshData"]["preferredName"],
+          res.data["froshData"]["email"],
+          res.data["froshData"]["shirtSize"],
+          "true"
+        ];
+      });
+      return true;
+    }
+    return false;
+  }
+
+  Future<void> updateLocations() async {
+    Response res =
+        await dio.get('https://www.orientation.skule.ca/app/locations');
+    List<dynamic> data = res.data;
+    setState(() {
+      locations = data.map((item) {
+        return item.toString();
+      }).toList();
+    });
+  }
 
   getStrings(String output) {
     if (output.split("/").length == numFields)
@@ -30,6 +85,13 @@ class LeadersPageState extends State<LeadersPage> {
       });
   }
 
+  @override
+  void initState() {
+    super.initState();
+    updateLocations();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: CustomScrollView(physics: BouncingScrollPhysics(), slivers: [
@@ -50,7 +112,7 @@ class LeadersPageState extends State<LeadersPage> {
                     text: scannedStrings[0],
                     fontSize: 24,
                     fontWeight: FontWeight.bold),
-                TextFont(text: "Frosh:"),
+                TextFont(text: "Frosh Email:"),
                 TextFont(
                     text: scannedStrings[1],
                     fontSize: 24,
@@ -96,16 +158,25 @@ class LeadersPageState extends State<LeadersPage> {
                     text: "Register",
                     customWidth: MediaQuery.of(context).size.width / 2 - 32 * 2,
                     onPressed: () async {
-                      print("register frosh");
+                      bool wasSuccessful = await signInFrosh(
+                          widget.leaderId,
+                          scannedStrings[1],
+                          location,
+                          scannedStrings[3] == "true",
+                          dio);
                       setState(() {
                         scannedStrings = defaultScannedStrings;
                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                           content: TextFont(
-                            text: '🎉 Frosh Registered',
+                            text: wasSuccessful
+                                ? '🎉 Frosh Registered'
+                                : '🛑 There was an error',
                             fontSize: 16,
                             textColor: Theme.of(context).colorScheme.white,
                           ),
-                          backgroundColor: Theme.of(context).colorScheme.black,
+                          backgroundColor: wasSuccessful
+                              ? Theme.of(context).colorScheme.black
+                              : Theme.of(context).colorScheme.redAccent,
                         ));
                       });
                     },
@@ -159,19 +230,23 @@ class LeadersPageState extends State<LeadersPage> {
             });
           },
         ),
-        Container(height: 30),
-        DropDownButton(
-            title: "Location",
-            items: ["King's college circle", "Myhal", "Orientation"],
-            onChanged: (value) {
-              print(value);
-            }),
         Container(height: 20),
         TextInput(
-            labelText: "Manual sign-in",
-            onSubmitted: (text) {
-              print(text);
-            }),
+          labelText: "Manual sign-in",
+          onSubmitted: (text) async {
+            bool foundFrosh = await manualGetFrosh(text);
+            if (!foundFrosh) {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: TextFont(
+                  text: '🛑 Unable to find a Frosh with that email',
+                  fontSize: 16,
+                  textColor: Theme.of(context).colorScheme.white,
+                ),
+                backgroundColor: Theme.of(context).colorScheme.redAccent,
+              ));
+            }
+          },
+        ),
         Container(height: 7),
         Center(
           child: TextFont(
@@ -179,6 +254,15 @@ class LeadersPageState extends State<LeadersPage> {
             fontSize: 10,
           ),
         ),
+        Container(height: 30),
+        DropDownButton(
+            title: "Location",
+            items: locations,
+            onChanged: (value) {
+              setState(() {
+                location = value;
+              });
+            }),
         Container(height: 100),
       ]))
     ]));
