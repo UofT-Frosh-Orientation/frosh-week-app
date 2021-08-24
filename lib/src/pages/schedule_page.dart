@@ -25,6 +25,7 @@ const attributeEndTime = "End time";
 const attributeColor = "Colour";
 const attributeRoom = "Location";
 const attributeDate = "Date";
+const attributeLink = "Link";
 
 ContainerEvent getNowEvent(data) {
   DateTime date = DateTime.now();
@@ -53,13 +54,14 @@ ContainerEvent getNowEvent(data) {
                   : "",
               description: event[attributeEventDescription],
               room: event[attributeRoom],
-              color: event[attributeColor]);
+              color: event[attributeColor],
+              link: event[attributeLink]);
         }
       }
     }
   }
   return ContainerEvent(
-      title: "", time: "", description: "", room: "", color: "");
+      title: "", time: "", description: "", room: "", color: "", link: "");
 }
 
 class SchedulePage extends StatelessWidget {

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:frosh_week_2t1/src/functions.dart';
 import 'package:frosh_week_2t1/src/widgets/Containers.dart';
 import '../widgets/TextWidgets.dart';
 import 'package:flutter/cupertino.dart';
 import '../colors.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/services.dart';
 
 class Resource {
   Resource({
@@ -107,7 +109,7 @@ class ResourceBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () async {
-        await launchContact(resource);
+        await launchContact(resource, context);
       },
       child: Box(
           widget: Padding(
@@ -155,7 +157,7 @@ class ResourceBox extends StatelessWidget {
   }
 }
 
-launchContact(Resource resource) async {
+launchContact(Resource resource, context) async {
   String url = "";
   if (resource.type == "email") {
     url = "mailto::" + resource.contact;
@@ -166,20 +168,14 @@ launchContact(Resource resource) async {
   } else {
     return;
   }
-  if (await canLaunch(url)) await launch(url);
-}
-
-cutUrl(String url) {
-  var splitUrl = url.split("/");
-  var splitUrlEnd = "";
-  if (splitUrl.length > 3 && splitUrl[3] != "") {
-    splitUrlEnd = "...";
+  if (await canLaunch(url))
+    await launch(url);
+  else {
+    Clipboard.setData(ClipboardData(text: "$url"));
+    showSnackbar(
+        context,
+        "There was an error launching the resource.\nThe resource has been copied to your clipboard.",
+        Theme.of(context).colorScheme.white,
+        Theme.of(context).colorScheme.black);
   }
-  return splitUrl[0] +
-      "/" +
-      splitUrl[1] +
-      "/" +
-      splitUrl[2] +
-      "/" +
-      splitUrlEnd;
 }
