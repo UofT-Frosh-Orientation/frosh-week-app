@@ -28,7 +28,7 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onPanUpdate: (details) {
-        if (details.delta.dy > 10) {
+        if (details.delta.dy > 10 || details.delta.dx > 10) {
           DeviceDisplayBrightness.resetBrightness();
           Navigator.of(context).pop();
         }

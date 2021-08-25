@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frosh_week_2t1/src/functions.dart';
 import 'package:frosh_week_2t1/src/widgets/ButtonWidgets.dart';
 import '../widgets/TextWidgets.dart';
 import '../widgets/qr_scanner.dart';
@@ -142,15 +143,11 @@ class LeadersPageState extends State<LeadersPage> {
                       setState(() {
                         scannedStrings = defaultScannedStrings;
                       });
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                        content: TextFont(
-                          text: '🛑 Registeration cancelled',
-                          fontSize: 16,
-                          textColor: Theme.of(context).colorScheme.white,
-                        ),
-                        backgroundColor:
-                            Theme.of(context).colorScheme.redAccent,
-                      ));
+                      showSnackbar(
+                          context,
+                          '🛑 Registeration cancelled',
+                          Theme.of(context).colorScheme.white,
+                          Theme.of(context).colorScheme.redAccent);
                     },
                   ),
                   ButtonRegular(
@@ -166,18 +163,15 @@ class LeadersPageState extends State<LeadersPage> {
                           dio);
                       setState(() {
                         scannedStrings = defaultScannedStrings;
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                          content: TextFont(
-                            text: wasSuccessful
+                        showSnackbar(
+                            context,
+                            wasSuccessful
                                 ? '🎉 Frosh Registered'
                                 : '🛑 There was an error',
-                            fontSize: 16,
-                            textColor: Theme.of(context).colorScheme.white,
-                          ),
-                          backgroundColor: wasSuccessful
-                              ? Theme.of(context).colorScheme.black
-                              : Theme.of(context).colorScheme.redAccent,
-                        ));
+                            Theme.of(context).colorScheme.white,
+                            wasSuccessful
+                                ? Theme.of(context).colorScheme.black
+                                : Theme.of(context).colorScheme.redAccent);
                       });
                     },
                   ),
@@ -195,7 +189,7 @@ class LeadersPageState extends State<LeadersPage> {
                 MaterialPageRoute<String>(builder: (BuildContext context) {
               return GestureDetector(
                 onPanUpdate: (details) {
-                  if (details.delta.dy > 10) {
+                  if (details.delta.dy > 10 || details.delta.dx > 10) {
                     Navigator.pop(context, '');
                   }
                 },
@@ -218,14 +212,11 @@ class LeadersPageState extends State<LeadersPage> {
               if (result != null && result.split("/").length == numFields)
                 scannedStrings = result.split("/");
               else {
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  content: TextFont(
-                    text: '🛑 There was an error reading the QR code',
-                    fontSize: 16,
-                    textColor: Theme.of(context).colorScheme.white,
-                  ),
-                  backgroundColor: Theme.of(context).colorScheme.redAccent,
-                ));
+                showSnackbar(
+                    context,
+                    '🛑 There was an error reading the QR code',
+                    Theme.of(context).colorScheme.white,
+                    Theme.of(context).colorScheme.redAccent);
               }
             });
           },
@@ -236,14 +227,11 @@ class LeadersPageState extends State<LeadersPage> {
           onSubmitted: (text) async {
             bool foundFrosh = await manualGetFrosh(text);
             if (!foundFrosh) {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                content: TextFont(
-                  text: '🛑 Unable to find a Frosh with that email',
-                  fontSize: 16,
-                  textColor: Theme.of(context).colorScheme.white,
-                ),
-                backgroundColor: Theme.of(context).colorScheme.redAccent,
-              ));
+              showSnackbar(
+                  context,
+                  '🛑 Unable to find a Frosh with that email',
+                  Theme.of(context).colorScheme.white,
+                  Theme.of(context).colorScheme.redAccent);
             }
           },
         ),
