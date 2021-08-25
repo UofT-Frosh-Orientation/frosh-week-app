@@ -201,7 +201,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     // SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
     return AnimatedSwitcher(
-        duration: Duration(milliseconds: 1000),
+        duration: Duration(milliseconds: 500),
         child: !isLoggedIn
             ? Scaffold(
                 body: LoginPage(
