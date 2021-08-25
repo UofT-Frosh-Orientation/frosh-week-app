@@ -46,6 +46,7 @@ Future<dynamic> loadData() async {
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences preferences = await SharedPreferences.getInstance();
+  await preferences.reload(); // Reload so that we clear the cache and access the values stored in isolation during background message
   final fss.FlutterSecureStorage storage = new fss.FlutterSecureStorage();
   await Firebase.initializeApp();
   FirebaseMessaging.onBackgroundMessage(_messageHandler);
