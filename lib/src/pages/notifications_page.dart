@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../widgets/TextWidgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'dart:convert';
+import "../functions.dart";
 
 class Notification {
   Notification(
@@ -55,7 +56,13 @@ class _NotificationsPageParseState extends State<NotificationsPageParse> {
 
   @override
   Widget build(BuildContext context) {
-    return NotificationsPage(notifications: notifications);
+    // return NotificationsPage(notifications: notifications);
+    return NotificationsPage(notifications: [
+      Notification(
+          title: "title really long test",
+          description: "description",
+          time: "23:00 PM")
+    ]);
   }
 }
 
@@ -118,7 +125,7 @@ class NotificationBox extends StatelessWidget {
               Flexible(
                 flex: 2,
                 child: TextFont(
-                  text: notification.title,
+                  text: notification.title.capitalizeFirst,
                   fontWeight: FontWeight.bold,
                   fontSize: 25,
                 ),
@@ -126,15 +133,16 @@ class NotificationBox extends StatelessWidget {
               Flexible(
                 flex: 1,
                 child: TextFont(
-                  text: notification.time,
+                  text: notification.time.capitalizeFirst,
                   fontSize: 15,
+                  textAlign: TextAlign.right,
                 ),
               )
             ],
           ),
           Container(height: 4),
           TextFont(
-            text: notification.description,
+            text: notification.description.capitalizeFirst,
             fontSize: 16,
           )
         ],
