@@ -189,7 +189,7 @@ class LeadersPageState extends State<LeadersPage> {
                 MaterialPageRoute<String>(builder: (BuildContext context) {
               return GestureDetector(
                 onPanUpdate: (details) {
-                  if (details.delta.dy > 10) {
+                  if (details.delta.dy > 10 || details.delta.dx > 10) {
                     Navigator.pop(context, '');
                   }
                 },

@@ -42,6 +42,7 @@ class ButtonRegular extends StatelessWidget {
                 text: text,
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
+                textAlign: TextAlign.center,
               ),
             ),
           ),
