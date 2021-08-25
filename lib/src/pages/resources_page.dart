@@ -41,6 +41,14 @@ class ResourcesPageParse extends StatelessWidget {
           description:
               "Don't know the building codes or where buildings are located? View this map!"),
       Resource(
+          icon: Icons.map,
+          title: "UofT Interactive Map and Food Map",
+          contact:
+              "https://map.utoronto.ca/?id=1809&fbclid=IwAR1oGzjVDb1Sh9NLQgwbyx24cN1D6Dlk4T7U4oAXpoXdZ75eGR95SPzt8gs#!ce/48659?ct/45469,0,48654,48655,48656,48657,48658",
+          type: "url",
+          description:
+              "An interactive map of campus and food locations available on campus."),
+      Resource(
           icon: Icons.file_copy,
           title: "Incident Report Form",
           contact: "https://forms.gle/c6tyroJMVsKHbhR59",
@@ -53,7 +61,7 @@ class ResourcesPageParse extends StatelessWidget {
           contact: "416-978-2323",
           type: "phone",
           description:
-              "For non-urgent reports. UofT campus police phone number."),
+              "For non-urgent reports. UofT campus police's phone number."),
     ]);
   }
 }
