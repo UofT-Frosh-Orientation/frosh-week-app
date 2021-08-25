@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0012E18226A5C2BF00558633 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0012E18126A5C2BF00558633 /* GoogleService-Info.plist */; };
+		00502FE326D1CB2E00A492EA /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 00502FE226D1CB2E00A492EA /* appstore.png */; };
 		0076787B26CB7B47003F79FC /* Info-Release.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0076787926CB7B47003F79FC /* Info-Release.plist */; };
 		0076787C26CB7B47003F79FC /* Info-Debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0076787A26CB7B47003F79FC /* Info-Debug.plist */; };
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		0012E18126A5C2BF00558633 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		00502FE226D1CB2E00A492EA /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appstore.png; path = Assets.xcassets/appstore.png; sourceTree = "<group>"; };
 		0076787926CB7B47003F79FC /* Info-Release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Release.plist"; sourceTree = "<group>"; };
 		0076787A26CB7B47003F79FC /* Info-Debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Debug.plist"; sourceTree = "<group>"; };
 		00EA3C6426CAB4F000E997D7 /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				00EA3C6426CAB4F000E997D7 /* Runner.entitlements */,
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
 				97C146FD1CF9000F007C117D /* Assets.xcassets */,
+				00502FE226D1CB2E00A492EA /* appstore.png */,
 				97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */,
 				97C147021CF9000F007C117D /* Info.plist */,
 				0076787A26CB7B47003F79FC /* Info-Debug.plist */,
@@ -204,6 +207,7 @@
 				0076787C26CB7B47003F79FC /* Info-Debug.plist in Resources */,
 				0076787B26CB7B47003F79FC /* Info-Release.plist in Resources */,
 				0012E18226A5C2BF00558633 /* GoogleService-Info.plist in Resources */,
+				00502FE326D1CB2E00A492EA /* appstore.png in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
 				97C146FC1CF9000F007C117D /* Main.storyboard in Resources */,
 			);
