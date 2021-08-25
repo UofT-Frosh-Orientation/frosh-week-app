@@ -202,14 +202,39 @@ class _MyAppState extends State<MyApp> {
     // SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
     return AnimatedSwitcher(
         duration: Duration(milliseconds: 500),
+        switchInCurve: Curves.easeInOutCubic,
+        switchOutCurve: Curves.easeInOutCubic,
+        transitionBuilder: (Widget child, Animation<double> animation) {
+          final inAnimation =
+              Tween<Offset>(begin: Offset(-1.0, 0.0), end: Offset(0.0, 0.0))
+                  .animate(animation);
+          final outAnimation =
+              Tween<Offset>(begin: Offset(1.0, 0.0), end: Offset(0.0, 0.0))
+                  .animate(animation);
+
+          if (child.key == ValueKey(0)) {
+            return ClipRect(
+              child: SlideTransition(
+                position: inAnimation,
+                child: child,
+              ),
+            );
+          } else {
+            return ClipRect(
+              child: SlideTransition(position: outAnimation, child: child),
+            );
+          }
+        },
         child: !isLoggedIn
             ? Scaffold(
+                key: ValueKey(0),
                 body: LoginPage(
                     dio: widget.dio,
                     setLoggedIn: setLoggedIn,
                     storage: widget.storage),
               )
             : Framework(
+                key: ValueKey(1),
                 isLoggedIn: widget.preferences.getBool('isLoggedIn') ?? false,
                 isLeader: isLeader,
                 dio: widget.dio,

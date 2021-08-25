@@ -218,8 +218,8 @@ class _LoginPageState extends State<LoginPage> {
                 )
               : AnimatedSwitcher(
                   duration: Duration(milliseconds: 500),
-                  switchInCurve: Curves.easeIn,
-                  switchOutCurve: Curves.easeIn,
+                  switchInCurve: Curves.easeInOutCubic,
+                  switchOutCurve: Curves.easeInOutCubic,
                   transitionBuilder:
                       (Widget child, Animation<double> animation) {
                     return ScaleTransition(child: child, scale: animation);
