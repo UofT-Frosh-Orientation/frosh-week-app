@@ -200,20 +200,22 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     // SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
-    return !isLoggedIn
-        ? Scaffold(
-            body: LoginPage(
+    return AnimatedSwitcher(
+        duration: Duration(milliseconds: 1000),
+        child: !isLoggedIn
+            ? Scaffold(
+                body: LoginPage(
+                    dio: widget.dio,
+                    setLoggedIn: setLoggedIn,
+                    storage: widget.storage),
+              )
+            : Framework(
+                isLoggedIn: widget.preferences.getBool('isLoggedIn') ?? false,
+                isLeader: isLeader,
                 dio: widget.dio,
+                storage: widget.storage,
+                loadedData: widget.loadedData,
                 setLoggedIn: setLoggedIn,
-                storage: widget.storage),
-          )
-        : Framework(
-            isLoggedIn: widget.preferences.getBool('isLoggedIn') ?? false,
-            isLeader: isLeader,
-            dio: widget.dio,
-            storage: widget.storage,
-            loadedData: widget.loadedData,
-            setLoggedIn: setLoggedIn,
-          );
+              ));
   }
 }

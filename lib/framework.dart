@@ -250,8 +250,19 @@ class FrameworkState extends State<Framework> {
     return FutureBuilder(
         future: completer.future,
         builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return Scaffold(
+          Widget child;
+          if (!snapshot.hasData) {
+            child = Scaffold(
+              key: ValueKey<int>(0),
+              body: Center(
+                child: CircularProgressIndicator(
+                  color: Theme.of(context).colorScheme.yellowAccent,
+                ),
+              ),
+            );
+          } else {
+            child = Scaffold(
+              key: ValueKey<int>(1),
               resizeToAvoidBottomInset: false,
               body: GestureDetector(
                 onTap: () {
@@ -311,13 +322,11 @@ class FrameworkState extends State<Framework> {
                 ]),
               ),
             );
-          } else {
-            return Scaffold(
-              body: Center(
-                child: CircularProgressIndicator(),
-              ),
-            );
           }
+          return AnimatedSwitcher(
+            duration: Duration(seconds: 1),
+            child: child,
+          );
         });
   }
 }
