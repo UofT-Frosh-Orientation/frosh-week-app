@@ -56,13 +56,13 @@ class _NotificationsPageParseState extends State<NotificationsPageParse> {
 
   @override
   Widget build(BuildContext context) {
-    // return NotificationsPage(notifications: notifications);
-    return NotificationsPage(notifications: [
-      Notification(
-          title: "title really long test",
-          description: "description",
-          time: "23:00 PM")
-    ]);
+    return NotificationsPage(notifications: notifications);
+    // return NotificationsPage(notifications: [
+    //   Notification(
+    //       title: "title really long test",
+    //       description: "description",
+    //       time: "23:00 PM")
+    // ]);
   }
 }
 
