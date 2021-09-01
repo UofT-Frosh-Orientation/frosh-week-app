@@ -131,7 +131,8 @@ class ContainerFrosh extends StatelessWidget {
     return Hero(
       tag: "froshProfileCard",
       child: (Box(
-        fancy: true,
+        animated: true,
+        animatedColor: Theme.of(context).colorScheme.animatedBackground,
         widget: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -142,11 +143,9 @@ class ContainerFrosh extends StatelessWidget {
                 TextFont(
                   text: welcomeMessage,
                   fontSize: 27,
-                  textColor: Colors.white,
                 ),
                 TextFont(
                   text: "$froshGroup",
-                  textColor: Colors.white,
                   textAlign: TextAlign.right,
                 ),
               ],
@@ -159,7 +158,6 @@ class ContainerFrosh extends StatelessWidget {
                     text: "$froshName",
                     fontSize: 37,
                     fontWeight: FontWeight.bold,
-                    textColor: Colors.white,
                   ),
                 ),
               ],
@@ -167,7 +165,6 @@ class ContainerFrosh extends StatelessWidget {
             TextFont(
               text: "$discipline",
               fontSize: 15,
-              textColor: Colors.white,
             ),
           ],
         ),

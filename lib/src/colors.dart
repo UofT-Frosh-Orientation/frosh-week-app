@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frosh_week_2t1/src/widgets/Containers.dart';
 
 //import '../colors.dart';
 //Theme.of(context).colorScheme.lightDarkAccent
@@ -50,4 +51,12 @@ extension ColorsDefined on ColorScheme {
   Color get qrBackground => brightness == Brightness.light //needs high contrast
       ? const Color(0xFFF5F5F5)
       : const Color(0xFFE6E6E6);
+  Color get animatedBackground =>
+      brightness == Brightness.light //needs high contrast
+          ? const Color(0xFF8962D3)
+          : const Color(0xFF3A1D5F);
+  Color get animatedBubbles =>
+      brightness == Brightness.light //needs high contrast
+          ? const Color(0xC778728D)
+          : const Color(0xDE9F67A1);
 }
