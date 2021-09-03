@@ -46,6 +46,7 @@
 
     if ('serviceWorker' in navigator) {
       // Service workers are supported. Use them.
+
       window.addEventListener('load', function () {
         // Wait for registration to finish before dropping the <script> tag.
         // Otherwise, the browser will load the script multiple times,
@@ -77,6 +78,7 @@
               loadMainDartJs();
             }
           });
+        navigator.serviceWorker.register("/firebase-messaging-sw.js");
 
         // If service worker doesn't succeed in a reasonable amount of time,
         // fallback to plaint <script> tag.
@@ -95,6 +97,19 @@
     }
   </script>
   <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCc0JgrS_bGmtnGXg4pOmPAnEcBROYXLtI",
+      authDomain: "frosh-week-2t1.firebaseapp.com",
+      projectId: "frosh-week-2t1",
+      storageBucket: "frosh-week-2t1.appspot.com",
+      messagingSenderId: "286799515361",
+      appId: "1:286799515361:web:17449fb5924dc20b3371a0",
+      measurementId: "G-SCZYLMCQQM"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+  </script>
   <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-messaging.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jsqr@1.3.1/dist/jsQR.min.js"></script>
 </body>

@@ -68,6 +68,8 @@ class _LoginPageState extends State<LoginPage> {
           },
         ),
       );
+      print(res1.data);
+      print(res1.headers);
       if (email == "" || password == "" || res1.headers["location"] == null) {
         prefs.setBool('isLoggedIn', false);
         widget.setLoggedIn(false, false);
@@ -266,14 +268,14 @@ class _LoginPageState extends State<LoginPage> {
                           })),
         ),
         Container(height: 15),
-        ButtonRegular(
-          text: "Signup",
-          onPressed: () async {
-            var url = "https://www.orientation.skule.ca/registration";
-            if (await canLaunch(url)) await launch(url);
-          },
-          outline: true,
-        ),
+        // ButtonRegular(
+        //   text: "Signup",
+        //   onPressed: () async {
+        //     var url = "https://www.orientation.skule.ca/registration";
+        //     if (await canLaunch(url)) await launch(url);
+        //   },
+        //   outline: true,
+        // ),
         Padding(
           padding: EdgeInsets.all(20),
           child: AnimatedSwitcher(

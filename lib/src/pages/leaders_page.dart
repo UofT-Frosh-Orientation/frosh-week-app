@@ -123,15 +123,15 @@ class LeadersPageState extends State<LeadersPage> {
                     text: scannedStrings[2],
                     fontSize: 24,
                     fontWeight: FontWeight.bold),
-                TextFont(text: "Completed UCheck:"),
-                TextFont(
-                  text: scannedStrings[3],
-                  fontSize: 24,
-                  textColor: scannedStrings[3] == "false"
-                      ? Theme.of(context).colorScheme.redAccent
-                      : Theme.of(context).colorScheme.greenAccent,
-                  fontWeight: FontWeight.bold,
-                ),
+                // TextFont(text: "Completed UCheck:"),
+                // TextFont(
+                //   text: scannedStrings[3],
+                //   fontSize: 24,
+                //   textColor: scannedStrings[3] == "false"
+                //       ? Theme.of(context).colorScheme.redAccent
+                //       : Theme.of(context).colorScheme.greenAccent,
+                //   fontWeight: FontWeight.bold,
+                // ),
                 Container(height: 5),
                 Row(children: [
                   ButtonRegular(
