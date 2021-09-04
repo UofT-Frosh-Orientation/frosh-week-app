@@ -14,6 +14,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'src/colors.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import "src/functions.dart";
+import "package:flutter/foundation.dart" show kIsWeb;
 
 List<String> convertToStringList(List<dynamic> data) {
   List<String> converted = data.map((item) {
@@ -110,7 +111,13 @@ class FrameworkState extends State<Framework> {
       await prefs.setStringList('froshData',
           [froshName, froshGroup, froshEmail, discipline, shirtSize]);
       // subscribe to topic on each app start-up
-      String? token = await FirebaseMessaging.instance.getToken();
+      String? token = "";
+
+      if (kIsWeb) {
+        token = await FirebaseMessaging.instance.getToken(vapidKey: "BFqpqneId9gNocjGirutOKr5FV66VwgL9ykDZdmzW4vaFSZYJzzemE4-NpFJw3z1hnv6LhyeByP0ak7qldlbscE");
+      } else {
+        token = await FirebaseMessaging.instance.getToken();
+      }
       await FirebaseMessaging.instance.subscribeToTopic(froshGroup);
       if (widget.isLeader) {
         await FirebaseMessaging.instance.subscribeToTopic("leaders");

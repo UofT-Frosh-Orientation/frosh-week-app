@@ -48,17 +48,17 @@ class _HomePageState extends State<HomePage> {
     preferences.setBool('uCheck', status);
   }
 
-  Future<void> initializeUCheck() async {
-    SharedPreferences preferences = await SharedPreferences.getInstance();
-    setState(() {
-      uCheckPass = preferences.getBool('uCheck') ?? false;
-    });
-  }
+  // Future<void> initializeUCheck() async {
+  //   SharedPreferences preferences = await SharedPreferences.getInstance();
+  //   setState(() {
+  //     uCheckPass = preferences.getBool('uCheck') ?? false;
+  //   });
+  // }
 
   @override
   void initState() {
     super.initState();
-    initializeUCheck();
+    // initializeUCheck();
   }
 
   @override
@@ -113,58 +113,58 @@ class _HomePageState extends State<HomePage> {
           if (widget.froshScheduleData != null)
             getNowEvent(widget.froshScheduleData),
           Container(height: 20),
-          ResourceBox(
-            resource: Resource(
-                icon: Icons.health_and_safety,
-                title: "UCheck",
-                contact:
-                    "https://www.provost.utoronto.ca/planning-policy/utogether2020-a-roadmap-for-the-university-of-toronto/quercus-ucheck/",
-                type: "url",
-                description:
-                    "Before coming to campus, complete a quick COVID-19 self-assessment through the UCheck web portal."),
-          ),
-          Container(height: 5),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              children: [
-                AnimatedSwitcher(
-                  duration: Duration(milliseconds: 400),
-                  child: ButtonRegular(
-                      key: ValueKey<bool>(uCheckPass),
-                      outline: !(uCheckPass == false),
-                      customWidth:
-                          MediaQuery.of(context).size.width / 2 - 16 - 20 * 2,
-                      text: "UCheck Fail",
-                      onPressed: () async {
-                        setState(() {
-                          uCheckPass = false;
-                        });
-                        handleUCheckChange(false);
-                      }),
-                ),
-                AnimatedSwitcher(
-                  duration: Duration(milliseconds: 400),
-                  child: ButtonRegular(
-                      key: ValueKey<bool>(uCheckPass),
-                      outline: !(uCheckPass == true),
-                      customWidth:
-                          MediaQuery.of(context).size.width / 2 - 16 - 20 * 2,
-                      text: "UCheck Pass",
-                      onPressed: () async {
-                        if (uCheckPass == true) {
-                          handleUCheckChange(false);
-                        } else {
-                          handleUCheckChange(true);
-                        }
-                        setState(() {
-                          uCheckPass = true;
-                        });
-                      }),
-                ),
-              ],
-            ),
-          ),
+          // ResourceBox(
+          //   resource: Resource(
+          //       icon: Icons.health_and_safety,
+          //       title: "UCheck",
+          //       contact:
+          //           "https://www.provost.utoronto.ca/planning-policy/utogether2020-a-roadmap-for-the-university-of-toronto/quercus-ucheck/",
+          //       type: "url",
+          //       description:
+          //           "Before coming to campus, complete a quick COVID-19 self-assessment through the UCheck web portal."),
+          // ),
+          // Container(height: 5),
+          // Padding(
+          //   padding: EdgeInsets.symmetric(horizontal: 20),
+          //   child: Row(
+          //     children: [
+          //       AnimatedSwitcher(
+          //         duration: Duration(milliseconds: 400),
+          //         child: ButtonRegular(
+          //             key: ValueKey<bool>(uCheckPass),
+          //             outline: !(uCheckPass == false),
+          //             customWidth:
+          //                 MediaQuery.of(context).size.width / 2 - 16 - 20 * 2,
+          //             text: "UCheck Fail",
+          //             onPressed: () async {
+          //               setState(() {
+          //                 uCheckPass = false;
+          //               });
+          //               handleUCheckChange(false);
+          //             }),
+          //       ),
+          //       AnimatedSwitcher(
+          //         duration: Duration(milliseconds: 400),
+          //         child: ButtonRegular(
+          //             key: ValueKey<bool>(uCheckPass),
+          //             outline: !(uCheckPass == true),
+          //             customWidth:
+          //                 MediaQuery.of(context).size.width / 2 - 16 - 20 * 2,
+          //             text: "UCheck Pass",
+          //             onPressed: () async {
+          //               if (uCheckPass == true) {
+          //                 handleUCheckChange(false);
+          //               } else {
+          //                 handleUCheckChange(true);
+          //               }
+          //               setState(() {
+          //                 uCheckPass = true;
+          //               });
+          //             }),
+          //       ),
+          //     ],
+          //   ),
+          // ),
           Container(height: 40),
           ButtonRegular(
             text: "Logout",

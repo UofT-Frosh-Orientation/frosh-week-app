@@ -7,14 +7,13 @@ class FroshQR extends StatelessWidget {
   final String froshName;
   final String froshAccount;
   final String froshKitsSize;
-  final bool hasCompletedUCheck;
+  // final bool hasCompletedUCheck;
 
   const FroshQR(
       {Key? key,
       required this.froshName,
       required this.froshAccount,
-      required this.froshKitsSize,
-      required this.hasCompletedUCheck})
+      required this.froshKitsSize,})
       : super(key: key);
 
   @override
@@ -36,7 +35,7 @@ class FroshQR extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(7.0),
         child: QrImage(
-          data: "$froshName/$froshAccount/$froshKitsSize/$hasCompletedUCheck",
+          data: "$froshName/$froshAccount/$froshKitsSize/true",
           version: QrVersions.auto,
           size: height * 0.7,
           foregroundColor: Theme.of(context).colorScheme.qrColor,

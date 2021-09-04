@@ -26,13 +26,13 @@ class ResourcesPageParse extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResourcesPage(resources: [
-      Resource(
-          icon: Icons.language,
-          title: "Orientation website",
-          contact: "https://www.orientation.skule.ca/",
-          type: "url",
-          description:
-              "The F!rosh orientation website. Login to your account here and view full account data."),
+      // Resource(
+      //     icon: Icons.language,
+      //     title: "Orientation website",
+      //     contact: "https://www.orientation.skule.ca/",
+      //     type: "url",
+      //     description:
+      //         "The F!rosh orientation website. Login to your account here and view full account data."),
       Resource(
           icon: Icons.location_on,
           title: "UofT Map",
