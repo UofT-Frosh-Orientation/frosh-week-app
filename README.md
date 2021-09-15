@@ -1,16 +1,28 @@
-# frosh_week_2t1
+# Frosh Week 2T1 App
+This app is intended to be used by the Frosh and the Frosh orientation committee to aid in the sign-in process for in person activities. This app contains a QR code for each Frosh with their UUID embedded to ensure their account gets tagged with a sign-in entry in the database when a Leader account scans the QR code. This app also contains useful information such as a schedule, resources, and sending push notification abilities.
 
-A new Flutter project.
+## Release
+iOS Release: https://apps.apple.com/ca/app/f-rosh-week/id1581524056
+
+Android Release: Not available. (However an APK is, located on the Frosh website repo: https://github.com/UofT-Frosh-Orientation/froshweek3.0/blob/dev/client/src/assets/virtualkit/app-release.apk)
 
 ## Getting Started
+Install Flutter, Java SDK, Android SDK, Swift dependencies etc. and ensure ```flutter doctor``` runs without errors
 
-This project is a starting point for a Flutter application.
+Install dependencies located in ```pubspec.yaml```
 
-A few resources to get you started if this is your first Flutter project:
+Run app in debug mode
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Warning: Web App mode does not work with log in - this is because the backend request system works differently in web app mode
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Future Enhancements
+* Some pages and components should be rewritten for better modularity 
+* Schedule: if there's no location for an event it should remove the entire text widget for location to resize container, not show blank space
+* Use safe area (especially for iOS, navbar is too low)
+* Enhancement: schedule notifications automatically from the time in the schedule for events
+* Enhancement: settings page for dark mode and notifications
+* Enhancement: map of locations of events
+* Hopefully, in the future, with in person kit pickup, this app can be used by Kits to also pass on information for shirt sizes and to confirm they have picked up their kit
+* This can also be used to sign people in for Scunt and other activities (with the dynamic location selection)
+* Enhancement: Web app mode (backend needs to be rewritten)
+* The app can be used for different activities: e.g. interactive Matriculation activities? 
