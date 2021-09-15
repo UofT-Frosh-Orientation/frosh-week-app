@@ -27,6 +27,32 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+       navigator.serviceWorker.register("/firebase-messaging-sw.js");
+     });
+    }
+   </script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script src="/__/firebase/8.6.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-messaging.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCc0JgrS_bGmtnGXg4pOmPAnEcBROYXLtI",
+      authDomain: "frosh-week-2t1.firebaseapp.com",
+      projectId: "frosh-week-2t1",
+      storageBucket: "frosh-week-2t1.appspot.com",
+      messagingSenderId: "286799515361",
+      appId: "1:286799515361:web:17449fb5924dc20b3371a0",
+      measurementId: "G-SCZYLMCQQM"
+    };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  </script>
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
@@ -52,6 +78,7 @@
         // Otherwise, the browser will load the script multiple times,
         // potentially different versions.
         var serviceWorkerUrl = 'flutter_service_worker.js?v=' + serviceWorkerVersion;
+        // navigator.serviceWorker.register("/firebase-messaging-sw.js");
         navigator.serviceWorker.register(serviceWorkerUrl)
           .then((reg) => {
             function waitForActivation(serviceWorker) {
